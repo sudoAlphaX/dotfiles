@@ -1,0 +1,10 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Alpha
+	email = 43486986+sudoAlphaX@users.noreply.github.com
+	signingkey = 4D59B5D805B2C19B!
+[commit]
+	gpgsign = true
+[gpg]
+	program = okc-gpg
