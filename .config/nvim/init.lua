@@ -1,0 +1,1 @@
+../templates/nvim/init.lua
