@@ -3,3 +3,7 @@
 1. Clone the repo in your $HOME directory
 2. `cd` into the repo
 3. Run `stow -v .`
+
+### Note
+
+Copy .shortcuts directory and .gitignore directory manually to the $HOME because Termux refuses to launch shortcuts if it is a symlink
