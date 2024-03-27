@@ -25,8 +25,9 @@ vim.opt.rtp:prepend(lazypath)
 -- Plugins go here
 local plugins = {
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 }, -- Catppuccin theme
-    {"nvim-telescope/telescope.nvim", tag = "0.1.6", dependencies = { "nvim-lua/plenary.nvim" } }, -- Telescope plugin
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    { "nvim-telescope/telescope.nvim", tag = "0.1.6", dependencies = { "nvim-lua/plenary.nvim" } }, -- Telescope plugin
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    { "alexghergh/nvim-tmux-navigation" },
 }
 
 local opts = {}
@@ -110,3 +111,20 @@ treesitter.setup({
     highlight = { enable = true },
     indent = { enable = true },
 })
+
+
+-- Neovim-Tmux navigation config
+
+local nvim_tmux_nav = require("nvim-tmux-navigation")
+
+nvim_tmux_nav.setup({
+    disable_when_zoomed = true -- defaults to false
+})
+
+vim.keymap.set('n', "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
+vim.keymap.set('n', "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
+vim.keymap.set('n', "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
+vim.keymap.set('n', "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
+vim.keymap.set('n', "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
+vim.keymap.set('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
+
