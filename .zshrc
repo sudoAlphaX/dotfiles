@@ -154,5 +154,9 @@ alias f="fuck"
 alias vi="nvim"
 export EDITOR="nvim"
 
+# Fix for gpg password prompt in tty
+GPG_TTY=$(tty)
+export GPG_TTY
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
