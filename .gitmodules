@@ -1,6 +1,0 @@
-[submodule ".config/templates/nvim"]
-	path = .config/templates/nvim
-	url = https://github.com/NvChad/starter
-[submodule ".config/templates/tmux"]
-	path = .config/templates/tmux
-	url = https://github.com/gpakosz/.tmux
