@@ -1,0 +1,12 @@
+#!/bin/bash
+
+orig="127.0.0.1 localhost
+::1 localhost"
+
+hosts=$(sudo head -2 "/etc/hosts")
+
+if [ "$orig" == "$hosts" ]; then
+ printf "Default hosts file present\nAdaway not effective" | termux-toast 
+else
+  printf "Adaway enabled\nHosts file last modified:\n$(date -d @"$(sudo stat --format="%Y" "/etc/hosts")" "+%H:%M:%S %d-%m-%Y")" | termux-toast
+fi 

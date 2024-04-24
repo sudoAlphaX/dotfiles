@@ -24,3 +24,6 @@ _darcs
 ^/COPYING
 
 ^/.config/templates
+^/.gitconfig
+^/.shortcuts
+^/downloads
