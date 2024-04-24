@@ -149,8 +149,6 @@ alias wget="wget -c"
 eval $(TF_SHELL=$(basename $SHELL) thefuck --alias)
 alias f="fuck"
 
-# speedtest-go alias
-alias fast="speedtest-go -m"
 
 # Use Neovim as default editor 
 alias vi="nvim"
