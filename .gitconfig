@@ -1,8 +1,14 @@
 [init]
 	defaultBranch = main
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
 [user]
-	name = Alpha
 	email = 43486986+sudoAlphaX@users.noreply.github.com
+	name = Alpha
 	signingkey = E61724645DD4AC78!
 [commit]
 	gpgsign = true
+[help]
+	autocorrect = 20
