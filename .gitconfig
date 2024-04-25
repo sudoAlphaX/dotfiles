@@ -6,5 +6,3 @@
 	signingkey = E61724645DD4AC78!
 [commit]
 	gpgsign = true
-[gpg]
-	program = okc-gpg
