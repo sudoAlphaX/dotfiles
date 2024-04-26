@@ -110,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # Plugin Configuration
 
 # tmux plugin
-export ZSH_TMUX_AUTOSTART=true
+# export ZSH_TMUX_AUTOSTART="true"
 export ZSH_TMUX_CONFIG="$XDG_CONFIG_HOME/tmux/tmux.conf"
 
 zstyle ':omz:plugins:alias-finder' autoload yes
