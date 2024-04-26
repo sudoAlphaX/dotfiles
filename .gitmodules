@@ -6,7 +6,8 @@
 	url = https://github.com/romkatv/powerlevel10k.git
 [submodule ".config/tmux/tpm"]
 	path = .config/tmux/tpm
-	url = https://github.com/tmux-plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
 [submodule ".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
 	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions
+    url = https://github.com/zsh-users/zsh-autosuggestions.git
+
