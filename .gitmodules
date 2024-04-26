@@ -7,3 +7,6 @@
 [submodule ".config/tmux/tpm"]
 	path = .config/tmux/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule ".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
