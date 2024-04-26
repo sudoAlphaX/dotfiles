@@ -86,7 +86,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gpg-agent git aliases alias-finder colored-man-pages command-not-found extract universalarchive virtualenvwrapper zsh-syntax-highlighting tmux)
+plugins=(gpg-agent git aliases alias-finder colored-man-pages command-not-found extract universalarchive virtualenvwrapper zsh-syntax-highlighting tmux zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
