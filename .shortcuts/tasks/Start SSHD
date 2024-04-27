@@ -3,11 +3,7 @@
 sshd
 
 wifi_info=$(termux-wifi-connectioninfo)
-printf "Started SSH Daemon
-
-SSID: $(echo $wifi_info | jq -r .ssid)
-IP: $(echo $wifi_info | jq -r .ip)
-Port: 8022
-" | termux-toast
+printf "Started sshd@$(echo $wifi_info | jq -r .ip)
+SSID: $(echo $wifi_info | jq -r .ssid)" | termux-toast
 
 termux-wake-lock
