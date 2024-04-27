@@ -86,7 +86,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(sudo gpg-agent git aliases alias-finder colored-man-pages command-not-found extract universalarchive virtualenvwrapper zsh-syntax-highlighting tmux zsh-autosuggestions)
+plugins=(sudo gpg-agent git aliases alias-finder colored-man-pages command-not-found extract universalarchive virtualenvwrapper zsh-syntax-highlighting tmux)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -117,6 +117,9 @@ zstyle ':omz:plugins:alias-finder' autoload yes
 zstyle ':omz:plugins:alias-finder' longer no
 zstyle ':omz:plugins:alias-finder' exact yes
 zstyle ':omz:plugins:alias-finder' cheaper yes
+
+# ZSH_AUTOSUGGEST_STRATEGY=(completion match_prev_cmd)
+
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
