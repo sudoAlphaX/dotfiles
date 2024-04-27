@@ -5,7 +5,3 @@
 3. `cd` into the repo
 4. Run git submodule init && git submodule update
 5. Run `stow -v .`
-
-### Note
-
-Copy .shortcuts directory manually to the $HOME because Termux refuses to launch shortcuts if it is a symlink
