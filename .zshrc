@@ -130,6 +130,10 @@ zstyle ':omz:plugins:alias-finder' cheaper yes
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias zshconf="nvim ~/.zshrc"
+alias tmuxconf="nvim ~/.config/tmux/tmux.conf"
+alias nvimconf="nvim ~/.config/nvim/init.lua"
+
 ## a quick way to get out of current directory ##
 alias ..="cd .."
 alias ...="cd ../../../"
