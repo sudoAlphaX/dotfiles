@@ -162,8 +162,8 @@ alias fgrep="fgrep --color=auto"
 alias wget="wget -c"
 
 # thefuck utility configuration and aliases
-eval $(thefuck --alias)
-alias f="fuck"
+# eval $(thefuck --alias)
+# alias f="fuck"
 
 # Use Neovim as default editor 
 alias vi="nvim"
