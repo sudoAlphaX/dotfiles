@@ -16,3 +16,5 @@
 	program = okc-gpg
 [help]
 	autocorrect = 25
+[push]
+	autoSetupRemote = true
