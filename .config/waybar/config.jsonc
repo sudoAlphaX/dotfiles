@@ -1,15 +1,36 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 25,
-    "spacing": 4,
+    "height": 30,
+    "spacing": 0,
     
     "fixed-center": true,
     "exclusive": true,
 
-    "modules-left": ["hyprland/workspaces"],
-    "modules-right": ["hyprland/window", "privacy", "keyboard-state", "pulseaudio", "bluetooth", "network", "battery", "clock"],
+    "modules-left": [
+        "hyprland/workspaces",
+    ],
 
+    "modules-right": [
+        "hyprland/window",
+        "privacy",
+     //   "keyboard-state",
+        "pulseaudio",
+        "network",
+        "bluetooth",
+        "battery",
+        "clock#date",
+        "clock",    
+    ],
+
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "disk",
+            "cpu",
+            "memory",
+        ],
+    },
 
     "hyprland/workspaces": {
         "format": "{id}",
@@ -21,16 +42,24 @@
     },
 
     "clock": {
-        "format": "  {:%a %d %h %H:%M}",
-        "format-alt":"{:%A | %d %B %Y | %H:%M:%S}",
+        "format": "{:%H:%M}",
+        "format-alt":"{:%H:%M:%S}",
         "tooltip-format":"{:%A (%U) | %d %B %Y (%j) | %H:%M:%S%z (%Z)}",
     },
 
+    "clock#date": {
+        "format": "{:%a %d-%m}",
+        "format-alt": "{:%A %d %B %Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+
     "battery": {
-        "format-icons":[" "," "," "," "," "],
-        "format":"{icon} {capacity}%",
+        "format-icons":["","","","",""],
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon}  {time}",
         "states": {
-            "normal": 100,
             "warning": 25,
             "critical": 15
         }
@@ -38,34 +67,37 @@
 
     "network": {
         "format-ethernet": "  {ifname}",
-        "format-wifi": "{icon} {signalStrength} {essid}",
-        "format-linked": " {ifname}",
-        "format-disconnected": "󰌙 ",
-        "format-icons": ["󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
-        "tooltip-format-wifi": "{ipaddr} | Strength {signalStrength}%",
+        "format-wifi": "{icon}  {essid}",
+        "format-alt": "{ipaddr}",
+        "format-linked": "   {ifname}",
+        "format-disconnected": "󰌙  ",
+        "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format-wifi": "Signal Strength: {signalStrength}%",
         "tooltip-format-ethernet": "{ipaddr}",
         "tooltip-format-disconnected": "Disconnected",
+        "max-length": 20,
     },
 
     "bluetooth": {
-        "format-off": "󰂲 ",
-        "format-on": "󰂯 ",
+        "format-off": "󰂲",
+        "format-on": "󰂯",
         "format-connected": "󰂱 {device_alias}",
         "tooltip-format-off": "Bluetooth off",
-        "tooltip-format-on": "Bluetooth not connected",
-        "tooltip-format-connected": "Connected to device: {device_alias} ({device_battery_percentage})"
+        "tooltip-format-on": "Bluetooth device not connected",
+        "tooltip-format-connected": "Connected to device: {device_alias} ({device_battery_percentage})",
     },
 
     "pulseaudio": {
-        "format": "{icon}{volume}%",
-        "format-muted": "󰝟 ",
+        "format": "{icon}  {volume}%", 
+        "format-muted": "󰝟",
         "format-icons": {
-            "default": ["󰕿 ", "󰖀 ", "󰕾 "],
-            "speaker": ["󰕿 ", "󰖀 ", "󰕾 "],
-            "headphone": ["󰋋 󰕿 ", "󰋋 󰖀 ", "󰋋 󰕾 "],
-            "headset": ["󰂯 󰕿 ", "󰂯 󰖀 ", "󰂯 󰕾 "],
-            "hands-free": ["󰂯 󰕿 ", "󰂯 󰖀 ", "󰂯 󰕾 "],
-        }
+            "default": ["", "", ""],
+            "speaker": ["", "", ""],
+            "headphone": ["󰋋 ", "󰋋 ", "󰋋 "],
+            "headset": [" ", " ", " "],
+            "hands-free": [" ", " ", " "],
+        },
+        "on-click": "pavucontrol",
     },
 
     "keyboard-state": {
