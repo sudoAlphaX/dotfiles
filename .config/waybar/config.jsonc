@@ -8,7 +8,17 @@
     "exclusive": true,
 
     "modules-left": ["hyprland/workspaces"],
-    "modules-right": ["pulseaudio", "bluetooth", "network", "battery", "clock"],
+    "modules-right": ["hyprland/window", "privacy", "keyboard-state", "pulseaudio", "bluetooth", "network", "battery", "clock"],
+
+
+    "hyprland/workspaces": {
+        "format": "{id}",
+    },
+
+    "hyprland/window": {
+        "format": "",
+        "icons": true,
+    },
 
     "clock": {
         "format": "  {:%a %d %h %H:%M}",
@@ -57,5 +67,39 @@
             "hands-free": ["󰂯 󰕿 ", "󰂯 󰖀 ", "󰂯 󰕾 "],
         }
     },
+
+    "keyboard-state": {
+        "format": {
+            "capslock": "HI{icon}",
+            "numlock": "HIE",
+        },
+        "format-icons": {
+            "locked": " Caps Locked",
+            "unlocked": ""
+        },
+        "numlock": false,
+        "capslock": true,
+        "scrolllock": false,
+    },
+
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [{
+            "type": "screenshare",
+            "tooltip-icon-size": 24,
+        },
+        {
+            "type": "audio-in",
+            "tooltip-icon-size": 24,
+        },
+        {
+            "type": "audio-out",
+            "tooltip-icon-size": 24,
+        },
+        ],
+    },
+
 
 }
