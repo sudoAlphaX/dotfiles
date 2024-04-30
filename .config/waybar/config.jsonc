@@ -1,0 +1,61 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 25,
+    "spacing": 4,
+    
+    "fixed-center": true,
+    "exclusive": true,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-right": ["pulseaudio", "bluetooth", "network", "battery", "clock"],
+
+    "clock": {
+        "format": "  {:%a %d %h %H:%M}",
+        "format-alt":"{:%A | %d %B %Y | %H:%M:%S}",
+        "tooltip-format":"{:%A (%U) | %d %B %Y (%j) | %H:%M:%S%z (%Z)}",
+    },
+
+    "battery": {
+        "format-icons":[" "," "," "," "," "],
+        "format":"{icon} {capacity}%",
+        "states": {
+            "normal": 100,
+            "warning": 25,
+            "critical": 15
+        }
+    },
+
+    "network": {
+        "format-ethernet": "  {ifname}",
+        "format-wifi": "{icon} {signalStrength} {essid}",
+        "format-linked": " {ifname}",
+        "format-disconnected": "󰌙 ",
+        "format-icons": ["󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
+        "tooltip-format-wifi": "{ipaddr} | Strength {signalStrength}%",
+        "tooltip-format-ethernet": "{ipaddr}",
+        "tooltip-format-disconnected": "Disconnected",
+    },
+
+    "bluetooth": {
+        "format-off": "󰂲 ",
+        "format-on": "󰂯 ",
+        "format-connected": "󰂱 {device_alias}",
+        "tooltip-format-off": "Bluetooth off",
+        "tooltip-format-on": "Bluetooth not connected",
+        "tooltip-format-connected": "Connected to device: {device_alias} ({device_battery_percentage})"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}{volume}%",
+        "format-muted": "󰝟 ",
+        "format-icons": {
+            "default": ["󰕿 ", "󰖀 ", "󰕾 "],
+            "speaker": ["󰕿 ", "󰖀 ", "󰕾 "],
+            "headphone": ["󰋋 󰕿 ", "󰋋 󰖀 ", "󰋋 󰕾 "],
+            "headset": ["󰂯 󰕿 ", "󰂯 󰖀 ", "󰂯 󰕾 "],
+            "hands-free": ["󰂯 󰕿 ", "󰂯 󰖀 ", "󰂯 󰕾 "],
+        }
+    },
+
+}

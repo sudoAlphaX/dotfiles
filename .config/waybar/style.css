@@ -1,0 +1,36 @@
+*{ 
+  font-family: "CaskaydiaCove Nerd Font"; 
+  font-size: 13px; 
+}
+
+#waybar {
+    background-color: #333333;
+    color: #ffffff;
+}
+/*
+#clock {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#battery.charging {
+    background-color: #00e600;
+    color: #ffffff;
+}
+
+#battery.discharging.normal {
+    background-color: #00d800;
+    color: #ffffff;
+
+
+#battery.discharging.warning {
+    background-color: #ffa500;
+    color: #000000;
+}
+
+#battery.discharging.critical {
+    background-color: #ff4500;
+    color: #000000;
+}
+
+*/
