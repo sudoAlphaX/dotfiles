@@ -13,12 +13,13 @@
 
     "modules-right": [
         "hyprland/window",
+        "tray",
         "privacy",
      //   "keyboard-state",
-        "pulseaudio",
         "network",
         "bluetooth",
         "group/hardware",
+        "pulseaudio",
         "battery",
         "clock#date",
         "clock",    
@@ -40,6 +41,11 @@
     "hyprland/window": {
         "format": "",
         "icons": true,
+    },
+
+    "tray": {
+        "spacing": "2",
+        "show-passive-items": "true"
     },
 
     "clock": {
@@ -68,13 +74,13 @@
     },
 
     "memory": {
-        "format": "  {percentage}%",
+        "format": "  {used:0.1f}G",
         "states": {
             "high": 70,
             "critical": 90
         },
         "on-click": "alacritty -e htop",
-        "tooltip-format": "{used} GB/{total} GB used ({percentage}%)"
+        "tooltip-format": "{used} GB/{total} GB used ({percentage}%)\n{swapUsed} GB/{swapTotal} GB swap used ({swapPercentage}%)"
     },
  
     "cpu": {
@@ -88,7 +94,8 @@
 
     "temperature": {
         "format": " {temperatureC}°C",
-        "critical-threshold": 50 
+        "critical-threshold": 50,
+        "tooltip-format": "{temperatureC}°C\n{temperatureF}°F\n{temperatureK}K"
     },
 
     "network": {
