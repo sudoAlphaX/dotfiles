@@ -164,8 +164,20 @@ button:hover {
 }
 
 #battery.warning:not(.charging) {
-    color: @peach;
-    border-bottom: 2px solid @peach;
+    color: @green;
+    border-bottom: 2px solid @green;
+    animation-name: warn;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes warn {
+    to {
+        color: @red;
+        border-bottom: 2px solid @red;
+    }
 }
 
 @keyframes blink {
@@ -183,8 +195,7 @@ button:hover {
     animation-duration: 0.75s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    animation-direction: alternate;
-        
+    animation-direction: alternate;        
 }
 
 
