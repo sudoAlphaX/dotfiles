@@ -73,6 +73,8 @@ button:hover {
 }
 
 #clock.date {
+    color: @yellow;
+    border-bottom: 2px solid @yellow;
 }
 
 #pulseaudio {
@@ -137,8 +139,8 @@ button:hover {
 }
 
 #network {
-   color: @yellow;
-    border-bottom: 2px solid @yellow;
+   color: @peach;
+    border-bottom: 2px solid @peach;
 }
 
 #idle_inhibitor {
