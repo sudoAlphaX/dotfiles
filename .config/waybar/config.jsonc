@@ -55,6 +55,7 @@
     },
 
     "battery": {
+        "interval": 15,
         "format-icons":["","","","",""],
         "format": "{icon}  {capacity}%",
         "format-charging": " {capacity}%",
