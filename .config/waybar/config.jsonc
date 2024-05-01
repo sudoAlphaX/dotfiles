@@ -18,6 +18,7 @@
         "pulseaudio",
         "network",
         "bluetooth",
+        "group/hardware",
         "battery",
         "clock#date",
         "clock",    
@@ -26,7 +27,7 @@
     "group/hardware": {
         "orientation": "horizontal",
         "modules": [
-            "disk",
+            "temperature",
             "cpu",
             "memory",
         ],
@@ -63,6 +64,30 @@
             "warning": 25,
             "critical": 15
         }
+    },
+
+    "memory": {
+        "format": "  {percentage}%",
+        "states": {
+            "high": 70,
+            "critical": 90
+        },
+        "on-click": "alacritty -e htop",
+        "tooltip-format": "{used} GB/{total} GB used ({percentage}%)"
+    },
+ 
+    "cpu": {
+        "format": " {usage}%",
+        "states": {
+            "high": 70,
+            "critical": 90
+        },
+        "on-click": "alacritty -e htop"
+    },
+
+    "temperature": {
+        "format": " {temperatureC}°C",
+        "critical-threshold": 50 
     },
 
     "network": {
