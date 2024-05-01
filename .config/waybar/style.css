@@ -10,11 +10,7 @@
 }
 
 window#waybar {
-    background: transparent;
-    background-color: @background;
-    color: @foreground;
-    transition-property: background-color;
-    transition-duration: 0.1s;
+    background-color: transparent;
 }
 
 #window {
@@ -31,22 +27,32 @@ button {
 
 button:hover {
     background: inherit;
-    border-top: 2px solid @hover;
+    border-bottom: 2px solid @white;
 }
 
 #workspaces button {
-    padding: 0 4px;
+    padding: 0 5px;
+    background-color: transparent;
+    color: @white;
+    border-bottom: 3px solid transparent;
 }
 
-#workspaces button.focused {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: @blue;
-    border-top: 2px solid @blue;
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inherit;
+    border-bottom: 3px solid @white;
+}
+
+#workspaces button.active {
+    background-color: @white;
+    border-bottom: 3px solid @white;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    color: @red;
+    border-bottom: 3px solid @red;
 }
+
 
 #network,
 #bluetooth,
