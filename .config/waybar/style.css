@@ -73,13 +73,62 @@ button:hover {
 }
 
 #clock.date {
-    color: @pink;
-    border-bottom: 2px solid @pink;
 }
 
 #pulseaudio {
     color: @teal;
     border-bottom: 2px solid @teal;
+}
+
+#cpu {
+    color: @teal;
+    border-bottom: 2px solid @teal;
+}
+
+#memory {
+    color: @sapphire;
+    border-bottom: 2px solid @sapphire;
+}
+
+#temperature {
+    color: @pink;
+    border-bottom: 2px solid @pink;
+}
+
+#temperature.critical {
+    color: @pink;
+    border-bottom: 2px solid @pink;    
+    animation-name: blink;
+    animation-duration: 0.75s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu.high,
+#memory.high {
+    color: @peach;
+    border-bottom: 2px solid @peach;
+}
+
+#cpu.critical {
+    color: @teal;
+    border-bottom: 2px solid @teal;    
+    animation-name: blink;
+    animation-duration: 0.75s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#memory.critical {
+    color: @sapphire;
+    border-bottom: 2px solid @sapphire;    
+    animation-name: blink;
+    animation-duration: 0.75s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #bluetooth {
