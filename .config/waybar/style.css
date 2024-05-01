@@ -101,6 +101,15 @@ button:hover {
     color: @red;
 }
 
+#battery {
+    color: @green;
+    border-bottom: 2px solid @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @peach;
+    border-bottom: 2px solid @peach;
+}
 
 @keyframes blink {
     to {
@@ -110,7 +119,7 @@ button:hover {
     }
 }
 
-#battery.discharging.critical {
+#battery.critical:not(.charging) {
     color: @green;
     border-bottom: 2px solid @green;    
     animation-name: blink;
@@ -120,6 +129,7 @@ button:hover {
     animation-direction: alternate;
         
 }
+
 
 #battery.charging,
 #battery.plugged {
