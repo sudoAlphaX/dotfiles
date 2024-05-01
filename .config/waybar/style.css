@@ -85,18 +85,18 @@ button:hover {
 }
 
 #pulseaudio {
-    color: @teal;
-    border-bottom: 2px solid @teal;
+    color: @peach;
+    border-bottom: 2px solid @peach;
 }
 
 #cpu {
-    color: @teal;
-    border-bottom: 2px solid @teal;
+    color: @sapphire;
+    border-bottom: 2px solid @sapphire;
 }
 
 #memory {
-    color: @sapphire;
-    border-bottom: 2px solid @sapphire;
+    color: @teal;
+    border-bottom: 2px solid @teal;
 }
 
 #temperature {
@@ -146,8 +146,8 @@ button:hover {
 }
 
 #network {
-   color: @peach;
-    border-bottom: 2px solid @peach;
+   color: @teal;
+    border-bottom: 2px solid @teal;
 }
 
 #idle_inhibitor {
@@ -204,6 +204,12 @@ button:hover {
 #battery.plugged {
     color: @green;
     border-bottom: 2px solid @green;
+}
+
+
+#privacy {
+    color: @white;
+    border-bottom: 2px solid @white;
 }
 
 #tray {
