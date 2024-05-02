@@ -16,3 +16,8 @@ style = "Italic"
 [font.normal]
 family = "CaskaydiaCove Nerd Font"
 style = "Regular"
+
+[window]
+opacity = 0.6
+
+
