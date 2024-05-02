@@ -49,8 +49,19 @@ button:hover {
 }
 
 #workspaces button.urgent {
-    color: @red;
-    border-bottom: 3px solid @red;
+    color: @white;
+    animation-name: urgent;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes urgent {
+    to {
+        color: @red;
+        border-bottom: 3px solid @red;
+    }
 }
 
 #tray,
