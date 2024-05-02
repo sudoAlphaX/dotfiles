@@ -132,6 +132,7 @@
             "hands-free": [" ", " ", "  "],
         },
         "on-click": "pavucontrol",
+        "reverse-scrolling": true,
     },
 
     "keyboard-state": {
