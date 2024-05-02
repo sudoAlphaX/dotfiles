@@ -19,6 +19,7 @@
         "network",
         "bluetooth",
         "group/hardware",
+        "backlight",
         "pulseaudio",
         "battery",
         "clock#date",
@@ -28,7 +29,6 @@
     "group/hardware": {
         "orientation": "horizontal",
         "modules": [
-            "temperature",
             "cpu",
             "memory",
         ],
@@ -58,6 +58,12 @@
         "format": "{:%a %d-%m}",
         "format-alt": "{:%A %d %B %Y}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "reverse-scrolling": true,
     },
 
     "battery": {
