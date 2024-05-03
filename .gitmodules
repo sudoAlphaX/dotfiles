@@ -7,3 +7,6 @@
 [submodule "zsh-syntax-highlighting"]
 	path = .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "rofi-fork"]
+	path = .config/templates/rofi
+	url = https://github.com/sudoAlphaX/rofi

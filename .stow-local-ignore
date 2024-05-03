@@ -23,7 +23,6 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
-^/.config/templates
 # ^/.gitconfig
 ^/.shortcuts
 ^/downloads
