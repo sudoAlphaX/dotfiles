@@ -108,13 +108,13 @@ button:hover {
 }
 
 #cpu {
-    color: @pink;
-    border-bottom: 2px solid @pink;
+    color: @teal;
+    border-bottom: 2px solid @teal;
 }
 
 #memory {
-    color: @teal;
-    border-bottom: 2px solid @teal;
+    color: @pink;
+    border-bottom: 2px solid @pink;
 }
 
 #temperature {
@@ -149,8 +149,8 @@ button:hover {
 }
 
 #memory.critical {
-    color: @sapphire;
-    border-bottom: 2px solid @sapphire;    
+    color: @pink;
+    border-bottom: 2px solid @pink;    
     animation-name: blink;
     animation-duration: 0.75s;
     animation-timing-function: linear;
@@ -164,8 +164,8 @@ button:hover {
 }
 
 #network {
-   color: @yellow;
-    border-bottom: 2px solid @yellow;
+    color: @mauve;
+    border-bottom: 2px solid @mauve;
 }
 
 #idle_inhibitor {
