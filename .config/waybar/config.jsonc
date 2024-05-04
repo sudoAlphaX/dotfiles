@@ -11,8 +11,11 @@
         "hyprland/workspaces",
     ],
 
-    "modules-right": [
+    "modules-center": [
         "hyprland/window",
+    ],
+
+    "modules-right": [
         "idle_inhibitor",
         "tray",
         "privacy",
@@ -40,7 +43,7 @@
     },
 
     "hyprland/window": {
-        "format": "",
+        "format": "{class}",
         "icons": true,
     },
 
