@@ -163,8 +163,8 @@ button:hover {
 }
 
 #network {
-   color: @yellow;
-    border-bottom: 2px solid @yellow;
+   color: @green;
+    border-bottom: 2px solid @green;
 }
 
 #idle_inhibitor {
