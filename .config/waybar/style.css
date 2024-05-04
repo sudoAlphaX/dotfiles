@@ -64,6 +64,7 @@ button:hover {
     }
 }
 
+#idle_inhibitor,
 #tray,
 #privacy,
 #network,
@@ -168,12 +169,13 @@ button:hover {
 }
 
 #idle_inhibitor {
-    margin-right: 12px;
-    color: #7cb342;
+    color: @green;
+    border-bottom: 2px solid @green;
 }
 
 #idle_inhibitor.activated {
     color: @red;
+    border-bottom: 2px solid @red;
 }
 
 #battery {

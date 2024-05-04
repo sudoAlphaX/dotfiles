@@ -13,6 +13,7 @@
 
     "modules-right": [
         "hyprland/window",
+        "idle_inhibitor",
         "tray",
         "privacy",
      //   "keyboard-state",
@@ -46,6 +47,14 @@
     "tray": {
         "spacing": "2",
         "show-passive-items": "true"
+    },
+
+    "idle_inhibitor": {
+    "format": "{icon} ",
+    "format-icons": {
+        "activated": "",
+        "deactivated": ""
+        },
     },
 
     "clock": {
@@ -173,6 +182,5 @@
         },
         ],
     },
-
 
 }
