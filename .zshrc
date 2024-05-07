@@ -165,6 +165,9 @@ alias fast="speedtest-go -m"
 alias vi="nvim"
 export EDITOR="nvim"
 
+# Memes
+alias pls="sudo"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
