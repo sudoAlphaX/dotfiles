@@ -16,3 +16,6 @@
 [submodule ".config/rofi/assets/rofi-git"]
 	path = .config/rofi/assets/rofi-git
 	url = https://www.github.com/sudoalphax/rofi
+[submodule ".oh-my-zsh/custom/plugins/zsh-autocomplete"]
+	path = .oh-my-zsh/custom/plugins/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete.git
