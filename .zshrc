@@ -128,6 +128,9 @@ bindkey "$terminfo[kcbt]" menu-select
 # Make Tab and ShiftTab change the selection in the menu
 bindkey -M menuselect '^I' menu-complete
 bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
+
+bindkey '^[OA' history-search-backward
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
