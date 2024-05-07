@@ -120,7 +120,14 @@ zstyle ':omz:plugins:alias-finder' cheaper yes
 
 # ZSH_AUTOSUGGEST_STRATEGY=(completion match_prev_cmd)
 
+# zsh-autocomplete plugin configuration
+# Make Tab and ShiftTab go to the menu
+bindkey '^I' menu-select
+bindkey "$terminfo[kcbt]" menu-select
 
+# Make Tab and ShiftTab change the selection in the menu
+bindkey -M menuselect '^I' menu-complete
+bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
