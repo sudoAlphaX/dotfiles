@@ -13,3 +13,6 @@
 [submodule ".oh-my-zsh/custom/plugins/zsh-autocomplete"]
 	path = .oh-my-zsh/custom/plugins/zsh-autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete.git
+[submodule "assets/utilities/arrpc"]
+	path = assets/utilities/arrpc
+	url = https://github.com/OpenAsar/arrpc
