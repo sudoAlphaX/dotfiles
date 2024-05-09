@@ -22,7 +22,7 @@ return {
                         f = { "<cmd>Telescope git_files<cr>", "Find Git Files" }
                     },
                     b = { "<cmd>Telescope buffers<cr>", "List Buffers" },
-                    v = { "<cmd>Telescope neoclip<cr>", "Register History" }
+                    p = { "<cmd>Telescope neoclip<cr>", "Register History" }
               }
         })
     end,
