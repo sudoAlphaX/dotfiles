@@ -10,6 +10,7 @@ return {
 
         local configs = require("nvim-tree.api")
         vim.keymap.set('n', "<C-n>", configs.tree.toggle)
+        vim.keymap.set('n', "<leader>e", configs.tree.focus, { desc = "Focus File Tree" })
     end
 }
 
