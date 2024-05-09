@@ -10,6 +10,7 @@ return {
                 ["<leader>"] = {
                     g = "+git",
                     f = "+file",
+                    b = "+buffers",
               }
         })
     end,
