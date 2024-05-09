@@ -15,6 +15,9 @@ return {
         {'ibhagwan/fzf-lua'},
     },
     config = function()
+        
+        vim.keymap.set('n', "<leader>p", "<cmd>Telescope neoclip<cr>", { desc = "Register History" })
+
         require('neoclip').setup({
             history = 1000,
             enable_persistent_history = false,
