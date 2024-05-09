@@ -4,13 +4,12 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim"
     },
---[[
     config = function()
         local configs = require("telescope.builtin")
-        vim.keymap.set("n", "<leader>o", configs.find_files, {})
-        vim.keymap.set("n", "<leader>g", configs.live_grep, {})
-        vim.keymap.set("n", "<leader>b", configs.buffers, {})
+        vim.keymap.set("n", "<leader>o", configs.find_files, { desc = "Open File"})
+        vim.keymap.set("n", "<leader>fg", configs.live_grep, { desc = "Live Grep"})
+        vim.keymap.set("n", "<leader>b", configs.buffers, { desc = "List Buffers"})
+        vim.keymap.set("n", "<leader>fr", configs.oldfiles, { desc = "Recent Files"})
     end
-]]
 }
 
