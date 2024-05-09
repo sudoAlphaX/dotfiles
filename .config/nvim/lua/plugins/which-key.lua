@@ -14,15 +14,9 @@ return {
                         g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
                         r = { "<cmd>Telescope oldfiles<cr>", "Recent files" },
                     },
-                    g = {
-                        name = "+git",
-                        s = { "<cmd>Telescope git_status<cr>", "Git Status" },
-                        b = { "<cmd>Telescope git_branches<cr>", "Git Branches" },
-                        c = { "<cmd>Telescope git_commits<cr>", "Git Commits" },
-                        f = { "<cmd>Telescope git_files<cr>", "Find Git Files" }
-                    },
                     b = { "<cmd>Telescope buffers<cr>", "List Buffers" },
                     p = { "<cmd>Telescope neoclip<cr>", "Register History" }
+                    g = "+git",
               }
         })
     end,
