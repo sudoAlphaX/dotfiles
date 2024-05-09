@@ -15,7 +15,6 @@ return {
                         r = { "<cmd>Telescope oldfiles<cr>", "Recent files" },
                     },
                     b = { "<cmd>Telescope buffers<cr>", "List Buffers" },
-                    p = { "<cmd>Telescope neoclip<cr>", "Register History" }
                     g = "+git",
               }
         })
