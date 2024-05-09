@@ -6,10 +6,10 @@ return {
     },
     config = function()
         local configs = require("telescope.builtin")
-        vim.keymap.set("n", "<leader>o", configs.find_files, { desc = "Open File"})
-        vim.keymap.set("n", "<leader>fg", configs.live_grep, { desc = "Live Grep"})
-        vim.keymap.set("n", "<leader>b", configs.buffers, { desc = "List Buffers"})
-        vim.keymap.set("n", "<leader>fr", configs.oldfiles, { desc = "Recent Files"})
+        vim.keymap.set("n", "<leader>o", "<cmd>Telescope find_files<CR>", { desc = "Open File"})
+        vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Live Grep"})
+        vim.keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Recent Files"})
+        vim.keymap.set("n", "<leader>bf", "<cmd>Telescope buffers<CR>", { desc = "List Buffers"})
     end
 }
 
