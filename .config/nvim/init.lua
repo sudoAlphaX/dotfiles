@@ -12,7 +12,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
-require("mappings")
 require("vim-conf") -- Specify bare vim configs in vim-conf.lua file
+require("mappings") -- Seperate file for mappings
 require("lazy").setup("plugins") -- lazy.nvim init
