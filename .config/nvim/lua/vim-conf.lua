@@ -28,5 +28,5 @@ vim.cmd("set nofoldenable")
 vim.cmd("set foldnestmax=3")
 
 -- Indentation shortcuts
-vim.keymap.set('x', "<Tab>", ">><ESC>")
-vim.keymap.set('x', "<S-Tab>", "<<<ESC>")
+vim.keymap.set('x', "<Tab>", ">gv")
+vim.keymap.set('x', "<S-Tab>", "<gv")
