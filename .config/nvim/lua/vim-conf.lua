@@ -21,6 +21,7 @@ vim.cmd("set smartcase")
 
 -- Text rendering options
 vim.cmd("set cursorline")
+vim.cmd("set nowrap")
 
 -- Code folding
 vim.cmd("set foldmethod=indent")
