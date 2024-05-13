@@ -76,6 +76,8 @@
         "format": "{icon} {percent}%",
         "format-icons": ["󰃞", "󰃟", "󰃠"],
         "reverse-scrolling": true,
+        "on-scroll-up": "brightnessctl --device='intel_backlight' set +1%",
+        "on-scroll-down": "brightnessctl --device='intel_backlight' --min-value=75 set 1%-",
     },
 
     "battery": {
