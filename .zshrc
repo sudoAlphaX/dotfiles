@@ -175,6 +175,11 @@ alias fast="speedtest-go -m"
 alias vi="nvim"
 export EDITOR="nvim"
 
+# Alias for configuring zsh
+alias zshconf="nvim ~/.zshrc"
+alias tmuxconf="nvim ~/.config/tmux/tmux.conf"
+alias nvimconf="nvim ~/.config/nvim/init.lua"
+
 # Memes
 alias pls="sudo"
 
