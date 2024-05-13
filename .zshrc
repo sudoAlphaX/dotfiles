@@ -165,8 +165,8 @@ alias fgrep="fgrep --color=auto"
 alias wget="wget -c"
 
 # thefuck utility configuration and aliases
-eval $(TF_SHELL=$(basename $SHELL) thefuck --alias)
-alias f="fuck"
+# eval $(tf_shell=$(basename $shell) thefuck --alias)
+# alias f="fuck"
 
 # speedtest-go alias
 alias fast="speedtest-go -m"
