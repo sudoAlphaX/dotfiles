@@ -1,18 +1,12 @@
-[submodule ".oh-my-zsh/custom/themes/powerlevel10k"]
-	path = .oh-my-zsh/custom/themes/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
 [submodule ".config/tmux/tpm"]
 	path = .config/tmux/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "zsh-syntax-highlighting"]
-	path = .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule ".config/rofi/assets/rofi-git"]
 	path = .config/rofi/assets/rofi-git
 	url = https://www.github.com/sudoalphax/rofi
-[submodule ".oh-my-zsh/custom/plugins/zsh-autocomplete"]
-	path = .oh-my-zsh/custom/plugins/zsh-autocomplete
-	url = https://github.com/marlonrichert/zsh-autocomplete.git
 [submodule "assets/utilities/arrpc"]
 	path = assets/utilities/arrpc
 	url = https://github.com/OpenAsar/arrpc
+[submodule "omz"]
+	path = .oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh
