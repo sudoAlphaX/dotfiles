@@ -244,7 +244,7 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/rofi -theme /home/alpha/projects/rofi/files/launchers/type-3/style-5.rasi -dmenu dunst:
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/xdg-open
