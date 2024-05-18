@@ -484,3 +484,8 @@
 #    set_stack_tag = "volume"
 #
 # vim: ft=cfg
+
+[librewolf]
+    appname="LibreWolf"
+    default_icon="librewolf"
+    format="<b>%s</b>\n%b"
