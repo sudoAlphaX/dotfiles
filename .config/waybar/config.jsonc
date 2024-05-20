@@ -128,7 +128,6 @@
         "tooltip-format-wifi": "Signal Strength: {signalStrength}%",
         "tooltip-format-ethernet": "{ipaddr}",
         "tooltip-format-disconnected": "Disconnected",
-        "max-length": 20,
     },
 
     "bluetooth": {
