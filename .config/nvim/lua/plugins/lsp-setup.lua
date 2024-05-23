@@ -31,7 +31,10 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             local configs = require("lspconfig")
-            configs.lua_ls.setup({})
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            configs.lua_ls.setup({
+                 capabilities = capabilities,
+            })
 
             vim.keymap.set("n", "H", vim.lsp.buf.hover, { desc = "Hover info"})
             vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, { desc = "Hover info"})
