@@ -20,4 +20,7 @@ style = "Regular"
 [window]
 opacity = 0.6
 
-
+[keyboard]
+bindings = [
+	{key = "Space", mods = "Control", chars = "\u0000"},
+]
