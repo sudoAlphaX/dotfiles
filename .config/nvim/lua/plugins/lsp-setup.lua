@@ -42,4 +42,15 @@ return {
             vim.keymap.set("n", "<leader>ll", vim.lsp.buf.code_action, { desc = "Code Actions" })
         end
     },
+    {
+        "nvimtools/none-ls.nvim",
+        config = function()
+            local configs = require("null-ls")
+            configs.setup({
+                sources = {
+                }
+            })
+            vim.keymap.set("n", "<leader>ll", vim.lsp.buf.format, { desc = "Format File" })
+        end,
+    }
 }
