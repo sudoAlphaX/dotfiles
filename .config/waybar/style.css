@@ -118,13 +118,13 @@ button:hover {
 }
 
 #temperature {
-    color: @pink;
-    border-bottom: 2px solid @pink;
+    color: @green;
+    border-bottom: 2px solid @green;
 }
 
 #temperature.critical {
-    color: @pink;
-    border-bottom: 2px solid @pink;    
+    color: @green;
+    border-bottom: 2px solid @green;    
     animation-name: blink;
     animation-duration: 0.75s;
     animation-timing-function: linear;
