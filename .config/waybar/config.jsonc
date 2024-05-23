@@ -33,6 +33,7 @@
     "group/hardware": {
         "orientation": "horizontal",
         "modules": [
+            "temperature",
             "cpu",
             "memory",
         ],
@@ -103,6 +104,14 @@
         "tooltip-format": "{used} GB/{total} GB used ({percentage}%)\n{swapUsed} GB/{swapTotal} GB swap used ({swapPercentage}%)"
     },
  
+    "temperature": {
+        "thermal-zone": 8,
+        "format": " {temperatureC}°C",
+        "format-critical": " {temperatureC}°C",
+        "critical-threshold": 70,
+        "on-click": "alacritty -e watch -n 1 sensors",
+    },
+
     "cpu": {
         "format": " {usage}%",
         "states": {
@@ -110,12 +119,6 @@
             "critical": 90
         },
         "on-click": "alacritty -e htop"
-    },
-
-    "temperature": {
-        "format": " {temperatureC}°C",
-        "critical-threshold": 50,
-        "tooltip-format": "{temperatureC}°C\n{temperatureF}°F\n{temperatureK}K"
     },
 
     "network": {
