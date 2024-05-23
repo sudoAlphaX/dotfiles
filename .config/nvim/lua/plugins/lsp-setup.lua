@@ -19,6 +19,9 @@ return {
             local configs = require("mason-tool-installer")
             configs.setup({
                 ensure_installed = {
+                    -- Lua
+                    "lua_ls",
+                    "stylua",
                 },
                 auto_update = true,
             })
@@ -28,6 +31,8 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             local configs = require("lspconfig")
+            configs.lua_ls.setup({})
+
             vim.keymap.set("n", "H", vim.lsp.buf.hover, { desc = "Hover info"})
             vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, { desc = "Hover info"})
             vim.keymap.set("n", "<C-h>", vim.lsp.buf.definition, { desc = "Signature help" })
@@ -48,6 +53,7 @@ return {
             local configs = require("null-ls")
             configs.setup({
                 sources = {
+                    configs.builtins.formatting.stylua,
                 }
             })
             vim.keymap.set("n", "<leader>ll", vim.lsp.buf.format, { desc = "Format File" })
