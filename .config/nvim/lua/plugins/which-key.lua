@@ -11,6 +11,8 @@ return {
                     g = "+git",
                     f = "+file",
                     b = "+buffers",
+                    l = "+lsp",
+                    w = "+diagostics",
               }
         })
     end,
