@@ -14,4 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-conf") -- Specify bare vim configs in vim-conf.lua file
 require("mappings") -- Seperate file for mappings
-require("lazy").setup("plugins") -- lazy.nvim init
+require("lazy").setup("plugins", {
+    change_detection = {
+        notify = false, -- Turn off notification on config change
+    }
+}) -- lazy.nvim init
