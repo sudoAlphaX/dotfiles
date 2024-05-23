@@ -16,6 +16,7 @@ return {
 		dependencies = {
 			{ "L3MON4D3/LuaSnip" },
 			{ "saadparwaiz1/cmp_luasnip" },
+			{ "hrsh7th/cmp-nvim-lsp" },
 		},
 		config = function()
 			local configs = require("cmp")
@@ -37,6 +38,7 @@ return {
 					["<CR>"] = configs.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				}),
 				sources = configs.config.sources({
+					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 				}, {
 					{ name = "buffer" },
