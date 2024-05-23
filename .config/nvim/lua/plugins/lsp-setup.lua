@@ -19,9 +19,6 @@ return {
             local configs = require("mason-tool-installer")
             configs.setup({
                 ensure_installed = {
-                    -- Lua
-                    "lua_ls",
-                    "stylua",
                 },
                 auto_update = true,
             })
