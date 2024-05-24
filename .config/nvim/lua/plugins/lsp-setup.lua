@@ -18,7 +18,12 @@ return {
 		config = function()
 			local configs = require("mason-tool-installer")
 			configs.setup({
-				ensure_installed = {},
+				ensure_installed = {
+					-- Python
+					"pyright",
+					"black",
+					"isort",
+				},
 				auto_update = true,
 			})
 		end,
@@ -28,6 +33,7 @@ return {
 		config = function()
 			local configs = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			configs.pyright.setup({ capabilities = capabilities })
 
 			vim.keymap.set("n", "H", vim.lsp.buf.hover, { desc = "Hover info" })
 			vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, { desc = "Hover info" })
@@ -49,7 +55,11 @@ return {
 			local configs = require("null-ls")
 			configs.setup({
 				sources = {
+					-- Lua
 					configs.builtins.formatting.stylua,
+					-- Python
+					configs.builtins.formatting.black,
+					configs.builtins.formatting.isort,
 				},
 			})
 			vim.keymap.set("n", "<leader>ll", vim.lsp.buf.format, { desc = "Format File" })
