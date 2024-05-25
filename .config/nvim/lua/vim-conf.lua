@@ -1,7 +1,7 @@
 -- Vim global configs
 
 -- Set tabs to use 4 spaces and replace tab characters to spaces
-vim.cmd("set expandtab")
+vim.cmd("set noexpandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
