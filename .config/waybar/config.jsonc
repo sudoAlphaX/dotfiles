@@ -33,7 +33,7 @@
     "group/hardware": {
         "orientation": "horizontal",
         "modules": [
-            "temperature",
+            "custom/temperature",
             "cpu",
             "memory",
         ],
@@ -112,6 +112,14 @@
         "on-click": "alacritty -e watch -n 1 sensors",
     },
 
+	
+	"custom/temperature": {
+		"exec": "bash $HOME/.config/waybar/scripts/temperature.sh /sys/devices/platform/coretemp.0/hwmon",
+		"format": " {}°C",
+		"interval": 10,
+		"on-click": "alacritty -e watch -n 1 sensors"
+	},
+	
     "cpu": {
         "format": " {usage}%",
         "states": {
