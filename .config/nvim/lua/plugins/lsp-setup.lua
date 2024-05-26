@@ -48,10 +48,6 @@ return {
 			vim.keymap.set("n", "<leader>ls", vim.lsp.buf.definition, { desc = "Signature help" })
 			vim.keymap.set("n", "<leader>R", vim.lsp.buf.rename, { desc = "Rename symbol" })
 			vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, { desc = "View References" })
-			vim.keymap.set("n", "<leader>wc", vim.diagnostic.open_float, { desc = "View Diagnostic" })
-			vim.keymap.set("n", "<leader>wn", vim.diagnostic.goto_next, { desc = "Goto Next Diagnostic" })
-			vim.keymap.set("n", "<leader>wb", vim.diagnostic.goto_prev, { desc = "Goto Prev Diagnostic" })
-			vim.keymap.set("n", "<leader>ww", vim.diagnostic.setloclist, { desc = "List Diagnostics" })
 			vim.keymap.set("n", "<C-space>", vim.lsp.buf.code_action, { desc = "Code Actions" })
 			vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { desc = "Code Actions" })
 		end,
