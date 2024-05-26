@@ -26,6 +26,7 @@ return {
 					"pyright",
 					"black",
 					"isort",
+					-- "pylint",
 					-- Shell
 					"bashls",
 				},

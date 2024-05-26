@@ -31,3 +31,5 @@ vim.cmd("set foldnestmax=3")
 -- Indentation shortcuts
 vim.keymap.set('x', "<Tab>", ">gv")
 vim.keymap.set('x', "<S-Tab>", "<gv")
+
+vim.g.python3_host_prog='/home/alpha/.pyenv/shims/python'
