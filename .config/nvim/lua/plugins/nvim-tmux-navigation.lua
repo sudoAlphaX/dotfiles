@@ -11,7 +11,7 @@ return {
 		vim.keymap.set("n", "<C-j>", configs.NvimTmuxNavigateDown)
 		vim.keymap.set("n", "<C-k>", configs.NvimTmuxNavigateUp)
 		vim.keymap.set("n", "<C-l>", configs.NvimTmuxNavigateRight)
-		vim.keymap.set("n", "<C-\\>", configs.NvimTmuxNavigateLastActive)
-		vim.keymap.set("n", "<C-Space>", configs.NvimTmuxNavigateNext)
+		vim.keymap.set("n", "<C-Tab>", configs.NvimTmuxNavigateLastActive)
+		-- vim.keymap.set("n", "<C-Space>", configs.NvimTmuxNavigateNext)
 	end,
 }
