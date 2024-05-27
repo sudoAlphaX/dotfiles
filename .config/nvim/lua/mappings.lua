@@ -19,3 +19,7 @@ local function open_nvim_tree(data)
     -- open the tree
     require("nvim-tree.api").tree.open()
 end
+
+vim.keymap.set("n", "<leader>bn", "<cmd>enew<CR>", { desc = "New Buffer" })
+vim.keymap.set("n", "<leader>bx", "<cmd>bd<CR>", { desc = "Close Buffer" })
+vim.keymap.set("n", "<leader>bx", "<cmd>bd!<CR>", { desc = "Force Close Buffer" })
