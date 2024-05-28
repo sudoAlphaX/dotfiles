@@ -1,207 +1,207 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 30,
-    "spacing": 0,
-    
-    "fixed-center": true,
-    "exclusive": true,
+	"layer": "top",
+	"position": "top",
+	"height": 30,
+	"spacing": 0,
 
-    "modules-left": [
-        "hyprland/workspaces",
-    ],
+	"fixed-center": true,
+	"exclusive": true,
 
-    "modules-center": [
-        "hyprland/window",
-    ],
+	"modules-left": [
+		"hyprland/workspaces",
+	],
 
-    "modules-right": [
-        "idle_inhibitor",
-        "tray",
-        "privacy",
-     //   "keyboard-state",
-        "network",
-        "bluetooth",
-        "group/hardware",
-        "backlight",
-        "pulseaudio",
-        "battery",
-        "clock#date",
-        "clock",    
-    ],
+	"modules-center": [
+		"hyprland/window",
+	],
 
-    "group/hardware": {
-        "orientation": "horizontal",
-        "modules": [
-            "custom/temperature",
-            "cpu",
-            "memory",
-        ],
-    },
+	"modules-right": [
+		"idle_inhibitor",
+		"tray",
+		"privacy",
+		//   "keyboard-state",
+		"network",
+		"bluetooth",
+		"group/hardware",
+		"backlight",
+		"pulseaudio",
+		"battery",
+		"clock#date",
+		"clock",    
+	],
 
-    "hyprland/workspaces": {
-        "format": "{id}",
-    },
+	"group/hardware": {
+		"orientation": "horizontal",
+		"modules": [
+			"custom/temperature",
+			"cpu",
+			"memory",
+		],
+	},
 
-    "hyprland/window": {
-        "format": "{class}",
-        "icons": true,
-    },
+	"hyprland/workspaces": {
+		"format": "{id}",
+	},
 
-    "tray": {
-        "spacing": "2",
-        "show-passive-items": "true"
-    },
+	"hyprland/window": {
+		"format": "{class}",
+		"icons": true,
+	},
 
-    "idle_inhibitor": {
-    "format": "{icon} ",
-    "format-icons": {
-        "activated": "",
-        "deactivated": ""
-        },
-    },
+	"tray": {
+		"spacing": "2",
+		"show-passive-items": "true"
+	},
 
-    "clock": {
-        "format": "{:%H:%M}",
-        "format-alt":"{:%H:%M:%S}",
-        "tooltip-format":"{:%A (%U) | %d %B %Y (%j) | %H:%M:%S%z (%Z)}",
-    },
+	"idle_inhibitor": {
+		"format": "{icon} ",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		},
+	},
 
-    "clock#date": {
-        "format": "{:%a %d-%m}",
-        "format-alt": "{:%A %d %B %Y}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    },
+	"clock": {
+		"format": "{:%H:%M}",
+		"format-alt":"{:%H:%M:%S}",
+		"tooltip-format":"{:%A (%U) | %d %B %Y (%j) | %H:%M:%S%z (%Z)}",
+	},
 
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
-        "reverse-scrolling": true,
-        "on-scroll-up": "brightnessctl --device='intel_backlight' set +1%",
-        "on-scroll-down": "brightnessctl --device='intel_backlight' --min-value=75 set 1%-",
-    },
+	"clock#date": {
+		"format": "{:%a %d-%m}",
+		"format-alt": "{:%A %d %B %Y}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+	},
 
-    "battery": {
-        "interval": 15,
-        "format-icons":["","","","",""],
-        "format": "{icon}  {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{icon}  {time}",
-        "states": {
-            "warning": 25,
-            "critical": 15
-        }
-    },
+	"backlight": {
+		"format": "{icon} {percent}%",
+		"format-icons": ["󰃞", "󰃟", "󰃠"],
+		"reverse-scrolling": true,
+		"on-scroll-up": "brightnessctl --device='intel_backlight' set +1%",
+		"on-scroll-down": "brightnessctl --device='intel_backlight' --min-value=75 set 1%-",
+	},
 
-    "memory": {
-        "format": "  {used:0.1f}G",
-        "states": {
-            "high": 70,
-            "critical": 90
-        },
-        "on-click": "alacritty -e htop",
-        "tooltip-format": "{used} GB/{total} GB used ({percentage}%)\n{swapUsed} GB/{swapTotal} GB swap used ({swapPercentage}%)"
-    },
- 
-    "temperature": {
-        "thermal-zone": 8,
-        "format": " {temperatureC}°C",
-        "format-critical": " {temperatureC}°C",
-        "critical-threshold": 70,
-        "on-click": "alacritty -e watch -n 1 sensors",
-    },
+	"battery": {
+		"interval": 15,
+		"format-icons":["","","","",""],
+		"format": "{icon}  {capacity}%",
+		"format-charging": " {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-alt": "{icon}  {time}",
+		"states": {
+			"warning": 25,
+			"critical": 15
+		}
+	},
 
-	
+	"memory": {
+		"format": "  {used:0.1f}G",
+		"states": {
+			"high": 70,
+			"critical": 90
+		},
+		"on-click": "alacritty -e htop",
+		"tooltip-format": "{used} GB/{total} GB used ({percentage}%)\n{swapUsed} GB/{swapTotal} GB swap used ({swapPercentage}%)"
+	},
+
+	"temperature": {
+		"thermal-zone": 8,
+		"format": " {temperatureC}°C",
+		"format-critical": " {temperatureC}°C",
+		"critical-threshold": 70,
+		"on-click": "alacritty -e watch -n 1 sensors",
+	},
+
+
 	"custom/temperature": {
 		"exec": "bash $HOME/.config/waybar/scripts/temperature.sh /sys/devices/platform/coretemp.0/hwmon",
 		"format": " {}°C",
 		"interval": 10,
 		"on-click": "alacritty -e watch -n 1 sensors"
 	},
-	
-    "cpu": {
-        "format": " {usage}%",
-        "states": {
-            "high": 70,
-            "critical": 90
-        },
-        "on-click": "alacritty -e htop"
-    },
 
-    "network": {
-        "format-ethernet": "  {ifname}",
-        "format-wifi": "{icon}  {essid}",
-        "format-alt": "{ipaddr}",
-        "format-linked": "   {ifname}",
-        "format-disconnected": "󰌙  ",
-        "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
-        "tooltip-format-wifi": "Signal Strength: {signalStrength}%",
-        "tooltip-format-ethernet": "{ipaddr}",
-        "tooltip-format-disconnected": "Disconnected",
+	"cpu": {
+		"format": " {usage}%",
+		"states": {
+			"high": 70,
+			"critical": 90
+		},
+		"on-click": "alacritty -e htop"
+	},
+
+	"network": {
+		"format-ethernet": "  {ifname}",
+		"format-wifi": "{icon}  {essid}",
+		"format-alt": "{ipaddr}",
+		"format-linked": "   {ifname}",
+		"format-disconnected": "󰌙  ",
+		"format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+		"tooltip-format-wifi": "Signal Strength: {signalStrength}%",
+		"tooltip-format-ethernet": "{ipaddr}",
+		"tooltip-format-disconnected": "Disconnected",
 		"on-click-right": "rfkill toggle wlan"
-    },
+	},
 
-    "bluetooth": {
-        "format-off": "󰂲",
-        "format-on": "󰂯",
+	"bluetooth": {
+		"format-off": "󰂲",
+		"format-on": "󰂯",
 		"format-disabled": "󰂲",
-        "format-connected": "󰂱 {device_alias}",
-        "tooltip-format-disabled": "Bluetooth disabled",
-        "tooltip-format-off": "Bluetooth off",
-        "tooltip-format-on": "Bluetooth device not connected",
-        "tooltip-format-connected": "Connected to device: {device_alias} ({device_battery_percentage})",
-        "on-click": "alacritty --command bluetoothctl",
+		"format-connected": "󰂱 {device_alias}",
+		"tooltip-format-disabled": "Bluetooth disabled",
+		"tooltip-format-off": "Bluetooth off",
+		"tooltip-format-on": "Bluetooth device not connected",
+		"tooltip-format-connected": "Connected to device: {device_alias} ({device_battery_percentage})",
+		"on-click": "alacritty --command bluetoothctl",
 		"on-click-right": "rfkill toggle bluetooth"
-    },
+	},
 
-    "pulseaudio": {
-        "format": "{icon} {volume}%", 
-        "format-muted": "󰝟 {volume}%",
-        "format-icons": {
-            "default": ["", "", " "],
-            "speaker": ["", "", " " ],
-            "headphone": ["󰋋 ", "󰋋 ", "󰋋  "],
-            "headset": [" ", " ", "  "],
-            "hands-free": [" ", " ", "  "],
-        },
-        "on-click": "pavucontrol",
-        "on-click-right": "wpctl set-mute @DEFAULT_SINK@ toggle",
-        "reverse-scrolling": true,
-    },
+	"pulseaudio": {
+		"format": "{icon} {volume}%", 
+		"format-muted": "󰝟 {volume}%",
+		"format-icons": {
+			"default": ["", "", " "],
+			"speaker": ["", "", " " ],
+			"headphone": ["󰋋 ", "󰋋 ", "󰋋  "],
+			"headset": [" ", " ", "  "],
+			"hands-free": [" ", " ", "  "],
+		},
+		"on-click": "pavucontrol",
+		"on-click-right": "wpctl set-mute @DEFAULT_SINK@ toggle",
+		"reverse-scrolling": true,
+	},
 
-    "keyboard-state": {
-        "format": {
-            "capslock": "HI{icon}",
-            "numlock": "HIE",
-        },
-        "format-icons": {
-            "locked": " Caps Locked",
-            "unlocked": ""
-        },
-        "numlock": false,
-        "capslock": true,
-        "scrolllock": false,
-    },
+	"keyboard-state": {
+		"format": {
+			"capslock": "HI{icon}",
+			"numlock": "HIE",
+		},
+		"format-icons": {
+			"locked": " Caps Locked",
+			"unlocked": ""
+		},
+		"numlock": false,
+		"capslock": true,
+		"scrolllock": false,
+	},
 
-    "privacy": {
-        "icon-spacing": 4,
-        "icon-size": 18,
-        "transition-duration": 250,
+	"privacy": {
+		"icon-spacing": 4,
+		"icon-size": 18,
+		"transition-duration": 250,
 		"on-click": "playerctl play-pause",
-        "modules": [{
-            "type": "screenshare",
-            "tooltip-icon-size": 24,
-        },
-        {
-            "type": "audio-in",
-            "tooltip-icon-size": 24,
-        },
-        {
-            "type": "audio-out",
-            "tooltip-icon-size": 24,
-        },
-        ],
-    },
+		"modules": [{
+			"type": "screenshare",
+			"tooltip-icon-size": 24,
+		},
+			{
+				"type": "audio-in",
+				"tooltip-icon-size": 24,
+			},
+			{
+				"type": "audio-out",
+				"tooltip-icon-size": 24,
+			},
+		],
+	},
 
 }
