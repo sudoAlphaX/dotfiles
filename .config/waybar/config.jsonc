@@ -139,6 +139,7 @@
         "tooltip-format-wifi": "Signal Strength: {signalStrength}%",
         "tooltip-format-ethernet": "{ipaddr}",
         "tooltip-format-disconnected": "Disconnected",
+		"on-click-right": "rfkill toggle wlan"
     },
 
     "bluetooth": {
@@ -149,6 +150,7 @@
         "tooltip-format-on": "Bluetooth device not connected",
         "tooltip-format-connected": "Connected to device: {device_alias} ({device_battery_percentage})",
         "on-click": "alacritty --command bluetoothctl",
+		"on-click-right": "rfkill toggle bluetooth"
     },
 
     "pulseaudio": {
@@ -162,6 +164,7 @@
             "hands-free": [" ", " ", "  "],
         },
         "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_SINK@ toggle",
         "reverse-scrolling": true,
     },
 
