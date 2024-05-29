@@ -188,7 +188,7 @@
 		"icon-spacing": 4,
 		"icon-size": 18,
 		"transition-duration": 250,
-		"on-click": "playerctl play-pause",
+		"on-click": "playerctl pause",
 		"modules": [{
 			"type": "screenshare",
 			"tooltip-icon-size": 24,
