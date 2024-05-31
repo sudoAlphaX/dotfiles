@@ -505,3 +505,11 @@
 	new_icon="touchpad-enabled-symbolic"
 	history_ignore=true
 	timeout=3
+
+[brightness-change]
+	summary="brightness_event"
+	category="device"
+	format="Brightness: %n%%"
+	history_ignore=true
+	new_icon="display-brightness-symbolic"
+	timeout=3
