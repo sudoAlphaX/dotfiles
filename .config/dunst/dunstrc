@@ -491,16 +491,16 @@
     format="<b>%s</b>\n%b"
 
 [touchpad-disabled]
-	category="device"
 	summary="Touchpad Disabled"
+	category="device"
 	format="%s"
 	new_icon="touchpad-disabled-symbolic"
 	history_ignore=true
 	timeout=3
 
 [touchpad-enabled]
-	category="device"
 	summary="Touchpad Enabled"
+	category="device"
 	format="%s"
 	new_icon="touchpad-enabled-symbolic"
 	history_ignore=true
