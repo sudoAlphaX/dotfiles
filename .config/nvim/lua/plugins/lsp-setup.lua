@@ -70,6 +70,9 @@ return {
 							return { "--init-hook", "import pylint_venv; pylint_venv.inithook()" }
 						end,
 					}),
+					-- Kotlin
+					configs.builtins.formatting.ktlint,
+					configs.builtins.diagnostics.ktlint,
 				},
 			})
 			vim.keymap.set("n", "<leader>ll", vim.lsp.buf.format, { desc = "Format File" })
