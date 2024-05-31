@@ -513,3 +513,11 @@
 	history_ignore=true
 	new_icon="display-brightness-symbolic"
 	timeout=3
+
+[volume-change]
+	summary="volume_event"
+	category="device"
+	format="Volume: %n%%"
+	history_ignore=true
+	new_icon="audio-volume-high-symbolic"
+	timeout=3
