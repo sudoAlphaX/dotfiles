@@ -13,6 +13,7 @@ return {
 				b = "+buffers",
 				l = "+lsp",
 				w = "+diagostics",
+				t = "+terminal"
 			},
 		})
 	end,
