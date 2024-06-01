@@ -22,3 +22,6 @@
 [submodule ".config/btop/btop"]
 	path = .config/btop/btop
 	url = https://github.com/catppuccin/btop
+[submodule ".config/obs-studio/assets/obs"]
+	path = .config/obs-studio/assets/obs
+	url = https://github.com/catppuccin/obs
