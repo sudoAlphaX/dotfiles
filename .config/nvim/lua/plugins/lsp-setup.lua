@@ -21,8 +21,11 @@ return {
 				ensure_installed = {
 					-- Python
 					"pyright",
-					"black",
-					"isort",
+					"ruff",
+					"ruff_lsp",
+					-- "black",
+					-- "isort",
+					-- "pylint",
 					-- Shell
 					"bashls",
 				},
@@ -36,6 +39,15 @@ return {
 			local configs = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			configs.pyright.setup({ capabilities = capabilities })
+			configs.ruff_lsp.setup({
+				capabilities = capabilities,
+				init_options = {
+					settings = {
+						-- Extra CLI Arguments
+						args = {},
+					},
+				},
+			})
 			configs.bashls.setup({ capabilities = capabilities })
 
 			vim.keymap.set("n", "H", vim.lsp.buf.hover, { desc = "Hover info" })
@@ -57,13 +69,13 @@ return {
 					-- Lua
 					configs.builtins.formatting.stylua,
 					-- Python
-					configs.builtins.formatting.black,
-					configs.builtins.formatting.isort,
-					configs.builtins.diagnostics.pylint.with({
-						extra_args = function()
-							return { "--init-hook", "import pylint_venv; pylint_venv.inithook()" }
-						end,
-					}),
+					-- configs.builtins.formatting.black,
+					-- configs.builtins.formatting.isort,
+					-- configs.builtins.diagnostics.pylint.with({
+					-- 	extra_args = function()
+					-- 		return { "--init-hook", "import pylint_venv; pylint_venv.inithook()" }
+					-- 	end,
+					-- }),
 					-- Kotlin
 					configs.builtins.formatting.ktlint,
 					configs.builtins.diagnostics.ktlint,
