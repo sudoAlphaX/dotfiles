@@ -1,6 +1,6 @@
 #/bin/bash
 
-STATUS_FILE=touchpad.log
+STATUS_FILE=/tmp/touchpad.log
 
 enable_touchpad() {
 	hyprctl keyword -r '$TOUCHPAD_ENABLED' "true"
@@ -15,9 +15,9 @@ disable_touchpad() {
 }
 
 if [ ! -f $STATUS_FILE ]; then
-	enable_touchpad
+	disable_touchpad
 else
-	if [ $(cat touchpad.log) = 'true' ]; then
+	if [ $(cat $STATUS_FILE) = 'true' ]; then
 		disable_touchpad
 	else
 		enable_touchpad
