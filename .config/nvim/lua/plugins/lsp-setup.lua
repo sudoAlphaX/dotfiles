@@ -24,8 +24,10 @@ return {
 					"stylua",
 					-- Python
 					"pyright",
-					"black",
-					"isort",
+					"ruff",
+					"ruff_lsp",
+					-- "black",
+					-- "isort",
 					-- "pylint",
 					-- Shell
 					"bashls",
@@ -41,6 +43,15 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			configs.lua_ls.setup({ capabilities = capabilities })
 			configs.pyright.setup({ capabilities = capabilities })
+			configs.ruff_lsp.setup({
+				capabilities = capabilities,
+				init_options = {
+					settings = {
+						-- Extra CLI Arguments
+						args = {},
+					},
+				},
+			})
 			configs.bashls.setup({ capabilities = capabilities })
 			configs.kotlin_language_server.setup({ capabilities = capabilities })
 
@@ -63,13 +74,13 @@ return {
 					-- Lua
 					configs.builtins.formatting.stylua,
 					-- Python
-					configs.builtins.formatting.black,
-					configs.builtins.formatting.isort,
-					configs.builtins.diagnostics.pylint.with({
-						extra_args = function()
-							return { "--init-hook", "import pylint_venv; pylint_venv.inithook()" }
-						end,
-					}),
+					-- configs.builtins.formatting.black,
+					-- configs.builtins.formatting.isort,
+					-- configs.builtins.diagnostics.pylint.with({
+					-- 	extra_args = function()
+					-- 		return { "--init-hook", "import pylint_venv; pylint_venv.inithook()" }
+					-- 	end,
+					-- }),
 					-- Kotlin
 					configs.builtins.formatting.ktlint,
 					configs.builtins.diagnostics.ktlint,
