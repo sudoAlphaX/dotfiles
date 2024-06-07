@@ -35,7 +35,16 @@ for source in "${monitors[@]}"; do
 	pactl load-module module-loopback sink=combined source=$source
 done
 
-filename="$(xdg-user-dir VIDEOS)/wf-recorder/$(date +%Y%m%d_%H%M%S)_$(hyprctl activewindow -j | jq -r .class).mp4"
+mkdir -p "$(xdg-user-dir VIDEOS)/wf-recorder/tmp"
+filename="$(xdg-user-dir VIDEOS)/wf-recorder$(if [ $1 != "false" ]; then echo "/tmp"; fi)/$(date +%Y%m%d_%H%M%S)_$(hyprctl activewindow -j | jq -r .class).mp4"
 
 
-wf-recorder --audio=combined.monitor -f $filename -c h264_vaapi -d /dev/dri/renderD128
+if [ $2 = "true" ]; then
+	wf-recorder -g "$(slurp)" --audio=combined.monitor -f $filename -r 30 -c h264_vaapi -d /dev/dri/renderD128
+else
+	wf-recorder --audio=combined.monitor -f $filename -r 30 -c h264_vaapi -d /dev/dri/renderD128
+fi
+
+if [ $1 != "false" ]; then
+	wl-copy "file://$filename" --type "text/uri-list"
+fi
