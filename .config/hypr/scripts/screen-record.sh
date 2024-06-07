@@ -13,11 +13,6 @@ if [ "$pid" ]; then
 	pactl unload-module module-loopback
 	pactl unload-module module-null-sink
 
-	stray=$(pidof wf-recorder)
-	if [ $stray ]; then
-		for id in $stray; do (kill -9 $id); done
-	fi
-
 	exit 0
 fi
 
@@ -36,15 +31,20 @@ for source in "${monitors[@]}"; do
 done
 
 mkdir -p "$(xdg-user-dir VIDEOS)/wf-recorder/tmp"
-filename="$(xdg-user-dir VIDEOS)/wf-recorder$(if [ $1 != "false" ]; then echo "/tmp"; fi)/$(date +%Y%m%d_%H%M%S)_$(hyprctl activewindow -j | jq -r .class).mp4"
+
+filename="$(date +%Y%m%d_%H%M%S)_$(hyprctl activewindow -j | jq -r .class).mp4"
+filepath="$(xdg-user-dir VIDEOS)/wf-recorder$(if [ $1 != "false" ]; then echo "/tmp"; fi)/$filename"
 
 
 if [ $2 = "true" ]; then
-	wf-recorder -g "$(slurp)" --audio=combined.monitor -f $filename -r 30 -c h264_vaapi -d /dev/dri/renderD128
+	wf-recorder -g "$(slurp)" --audio=combined.monitor -f $filepath -r 30 -c h264_vaapi -d /dev/dri/renderD128
 else
-	wf-recorder --audio=combined.monitor -f $filename -r 30 -c h264_vaapi -d /dev/dri/renderD128
+	wf-recorder --audio=combined.monitor -f $filepath -r 30 -c h264_vaapi -d /dev/dri/renderD128
 fi
 
 if [ $1 != "false" ]; then
-	wl-copy "file://$filename" --type "text/uri-list"
+	wl-copy "file://$filepath" --type "text/uri-list"
+	notify-send -u low -a wf-recorder "Copied screen recording to clipboard"
+else
+	notify-send -u low -a wf-recorder "Saved screen recording to $filename"
 fi
