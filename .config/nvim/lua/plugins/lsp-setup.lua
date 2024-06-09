@@ -53,7 +53,6 @@ return {
 				},
 			})
 			configs.bashls.setup({ capabilities = capabilities })
-			configs.kotlin_language_server.setup({ capabilities = capabilities })
 
 			vim.keymap.set("n", "H", vim.lsp.buf.hover, { desc = "Hover info" })
 			vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, { desc = "Hover info" })
