@@ -73,16 +73,13 @@ return {
 					-- Lua
 					configs.builtins.formatting.stylua,
 					-- Python
-					-- configs.builtins.formatting.black,
-					-- configs.builtins.formatting.isort,
-					-- configs.builtins.diagnostics.pylint.with({
-					-- 	extra_args = function()
-					-- 		return { "--init-hook", "import pylint_venv; pylint_venv.inithook()" }
-					-- 	end,
-					-- }),
-					-- Kotlin
-					configs.builtins.formatting.ktlint,
-					configs.builtins.diagnostics.ktlint,
+					configs.builtins.formatting.black,
+					configs.builtins.formatting.isort,
+					configs.builtins.diagnostics.pylint.with({
+						extra_args = function()
+							return { "--init-hook", "import pylint_venv; pylint_venv.inithook()" }
+						end,
+					}),
 				},
 			})
 			vim.keymap.set("n", "<leader>ll", vim.lsp.buf.format, { desc = "Format File" })
