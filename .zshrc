@@ -162,9 +162,9 @@ alias .4="cd ../../../../"
 alias .5="cd ../../../../.."
 
 # Always copy contents of directories (r)ecursively and explain (v) what was done
-alias cp="cp -rv"
+alias cp="cp -irv"
 # Explain (v) what was done when moving a file
-alias mv="mv -v"
+alias mv="mv -iv"
 
 # Create any non-existent (p)arent directories and explain (v) what was done
 alias mkdir="mkdir -pv"
@@ -190,6 +190,9 @@ export EDITOR="nvim"
 
 # Memes
 alias pls="sudo"
+
+# Paru
+alias paru="paru --sudoloop"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
