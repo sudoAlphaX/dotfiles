@@ -30,10 +30,10 @@ for source in "${monitors[@]}"; do
 	pactl load-module module-loopback sink=combined source=$source
 done
 
-mkdir -p "$(xdg-user-dir VIDEOS)/wf-recorder/tmp"
+mkdir -p "$HOME/Videos/wf-recorder/tmp"
 
 filename="$(date +%Y%m%d_%H%M%S)_$(hyprctl activewindow -j | jq -r .class).mp4"
-filepath="$(xdg-user-dir VIDEOS)/wf-recorder$(if [ $1 != "false" ]; then echo "/tmp"; fi)/$filename"
+filepath="$HOME/Videos/wf-recorder$(if [ $1 != "false" ]; then echo "/tmp"; fi)/$filename"
 
 
 if [ $2 = "true" ]; then
