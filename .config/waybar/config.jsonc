@@ -8,7 +8,7 @@
 	"exclusive": true,
 
 	"modules-left": [
-		"hyprland/workspaces",
+		"hyprland/workspaces"
 	],
 
 	"modules-center": [
@@ -132,13 +132,13 @@
 	"network": {
 		"format-ethernet": "  {ifname}",
 		"format-wifi": "{icon}  {essid}",
-		"format-alt": "{ipaddr}",
 		"format-linked": "   {ifname}",
 		"format-disconnected": "󰌙  ",
 		"format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
-		"tooltip-format-wifi": "Signal Strength: {signalStrength}%",
+		"tooltip-format-wifi": "{ipaddr}\nSignal Strength: {signalStrength}%",
 		"tooltip-format-ethernet": "{ipaddr}",
 		"tooltip-format-disconnected": "Disconnected",
+		"on-click": "alacritty -e nmtui-connect",
 		"on-click-right": "rfkill toggle wlan"
 	},
 
