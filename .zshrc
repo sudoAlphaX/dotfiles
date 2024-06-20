@@ -166,7 +166,7 @@ alias cp="cp -irv"
 # Explain (v) what was done when moving a file
 alias mv="mv -iv"
 # rm command interactive
-alias rm="rm -I"
+alias rm="rm -Iv"
 
 # Create any non-existent (p)arent directories and explain (v) what was done
 alias mkdir="mkdir -pv"
