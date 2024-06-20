@@ -87,6 +87,19 @@ COMPLETION_WAITING_DOTS="true"
 # see 'man strftime' for details.
 HIST_STAMPS="yyyy-mm-dd"
 
+# Plugin Configuration
+
+# Tmux plugin
+if [[ $SSH_CONNECTION ]]; then 
+	export ZSH_TMUX_AUTOSTART=true
+	export ZSH_TMUX_AUTOQUIT=true
+	export ZSH_TMUX_AUTONAME_SESSION='ssh'
+else
+	export ZSH_TMUX_AUTOQUIT=false
+fi
+
+export ZSH_TMUX_CONFIG="$XDG_CONFIG_HOME/tmux/tmux.conf"
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -116,10 +129,6 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Plugin Configuration
-
-# tmux plugin
-# export ZSH_TMUX_AUTOSTART="true"
-export ZSH_TMUX_CONFIG="$XDG_CONFIG_HOME/tmux/tmux.conf"
 
 zstyle ':omz:plugins:alias-finder' autoload yes
 zstyle ':omz:plugins:alias-finder' longer no
