@@ -100,7 +100,7 @@
 			"high": 70,
 			"critical": 90
 		},
-		"on-click": "alacritty -e htop",
+		"on-click": "alacritty -e watch -n 1 free -h",
 		"tooltip-format": "{used} GB/{total} GB used ({percentage}%)\n{swapUsed} GB/{swapTotal} GB swap used ({swapPercentage}%)"
 	},
 
