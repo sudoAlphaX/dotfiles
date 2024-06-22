@@ -65,6 +65,7 @@
 		"format": "{:%H:%M}",
 		"format-alt":"{:%H:%M:%S}",
 		"tooltip-format":"{:%A (%U) | %d %B %Y (%j) | %H:%M:%S%z (%Z)}",
+		"interval": 1,
 	},
 
 	"clock#date": {
