@@ -24,7 +24,7 @@
 		"bluetooth",
 		"group/hardware",
 		"backlight",
-		"pulseaudio",
+		"wireplumber",
 		"battery",
 		"clock#date",
 		"clock",    
@@ -156,7 +156,7 @@
 		"on-click-right": "rfkill toggle bluetooth"
 	},
 
-	"pulseaudio": {
+	"wireplumber": {
 		"format": "{icon} {volume}%", 
 		"format-muted": "󰝟 {volume}%",
 		"format-icons": {
