@@ -116,6 +116,7 @@
 
 	"custom/temperature": {
 		"exec": "bash $HOME/.config/waybar/scripts/temperature.sh /sys/devices/platform/coretemp.0/hwmon",
+		"return-type": "json",
 		"format": " {}°C",
 		"interval": 10,
 		"on-click": "alacritty -e watch -n 1 sensors"
