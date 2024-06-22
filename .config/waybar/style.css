@@ -123,12 +123,7 @@ button:hover {
     border-bottom: 2px solid @green;
 }
 
-#custom-temperature {
-    color: @green;
-    border-bottom: 2px solid @green;
-}
-
-#temperature.critical {
+#custom-temperature.critical {
     color: @green;
     border-bottom: 2px solid @green;    
     animation-name: blink;
@@ -136,6 +131,16 @@ button:hover {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#custom-temperature.high {
+    color: @peach;
+    border-bottom: 2px solid @peach;
+}
+
+#custom-temperature {
+    color: @green;
+    border-bottom: 2px solid @green;
 }
 
 #cpu.high,
