@@ -335,7 +335,7 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#1E1E2E99"
     foreground = "#ffffff"
-    timeout = 10
+    timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
