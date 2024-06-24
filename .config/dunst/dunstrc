@@ -521,3 +521,10 @@
 	history_ignore=true
 	new_icon="audio-volume-high-symbolic"
 	timeout=3
+
+[temperature-critical]
+	summary="temperature_critical_event"
+	category="device"
+	msg_urgency="critical"
+	format="<b>CPU Temperature Critical: %n°C</b>"
+	history_ignore=true
