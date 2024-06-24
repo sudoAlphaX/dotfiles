@@ -33,3 +33,6 @@ vim.keymap.set('x', "<Tab>", ">gv")
 vim.keymap.set('x', "<S-Tab>", "<gv")
 
 vim.g.python3_host_prog='/home/alpha/.pyenv/shims/python'
+
+-- Colors and fonts
+vim.opt.termguicolors = true
