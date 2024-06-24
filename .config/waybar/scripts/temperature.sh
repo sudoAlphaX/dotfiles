@@ -9,10 +9,14 @@ else
 	rawTemp=$(cat "$path"/hwmon[[:print:]]*/temp1_input)
 	temp=${rawTemp::-3}
 
+	notifyCriticalTemp=75
 	criticalTemp=68
 	highTemp=60
 
-	if (( $temp >= $criticalTemp )); then
+	if (( $temp >= $notifyCriticalTemp )); then
+		tempState="critical"
+		notify-send -u critical -h int:value:$temp --category=device temperature_critical_event
+	elif (( $temp >= $criticalTemp )); then
 		tempState="critical"
 	elif (( $temp >= $highTemp )); then
 		tempState="high"
