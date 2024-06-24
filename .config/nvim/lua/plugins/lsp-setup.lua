@@ -70,11 +70,6 @@ return {
 			local configs = require("null-ls")
 			configs.setup({
 				sources = {
-					-- Lua
-					configs.builtins.formatting.stylua,
-					-- Python
-					configs.builtins.formatting.black,
-					configs.builtins.formatting.isort,
 					configs.builtins.diagnostics.pylint.with({
 						extra_args = function()
 							return { "--init-hook", "import pylint_venv; pylint_venv.inithook()" }
@@ -83,6 +78,31 @@ return {
 				},
 			})
 			vim.keymap.set("n", "<leader>ll", vim.lsp.buf.format, { desc = "Format File" })
+		end,
+	},
+	{
+		"stevearc/conform.nvim",
+		config = function()
+			local configs = require("conform")
+			configs.setup({
+				format_on_save = {
+					timeout_ms = 500,
+					lsp_format = "fallback",
+				},
+				formatters_by_ft = {
+					lua = { "stylua" },
+
+					python = function(bufnr)
+						if require("conform").get_formatter_info("ruff_format", bufnr).available then
+							return { "ruff_format", "ruff_organize_imports" }
+						else
+							return { "isort", "black" }
+						end
+					end,
+
+					kotlin = { "ktfmt" },
+				},
+			})
 		end,
 	},
 }
