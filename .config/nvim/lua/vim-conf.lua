@@ -31,3 +31,6 @@ vim.cmd("set foldnestmax=3")
 -- Indentation shortcuts
 vim.keymap.set('x', "<Tab>", ">gv")
 vim.keymap.set('x', "<S-Tab>", "<gv")
+
+-- Colors and fonts
+vim.opt.termguicolors = true
