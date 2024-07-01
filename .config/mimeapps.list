@@ -11,6 +11,9 @@ application/x-extension-xhtml=librewolf.desktop
 application/x-extension-xht=librewolf.desktop
 x-scheme-handler/discord-1176718791388975124=discord-1176718791388975124.desktop
 application/pdf=librewolf.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-IGDUP2.desktop
+message/rfc822=userapp-Thunderbird-IGDUP2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-IGDUP2.desktop
 
 [Added Associations]
 x-scheme-handler/http=librewolf.desktop;
@@ -24,3 +27,5 @@ application/xhtml+xml=librewolf.desktop;
 application/x-extension-xhtml=librewolf.desktop;
 application/x-extension-xht=librewolf.desktop;
 application/pdf=librewolf.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-IGDUP2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-IGDUP2.desktop;
