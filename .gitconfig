@@ -7,7 +7,7 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [user]
-	email = 43486986+sudoAlphaX@users.noreply.github.com
+	email = 19459048-sudoAlphaX@users.noreply.gitlab.com
 	name = Alpha
 	signingkey = E61724645DD4AC78!
 [commit]
