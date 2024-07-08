@@ -208,6 +208,9 @@ alias paru="paru --sudoloop"
 # Rsync
 alias copy="rsync -ah --partial --info=PROGRESS2"
 
+# Mount
+alias qmount="mount -o uid=$(id -u $(logname)),gid=$(id -g $(logname))"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
