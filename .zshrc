@@ -200,7 +200,7 @@ alias vi="nvim"
 export EDITOR="nvim"
 
 # Memes
-alias pls="sudo"
+alias pls="sudo "
 
 # Paru
 alias paru="paru --sudoloop"
