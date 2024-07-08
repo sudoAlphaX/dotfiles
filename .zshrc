@@ -201,3 +201,6 @@ alias paru="paru --sudoloop"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # zprof
+
+# Created by `pipx` on 2024-07-01 20:09:34
+export PATH="$PATH:/data/data/com.termux/files/home/.local/bin"
