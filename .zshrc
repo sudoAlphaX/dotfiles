@@ -192,7 +192,7 @@ alias tmuxconf="nvim ~/.config/tmux/tmux.conf"
 alias nvimconf="nvim ~/.config/nvim/init.lua"
 
 # Memes
-alias pls="sudo"
+alias pls="sudo "
 
 # Paru
 alias paru="paru --sudoloop"
