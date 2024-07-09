@@ -19,6 +19,7 @@ style = "Regular"
 
 [window]
 opacity = 0.5
+blur = true
 
 [keyboard]
 bindings = [
