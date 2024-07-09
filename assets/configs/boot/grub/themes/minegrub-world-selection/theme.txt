@@ -1,0 +1,119 @@
+# Global
+
+title-text: ""
+desktop-image: "background.png"
+
+# Terminal for Console and Options
+terminal-border: "20"
+terminal-left: "10%"
+terminal-top: "10%+23"
+terminal-width: "80%"
+terminal-height: "80%"
+terminal-box: "term_*.png"
+terminal-font: "Monocraft Regular 22"
+
+### PLAY BUTTON
++ boot_menu {
+	left = 50%-399
+	top = 108
+	width = 798
+	height = 100%-324
+
+	item_font = "Minecraft Regular 30"
+	item_color = "#ffffff"
+    item_padding = 5
+    # height+spacing should equals 108
+    item_height = 96
+    item_spacing = 12
+
+    item_pixmap_style = "L2_item_*.png"
+    selected_item_pixmap_style = "L3_item_*.png"
+
+    icon_width = 1
+    icon_height = 1
+    item_icon_space = 2000  # Temp fix, draw with empty font instead
+
+	scrollbar = true
+}
+
+### Icon and Description (one file, see ./icons/)
++ boot_menu {
+	left = 50%-399
+	top = 108
+	width = 798
+	height = 100%-324
+
+	item_font = "Minecraft Regular 30"
+	item_color = "#ffffff"
+    item_padding = 5
+    # height+spacing should equals 108
+    # Info: pixmaps are drawn in spacing, which may fuck with where the text is drawn
+    # That's why i have empty pixmaps in left/top
+    item_height = 96
+    item_spacing = 12
+
+    item_pixmap_style = "L2_item_*.png"
+
+    icon_width = 801
+    icon_height = 96
+    item_icon_space = 1000  # Temp fix, draw with empty font instead
+
+	scrollbar = true
+}
+
+### default image and item name
++ boot_menu {
+	left = 50%-399
+	top = 108
+	width = 798
+	height = 100%-324
+
+	item_font = "Minecraft Regular 30"
+	item_color = "#ffffff"
+    item_padding = 5
+    # height+spacing+pixmaps should equals 108
+    item_height = 24
+    item_spacing = 84
+
+	item_pixmap_style = "item_*.png"
+	selected_item_pixmap_style = "selected_item_*.png"
+
+    icon_width  = 1
+    icon_height = 1
+    item_icon_space = 5
+
+	scrollbar = true
+}
+
+
+# TIMEOUT
++ label {
+	id = "__timeout__"
+	
+	left = 0
+	top = 60
+	height = 30
+	width = 100%	
+	
+	text = "Joining World in %d Seconds"
+	align = "center"
+	font = "Minecraft Regular 30"
+	color = "#aaaaaa"
+}
+
+# TIMEOUT SHADOW 
++ label {
+	id = "__timeout__"
+
+	left = 3
+	top = 63
+	height = 30
+	width = 100%
+
+	text = "Joining World in %d Seconds"
+	align = "center"
+	font = "Minecraft Regular 30"
+	color = "#2A2A2A"
+}
+
+
