@@ -206,7 +206,7 @@ alias pls="sudo "
 alias paru="paru --sudoloop"
 
 # Rsync
-alias copy="rsync -ah --partial --info=PROGRESS2"
+alias copy="rsync -ah --info=PROGRESS2"
 
 # Mount
 alias qmount="mount -o uid=$(id -u $(logname)),gid=$(id -g $(logname))"
