@@ -171,11 +171,11 @@ alias .4="cd ../../../../"
 alias .5="cd ../../../../.."
 
 # Always copy contents of directories (r)ecursively and explain (v) what was done
-alias cp="cp -irv"
+# alias cp="cp -irv"
 # Explain (v) what was done when moving a file
-alias mv="mv -iv"
+alias move="mv -iv"
 # rm command interactive
-alias rm="rm -Iv"
+alias del="rm -Iv"
 
 # Create any non-existent (p)arent directories and explain (v) what was done
 alias mkdir="mkdir -pv"
