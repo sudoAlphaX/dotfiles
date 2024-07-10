@@ -175,7 +175,7 @@ alias .5="cd ../../../../.."
 # Explain (v) what was done when moving a file
 alias move="mv -iv"
 # rm command interactive
-alias del="rm -Iv"
+alias del="trash-put -v"
 
 # Create any non-existent (p)arent directories and explain (v) what was done
 alias mkdir="mkdir -pv"
