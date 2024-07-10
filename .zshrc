@@ -208,6 +208,9 @@ alias paru="paru --sudoloop"
 # Rsync
 alias copy="rsync -ah --info=PROGRESS2"
 
+# Rclone
+export RCLONE_PASSWORD_COMMAND="secret-tool lookup service rclone"
+
 # Mount
 alias qmount="mount -o uid=$(id -u $(logname)),gid=$(id -g $(logname))"
 
