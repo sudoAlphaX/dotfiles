@@ -196,7 +196,6 @@ alias wget="wget -c"
 # alias f="fuck"
 
 # Use Neovim as default editor 
-alias vi="nvim"
 export EDITOR="nvim"
 
 # Memes
