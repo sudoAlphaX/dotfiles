@@ -183,7 +183,6 @@ alias wget="wget -c"
 alias fast="speedtest-go -m"
 
 # Use Neovim as default editor 
-alias vi="nvim"
 export EDITOR="nvim"
 
 # Alias for configuring zsh
