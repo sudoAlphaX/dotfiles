@@ -101,6 +101,7 @@ return {
 					end,
 
 					kotlin = { "ktfmt" },
+					bash = { "bash-language-server", "shellcheck" },
 				},
 			})
 		end,
