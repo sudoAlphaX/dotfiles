@@ -13,12 +13,12 @@ else
 	criticalTemp=68
 	highTemp=60
 
-	if (( $temp >= $notifyCriticalTemp )); then
+	if (( temp >= notifyCriticalTemp )); then
 		tempState="critical"
-		notify-send -u critical -h int:value:$temp --category=device temperature_critical_event
-	elif (( $temp >= $criticalTemp )); then
+		notify-send -u critical -h int:value:"$temp" --category=device temperature_critical_event
+	elif (( temp >= criticalTemp )); then
 		tempState="critical"
-	elif (( $temp >= $highTemp )); then
+	elif (( temp >= highTemp )); then
 		tempState="high"
 	else
 		tempState="normal"
