@@ -14,3 +14,6 @@ unmap("n", "<leader>bd")
 map("n", "<leader>bn", "<CMD>enew<CR>", { desc = "New Buffer" })
 map("n", "<leader>bx", "<CMD>bd<CR>", { desc = "Close Buffer" })
 map("n", "<leader>bX", "<CMD>bd!<CR>", { desc = "Force Close Buffer" })
+
+-- Find Files
+map("n", "<leader>o", "<CMD>Telescope find_files<CR>", { desc = "Open File" })
