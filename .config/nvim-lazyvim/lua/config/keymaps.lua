@@ -17,3 +17,7 @@ map("n", "<leader>bX", "<CMD>bd!<CR>", { desc = "Force Close Buffer" })
 
 -- Find Files
 map("n", "<leader>o", "<CMD>Telescope find_files<CR>", { desc = "Open File" })
+
+-- Indentation shortcuts
+vim.keymap.set("x", "<Tab>", ">gv")
+vim.keymap.set("x", "<S-Tab>", "<gv")
