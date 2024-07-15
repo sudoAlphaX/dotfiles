@@ -184,6 +184,7 @@ alias fast="speedtest-go -m"
 
 # Use Neovim as default editor 
 export EDITOR="nvim"
+export NVIM_APPNAME=nvim-lazyvim
 
 # Alias for configuring zsh
 alias zshconf="nvim ~/.zshrc"
