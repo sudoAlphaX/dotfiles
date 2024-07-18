@@ -1,0 +1,21 @@
+#billy's agent grub2 theme
+
+desktop-image: "billys_agent_bg.png"
+
+title-text: ""
+
++ boot_menu {
+	left = 22%
+	width = 51%
+	top = 7%
+	height = 85%
+
+	item_font = "monospace 14"
+	item_color = "#1a4165"
+	item_height = 36
+	item_spacing = 6
+
+	selected_item_font = "monospace 14"
+	selected_item_color = "#f81203"
+	selected_item_pixmap_style= "select_*.png"
+}
