@@ -1,3 +1,5 @@
+live_config_reload = true
+
 [font]
 size = 12.0
 
