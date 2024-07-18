@@ -206,7 +206,7 @@ alias pls="sudo "
 alias paru="paru --sudoloop"
 
 # Rsync
-alias copy="rsync -ah --info=PROGRESS2"
+alias copy="rsync -ah --info=PROGRESS2 --mkpath"
 
 # Rclone
 export RCLONE_PASSWORD_COMMAND="secret-tool lookup service rclone"
