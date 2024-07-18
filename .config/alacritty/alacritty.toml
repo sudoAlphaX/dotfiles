@@ -21,7 +21,4 @@ style = "Regular"
 opacity = 0.6
 blur = true
 
-[keyboard]
-bindings = [
-	{key = "Space", mods = "Control", chars = "\u0000"},
-]
+
