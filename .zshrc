@@ -198,7 +198,7 @@ alias pls="sudo "
 alias paru="paru --sudoloop"
 
 # Rsync
-alias copy="rsync -ah --info=PROGRESS2"
+alias copy="rsync -ah --info=PROGRESS2 --mkpath"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
