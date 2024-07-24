@@ -78,7 +78,8 @@ no_self_update = true
 # Commands to run before anything
 [pre_commands]
 # "Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
-"Mirrors" = "sudo systemctl start reflector.service"
+"1. Mirrors" = "sudo systemctl start reflector.service"
+"2. Git submodules" = "cd ~/.dotfiles && git submodule foreach git pull; cd ~/"
 
 
 # Commands to run after anything
