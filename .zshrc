@@ -132,7 +132,7 @@ source $ZSH/oh-my-zsh.sh
 
 zstyle ':omz:plugins:alias-finder' autoload yes
 zstyle ':omz:plugins:alias-finder' longer no
-zstyle ':omz:plugins:alias-finder' exact yes
+zstyle ':omz:plugins:alias-finder' exact no
 zstyle ':omz:plugins:alias-finder' cheaper yes
 
 # ZSH_AUTOSUGGEST_STRATEGY=(completion match_prev_cmd)
