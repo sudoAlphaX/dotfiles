@@ -26,8 +26,6 @@ app_id = "1121632048155742288"
 icon = "https://raw.githubusercontent.com/lazykern/mprisence/main/assets/icon.png"
 show_icon = false
 allow_streaming = false
-app_id = "1125084572166656031"
-icon = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Audacious-2.4-logo.svg/1200px-Audacious-2.4-logo.svg.png"
 
 [player.elisa]
 app_id = "1125089232776601761"
@@ -47,19 +45,22 @@ allow_streaming = true
 app_id = "1124777797722853476"
 
 [player.vlc_media_player]
+ignore = true
 app_id = "1124968989538402334"
 icon = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/VLC_Icon.svg/1200px-VLC_Icon.svg.png"
 allow_streaming = false
 
 [player.mpv]
+ignore = true
 app_id = "1125075797942734928"
 icon = "https://upload.wikimedia.org/wikipedia/commons/7/73/Mpv_logo_%28official%29.png"
-allow_streaming = false
+allow_streaming = true
 
 [player.mpd]
+ignore = true
 app_id = "1126153268486213672"
 icon = "https://www.musicpd.org/logo.png"
-allow_streaming = false
+allow_streaming = true
 
 [player.music_player_daemon]
 app_id = "1126153268486213672"
@@ -72,16 +73,19 @@ icon = "https://dashboard.snapcraft.io/site_media/appmedia/2020/04/ic_launcher_s
 allow_streaming = true
 
 [player.clementine]
+ignore = true
 app_id = "1125075725473562735"
 icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYiUYLmMQwsDaNqu6eg5I4aB1vyy_uptN34eouN7XxA5eFZTAV8RISZHCsn_M6-iQc-Pw&usqp=CAU"
 allow_streaming = true
 
 [player.strawberry]
+ignore = true
 app_id = "1126197744512536647"
 icon = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Strawberry-icon-1000px.png/800px-Strawberry-icon-1000px.png"
 allow_streaming = true
 
 [player.amberol]
+ignore = true
 app_id = "1125077658192056431"
 icon = "https://dashboard.snapcraft.io/site_media/appmedia/2022/09/io.bassi.Amberol.svg.png"
 
@@ -91,7 +95,7 @@ icon = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/SMPlayer_icon.
 
 # STREAMING
 [player.spotify]
-ignore = true
+ignore = false
 
 [player.youtube_music]
 app_id = "1125082278339559505"
