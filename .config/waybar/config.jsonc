@@ -1,7 +1,4 @@
 {
-		"on-click": "alacritty -e nmtui-connect",
-		"on-click": "alacritty --command bluetoothctl",
-		"on-click": "pavucontrol",
   "layer": "top",
   "position": "top",
   "height": 30,
@@ -139,6 +136,7 @@
     "tooltip-format-wifi": "{ipaddr}\nSignal Strength: {signalStrength}%",
     "tooltip-format-ethernet": "{ipaddr}",
     "tooltip-format-disconnected": "Disconnected",
+    "on-click": "hyprctl dispatch exec '[float] alacritty -e nmtui-connect'",
     "on-click-right": "rfkill toggle wlan"
   },
   "bluetooth": {
@@ -150,6 +148,7 @@
     "tooltip-format-off": "Bluetooth off",
     "tooltip-format-on": "Bluetooth device not connected",
     "tooltip-format-connected": "Connected to device: {device_alias} ({device_battery_percentage})",
+    "on-click": "hyprctl dispatch exec '[float] alacritty -e bluetoothctl'",
     "on-click-right": "rfkill toggle bluetooth"
   },
   "pulseaudio": {
@@ -182,6 +181,7 @@
         "  "
       ]
     },
+    "on-click": "hyprctl dispatch exec '[float] pavucontrol'",
     "on-click-right": "wpctl set-mute @DEFAULT_SINK@ toggle",
     "reverse-scrolling": true
   },
