@@ -48,7 +48,7 @@ display_time = true
 run_in_tmux = true
 
 # Cleanup temporary or old files (default: false)
-cleanup = true
+cleanup = false
 
 # Send a notification for every step (default: false)
 notify_each_step = true
