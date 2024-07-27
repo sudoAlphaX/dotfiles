@@ -21,3 +21,7 @@ map("n", "<leader>o", "<CMD>Telescope find_files<CR>", { desc = "Open File" })
 -- Indentation shortcuts
 map("x", "<Tab>", ">gv")
 map("x", "<S-Tab>", "<gv")
+
+-- Live Grep
+
+map("n", "<leader>/", "<leader>sG", { remap = true, desc = "Live Grep (cwd)" })
