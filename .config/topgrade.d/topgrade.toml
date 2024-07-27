@@ -80,12 +80,12 @@ no_self_update = true
 # "Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
 "1. Mirrors" = "sudo systemctl start reflector.service"
 "2. Git submodules" = "cd ~/.dotfiles && git submodule foreach git pull; cd ~/"
+"3. Neovim plugins" = "nvim --headless '+Lazy! sync' +qa"
 
 
 # Commands to run after anything
 [post_commands]
 # "Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
-"lazynvim" = "nvim --headless '+Lazy! sync' +qa"
 
 
 # Custom commands
