@@ -1,5 +1,5 @@
 clear_on_pause = true
-interval = 5000
+interval = 2000
 
 [template]
 detail = "{{{title}}}"
