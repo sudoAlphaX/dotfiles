@@ -78,9 +78,7 @@ no_self_update = true
 # Commands to run before anything
 [pre_commands]
 # "Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
-"1. Mirrors" = "sudo systemctl start reflector.service"
-"2. Git submodules" = "cd ~/.dotfiles && git submodule foreach git pull; cd ~/"
-"3. Neovim plugins" = "nvim --headless '+Lazy! sync' +qa"
+"Update Mirrors" = "sudo systemctl start reflector.service"
 
 
 # Commands to run after anything
@@ -90,6 +88,8 @@ no_self_update = true
 
 # Custom commands
 [commands]
+"Git submodules" = "cd ~/.dotfiles && git submodule foreach git pull; cd ~/"
+"Neovim plugins" = "nvim --headless '+Lazy! sync' +qa"
 # "Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 # "Custom command using interactive shell (unix)" = "-i vim_upgrade"
 
