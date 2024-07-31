@@ -173,7 +173,7 @@ alias .5="cd ../../../../.."
 # Always copy contents of directories (r)ecursively and explain (v) what was done
 # alias cp="cp -irv"
 # Explain (v) what was done when moving a file
-alias move="mv -iv"
+alias mov="mv -iv"
 # rm command interactive
 alias dl="trash-put -v"
 
