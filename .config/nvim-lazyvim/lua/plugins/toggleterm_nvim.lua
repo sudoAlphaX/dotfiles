@@ -7,4 +7,5 @@ return {
     { "<leader>tb", "<CMD>ToggleTerm direction=tab<CR>", desc = "Terminal in a Tab" },
   },
   config = true,
+  lazy = true,
 }
