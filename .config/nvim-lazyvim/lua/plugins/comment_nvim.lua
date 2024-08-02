@@ -4,5 +4,5 @@ return {
     { "<C-/>", "<ESC><CMD>lua require('Comment.api').toggle.linewise.current()<CR>", mode = { "n" } },
     { "<C-/>", "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", mode = { "v" } },
   },
-  config = true,
+  lazy = true,
 }
