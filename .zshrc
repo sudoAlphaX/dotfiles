@@ -1,7 +1,7 @@
 # zmodload zsh/zprof
 
 # Fix for gpg password prompt in tty
-export GPG_TTY=$(tty)
+export GPG_TTY=$TTY
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
