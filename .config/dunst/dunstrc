@@ -528,9 +528,3 @@
 	msg_urgency="critical"
 	format="<b>CPU Temperature Critical: %n°C</b>"
 	history_ignore=true
-
-[hyprsplash]
-  app_name='hyprsplash'
-	format="%s"
-  icon_position=off
-	history_ignore=true

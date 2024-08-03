@@ -1,7 +1,5 @@
 # zmodload zsh/zprof
 
-# hyprctl splash
-
 # Fix for gpg password prompt in tty
 export GPG_TTY=$TTY
 
