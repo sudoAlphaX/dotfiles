@@ -88,7 +88,7 @@ no_self_update = true
 
 # Custom commands
 [commands]
-"Git submodules" = "cd ~/.dotfiles && git submodule foreach git pull; cd ~/"
+"Git submodules" = "cd ~/.dotfiles && git submodule foreach '(git checkout main || git checkout master) && git pull'; cd ~/"
 "Neovim plugins" = "nvim --headless '+Lazy! sync' +qa"
 # "Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 # "Custom command using interactive shell (unix)" = "-i vim_upgrade"
