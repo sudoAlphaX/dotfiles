@@ -78,6 +78,7 @@ button:hover {
 #disk,
 #temperature,
 #custom-temperature,
+#custom-pacman_updates,
 #backlight,
 #wireplumber,
 #tray,
@@ -141,6 +142,21 @@ button:hover {
 #custom-temperature {
     color: @green;
     border-bottom: 2px solid @green;
+}
+
+#custom-pacman_updates.high {
+    color: @red;
+    border-bottom: 2px solid @red;
+}
+
+#custom-pacman_updates.normal {
+    color: @yellow;
+    border-bottom: 2px solid @yellow;
+}
+
+#custom-pacman_updates {
+    color: @white;
+    border-bottom: 2px solid @white;
 }
 
 #cpu.high,

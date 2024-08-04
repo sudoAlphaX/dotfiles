@@ -15,6 +15,7 @@
     "idle_inhibitor",
     "tray",
     "privacy",
+    "custom/pacman_updates",
     //   "keyboard-state",
     "network",
     "bluetooth",
@@ -50,6 +51,14 @@
       "activated": "",
       "deactivated": ""
     }
+  },
+  "custom/pacman_updates": {
+    "exec": "bash $HOME/.config/waybar/scripts/waybar-updates.sh",
+    "hide-empty-text": false,
+    "return-type": "json",
+    "format": "{}",
+    "interval": 600,
+    "on-click": "hyprctl dispatch exec '[workspace special:s1] alacritty -e topgrade'"
   },
   "clock": {
     "format": "{:%H:%M}",
