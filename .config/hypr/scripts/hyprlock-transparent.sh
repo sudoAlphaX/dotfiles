@@ -1,3 +1,3 @@
 #!/bin/bash
 
-hyprlock --config $HOME/.config/hypr/hyprlock-ts.conf
+hyprlock --config "$HOME/.config/hypr/hyprlock-ts.conf"
