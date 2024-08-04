@@ -31,3 +31,6 @@
 [submodule ".config/yazi/assets/catppuccin-syntax-highlighting-bat"]
 	path = .config/yazi/assets/catppuccin-syntax-highlighting-bat
 	url = https://github.com/catppuccin/bat
+[submodule ".config/hypr/assets/hyprpaper-gen"]
+	path = .config/hypr/assets/hyprpaper-gen
+	url = https://github.com/BoopyTheFox/hyprpaper-gen
