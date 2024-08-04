@@ -3,7 +3,7 @@
   "position": "top",
   "height": 30,
   "spacing": 0,
-  "fixed-center": true,
+  "fixed-center": false,
   "exclusive": true,
   "modules-left": [
     "hyprland/workspaces"
