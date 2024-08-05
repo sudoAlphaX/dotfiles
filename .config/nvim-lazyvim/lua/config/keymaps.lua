@@ -16,15 +16,13 @@ map("n", "<leader>bx", "<CMD>bd<CR>", { desc = "Close Buffer" })
 map("n", "<leader>bX", "<CMD>bd!<CR>", { desc = "Force Close Buffer" })
 
 -- Find Files
-map("n", "<leader>o", "<CMD>Telescope find_files<CR>", { desc = "Open File" })
+map("n", "<leader> ", "<leader>fF", { remap = true, desc = "Find Files (cwd)" })
+map("n", "<leader>o", "<leader>ff", { remap = true, desc = "Find Files (Root Dir)" })
+map("n", "<leader>/", "<leader>sG", { remap = true, desc = "Grep (cwd)" })
 
 -- Indentation shortcuts
 map("x", "<Tab>", ">gv")
 map("x", "<S-Tab>", "<gv")
-
--- Live Grep
-
-map("n", "<leader>/", "<leader>sG", { remap = true, desc = "Live Grep (cwd)" })
 
 -- Registers (Clipboard History)
 map("n", "<leader>p", '<leader>s"', { remap = true, desc = "Registers" })
