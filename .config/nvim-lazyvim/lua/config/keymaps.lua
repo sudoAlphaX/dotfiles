@@ -25,3 +25,6 @@ map("x", "<S-Tab>", "<gv")
 -- Live Grep
 
 map("n", "<leader>/", "<leader>sG", { remap = true, desc = "Live Grep (cwd)" })
+
+-- Registers (Clipboard History)
+map("n", "<leader>p", '<leader>s"', { remap = true, desc = "Registers" })
