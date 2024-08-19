@@ -29,10 +29,10 @@ vim.cmd("set nofoldenable")
 vim.cmd("set foldnestmax=3")
 
 -- Indentation shortcuts
-vim.keymap.set('x', "<Tab>", ">gv")
-vim.keymap.set('x', "<S-Tab>", "<gv")
+vim.keymap.set("x", "<Tab>", ">gv")
+vim.keymap.set("x", "<S-Tab>", "<gv")
 
-vim.g.python3_host_prog='/home/alpha/.pyenv/shims/python'
+vim.g.python3_host_prog = "$HOME/.pyenv/shims/python"
 
 -- Colors and fonts
 vim.opt.termguicolors = true
