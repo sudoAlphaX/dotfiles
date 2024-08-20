@@ -1,4 +1,1 @@
-return {
-  "wakatime/vim-wakatime",
-  lazy = false,
-}
+../../../nvim-lazyvim/lua/plugins/wakatime.lua
