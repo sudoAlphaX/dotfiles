@@ -1,8 +1,1 @@
-return {
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin",
-    },
-  },
-}
+../../../nvim-lazyvim/lua/plugins/colorscheme.lua

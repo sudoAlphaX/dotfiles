@@ -1,4 +1,1 @@
-return {
-  "folke/noice.nvim",
-  enabled = false,
-}
+../../../nvim-lazyvim/lua/plugins/disabled.lua
