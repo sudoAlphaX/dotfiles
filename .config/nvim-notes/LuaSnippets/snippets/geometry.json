@@ -1,0 +1,50 @@
+{
+  "Degree": {
+    "prefix": "degree",
+    "body": [
+      "°"
+    ]
+  },
+  "Right angle": {
+    "prefix": "rightangle",
+    "body": [
+      "∟"
+    ]
+  },
+  "angle": {
+    "prefix": "angle",
+    "body": [
+      "°"
+    ]
+  },
+  "Prependicular": {
+    "prefix": "prependicularto",
+    "body": [
+      "⊥"
+    ]
+  },
+  "Parallel": {
+    "prefix": "parallelto",
+    "body": [
+      "∥"
+    ]
+  },
+  "Triangle": {
+    "prefix": "triangle",
+    "body": [
+      "Δ"
+    ]
+  },
+  "Congruent": {
+    "prefix": "congruentto",
+    "body": [
+      "≅"
+    ]
+  },
+  "Similar": {
+    "prefix": "similarto",
+    "body": [
+      "~"
+    ]
+  }
+}
