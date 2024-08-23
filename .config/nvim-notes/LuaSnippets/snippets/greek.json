@@ -1,0 +1,146 @@
+{
+  "alpha": {
+    "prefix": "alpha",
+    "body": [
+      "α"
+    ]
+  },
+  "Beta": {
+    "prefix": "beta",
+    "body": [
+      "β"
+    ]
+  },
+  "Gamma": {
+    "prefix": "gamma",
+    "body": [
+      "γ"
+    ]
+  },
+  "Delta": {
+    "prefix": "delta",
+    "body": [
+      "δ"
+    ]
+  },
+  "Epsilon": {
+    "prefix": "epsilon",
+    "body": [
+      "ε"
+    ]
+  },
+  "Zeta": {
+    "prefix": "zeta",
+    "body": [
+      "ζ"
+    ]
+  },
+  "Eta": {
+    "prefix": "eta",
+    "body": [
+      "η"
+    ]
+  },
+  "Theta": {
+    "prefix": "theta",
+    "body": [
+      "θ"
+    ]
+  },
+  "Iota": {
+    "prefix": "iota",
+    "body": [
+      "ι"
+    ]
+  },
+  "Kappa": {
+    "prefix": "kappa",
+    "body": [
+      "κ"
+    ]
+  },
+  "Lambda": {
+    "prefix": "lambda",
+    "body": [
+      "λ"
+    ]
+  },
+  "Mu": {
+    "prefix": "mu",
+    "body": [
+      "μ"
+    ]
+  },
+  "Nu": {
+    "prefix": "nu",
+    "body": [
+      "ν"
+    ]
+  },
+  "Xi": {
+    "prefix": "xi",
+    "body": [
+      "ξ"
+    ]
+  },
+  "Omicron": {
+    "prefix": "omicron",
+    "body": [
+      "ο"
+    ]
+  },
+  "Pi": {
+    "prefix": "pi",
+    "body": [
+      "π"
+    ]
+  },
+  "Rho": {
+    "prefix": "rho",
+    "body": [
+      "ρ"
+    ]
+  },
+  "Sigma": {
+    "prefix": "sigma",
+    "body": [
+      "σ"
+    ]
+  },
+  "Tau": {
+    "prefix": "tau",
+    "body": [
+      "τ"
+    ]
+  },
+  "Upsilon": {
+    "prefix": "upsilon",
+    "body": [
+      "υ"
+    ]
+  },
+  "Phi": {
+    "prefix": "phi",
+    "body": [
+      "φ"
+    ]
+  },
+  "Chi": {
+    "prefix": "chi",
+    "body": [
+      "χ"
+    ]
+  },
+  "Psi": {
+    "prefix": "psi",
+    "body": [
+      "ψ"
+    ]
+  },
+  "Omega": {
+    "prefix": "omega",
+    "body": [
+      "ω"
+    ]
+  }
+}
