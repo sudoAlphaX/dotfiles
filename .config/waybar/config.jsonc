@@ -6,7 +6,8 @@
   "fixed-center": false,
   "exclusive": true,
   "modules-left": [
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "custom/user",
   ],
   "modules-center": [
     "hyprland/window"
@@ -51,6 +52,10 @@
       "activated": "",
       "deactivated": ""
     }
+  },
+  "custom/user": {
+    "exec": "bash $HOME/.config/waybar/scripts/username.sh",
+    "format": "{}"
   },
   "custom/pacman_updates": {
     "exec": "bash $HOME/.config/waybar/scripts/waybar-updates.sh",
