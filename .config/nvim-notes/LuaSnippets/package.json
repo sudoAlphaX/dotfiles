@@ -19,6 +19,12 @@
           "markdown"
         ],
         "path": "./snippets/math.json"
+      },
+      {
+        "language": [
+          "tex"
+        ],
+        "path": "./snippets/tex.json"
       }
     ]
   }
