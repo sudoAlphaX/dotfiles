@@ -1,0 +1,26 @@
+{
+  "Boilerplate": {
+    "prefix": ",boilerplate",
+    "body": [
+      "\\documentclass{12, a4paper}",
+      "",
+      "\\title{$1}",
+      "\\author{$2}",
+      "\\date{$3}",
+      "",
+      "\\begin{document}",
+      "\\maketitle",
+      "",
+      "",
+      "$0",
+      "",
+      "\\end{document}"
+    ]
+  },
+  "Underline": {
+    "prefix": "\\underline",
+    "body": [
+      "\\underline{$1}$0"
+    ]
+  }
+}
