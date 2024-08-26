@@ -1,6 +1,6 @@
 {
   "Boilerplate": {
-    "prefix": ",boilerplate",
+    "prefix": "\\boilerplate",
     "body": [
       "\\documentclass{12, a4paper}",
       "",
@@ -21,6 +21,18 @@
     "prefix": "\\underline",
     "body": [
       "\\underline{$1}$0"
+    ]
+  },
+  "Root": {
+    "prefix": "\\root",
+    "body": [
+      "\\sqrt{$1}$0"
+    ]
+  },
+  "Sqrt": {
+    "prefix": "\\sqrt",
+    "body": [
+      "\\sqrt{$1}$0"
     ]
   }
 }
