@@ -10,4 +10,14 @@ return {
 		event = "InsertEnter",
 		config = true,
 	},
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			local configs = require("gitsigns")
+			configs.setup({
+				current_line_blame = true,
+				numhl = true,
+			})
+		end,
+	},
 }
