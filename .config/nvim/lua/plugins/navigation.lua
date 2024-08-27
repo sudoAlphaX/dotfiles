@@ -13,6 +13,9 @@ return {
 				mode = { "n", "t" },
 			},
 		},
+		opts = {
+			disable_when_zoomed = true,
+		},
 		lazy = true,
 	},
 	{
