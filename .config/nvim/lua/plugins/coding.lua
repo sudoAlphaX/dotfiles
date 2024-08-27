@@ -46,4 +46,17 @@ return {
 			{ "<leader>gh", "<CMD>lua require('telescope.builtin').git_stash()<CR>", { desc = "Git Stashes" } },
 		},
 	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function()
+			require("nvim-treesitter.configs").setup({
+
+				auto_install = true,
+				highlight = { enable = true },
+				indent = { enable = true },
+				ensure_installed = { "gitignore", "bash", "python", "lua", "markdown", "python" },
+			})
+		end,
+	},
 }
