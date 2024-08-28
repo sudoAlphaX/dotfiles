@@ -25,3 +25,7 @@ vim.cmd("set nowrap")
 vim.cmd("set foldmethod=indent")
 vim.cmd("set nofoldenable")
 vim.cmd("set foldnestmax=3")
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.opt.termguicolors = true
