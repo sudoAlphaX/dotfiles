@@ -18,3 +18,7 @@ map("n", "<leader>bX", "<CMD>bd!<CR>", { desc = "Force Close Buffer" })
 -- Indentation shortcuts
 map("x", "<Tab>", ">gv")
 map("x", "<S-Tab>", "<gv")
+
+-- Window Splits
+map("n", "<leader>-", "<CMD>split<CR>", { desc = "Split Window Below" })
+map("n", "<leader>|", "<CMD>vsplit<CR>", { desc = "Split Window Right" })
