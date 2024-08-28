@@ -13,6 +13,7 @@ return {
 					lualine_y = { "searchcount", "selectioncount", { "location", separator = "" }, { "progress" } },
 					lualine_z = { { "datetime", style = "%H:%M" } },
 				},
+				extensions = { "nvim-tree" },
 			})
 		end,
 	},

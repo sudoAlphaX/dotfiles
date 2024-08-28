@@ -25,4 +25,20 @@ return {
 		},
 		lazy = true,
 	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = true,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		opts = {
+			view = { side = "right" },
+		},
+		keys = {
+			{ "<C-n>", "<CMD>lua require('nvim-tree.api').tree.toggle()<CR>" },
+			{ "<leader>e", "<CMD>lua require('nvim-tree.api').tree.focus()<CR>", { desc = "Focus File Tree" } },
+		},
+		config = true,
+	},
 }
