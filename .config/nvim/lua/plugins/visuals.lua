@@ -5,4 +5,7 @@ return {
 			require("ibl").setup()
 		end,
 	},
+	{
+		"RRethy/vim-illuminate",
+	},
 }
