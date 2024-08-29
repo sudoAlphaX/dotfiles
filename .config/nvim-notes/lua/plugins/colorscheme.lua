@@ -1,1 +1,0 @@
-../../../nvim-lazyvim/lua/plugins/colorscheme.lua

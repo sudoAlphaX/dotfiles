@@ -1,1 +1,0 @@
-../../../nvim-lazyvim/lua/plugins/nvim-tmux-navigation.lua
