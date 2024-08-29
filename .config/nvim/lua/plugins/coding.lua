@@ -10,17 +10,14 @@ return {
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
-    config = true,
+    opts = {}
   },
   {
     "lewis6991/gitsigns.nvim",
-    config = function()
-      local configs = require("gitsigns")
-      configs.setup({
-        current_line_blame = true,
-        numhl = true,
-      })
-    end,
+    opts = {
+      current_line_blame = true,
+      numhl = false,
+    }
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -51,15 +48,13 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    config = function()
-      require("nvim-treesitter.configs").setup({
+    opts = {
+      auto_install = true,
+      highlight = { enable = true },
+      indent = { enable = true },
+      ensure_installed = { "gitignore", "bash", "python", "lua", "markdown", "python" },
 
-        auto_install = true,
-        highlight = { enable = true },
-        indent = { enable = true },
-        ensure_installed = { "gitignore", "bash", "python", "lua", "markdown", "python" },
-      })
-    end,
+    }
   },
   {
     "akinsho/toggleterm.nvim",
@@ -73,7 +68,7 @@ return {
       -- { "<leader>gg", "<CMD>TermExec name=Lazygit cmd=lazygit direction=float<CR>", desc = "Lazygit" },
     },
     lazy = true,
-    config = true,
+    opts = {}
   },
   {
     "kdheepak/lazygit.nvim",
