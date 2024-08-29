@@ -1,12 +1,11 @@
 return {
   {
     "toppair/peek.nvim",
-    event = { "VeryLazy" },
     build = "deno task --quiet build:fast",
-    config = function()
-      require("peek").setup()
-      vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-      vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
-    end,
+    keys = {
+      { "<leader>mm", "<CMD>lua require('peek').open()<CR>", desc = "Markdown Preview" },
+      { "<leader>mM", "<CMD>lua require('peek').close()<CR>", desc = "Stop Markdown Preview" },
+    },
+    lazy = true,
   },
 }
