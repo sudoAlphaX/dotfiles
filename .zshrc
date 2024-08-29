@@ -199,8 +199,9 @@ alias wget="wget -c"
 
 # Use Neovim as default editor 
 export EDITOR="nvim"
-export NVIM_APPNAME=nvim-lazyvim
+export NVIM_APPNAME=nvim
 alias notesvim="NVIM_APPNAME=nvim-notesvim nvim"
+alias lazyvim="NVIM_APPNAME=nvim-lazyvim nvim"
 
 # Memes
 alias pls="sudo "
