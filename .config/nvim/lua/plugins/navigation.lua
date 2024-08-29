@@ -39,7 +39,6 @@ return {
       { "<C-n>", "<CMD>lua require('nvim-tree.api').tree.toggle()<CR>" },
       { "<leader>e", "<CMD>lua require('nvim-tree.api').tree.focus()<CR>", desc = "Focus File Tree" },
     },
-    config = true,
   },
   {
     "folke/flash.nvim",
