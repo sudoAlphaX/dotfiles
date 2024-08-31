@@ -10,7 +10,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if [[ "$TERM" = "alacritty" ]]; then echo "$(hyprctl splash)"; fi
+if [[ "$TERM" = "alacritty" && ! $SSH_CONNECTION ]]; then echo "$(hyprctl splash)"; fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 
