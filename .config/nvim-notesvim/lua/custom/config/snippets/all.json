@@ -1,0 +1,16 @@
+{
+  "snip1": {
+    "prefix": "snip1",
+    "body": [
+      "expands? jumps? $1 $2 !"
+    ]
+  },
+  "snip2": {
+    "prefix": "snip2",
+    "body": [
+      "multi $1",
+      "line $2",
+      "snippet$0"
+    ]
+  }
+}
