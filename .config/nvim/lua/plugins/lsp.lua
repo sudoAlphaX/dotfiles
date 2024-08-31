@@ -13,13 +13,11 @@ return {
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
 			"neovim/nvim-lspconfig",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
 		},
 		opts_extend = { "ensure_installed" },
 		opts = {
-			ensure_installed = {
-				"stylua",
-				-- "shfmt",
-			},
+			ensure_installed = {},
 		},
 		---@param opts MasonSettings | {ensure_installed: string[]}
 		config = function(_, opts)
@@ -46,21 +44,6 @@ return {
 		end,
 	},
 	{ "williamboman/mason-lspconfig.nvim", config = function() end },
-	{
-		"neovim/nvim-lspconfig",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-		},
-		config = function()
-			require("mason").setup()
-			require("mason-lspconfig").setup()
-
-			local lsp = require("lspconfig")
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-			lsp.lua_ls.setup({ capabilities = capabilities })
-		end,
-	},
 	{
 		"stevearc/conform.nvim",
 		event = { "BufWritePre" },
