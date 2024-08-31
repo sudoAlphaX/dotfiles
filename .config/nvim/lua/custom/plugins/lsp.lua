@@ -37,6 +37,10 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			lsp.lua_ls.setup({ capabilities = capabilities })
+
+			lsp.ruff.setup({ capabilities = capabilities })
+			lsp.pyright.setup({ capabilities = capabilities })
+			lsp.ruff_lsp.setup({ capabilities = capabilities })
 		end,
 	},
 }
