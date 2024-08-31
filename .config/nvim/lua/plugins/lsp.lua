@@ -48,13 +48,17 @@ return {
 	{ "williamboman/mason-lspconfig.nvim", config = function() end },
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = {
+			"hrsh7th/cmp-nvim-lsp",
+		},
 		config = function()
 			require("mason").setup()
 			require("mason-lspconfig").setup()
 
 			local lsp = require("lspconfig")
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			lsp.lua_ls.setup({})
+			lsp.lua_ls.setup({ capabilities = capabilities })
 		end,
 	},
 	{
