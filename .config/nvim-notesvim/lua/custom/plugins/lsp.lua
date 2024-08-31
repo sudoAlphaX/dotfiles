@@ -10,7 +10,12 @@ return {
 					-- Lua
 					"lua_ls",
 					"stylua",
+
 					"marksman",
+					"markdownlint",
+
+					-- Spell
+					"cspell",
 				},
 				auto_update = true,
 			}),
