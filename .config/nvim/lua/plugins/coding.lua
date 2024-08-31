@@ -1,13 +1,5 @@
 return {
 	{
-		"numToStr/Comment.nvim",
-		keys = {
-			{ "<C-/>", "<CMD>lua require('Comment.api').toggle.linewise.current()<CR>", mode = { "n" } },
-			{ "<C-/>", "<CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", mode = { "v" } },
-		},
-		lazy = true,
-	},
-	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		opts = {},
