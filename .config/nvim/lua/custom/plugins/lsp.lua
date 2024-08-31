@@ -22,6 +22,9 @@ return {
 
 					-- Json
 					"json-lsp",
+
+					-- Spell
+					"cspell",
 				},
 				auto_update = true,
 			}),
