@@ -48,3 +48,15 @@ map("n", "gco", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Commen
 map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" })
 map("n", "<C-/>", "gcc", { remap = true })
 map("v", "<C-/>", "gc", { remap = true })
+
+-- LSP
+map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Hover Help" })
+map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Definition" })
+map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", { desc = "Declatation" })
+map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", { desc = "Implementation" })
+map("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", { desc = "Type Definition" })
+map("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", { desc = "References" })
+map("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { desc = "Signature Help" })
+map("n", "<leader>ss", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename Symbol" })
+map({ "n", "x" }, "<leader>lf", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", { desc = "Format Code (Native)" })
+map("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Code Actions" })
