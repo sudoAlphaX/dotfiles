@@ -16,12 +16,12 @@ opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.cursorline = true -- Enable highlighting of the current line
 opt.expandtab = true -- Use spaces instead of tabs
 opt.fillchars = {
-  foldopen = "",
-  foldclose = "",
-  fold = " ",
-  foldsep = " ",
-  diff = "╱",
-  eob = " ",
+	foldopen = "",
+	foldclose = "",
+	fold = " ",
+	foldsep = " ",
+	diff = "╱",
+	eob = " ",
 }
 opt.foldlevel = 99
 opt.formatoptions = "jcroqlnt" -- tcqj
@@ -32,7 +32,7 @@ opt.inccommand = "nosplit" -- preview incremental substitute
 opt.jumpoptions = "view"
 opt.laststatus = 3 -- global statusline
 opt.linebreak = true -- Wrap lines at convenient points
-opt.list = true -- Show some invisible characters (tabs...
+opt.list = false -- Show some invisible characters (tabs...
 opt.mouse = "a" -- Enable mouse mode
 opt.number = true -- Print line number
 opt.pumblend = 10 -- Popup blend
@@ -68,11 +68,11 @@ opt.incsearch = true
 opt.termguicolors = true
 
 if vim.fn.has("nvim-0.10") == 1 then
-  opt.smoothscroll = true
-  opt.foldmethod = "expr"
-  opt.foldtext = ""
+	opt.smoothscroll = true
+	opt.foldmethod = "expr"
+	opt.foldtext = ""
 else
-  opt.foldmethod = "indent"
+	opt.foldmethod = "indent"
 end
 
 -- Fix markdown indentation settings
