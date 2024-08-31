@@ -19,6 +19,9 @@ return {
 					-- "pylint",
 					-- Shell
 					"bashls",
+
+					-- Json
+					"json-lsp",
 				},
 				auto_update = true,
 			}),
@@ -41,6 +44,10 @@ return {
 			lsp.ruff.setup({ capabilities = capabilities })
 			lsp.pyright.setup({ capabilities = capabilities })
 			lsp.ruff_lsp.setup({ capabilities = capabilities })
+
+			lsp.bashls.setup({ capabilities = capabilities })
+
+			lsp.jsonls.setup({ capabilities = capabilities })
 		end,
 	},
 }
