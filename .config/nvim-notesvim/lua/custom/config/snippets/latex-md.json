@@ -5,9 +5,7 @@
       "\\inline",
       "\\mathinline"
     ],
-    "body": [
-      "$$1$$0"
-    ],
+    "body": "$$1$$0",
     "description": "Insert inline math"
   },
   "Math": {
@@ -16,17 +14,147 @@
       "\\math",
       "\\mathcentered"
     ],
-    "body": [
-      "$$$1$$$0"
-    ],
+    "body": "$$$1$$$0",
     "description": "Insert centered math environment"
   },
-  "Pi": {
+  "pi": {
     "prefix": [
-      "pi"
-    ],
-    "body": [
+      "pi",
       "\\pi"
-    ]
+    ],
+    "body": "\\pi"
+  },
+  "Square root": {
+    "prefix": [
+      "\\sqrt",
+      "\\root"
+    ],
+    "body": "\\sqrt{$1}$0"
+  },
+  "nth root": {
+    "prefix": [
+      "\\nroot"
+    ],
+    "body": "\\sqrt[$1]{$2}$0"
+  },
+  "Infinity": {
+    "prefix": [
+      "\\infinity",
+      "\\inf",
+      "\\infty"
+    ],
+    "body": "\\infty",
+    "description": "Infinity Symbol"
+  },
+  "Belongs to": {
+    "prefix": [
+      "\\belongs",
+      "\\belongsto",
+      "\\in"
+    ],
+    "body": "\\in"
+  },
+  "Does not belong to": {
+    "prefix": [
+      "\\nobelong",
+      "\\nobelongto",
+      "\\nobelongsto",
+      "\\notbelong",
+      "\\notbelongto",
+      "\\notbelongsto",
+      "\\notin"
+    ],
+    "body": "\\notin"
+  },
+  "Where": {
+    "prefix": [
+      "\\where",
+      "\\forall"
+    ],
+    "body": "\\forall"
+  },
+  "Right Arrow": {
+    "prefix": [
+      "\\right",
+      "\\rightarrow"
+    ],
+    "body": "\\rightarrow"
+  },
+  "Left Arrow": {
+    "prefix": [
+      "\\left",
+      "\\leftarrow"
+    ],
+    "body": "\\leftarrow"
+  },
+  "Up Arrow": {
+    "prefix": [
+      "\\up",
+      "\\uparrow"
+    ],
+    "body": "\\uparrow"
+  },
+  "Down Arrow": {
+    "prefix": [
+      "\\down",
+      "\\downarrow"
+    ],
+    "body": "\\downarrow"
+  },
+  "Union": {
+    "prefix": [
+      "\\union"
+    ],
+    "body": "\\cup",
+    "description": "Insert Union Symbol"
+  },
+  "Union (limits)": {
+    "prefix": [
+      "\\unionl"
+    ],
+    "body": "\\cup_{$1}^{$2}$0",
+    "description": "Insert Union Symbol (with limits)"
+  },
+  "Big Union": {
+    "prefix": [
+      "\\bigunion"
+    ],
+    "body": "\\bigcup",
+    "description": "Insert Big Union Symbol"
+  },
+  "Big Union (limits)": {
+    "prefix": [
+      "\\bigunionl"
+    ],
+    "body": "\\bigcup_{$1}^{$2}$0",
+    "description": "Insert Big Union Symbol (with limits)"
+  },
+  "Intersection": {
+    "prefix": [
+      "\\intersection"
+    ],
+    "body": "\\cap",
+    "description": "Insert Intersection Symbol"
+  },
+  "Intersection (limits)": {
+    "prefix": [
+      "\\intersectionl"
+    ],
+    "body": "\\cap_{$1}^{$2}$0",
+    "description": "Insert Intersection Symbol (with limits)"
+  },
+  "Big Intersection": {
+    "prefix": [
+      "\\bigintersection"
+    ],
+    "body": "\\bigcap",
+    "description": "Insert Big Intersection Symbol"
+  },
+  "Big Intersection (limits)": {
+    "prefix": [
+      "\\bigintersectionl"
+    ],
+    "body": "\\bigcap_{$1}^{$2}$0",
+    "description": "Insert Big Intersection Symbol (with limits)"
   }
 }
