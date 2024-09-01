@@ -2,8 +2,10 @@ local map = vim.keymap.set
 local unmap = vim.keymap.del
 
 -- Return to normal mode from terminal
-
 map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+
+-- Easy enter commands
+map("n", ";", ":")
 
 -- Buffers
 map("n", "<Tab>", "<CMD>bnext<CR>")
