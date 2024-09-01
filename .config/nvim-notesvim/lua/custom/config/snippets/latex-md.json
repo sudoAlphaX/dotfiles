@@ -107,7 +107,8 @@
       "\\where",
       "\\forall"
     ],
-    "body": "\\forall"
+    "body": "~\\forall~"
+  },
   },
   "Right Arrow": {
     "prefix": [
