@@ -109,6 +109,11 @@
     ],
     "body": "~\\forall~"
   },
+  "Implies": {
+    "prefix": [
+      "\\implies"
+    ],
+    "body": "\\implies"
   },
   "Right Arrow": {
     "prefix": [
