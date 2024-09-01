@@ -34,6 +34,25 @@
     "body": "\\div",
     "description": "Insert Division symbol"
   },
+  "Power": {
+    "prefix": [
+      "\\power",
+      "\\raise",
+      "\\raised",
+      "\\superscript"
+    ],
+    "body": "\\^{$1}$0",
+    "description": "Insert Superscript"
+  },
+  "Base": {
+    "prefix": [
+      "\\base",
+      "\\below",
+      "\\subscript"
+    ],
+    "body": "\\_{$1}$0",
+    "description": "Insert Subscript"
+  },
   "pi": {
     "prefix": [
       "pi",
