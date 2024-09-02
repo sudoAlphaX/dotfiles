@@ -13,6 +13,12 @@
           "markdown"
         ],
         "path": "./latex-md.json"
+      },
+      {
+        "language": [
+          "markdown"
+        ],
+        "path": "./subscript_letters.json"
       }
     ]
   }
