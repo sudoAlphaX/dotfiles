@@ -45,6 +45,16 @@
     "body": "^{$1}$0 ",
     "description": "Insert Superscript"
   },
+  "Square": {
+    "prefix": "\\square",
+    "body": "^{2} ",
+    "description": "Raise the expression to the power of 2"
+  },
+  "Cube": {
+    "prefix": "\\cube",
+    "body": "^{3} ",
+    "description": "Raise the expression to the power of 3"
+  },
   "Base": {
     "prefix": [
       "\\base",
@@ -65,7 +75,8 @@
     "prefix": [
       "\\sqrt"
     ],
-    "body": "\\sqrt{$1} $0"
+    "body": "\\sqrt{$1} $0",
+    "description": "Insert square root"
   },
   "nth root": {
     "prefix": [
