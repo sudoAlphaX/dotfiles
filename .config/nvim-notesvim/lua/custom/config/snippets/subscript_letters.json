@@ -1,152 +1,152 @@
 {
   "a1": {
     "prefix": "a1",
-    "body": "a_{1} ",
+    "body": "a_{1}",
     "description": "Shortcut for a (subscript) 1"
   },
   "a2": {
     "prefix": "a2",
-    "body": "a_{2} ",
+    "body": "a_{2}",
     "description": "Shortcut for a (subscript) 2"
   },
   "a3": {
     "prefix": "a3",
-    "body": "a_{3} ",
+    "body": "a_{3}",
     "description": "Shortcut for a (subscript) 3"
   },
   "a1a2a3": {
     "prefix": "a1a2a3",
-    "body": "a_{1}, a_{2}, a_{3} ",
+    "body": "a_{1}, a_{2}, a_{3}",
     "description": "shortcut for a (subscript) 1, a (subscript) 2, a (subscript) 3"
   },
   "b1": {
     "prefix": "b1",
-    "body": "b_{1} ",
+    "body": "b_{1}",
     "description": "Shortcut for b (subscript) 1"
   },
   "b2": {
     "prefix": "b2",
-    "body": "b_{2} ",
+    "body": "b_{2}",
     "description": "Shortcut for b (subscript) 2"
   },
   "b3": {
     "prefix": "b3",
-    "body": "b_{3} ",
+    "body": "b_{3}",
     "description": "Shortcut for b (subscript) 3"
   },
   "b1b2b3": {
     "prefix": "b1b2b3",
-    "body": "b_{1}, b_{2}, b_{3} ",
+    "body": "b_{1}, b_{2}, b_{3}",
     "description": "shortcut for b (subscript) 1, b (subscript) 2, b (subscript) 3"
   },
   "c1": {
     "prefix": "c1",
-    "body": "c_{1} ",
+    "body": "c_{1}",
     "description": "Shortcut for c (subscript) 1"
   },
   "c2": {
     "prefix": "c2",
-    "body": "c_{2} ",
+    "body": "c_{2}",
     "description": "Shortcut for c (subscript) 2"
   },
   "c3": {
     "prefix": "c3",
-    "body": "c_{3} ",
+    "body": "c_{3}",
     "description": "shortcut for c (subscript) 3"
   },
   "c1c2c3": {
     "prefix": "c1c2c3",
-    "body": "c_{1}, c_{2}, c_{3} ",
+    "body": "c_{1}, c_{2}, c_{3}",
     "description": "shortcut for c (subscript) 1, c (subscript) 2, c (subscript) 3"
   },
   "a1b1c1": {
     "prefix": "a1b1c1",
-    "body": "a_{1}, b_{1}, c_{1} ",
+    "body": "a_{1}, b_{1}, c_{1}",
     "description": "shortcut for a (subscript) 1, b (subscript) 1, c (subscript) 1"
   },
   "a2b2c2": {
     "prefix": "a2b2c2",
-    "body": "a_{2}, b_{2}, c_{2} ",
+    "body": "a_{2}, b_{2}, c_{2}",
     "description": "shortcut for a (subscript) 2, b (subscript) 2, c (subscript) 2"
   },
   "a3b3c3": {
     "prefix": "a3b3c3",
-    "body": "a_{3}, b_{3}, c_{3} ",
+    "body": "a_{3}, b_{3}, c_{3}",
     "description": "shortcut for a (subscript) 3, b (subscript) 3, c (subscript) 3"
   },
   "x1": {
     "prefix": "x1",
-    "body": "x_{1} ",
+    "body": "x_{1}",
     "description": "Shortcut for x (subscript) 1"
   },
   "x2": {
     "prefix": "x2",
-    "body": "x_{2} ",
+    "body": "x_{2}",
     "description": "Shortcut for x (subscript) 2"
   },
   "x3": {
     "prefix": "x3",
-    "body": "x_{3} ",
+    "body": "x_{3}",
     "description": "Shortcut for x (subscript) 3"
   },
   "x1x2x3": {
     "prefix": "x1x2x3",
-    "body": "x_{1}, x_{2}, x_{3} ",
+    "body": "x_{1}, x_{2}, x_{3}",
     "description": "shortcut for x (subscript) 1, x (subscript) 2, x (subscript) 3"
   },
   "y1": {
     "prefix": "y1",
-    "body": "y_{1} ",
+    "body": "y_{1}",
     "description": "Shortcut for y (subscript) 1"
   },
   "y2": {
     "prefix": "y2",
-    "body": "y_{2} ",
+    "body": "y_{2}",
     "description": "Shortcut for y (subscript) 2"
   },
   "y3": {
     "prefix": "y3",
-    "body": "y_{3} ",
+    "body": "y_{3}",
     "description": "Shortcut for y (subscript) 3"
   },
   "y1y2y3": {
     "prefix": "y1y2y3",
-    "body": "y_{1}, y_{2}, y_{3} ",
+    "body": "y_{1}, y_{2}, y_{3}",
     "description": "shortcut for y (subscript) 1, y (subscript) 2, y (subscript) 3"
   },
   "z1": {
     "prefix": "z1",
-    "body": "z_{1} ",
+    "body": "z_{1}",
     "description": "Shortcut for z (subscript) 1"
   },
   "z2": {
     "prefix": "z2",
-    "body": "z_{2} ",
+    "body": "z_{2}",
     "description": "Shortcut for z (subscript) 2"
   },
   "z3": {
     "prefix": "z3",
-    "body": "z_{3} ",
+    "body": "z_{3}",
     "description": "Shortcut for z (subscript) 3"
   },
   "z1z2z3": {
     "prefix": "z1z2z3",
-    "body": "z_{1}, z_{2}, z_{3} ",
+    "body": "z_{1}, z_{2}, z_{3}",
     "description": "shortcut for z (subscript) 1, z (subscript) 2, z (subscript) 3"
   },
   "x1y1z1": {
     "prefix": "x1b1c1",
-    "body": "x_{1}, y_{1}, z_{1} ",
+    "body": "x_{1}, y_{1}, z_{1}",
     "description": "shortcut for x (subscript) 1, b (subscript) 1, c (subscript) 1"
   },
   "x2y2z2": {
     "prefix": "x2b2c2",
-    "body": "x_{2}, y_{2}, z_{2} ",
+    "body": "x_{2}, y_{2}, z_{2}",
     "description": "shortcut for x (subscript) 2, b (subscript) 2, c (subscript) 2"
   },
   "x3y3z3": {
     "prefix": "x3b3c3",
-    "body": "x_{3}, y_{3}, z_{3} ",
+    "body": "x_{3}, y_{3}, z_{3}",
     "description": "shortcut for x (subscript) 3, b (subscript) 3, c (subscript) 3"
   }
 }

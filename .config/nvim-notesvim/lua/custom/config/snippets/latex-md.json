@@ -23,7 +23,7 @@
       "\\multiply",
       "\\into"
     ],
-    "body": "\\times ",
+    "body": "\\times",
     "description": "Insert Multiplicaton symbol"
   },
   "Division Symbol": {
@@ -32,7 +32,7 @@
       "\\division",
       "\\by"
     ],
-    "body": "\\div ",
+    "body": "\\div",
     "description": "Insert Division symbol"
   },
   "Power": {
@@ -42,17 +42,17 @@
       "\\raised",
       "\\superscript"
     ],
-    "body": "^{$1}$0 ",
+    "body": "^{$1}$0",
     "description": "Insert Superscript"
   },
   "Square": {
     "prefix": "\\square",
-    "body": "^{2} ",
+    "body": "^{2}",
     "description": "Raise the expression to the power of 2"
   },
   "Cube": {
     "prefix": "\\cube",
-    "body": "^{3} ",
+    "body": "^{3}",
     "description": "Raise the expression to the power of 3"
   },
   "Base": {
@@ -61,7 +61,7 @@
       "\\below",
       "\\subscript"
     ],
-    "body": "_{$1}$0 ",
+    "body": "_{$1}$0",
     "description": "Insert Subscript"
   },
   "pi": {
@@ -69,20 +69,20 @@
       "pi",
       "\\pi"
     ],
-    "body": "\\pi "
+    "body": "\\pi"
   },
   "Square root": {
     "prefix": [
       "\\sqrt"
     ],
-    "body": "\\sqrt{$1} $0",
+    "body": "\\sqrt{$1}$0",
     "description": "Insert square root"
   },
   "nth root": {
     "prefix": [
       "\\root"
     ],
-    "body": "\\sqrt[$1]{$2} $0"
+    "body": "\\sqrt[$1]{$2}$0"
   },
   "Infinity": {
     "prefix": [
@@ -90,7 +90,7 @@
       "\\inf",
       "\\infty"
     ],
-    "body": "\\infty ",
+    "body": "\\infty",
     "description": "Infinity Symbol"
   },
   "Belongs to": {
@@ -99,7 +99,7 @@
       "\\belongsto",
       "\\in"
     ],
-    "body": "\\in "
+    "body": "\\in"
   },
   "Does not belong to": {
     "prefix": [
@@ -111,103 +111,103 @@
       "\\notbelongsto",
       "\\notin"
     ],
-    "body": "\\notin "
+    "body": "\\notin"
   },
   "Where": {
     "prefix": [
       "\\where",
       "\\forall"
     ],
-    "body": "~\\forall~ "
+    "body": "~\\forall~"
   },
   "Implies": {
     "prefix": [
       "\\implies"
     ],
-    "body": "\\implies "
+    "body": "\\implies"
   },
   "Right Arrow": {
     "prefix": [
       "\\right",
       "\\rightarrow"
     ],
-    "body": "\\rightarrow "
+    "body": "\\rightarrow"
   },
   "Left Arrow": {
     "prefix": [
       "\\left",
       "\\leftarrow"
     ],
-    "body": "\\leftarrow "
+    "body": "\\leftarrow"
   },
   "Up Arrow": {
     "prefix": [
       "\\up",
       "\\uparrow"
     ],
-    "body": "\\uparrow "
+    "body": "\\uparrow"
   },
   "Down Arrow": {
     "prefix": [
       "\\down",
       "\\downarrow"
     ],
-    "body": "\\downarrow "
+    "body": "\\downarrow"
   },
   "Union": {
     "prefix": [
       "\\union"
     ],
-    "body": "\\cup ",
+    "body": "\\cup",
     "description": "Insert Union Symbol"
   },
   "Union (limits)": {
     "prefix": [
       "\\unionl"
     ],
-    "body": "\\cup_{$1}^{$2} $0",
+    "body": "\\cup_{$1}^{$2}$0",
     "description": "Insert Union Symbol (with limits)"
   },
   "Big Union": {
     "prefix": [
       "\\bigunion"
     ],
-    "body": "\\bigcup ",
+    "body": "\\bigcup",
     "description": "Insert Big Union Symbol"
   },
   "Big Union (limits)": {
     "prefix": [
       "\\bigunionl"
     ],
-    "body": "\\bigcup_{$1}^{$2} $0",
+    "body": "\\bigcup_{$1}^{$2}$0",
     "description": "Insert Big Union Symbol (with limits)"
   },
   "Intersection": {
     "prefix": [
       "\\intersection"
     ],
-    "body": "\\cap ",
+    "body": "\\cap",
     "description": "Insert Intersection Symbol"
   },
   "Intersection (limits)": {
     "prefix": [
       "\\intersectionl"
     ],
-    "body": "\\cap_{$1}^{$2} $0",
+    "body": "\\cap_{$1}^{$2}$0",
     "description": "Insert Intersection Symbol (with limits)"
   },
   "Big Intersection": {
     "prefix": [
       "\\bigintersection"
     ],
-    "body": "\\bigcap ",
+    "body": "\\bigcap",
     "description": "Insert Big Intersection Symbol"
   },
   "Big Intersection (limits)": {
     "prefix": [
       "\\bigintersectionl"
     ],
-    "body": "\\bigcap_{$1}^{$2} $0",
+    "body": "\\bigcap_{$1}^{$2}$0",
     "description": "Insert Big Intersection Symbol (with limits)"
   }
 }
