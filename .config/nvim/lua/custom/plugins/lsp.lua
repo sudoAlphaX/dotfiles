@@ -19,6 +19,8 @@ return {
 					-- "pylint",
 					-- Shell
 					"bashls",
+					"shellcheck",
+					"shellharden",
 
 					-- Json
 					"json-lsp",
@@ -51,6 +53,10 @@ return {
 			lsp.bashls.setup({ capabilities = capabilities })
 
 			lsp.jsonls.setup({ capabilities = capabilities })
+
+			lsp.clangd.setup({ capabilities = capabilities })
+
+			lsp.arduino_language_server.setup({ capabilities = capabilities })
 		end,
 	},
 }
