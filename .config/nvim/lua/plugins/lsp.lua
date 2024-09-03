@@ -66,8 +66,12 @@ return {
 			-- Define your formatters
 			formatters_by_ft = {
 				lua = { "stylua" },
-				python = { "isort", "black" },
+				python = { "ruff_format", "ruff_fix", "ruff_organize_inputs" },
 				javascript = { "prettierd", "prettier", stop_after_first = true },
+				c = { "clangd-format" },
+				cpp = { "clangd-format" },
+				sh = { "shellcheck", "shellharden" },
+				markdown = { "markdownlint", "cbfmt" },
 			},
 			-- Set default options
 			default_format_opts = {
