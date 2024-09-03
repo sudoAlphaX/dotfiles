@@ -71,7 +71,7 @@ return {
 				c = { "clangd-format" },
 				cpp = { "clangd-format" },
 				sh = { "shellcheck", "shellharden" },
-				markdown = { "markdownlint", "cbfmt" },
+				markdown = { "markdownlint" },
 			},
 			-- Set default options
 			default_format_opts = {
