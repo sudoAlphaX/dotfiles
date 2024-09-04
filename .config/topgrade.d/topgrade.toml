@@ -45,7 +45,7 @@ display_time = true
 # no_retry = true
 
 # Run inside tmux (default: false)
-run_in_tmux = true
+run_in_tmux = false
 
 # Cleanup temporary or old files (default: false)
 cleanup = false
