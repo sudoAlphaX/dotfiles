@@ -68,10 +68,11 @@ return {
 				lua = { "stylua" },
 				python = { "ruff_format", "ruff_fix", "ruff_organize_inputs" },
 				javascript = { "prettierd", "prettier", stop_after_first = true },
-				c = { "clangd-format" },
-				cpp = { "clangd-format" },
+				c = { "clang-format" },
+				cpp = { "clang-format" },
 				sh = { "shellcheck", "shellharden" },
 				markdown = { "markdownlint" },
+				arduino = { "clang-format" },
 			},
 			-- Set default options
 			default_format_opts = {
