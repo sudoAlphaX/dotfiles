@@ -21,7 +21,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export ZSH_CUSTOM="$HOME/.dotfiles/assets/omz-custom"
+export ZSH_CUSTOM="$HOME/.config/omz-custom"
 
 # pyenv setup
 # export PYENV_ROOT="$HOME/.pyenv"
