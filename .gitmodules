@@ -10,15 +10,6 @@
 [submodule "omz"]
 	path = .oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh
-[submodule "assets/omz-custom/plugins/zsh-autocomplete"]
-	path = assets/omz-custom/plugins/zsh-autocomplete
-	url = https://github.com/marlonrichert/zsh-autocomplete
-[submodule "assets/omz-custom/plugins/zsh-syntax-highlighting"]
-	path = assets/omz-custom/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "assets/omz-custom/themes/powerlevel10k"]
-	path = assets/omz-custom/themes/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k
 [submodule ".config/btop/btop"]
 	path = .config/btop/btop
 	url = https://github.com/catppuccin/btop
@@ -37,3 +28,12 @@
 [submodule ".config/bat/assets/catppuccin"]
 	path = .config/bat/assets/catppuccin
 	url = https://github.com/catppuccin/bat
+[submodule ".config/omz-custom/plugins/zsh-syntax-highlighting"]
+	path = .config/omz-custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule ".config/omz-custom/plugins/zsh-autocomplete"]
+	path = .config/omz-custom/plugins/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete
+[submodule ".config/omz-custom/themes/powerlevel10k"]
+	path = .config/omz-custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k
