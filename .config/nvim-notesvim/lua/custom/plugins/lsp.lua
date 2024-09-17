@@ -37,4 +37,12 @@ return {
 			lsp.marksman.setup({ capabilities = capabilities })
 		end,
 	},
+	{
+		"stevearc/conform.nvim",
+		opts = {
+			formatters_by_ft = {
+				tex = { "latexindent" },
+			},
+		},
+	},
 }

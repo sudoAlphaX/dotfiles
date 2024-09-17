@@ -15,6 +15,7 @@ return {
 
 		lint.linters_by_ft = {
 			markdown = { "markdownlint", "cspell" },
+			tex = { "chktex" },
 		}
 	end,
 }
