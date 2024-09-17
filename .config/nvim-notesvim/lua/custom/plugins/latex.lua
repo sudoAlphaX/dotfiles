@@ -29,4 +29,13 @@ return {
 			lsp.texlab.setup({ capabilities = capabilities })
 		end,
 	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		opts = {
+			highlight = {
+				enable = false,
+				disable = { "latex" },
+			},
+		},
+	},
 }
