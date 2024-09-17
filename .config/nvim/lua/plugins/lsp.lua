@@ -53,7 +53,7 @@ return {
 				-- Customize or remove this keymap to your liking
 				"<leader>lF",
 				function()
-					require("conform").format({ async = true })
+					require("conform").format({ async = true, lsp_fallback = true })
 				end,
 				mode = "",
 				desc = "Format buffer",
@@ -77,6 +77,8 @@ return {
 			-- Set default options
 			default_format_opts = {
 				lsp_format = "fallback",
+
+				async = true,
 			},
 			-- Set up format-on-save
 			format_on_save = { timeout_ms = 500 },
@@ -94,7 +96,7 @@ return {
 					if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
 						return
 					end
-					return { timeout_ms = 500, lsp_format = "fallback" }
+					return { timeout_ms = 1000, lsp_format = "fallback" }
 				end,
 			})
 
