@@ -23,4 +23,7 @@ style = "Regular"
 opacity = 0.6
 blur = true
 
-
+[keyboard]
+bindings = [
+	{key = "Backspace", mods = "Control", chars = "\u0017"},
+]
