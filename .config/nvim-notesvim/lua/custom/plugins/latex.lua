@@ -6,8 +6,8 @@ return {
 		init = function()
 			vim.g.tex_flavor = "latex"
 			vim.g.vimtex_view_method = "zathura"
-			vim.g.vimtex_quickfix_mode = 0
-			-- vim.g.vimtex_compiler_method = "tectonic"
+			vim.g.vimtex_quickfix_mode = 2
+			vim.g.vimtex_compiler_method = "latexmk"
 			vim.g.vimtex_syntax_conceal = {
 				accents = 1,
 				ligatures = 1,
