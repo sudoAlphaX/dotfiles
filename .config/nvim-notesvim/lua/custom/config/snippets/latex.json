@@ -1,0 +1,66 @@
+{
+  "Boilerplate": {
+    "prefix": [
+      "\\boilerplate"
+    ],
+    "body": [
+      "\\documentclass{article}",
+      "",
+      "% Initialize packages",
+      "\\usepackage{geometry}",
+      "\\usepackage{tikz}",
+      "",
+      "% Page Setting",
+      "\\geometry{a4paper}",
+      "",
+      "% Title and Author",
+      "\\title{$1}",
+      "\\author{$2}",
+      "",
+      "",
+      "\\begin{document}",
+      "\\maketitle",
+      "",
+      "$0",
+      "",
+      "\\end{document}"
+    ],
+    "description": "Initialize latex document"
+  },
+  "Section": {
+    "prefix": [
+      "#",
+      "\\section"
+    ],
+    "body": [
+      "\\section{$1}",
+      "",
+      "$0"
+    ],
+    "description": "Insert a section"
+  },
+  "Subsection": {
+    "prefix": [
+      "##",
+      "\\subsection"
+    ],
+    "body": [
+      "\\subsection{$1}",
+      "",
+      "$0"
+    ],
+    "description": "Insert a subsection"
+  },
+  "Subsubsection": {
+    "prefix": [
+      "###",
+      "\\subsubsection"
+    ],
+    "body": [
+      "\\subsubsection{$1}",
+      "",
+      "$0"
+    ],
+    "description": "Insert a subsubsection"
+  }
+}

@@ -10,15 +10,26 @@
       },
       {
         "language": [
-          "markdown"
+          "markdown",
+          "tex",
+          "plaintex"
         ],
         "path": "./latex-md.json"
       },
       {
         "language": [
-          "markdown"
+          "markdown",
+          "tex",
+          "plaintex"
         ],
         "path": "./subscript_letters.json"
+      },
+      {
+        "language": [
+          "tex",
+          "plaintex"
+        ],
+        "path": "./latex.json"
       }
     ]
   }
