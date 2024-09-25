@@ -231,7 +231,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{mathdots}
 \RequirePackage{mathrsfs}
-\RequirePackage{microtype}
+\RequirePackage[nopatch=footnote]{microtype}
 \RequirePackage{stmaryrd}
 \RequirePackage{titlesec}
 \newcommand{\contentsfinish}{}
