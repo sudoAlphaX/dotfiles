@@ -1,0 +1,386 @@
+{
+  "alpha": {
+    "prefix": [
+      "alpha",
+      "\\alpha"
+    ],
+    "body": "\\alpha",
+    "description": "α (Lower case alpha)"
+  },
+  "Alpha": {
+    "prefix": [
+      "Alpha",
+      "\\Alpha"
+    ],
+    "body": "\\Alpha",
+    "description": "Upper case Alpha"
+  },
+  "beta": {
+    "prefix": [
+      "beta",
+      "\\beta"
+    ],
+    "body": "\\beta",
+    "description": "β (Lower case beta)"
+  },
+  "Beta": {
+    "prefix": [
+      "Beta",
+      "\\Beta"
+    ],
+    "body": "\\Beta",
+    "description": "Upper case Beta"
+  },
+  "gamma": {
+    "prefix": [
+      "gamma",
+      "\\gamma"
+    ],
+    "body": "\\gamma",
+    "description": "γ (Lower case gamma)"
+  },
+  "Gamma": {
+    "prefix": [
+      "Gamma",
+      "\\Gamma"
+    ],
+    "body": "\\Gamma",
+    "description": "Upper case Gamma"
+  },
+  "delta": {
+    "prefix": [
+      "delta",
+      "\\delta"
+    ],
+    "body": "\\delta",
+    "description": "δ (Lower case delta)"
+  },
+  "Delta": {
+    "prefix": [
+      "Delta",
+      "\\Delta"
+    ],
+    "body": "\\Delta",
+    "description": "Upper case Delta"
+  },
+  "epsilon": {
+    "prefix": [
+      "epsilon",
+      "\\epsilon"
+    ],
+    "body": "\\epsilon",
+    "description": "ε (Lower case epsilon)"
+  },
+  "Epsilon": {
+    "prefix": [
+      "Epsilon",
+      "\\Epsilon"
+    ],
+    "body": "\\Epsilon",
+    "description": "Upper case Epsilon"
+  },
+  "zeta": {
+    "prefix": [
+      "zeta",
+      "\\zeta"
+    ],
+    "body": "\\zeta",
+    "description": "ζ (Lower case zeta)"
+  },
+  "Zeta": {
+    "prefix": [
+      "Zeta",
+      "\\Zeta"
+    ],
+    "body": "\\Zeta",
+    "description": "Upper case Zeta"
+  },
+  "eta": {
+    "prefix": [
+      "eta",
+      "\\eta"
+    ],
+    "body": "\\eta",
+    "description": "η (Lower case eta)"
+  },
+  "Eta": {
+    "prefix": [
+      "Eta",
+      "\\Eta"
+    ],
+    "body": "\\Eta",
+    "description": "Upper case Eta"
+  },
+  "theta": {
+    "prefix": [
+      "theta",
+      "\\theta"
+    ],
+    "body": "\\theta",
+    "description": "θ (Lower case theta)"
+  },
+  "Theta": {
+    "prefix": [
+      "Theta",
+      "\\Theta"
+    ],
+    "body": "\\Theta",
+    "description": "Upper case Theta"
+  },
+  "iota": {
+    "prefix": [
+      "iota",
+      "\\iota"
+    ],
+    "body": "\\iota",
+    "description": "ι (Lower case iota)"
+  },
+  "Iota": {
+    "prefix": [
+      "Iota",
+      "\\Iota"
+    ],
+    "body": "\\Iota",
+    "description": "Upper case Iota"
+  },
+  "kappa": {
+    "prefix": [
+      "kappa",
+      "\\kappa"
+    ],
+    "body": "\\kappa",
+    "description": "κ (Lower case kappa)"
+  },
+  "Kappa": {
+    "prefix": [
+      "Kappa",
+      "\\Kappa"
+    ],
+    "body": "\\Kappa",
+    "description": "Upper case Kappa"
+  },
+  "lambda": {
+    "prefix": [
+      "lambda",
+      "\\lambda"
+    ],
+    "body": "\\lambda",
+    "description": "λ (Lower case lambda)"
+  },
+  "Lambda": {
+    "prefix": [
+      "Lambda",
+      "\\Lambda"
+    ],
+    "body": "\\Lambda",
+    "description": "Upper case Lambda"
+  },
+  "mu": {
+    "prefix": [
+      "mu",
+      "\\mu"
+    ],
+    "body": "\\mu",
+    "description": "μ (Lower case mu)"
+  },
+  "Mu": {
+    "prefix": [
+      "Mu",
+      "\\Mu"
+    ],
+    "body": "\\Mu",
+    "description": "Upper case Mu"
+  },
+  "nu": {
+    "prefix": [
+      "nu",
+      "\\nu"
+    ],
+    "body": "\\nu",
+    "description": "ν (Lower case nu)"
+  },
+  "Nu": {
+    "prefix": [
+      "Nu",
+      "\\Nu"
+    ],
+    "body": "\\Nu",
+    "description": "Upper case Nu"
+  },
+  "xi": {
+    "prefix": [
+      "xi",
+      "\\xi"
+    ],
+    "body": "\\xi",
+    "description": "ξ (Lower case xi)"
+  },
+  "Xi": {
+    "prefix": [
+      "Xi",
+      "\\Xi"
+    ],
+    "body": "\\Xi",
+    "description": "Upper case Xi"
+  },
+  "omicron": {
+    "prefix": [
+      "omicron",
+      "\\omicron"
+    ],
+    "body": "\\omicron",
+    "description": "ο (Lower case omicron)"
+  },
+  "Omicron": {
+    "prefix": [
+      "Omicron",
+      "\\Omicron"
+    ],
+    "body": "\\Omicron",
+    "description": "Upper case Omicron"
+  },
+  "pi": {
+    "prefix": [
+      "pi",
+      "\\pi"
+    ],
+    "body": "\\pi",
+    "description": "π (Lower case pi)"
+  },
+  "Pi": {
+    "prefix": [
+      "Pi",
+      "\\Pi"
+    ],
+    "body": "\\Pi",
+    "description": "Upper case Pi"
+  },
+  "rho": {
+    "prefix": [
+      "rho",
+      "\\rho"
+    ],
+    "body": "\\rho",
+    "description": "ρ (Lower case rho)"
+  },
+  "Rho": {
+    "prefix": [
+      "Rho",
+      "\\Rho"
+    ],
+    "body": "\\Rho",
+    "description": "Upper case Rho"
+  },
+  "sigma": {
+    "prefix": [
+      "sigma",
+      "\\sigma"
+    ],
+    "body": "\\sigma",
+    "description": "σ (Lower case sigma)"
+  },
+  "Sigma": {
+    "prefix": [
+      "Sigma",
+      "\\Sigma"
+    ],
+    "body": "\\Sigma",
+    "description": "Upper case Sigma"
+  },
+  "tau": {
+    "prefix": [
+      "tau",
+      "\\tau"
+    ],
+    "body": "\\tau",
+    "description": "τ (Lower case tau)"
+  },
+  "Tau": {
+    "prefix": [
+      "Tau",
+      "\\Tau"
+    ],
+    "body": "\\Tau",
+    "description": "Upper case Tau"
+  },
+  "upsilon": {
+    "prefix": [
+      "upsilon",
+      "\\upsilon"
+    ],
+    "body": "\\upsilon",
+    "description": "υ (Lower case upsilon)"
+  },
+  "Upsilon": {
+    "prefix": [
+      "Upsilon",
+      "\\Upsilon"
+    ],
+    "body": "\\Upsilon",
+    "description": "Upper case Upsilon"
+  },
+  "phi": {
+    "prefix": [
+      "phi",
+      "\\phi"
+    ],
+    "body": "\\phi",
+    "description": "φ (Lower case phi)"
+  },
+  "Phi": {
+    "prefix": [
+      "Phi",
+      "\\Phi"
+    ],
+    "body": "\\Phi",
+    "description": "Upper case Phi"
+  },
+  "chi": {
+    "prefix": [
+      "chi",
+      "\\chi"
+    ],
+    "body": "\\chi",
+    "description": "χ (Lower case chi)"
+  },
+  "Chi": {
+    "prefix": [
+      "Chi",
+      "\\Chi"
+    ],
+    "body": "\\Chi",
+    "description": "Upper case Chi"
+  },
+  "psi": {
+    "prefix": [
+      "psi",
+      "\\psi"
+    ],
+    "body": "\\psi",
+    "description": "ψ (Lower case psi)"
+  },
+  "Psi": {
+    "prefix": [
+      "Psi",
+      "\\Psi"
+    ],
+    "body": "\\Psi",
+    "description": "Upper case Psi"
+  },
+  "omega": {
+    "prefix": [
+      "omega",
+      "\\omega"
+    ],
+    "body": "\\omega",
+    "description": "ω (Lower case omega)"
+  },
+  "Omega": {
+    "prefix": [
+      "Omega",
+      "\\Omega"
+    ],
+    "body": "\\Omega",
+    "description": "Upper case Omega"
+  }
+}

@@ -26,6 +26,14 @@
       },
       {
         "language": [
+          "markdown",
+          "tex",
+          "plaintex"
+        ],
+        "path": "./latex-greek.json"
+      },
+      {
+        "language": [
           "tex",
           "plaintex"
         ],
