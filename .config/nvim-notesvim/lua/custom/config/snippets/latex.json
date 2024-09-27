@@ -62,5 +62,255 @@
       "$0"
     ],
     "description": "Insert a subsubsection"
+  },
+  "1x1 Matrix": {
+    "prefix": "\\1x1matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "1x2 Matrix": {
+    "prefix": "\\1x2matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "1x3 Matrix": {
+    "prefix": "\\1x3matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "1x4 Matrix": {
+    "prefix": "\\1x4matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 & $5\\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "1x5 Matrix": {
+    "prefix": "\\1x5matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 & $5 & $6\\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "2x1 Matrix": {
+    "prefix": "\\2x1matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 \\\\\\",
+      "  $3 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "2x2 Matrix": {
+    "prefix": "\\2x2matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 \\\\\\",
+      "  $4 & $5 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "2x3 Matrix": {
+    "prefix": "\\2x3matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 \\\\\\",
+      "  $5 & $6 & $7 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "2x4 Matrix": {
+    "prefix": "\\2x4matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 & $5 \\\\\\",
+      "  $6 & $7 & $8 & $9 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "2x5 Matrix": {
+    "prefix": "\\2x5matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 & $5 & $6 \\\\\\",
+      "  $7 & $8 & $9 & $10 & $11 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "3x1 Matrix": {
+    "prefix": "\\3x1matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 \\\\\\",
+      "  $3 \\\\\\",
+      "  $4 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "3x2 Matrix": {
+    "prefix": "\\3x2matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 \\\\\\",
+      "  $4 & $5 \\\\\\",
+      "  $6 & $7 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "3x3 Matrix": {
+    "prefix": "\\3x3matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 \\\\\\",
+      "  $5 & $6 & $7 \\\\\\",
+      "  $8 & $9 & $10 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "3x4 Matrix": {
+    "prefix": "\\3x4matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 & $5 \\\\\\",
+      "  $6 & $7 & $8 & $9 \\\\\\",
+      "  $10 & $11 & $12 & $13 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "3x5 Matrix": {
+    "prefix": "\\3x5matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 & $5 & $6 \\\\\\",
+      "  $7 & $8 & $9 & $10 & $11 \\\\\\",
+      "  $12 & $13 & $14 & $15 & $16 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "4x1 Matrix": {
+    "prefix": "\\4x1matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 \\\\\\",
+      "  $3 \\\\\\",
+      "  $4 \\\\\\",
+      "  $5 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "4x2 Matrix": {
+    "prefix": "\\4x2matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 \\\\\\",
+      "  $4 & $5 \\\\\\",
+      "  $6 & $7 \\\\\\",
+      "  $8 & $9 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "4x3 Matrix": {
+    "prefix": "\\4x3matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 \\\\\\",
+      "  $5 & $6 & $7 \\\\\\",
+      "  $8 & $9 & $10 \\\\\\",
+      "  $11 & $12 & $13 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "4x4 Matrix": {
+    "prefix": "\\4x4matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 & $5 \\\\\\",
+      "  $6 & $7 & $8 & $9 \\\\\\",
+      "  $10 & $11 & $12 & $13 \\\\\\",
+      "  $14 & $15 & $16 & $17 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "4x5 Matrix": {
+    "prefix": "\\4x5matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 & $5 & $6 \\\\\\",
+      "  $7 & $8 & $9 & $10 & $11 \\\\\\",
+      "  $12 & $13 & $14 & $15 & $16 \\\\\\",
+      "  $17 & $18 & $19 & $20 & $21 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "5x1 Matrix": {
+    "prefix": "\\5x1matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 \\\\\\",
+      "  $3 \\\\\\",
+      "  $4 \\\\\\",
+      "  $5 \\\\\\",
+      "  $6 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "5x2 Matrix": {
+    "prefix": "\\5x2matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 \\\\\\",
+      "  $4 & $5 \\\\\\",
+      "  $6 & $7 \\\\\\",
+      "  $8 & $9 \\\\\\",
+      "  $10 & $11 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "5x3 Matrix": {
+    "prefix": "\\5x3matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 \\\\\\",
+      "  $5 & $6 & $7 \\\\\\",
+      "  $8 & $9 & $10 \\\\\\",
+      "  $11 & $12 & $13 \\\\\\",
+      "  $14 & $15 & $16 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "5x4 Matrix": {
+    "prefix": "\\5x4matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 & $5 \\\\\\",
+      "  $6 & $7 & $8 & $9 \\\\\\",
+      "  $10 & $11 & $12 & $13 \\\\\\",
+      "  $14 & $15 & $16 & $17 \\\\\\",
+      "  $18 & $19 & $20 & $21 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
+  },
+  "5x5 Matrix": {
+    "prefix": "\\5x5matrix",
+    "body": [
+      "\\begin{${1:p/b/v}matrix}",
+      "  $2 & $3 & $4 & $5 & $6 \\\\\\",
+      "  $7 & $8 & $9 & $10 & $11 \\\\\\",
+      "  $12 & $13 & $14 & $15 & $16 \\\\\\",
+      "  $17 & $18 & $19 & $20 & $21 \\\\\\",
+      "  $22 & $23 & $24 & $25 & $26 \\\\\\",
+      "\\end{${1}matrix}"
+    ]
   }
 }
