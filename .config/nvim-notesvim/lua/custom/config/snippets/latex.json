@@ -4,28 +4,64 @@
       "\\boilerplate"
     ],
     "body": [
-      "\\documentclass{article}",
+      "\\documentclass[english,${1:course/seminar/talk}]{lecture}",
       "",
-      "% Initialize packages",
+      "% Packages",
       "\\usepackage{geometry}",
-      "\\usepackage{tikz}",
+      "\\usepackage{amssymb}",
+      "\\usepackage{amsmath}",
+      "\\usepackage{amsthm}",
       "",
       "% Page Setting",
       "\\geometry{a4paper}",
       "",
-      "% Title and Author",
-      "\\title{$1}",
-      "\\author{$2}",
+      "% Custom environments",
+      "\\newenvironment{qanda}{\\setlength{\\parindent}{0pt}}{\\bigskip}",
+      "\\newcommand{\\Q}{\\bigskip\\bfseries Q:\\ }",
+      "\\newcommand{\\A}{\\par\\textbf{A:} \\normalfont}",
       "",
+      "% Headers",
+      "\\title{${2:Title}}",
+      "\\subtitle{Unit ${3:N}}",
+      "\\shorttitle{$2}",
+      "% \\subject{Subject of the Talk}",
+      "\\author{${4:Author}}",
+      "% \\email{Author's email}",
+      "\\speaker{${6:Speaker}}",
+      "% \\spemail{Speaker's email}",
+      "\\ccode{${8:Subject Code}}",
+      "\\date{${9:DD}}{${10:MM}}{${11:YYYY}}",
+      "% \\dateend{}{}{}",
+      "% \\flag{An extra line if you need it}",
+      "% \\attn{Something to get reader's attention}",
+      "\\morelink{$12}",
       "",
       "\\begin{document}",
-      "\\maketitle",
+      "",
+      "\\newpage",
       "",
       "$0",
       "",
+      "",
       "\\end{document}"
+    ]
+  },
+  "Lecture": {
+    "prefix": [
+      "\\lecture",
+      "\\class"
     ],
-    "description": "Initialize latex document"
+    "body": [
+      "\\lecture[$1]{${2:DD}}{${3:MM}}{${4:YYYY}}"
+    ],
+    "description": "Insert a lecture header"
+  },
+  "Margin Text": {
+    "prefix": [
+      "\\margintext"
+    ],
+    "body": "\\margintext{$1}$0",
+    "description": "Make notes in the margin"
   },
   "Section": {
     "prefix": [
