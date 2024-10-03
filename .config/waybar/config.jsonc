@@ -7,7 +7,7 @@
   "exclusive": true,
   "modules-left": [
     "hyprland/workspaces",
-    "custom/user",
+    "custom/user"
   ],
   "modules-center": [
     "hyprland/window"
@@ -162,8 +162,8 @@
     "tooltip-format-off": "Bluetooth off",
     "tooltip-format-on": "Bluetooth device not connected",
     "tooltip-format-connected": "Connected to device: {device_alias} ({device_battery_percentage})",
-    "on-click": "IFS=$'\n'; for device in $(bluetoothctl devices Trusted); do echo $device | awk '{print $2}' | xargs bluetoothctl connect & done",
-    "on-click-middle": "alacritty -T AlacrittyFloat -e bluetoothctl",
+    //"on-click": "IFS=$'\n'; for device in $(bluetoothctl devices Trusted); do echo $device | awk '{print $2}' | xargs bluetoothctl connect & done",
+    "on-click": "alacritty -T AlacrittyFloat -e bluetoothctl",
     "on-click-right": "rfkill toggle bluetooth"
   },
   "pulseaudio": {
