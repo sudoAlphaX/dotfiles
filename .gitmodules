@@ -34,3 +34,6 @@
 [submodule ".config/omz-custom/themes/powerlevel10k"]
 	path = .config/omz-custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k
+[submodule "Pictures/Wallpapers"]
+	path = Pictures/Wallpapers
+	url = https://github.com/sudoAlphaX/Wallpapers
