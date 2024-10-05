@@ -15,7 +15,7 @@ pre_sudo = true
 sudo_command = "sudo"
 
 # Disable specific steps - same options as the command line flag
-disable = ["poetry","config_update", "auto_cpufreq", "shell", "rustup"]
+disable = ["config_update", "auto_cpufreq", "shell", "rustup"]
 
 # Ignore failures for these steps
 # ignore_failures = ["powershell"]
