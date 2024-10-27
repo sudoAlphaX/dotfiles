@@ -23,6 +23,10 @@ return {
 				sections = 1,
 				styles = 1,
 			}
+			vim.g.vimtex_quickfix_ignore_filters = {
+				"Underfull",
+				"Overfull",
+			}
 
 			local lsp = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
