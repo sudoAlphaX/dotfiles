@@ -17,11 +17,16 @@ unmap("n", "<leader>bd")
 map("n", "<leader>bn", "<CMD>enew<CR>", { desc = "New Buffer" })
 map("n", "<leader>bx", "<CMD>bd<CR>", { desc = "Close Buffer" })
 map("n", "<leader>bX", "<CMD>bd!<CR>", { desc = "Force Close Buffer" })
+map("n", "<leader>bb", "<CMD>lua require('telescope.builtin').buffers()<CR>", { desc = "List Buffers" })
 
 -- Find Files
 map("n", "<leader> ", "<leader>fF", { remap = true, desc = "Find Files (cwd)" })
 map("n", "<leader>o", "<leader>ff", { remap = true, desc = "Find Files (Root Dir)" })
 map("n", "<leader>/", "<leader>sG", { remap = true, desc = "Grep (cwd)" })
+map("n", "<leader>r", "<CMD>lua require('telescope.builtin').oldfiles()<CR>", { desc = "Grep (cwd)" })
+
+-- Git
+map("n", "<leader>gH", "<CMD>lua require('telescope.builtin').git_stash()<CR>", { desc = "Git Stashes" })
 
 -- Indentation shortcuts
 map("x", "<Tab>", ">gv")
@@ -29,3 +34,6 @@ map("x", "<S-Tab>", "<gv")
 
 -- Registers (Clipboard History)
 map("n", "<leader>p", '<leader>s"', { remap = true, desc = "Registers" })
+
+map("n", "<C-/>", "gcc", { remap = true })
+map("v", "<C-/>", "gc", { remap = true })
