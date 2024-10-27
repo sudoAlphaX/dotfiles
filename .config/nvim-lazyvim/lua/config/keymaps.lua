@@ -5,6 +5,9 @@
 local map = vim.keymap.set
 local unmap = vim.keymap.del
 
+-- Easy enter commands
+map("n", ";", ":")
+
 -- Bufferline Tabs
 map("n", "<Tab>", "<CMD>BufferLineCycleNext<CR>")
 map("n", "<S-Tab>", "<CMD>BufferLineCyclePrev<CR>")
