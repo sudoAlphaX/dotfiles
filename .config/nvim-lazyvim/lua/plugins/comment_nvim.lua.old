@@ -1,0 +1,10 @@
+return {
+  "numToStr/Comment.nvim",
+
+  keys = {
+    -- { "<C-/>", false },
+    -- { "<C-/>", "<ESC><CMD>lua require('Comment.api').toggle.linewise.current()<CR>", mode = { "n" }, remap = true },
+    -- { "<C-/>", "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", mode = { "v" } },
+  },
+  lazy = true,
+}
