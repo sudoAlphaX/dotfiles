@@ -6,6 +6,6 @@ return {
     { "<leader>tf", "<CMD>ToggleTerm direction=float<CR>", desc = "Floating Terminal" },
     { "<leader>tb", "<CMD>ToggleTerm direction=tab<CR>", desc = "Terminal in a Tab" },
   },
-  config = true,
+  opts = {},
   lazy = true,
 }
