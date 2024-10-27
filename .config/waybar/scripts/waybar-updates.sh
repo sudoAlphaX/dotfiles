@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #set high limits. example: if number is less than 10, it is considered safe.
-safe=15
-normal=30
+safe=30
+normal=50
 # Values greater than $normal will be considered critical.
 
 updates="$(checkupdates --nocolor)"
