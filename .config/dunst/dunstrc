@@ -506,6 +506,22 @@
 	history_ignore=true
 	timeout=3
 
+[touchscreen-disabled]
+	summary="Touchscreen Disabled"
+	category="device"
+	format="%s"
+	new_icon="/usr/share/icons/breeze-dark/devices/24/input-touchscreen-symbolic.svg"
+	history_ignore=true
+	timeout=3
+
+[touchscreen-enabled]
+	summary="Touchscreen Enabled"
+	category="device"
+	format="%s"
+	new_icon="/usr/share/icons/breeze-dark/devices/24/input-touchscreen-symbolic.svg"
+	history_ignore=true
+	timeout=3
+
 [brightness-change]
 	summary="brightness_event"
 	category="device"
