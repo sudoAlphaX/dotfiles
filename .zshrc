@@ -223,6 +223,10 @@ alias qmount="mount -o uid=$(id -u $(logname)),gid=$(id -g $(logname))"
 # IP
 alias ipa="ip -color a"
 
+# LS_COLORS
+
+export LS_COLORS="$(vivid generate catppuccin-mocha)"
+
 eval "$(register-python-argcomplete pipx)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
