@@ -37,3 +37,6 @@
 [submodule "Pictures/Wallpapers"]
 	path = Pictures/Wallpapers
 	url = https://github.com/sudoAlphaX/Wallpapers
+[submodule ".config/lazygit/assets/lazygit"]
+	path = .config/lazygit/assets/lazygit
+	url = https://github.com/catppuccin/lazygit
