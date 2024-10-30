@@ -40,3 +40,6 @@
 [submodule ".config/lazygit/assets/lazygit"]
 	path = .config/lazygit/assets/lazygit
 	url = https://github.com/catppuccin/lazygit
+[submodule ".config/omz-custom/themes/zsh-syntax-highlighting"]
+	path = .config/omz-custom/themes/zsh-syntax-highlighting
+	url = https://github.com/catppuccin/zsh-syntax-highlighting
