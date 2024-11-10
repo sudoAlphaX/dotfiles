@@ -37,3 +37,15 @@ map("n", "<leader>p", '<leader>s"', { remap = true, desc = "Registers" })
 
 map("n", "<C-/>", "gcc", { remap = true })
 map("v", "<C-/>", "gc", { remap = true })
+
+-- Copy +code from <leader>c to <leader>a
+unmap("n", "<leader>l")
+map({ "n", "v" }, "<leader>la", "<leader>ca", { remap = true, desc = "Code Action" })
+map("n", "<leader>lR", "<leader>cR", { remap = true, desc = "Rename File" })
+map("n", "<leader>lr", "<leader>cr", { remap = true, desc = "Rename Symbol" })
+map("n", "<leader>lA", "<leader>cA", { remap = true, desc = "Source Action" })
+map("n", "<leader>ll", "<leader>cl", { remap = true, desc = "Lsp Info" })
+map("n", "<leader>lf", "<leader>cf", { remap = true, desc = "Format" })
+map("n", "<leader>lF", "<leader>cF", { remap = true, desc = "Format Injected Langs" })
+map("n", "<leader>ls", "<leader>cs", { remap = true, desc = "Symbols" })
+map("n", "<leader>lS", "<leader>cS", { remap = true, desc = "LSP References/definitions/..." })
