@@ -31,6 +31,9 @@ export ZSH_CUSTOM="$HOME/.config/omz-custom"
 # Created by `pipx` on 2024-04-29 19:12:20
 export PATH="$PATH:$HOME/.local/bin"
 
+# LS_COLORS
+export LS_COLORS="$(vivid generate catppuccin-mocha)"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -222,10 +225,6 @@ alias qmount="mount -o uid=$(id -u $(logname)),gid=$(id -g $(logname))"
 
 # IP
 alias ipa="ip -color a"
-
-# LS_COLORS
-
-export LS_COLORS="$(vivid generate catppuccin-mocha)"
 
 eval "$(register-python-argcomplete pipx)"
 
