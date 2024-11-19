@@ -191,12 +191,12 @@ alias mkdir="mkdir -pv"
 alias l.="ls -dlAF .* --color=auto"
 
 ## Colorize the grep command output for ease of use (good for log files)##
-alias grep="grep --color=auto"
-alias egrep="egrep --color=auto"
-alias fgrep="fgrep --color=auto"
+alias grep="grep --color=auto "
+alias egrep="egrep --color=auto "
+alias fgrep="fgrep --color=auto "
 
 # Always try to (c)ontinue getting a partially-downloaded file
-alias wget="wget -c"
+alias wget="wget -c "
 
 # thefuck utility configuration and aliases
 # eval $(thefuck --alias)
@@ -212,16 +212,16 @@ alias truenvim="NVIM_APPNAME=nvim nvim"
 alias pls="sudo "
 
 # Paru
-alias paru="paru --sudoloop"
+alias paru="paru --sudoloop "
 
 # Rsync
-alias copy="rsync -ah --info=PROGRESS2 --mkpath"
+alias copy="rsync -ah --info=PROGRESS2 --mkpath "
 
 # Rclone
 export RCLONE_PASSWORD_COMMAND="secret-tool lookup service rclone"
 
 # Mount
-alias qmount="mount -o uid=$(id -u $(logname)),gid=$(id -g $(logname))"
+alias qmount="mount -o uid=$(id -u $(logname)),gid=$(id -g $(logname)) "
 
 # IP
 alias ipa="ip -color a"
