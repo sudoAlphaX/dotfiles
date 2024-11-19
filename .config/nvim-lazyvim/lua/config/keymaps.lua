@@ -49,3 +49,6 @@ map("n", "<leader>lf", "<leader>cf", { remap = true, desc = "Format" })
 map("n", "<leader>lF", "<leader>cF", { remap = true, desc = "Format Injected Langs" })
 map("n", "<leader>ls", "<leader>cs", { remap = true, desc = "Symbols" })
 map("n", "<leader>lS", "<leader>cS", { remap = true, desc = "LSP References/definitions/..." })
+
+-- Terminal
+map("n", "<leader>t", "<leader>ft", { remap = true, desc = "Terminal" })
