@@ -26,3 +26,8 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
   pattern = "*." .. table.concat(filetypes, ",*."),
   group = "AutoSave",
 })
+
+-- Snippets
+require("luasnip.loaders.from_vscode").lazy_load({
+  paths = "./snippets",
+})

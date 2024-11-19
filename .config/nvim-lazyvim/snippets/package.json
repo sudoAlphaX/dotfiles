@@ -1,0 +1,44 @@
+{
+  "name": "custom-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "all"
+        ],
+        "path": "./all.json"
+      },
+      {
+        "language": [
+          "markdown",
+          "tex",
+          "plaintex"
+        ],
+        "path": "./latex-md.json"
+      },
+      {
+        "language": [
+          "markdown",
+          "tex",
+          "plaintex"
+        ],
+        "path": "./subscript_letters.json"
+      },
+      {
+        "language": [
+          "markdown",
+          "tex",
+          "plaintex"
+        ],
+        "path": "./latex-greek.json"
+      },
+      {
+        "language": [
+          "tex",
+          "plaintex"
+        ],
+        "path": "./latex.json"
+      }
+    ]
+  }
+}
