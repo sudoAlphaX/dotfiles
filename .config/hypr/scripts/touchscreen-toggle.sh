@@ -15,7 +15,7 @@ disable_touchscreen() {
 }
 
 if [ ! -f "$STATUS_FILE" ]; then
-  disable_touchscreen
+  enable_touchscreen
 else
   if [ "$(cat "$STATUS_FILE")" = 'true' ]; then
     disable_touchscreen
