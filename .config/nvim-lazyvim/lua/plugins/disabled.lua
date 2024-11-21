@@ -8,23 +8,23 @@ return {
     opts = {
       servers = {
         lua_ls = {
-          mason = false
+          mason = false,
         },
         clangd = {
-          mason = false
+          mason = false,
         },
         texlab = {
-          mason = false
+          mason = false,
         },
         pyright = {
-          mason = false
+          mason = false,
         },
         bashls = {
-          mason = false
+          mason = false,
         },
         jsonls = {
-          mason = false
-        }
+          mason = false,
+        },
       },
     },
   },
