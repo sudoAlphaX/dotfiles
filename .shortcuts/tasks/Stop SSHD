@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pkill sshd
+
+termux-toast -s "Killed SSH Daemon"
+
+termux-wake-unlock

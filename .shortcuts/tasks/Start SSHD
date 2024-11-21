@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sshd
+
+wifi_info=$(termux-wifi-connectioninfo)
+printf "Started sshd@$(echo $wifi_info | jq -r .ip)
+SSID: $(echo $wifi_info | jq -r .ssid)" | termux-toast
+
+termux-wake-lock

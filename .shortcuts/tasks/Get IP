@@ -1,0 +1,6 @@
+#!/bin/bash
+
+wifi_info=$(termux-wifi-connectioninfo)
+
+printf "SSID: $(echo $wifi_info | jq -r .ssid)
+IP: $(echo $wifi_info | jq -r .ip)" | termux-toast
