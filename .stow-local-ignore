@@ -26,4 +26,5 @@ _darcs
 # ^/.gitconfig
 ^/.shortcuts
 ^/downloads
+^/extsd
 ^/assets
