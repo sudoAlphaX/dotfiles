@@ -2,7 +2,6 @@ return {
   {
     "folke/noice.nvim",
     enabled = false,
-
   },
   {
     "neovim/nvim-lspconfig",
@@ -27,6 +26,13 @@ return {
           mason = false
         }
       },
+    },
+  },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = { enabled = false },
+      notifier = { enabled = false },
     },
   },
 }
