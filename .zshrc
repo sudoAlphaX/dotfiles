@@ -206,7 +206,7 @@ alias truenvim="NVIM_APPNAME=nvim nvim"
 alias pls="sudo "
 
 # Rsync
-alias copy="rsync -rlptUNDh --info=PROGRESS2 --mkpath "
+alias copy="rsync -rlptUDh --info=PROGRESS2 --mkpath "
 
 # IP
 alias ipa="ip -color a"
