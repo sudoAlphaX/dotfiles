@@ -1,16 +1,11 @@
 # zmodload zsh/zprof
 
-# Fix for gpg password prompt in tty
-export GPG_TTY=$TTY
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-if [[ "$TERM" = "alacritty" && ! $SSH_CONNECTION ]]; then echo "$(hyprctl splash)"; fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 
@@ -167,7 +162,6 @@ bindkey '^[OA' history-search-backward
 alias zshconf="nvim ~/.zshrc"
 alias tmuxconf="nvim ~/.config/tmux/tmux.conf"
 alias nvimconf="nvim ~/.config/nvim/init.lua"
-alias hyprconf="nvim ~/.config/hypr/hyprland.conf"
 
 ## a quick way to get out of current directory ##
 alias ..="cd .."
@@ -182,7 +176,7 @@ alias .5="cd ../../../../.."
 # Explain (v) what was done when moving a file
 alias mov="mv -iv"
 # rm command interactive
-alias dl="trash-put -v"
+alias dl="rm -Iv"
 
 # Create any non-existent (p)arent directories and explain (v) what was done
 alias mkdir="mkdir -pv"
@@ -211,22 +205,11 @@ alias truenvim="NVIM_APPNAME=nvim nvim"
 # Memes
 alias pls="sudo "
 
-# Paru
-alias paru="paru --sudoloop "
-
 # Rsync
 alias copy="rsync -rlptUNDh --info=PROGRESS2 --mkpath "
 
-# Rclone
-export RCLONE_PASSWORD_COMMAND="secret-tool lookup service rclone"
-
-# Mount
-alias qmount="mount -o uid=$(id -u $(logname)),gid=$(id -g $(logname)) "
-
 # IP
 alias ipa="ip -color a"
-
-eval "$(register-python-argcomplete pipx)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
