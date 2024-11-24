@@ -34,6 +34,9 @@ export PATH="$PATH:$HOME/.local/bin"
 # LS_COLORS
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
 
+# nvim as MAN pager
+export MANPAGER='nvim +Man!'
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
