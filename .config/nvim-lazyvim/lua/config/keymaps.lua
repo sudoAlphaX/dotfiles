@@ -52,3 +52,4 @@ map("n", "<leader>lS", "<leader>cS", { remap = true, desc = "LSP References/defi
 
 -- Terminal
 map("n", "<leader>t", "<leader>ft", { remap = true, desc = "Terminal" })
+map("n", "<leader>T", "<leader>fT", { remap = true, desc = "Terminal (cwd)" })
