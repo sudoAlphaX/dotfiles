@@ -1,0 +1,36 @@
+#!/bin/bash
+
+sudo -v
+
+{
+  sudo systemctl start warp-svc.service
+  systemctl --user start warp-taskbar.service
+
+  until
+    [ "$(systemctl is-active warp-svc.service)" = "active" ]
+  do
+    sleep 1
+    echo "Attempting to start WARP service"
+  done
+
+  echo "Started WARP service"
+  notify-send -u low "Started WARP service"
+
+  until [ "$(warp-cli connect)" = "Success" ]; do
+    sleep 1
+    echo "Attempting to initialize connection"
+  done
+
+  echo "Initialized connection to WARP"
+  notify-send -u low "Initialized connection to WARP"
+
+  until [ "$(warp-cli status)" = "Status update: Connected" ]; do
+    sleep 1
+    echo "Waiting to connect to WARP network"
+  done
+
+  echo "WARP connected"
+  notify-send -u low "WARP connected"
+} >/dev/null 2>&1 &
+
+disown
