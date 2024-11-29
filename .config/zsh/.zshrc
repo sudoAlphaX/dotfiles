@@ -196,6 +196,7 @@ alias .5="cd ../../../../.."
 alias mov="mv -iv"
 # rm command interactive
 alias dl="rm -Iv"
+alias del="rm -Iv"
 
 # Create any non-existent (p)arent directories and explain (v) what was done
 alias mkdir="mkdir -pv"
