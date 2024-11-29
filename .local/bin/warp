@@ -4,7 +4,6 @@ sudo -v
 
 {
   sudo systemctl start warp-svc.service
-  systemctl --user start warp-taskbar.service
 
   until
     [ "$(systemctl is-active warp-svc.service)" = "active" ]
