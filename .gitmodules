@@ -1,9 +1,6 @@
 [submodule ".config/tmux/tpm"]
 	path = .config/tmux/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "omz"]
-	path = .config/oh-my-zsh
-	url = https://github.com/ohmyzsh/ohmyzsh
 [submodule ".config/yazi/assets/catppuccin-yazi"]
 	path = .config/yazi/assets/catppuccin-yazi
 	url = https://github.com/catppuccin/yazi
@@ -28,3 +25,6 @@
 [submodule ".config/omz-custom/themes/zsh-syntax-highlighting"]
 	path = .config/omz-custom/themes/zsh-syntax-highlighting
 	url = https://github.com/catppuccin/zsh-syntax-highlighting
+[submodule ".config/oh-my-zsh"]
+	path = .config/oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh
