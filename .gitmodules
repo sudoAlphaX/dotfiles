@@ -2,7 +2,7 @@
 	path = .config/tmux/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule "omz"]
-	path = .oh-my-zsh
+	path = .config/oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh
 [submodule ".config/yazi/assets/catppuccin-yazi"]
 	path = .config/yazi/assets/catppuccin-yazi
