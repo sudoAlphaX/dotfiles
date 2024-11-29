@@ -5,7 +5,7 @@
 	path = .config/rofi/assets/rofi-git
 	url = https://www.github.com/sudoalphax/rofi
 [submodule "omz"]
-	path = .oh-my-zsh
+	path = .config/oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh
 [submodule ".config/btop/btop"]
 	path = .config/btop/btop
