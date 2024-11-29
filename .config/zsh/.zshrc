@@ -183,10 +183,10 @@ bindkey '^[OA' history-search-backward
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias zshconf="nvim ~/.zshrc"
+alias zshconf="nvim $ZDOTDIR/.zshrc"
 alias tmuxconf="nvim $XDG_CONFIG_HOME/tmux/tmux.conf"
-alias nvimconf="nvim $XDG_CONFIG_HOME/nvim/init.lua"
-alias hyprconf="nvim $XDG_CONFIG_HOME/hypr/hyprland.conf"
+alias nvimconf="cd $XDG_CONFIG_HOME/$NVIM_APPNAME/"
+alias hyprconf="cd $XDG_CONFIG_HOME/hypr/"
 
 ## a quick way to get out of current directory ##
 alias ..="cd .."
