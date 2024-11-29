@@ -9,14 +9,27 @@ fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 
+# Environment Variables
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# XDG config variables
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# Path to zsh configuration directory
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export HISTFILE="$XDG_STATE_HOME/zsh/history"
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-export ZSH_CUSTOM="$HOME/.config/omz-custom"
+export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
+export ZSH_CUSTOM="$XDG_CONFIG_HOME/omz-custom"
+
+# Z plugin
+export _Z_DATA="$XDG_DATA_HOME/z"
 
 # pyenv setup
 # export PYENV_ROOT="$HOME/.pyenv"
@@ -25,6 +38,9 @@ export ZSH_CUSTOM="$HOME/.config/omz-custom"
 
 # Created by `pipx` on 2024-04-29 19:12:20
 export PATH="$PATH:$HOME/.local/bin"
+
+# WakaTime
+export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
 
 # LS_COLORS
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
@@ -163,8 +179,8 @@ bindkey '^[OA' history-search-backward
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias zshconf="nvim ~/.zshrc"
-alias tmuxconf="nvim ~/.config/tmux/tmux.conf"
-alias nvimconf="nvim ~/.config/nvim/init.lua"
+alias tmuxconf="nvim $XDG_CONFIG_HOME/tmux/tmux.conf"
+alias nvimconf="nvim $XDG_CONFIG_HOME/nvim/init.lua"
 
 ## a quick way to get out of current directory ##
 alias ..="cd .."
@@ -192,8 +208,8 @@ alias grep="grep --color=auto "
 alias egrep="egrep --color=auto "
 alias fgrep="fgrep --color=auto "
 
-# Always try to (c)ontinue getting a partially-downloaded file
-alias wget="wget -c "
+# Always try to (c)ontinue getting a partially-downloaded file and use XDG_DATA_HOME for wget-hsts file
+alias wget="wget -c --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""
 
 # thefuck utility configuration and aliases
 # eval $(thefuck --alias)
@@ -215,7 +231,7 @@ alias copy="rsync -rlptUDh --info=PROGRESS2 --mkpath "
 alias ipa="ip -color a"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ${ZDOTDIR:-~}/.p10k.zsh ]] || source ${ZDOTDIR:-~}/.p10k.zsh
 
 
 # zprof
