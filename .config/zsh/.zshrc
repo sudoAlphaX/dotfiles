@@ -180,7 +180,6 @@ bindkey '^[OA' history-search-backward
 
 alias zshconf="nvim $ZDOTDIR/.zshrc"
 alias tmuxconf="nvim $XDG_CONFIG_HOME/tmux/tmux.conf"
-alias nvimconf="cd $XDG_CONFIG_HOME/$NVIM_APPNAME/"
 
 ## a quick way to get out of current directory ##
 alias ..="cd .."
@@ -221,6 +220,8 @@ export EDITOR="nvim"
 export NVIM_APPNAME=nvim-lazyvim
 alias notesvim="NVIM_APPNAME=nvim-notesvim nvim"
 alias truenvim="NVIM_APPNAME=nvim nvim"
+
+alias nvimconf="cd $XDG_CONFIG_HOME/$NVIM_APPNAME/"
 
 # Memes
 alias pls="sudo "
