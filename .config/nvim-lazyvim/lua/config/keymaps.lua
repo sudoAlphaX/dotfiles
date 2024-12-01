@@ -51,5 +51,5 @@ map("n", "<leader>ls", "<leader>cs", { remap = true, desc = "Symbols" })
 map("n", "<leader>lS", "<leader>cS", { remap = true, desc = "LSP References/definitions/..." })
 
 -- Terminal
-map("n", "<leader>t", "<leader>ft", { remap = true, desc = "Terminal" })
-map("n", "<leader>T", "<leader>fT", { remap = true, desc = "Terminal (cwd)" })
+map("n", "<leader>T", "<leader>ft", { remap = true, desc = "Terminal" })
+map("n", "<leader>t", "<leader>fT", { remap = true, desc = "Terminal (cwd)" })
