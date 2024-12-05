@@ -1,6 +1,0 @@
-return {
-  {
-    "jghauser/mkdir.nvim",
-  },
-}
-
