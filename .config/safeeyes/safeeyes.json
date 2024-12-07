@@ -109,7 +109,7 @@
         }
     ],
     "postpone_duration": 5,
-    "pre_break_warning_time": 30,
+    "pre_break_warning_time": 15,
     "random_order": true,
     "rpc_port": 7200,
     "short_break_duration": 30,
