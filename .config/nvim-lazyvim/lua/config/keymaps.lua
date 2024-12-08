@@ -15,9 +15,8 @@ unmap("n", "<leader>bd")
 
 -- Buffers
 map("n", "<leader>bn", "<CMD>enew<CR>", { desc = "New Buffer" })
--- Using bufdelete plugin
--- map("n", "<leader>bx", "<CMD>bd<CR>", { desc = "Close Buffer" })
--- map("n", "<leader>bX", "<CMD>bd!<CR>", { desc = "Force Close Buffer" })
+map("n", "<leader>bx", "<CMD>bd<CR>", { desc = "Close Buffer" })
+map("n", "<leader>bX", "<CMD>bd!<CR>", { desc = "Force Close Buffer" })
 map("n", "<leader>bb", "<CMD>lua require('telescope.builtin').buffers()<CR>", { desc = "List Buffers" })
 
 -- Find Files
