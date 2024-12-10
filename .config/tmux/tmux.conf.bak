@@ -1,0 +1,113 @@
+# List of plugins
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+set -g @plugin 'catppuccin/tmux'
+
+set -g @plugin 'christoomey/vim-tmux-navigator'
+# set -g @plugin 'joshmedeski/tmux-nerd-font-window-name'
+set -g @plugin 'rickstaa/tmux-notify'
+# set -g @plugin 'b0o/tmux-autoreload'
+# set -g @plugin 'ofirgall/tmux-window-name'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+# set -g @plugin 'tmux-plugins/tmux-yank'
+# set -g @plugin 'kiyoon/treemux'
+# set -g @treemux-tree-nvim-init-file '~/.tmux/plugins/treemux/configs/treemux_init.lua'
+set -g @plugin 'tmux-plugins/tmux-battery'
+set -g @plugin 'tmux-plugins/tmux-online-status'
+# set -g @plugin 'erikw/tmux-powerline'
+
+
+# Configurations
+
+# Increase scrollback buffer size from 2000 to 50000 lines
+set -g history-limit 50000
+# Upgrade $TERM
+set -g default-terminal "tmux-256color"
+# set-option -a terminal-features "alacritty:RGB"
+# Enable mouse mode by default
+set -g mouse on
+# Prefix keybind
+set-option -g prefix C-b
+# Additional prefix keybind
+set-option -g prefix2 C-a
+# Start windows and panes indexing at 1
+set -g base-index 1
+setw -g pane-base-index 1
+# Ensure window index numbers get reordered on delete.
+set-option -g renumber-windows on
+# Set new panes to open in current directory
+bind c new-window -c "#{pane_current_path}"
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+
+
+# Plugin specific configuration
+
+# rickstaa/tmux-notify
+# set -g @tnotify-sleep-duration '600'
+set -g @tnotify-prompt-suffixes "$,#,%,❯ "
+# set -g @tnotify-custom-cmd ""
+
+
+# tmux-plugins/tmux-continuum
+# Automatically restore last saved environment on tmux start
+set -g @continuum-restore 'off'
+# Automatically start tmux on server on
+set -g @continuum-boot 'off'
+
+
+# tmux-plugins/tmux-resurrect
+# Restore Neovim sessions
+set -g @resurrect-strategy-nvim 'session'
+
+
+# b0o/tmux-autoreload
+#set-option -g @tmux-autoreload-configs '$XDG_CONFIG_HOME/tmux/tmux.conf'
+
+
+set -g @catppuccin_custom_plugin_dir "$XDG_CONFIG_HOME/tmux/custom"
+
+# Customization
+
+# Window settings
+#set -g @catppuccin_window_left_separator "█"█
+set -g @catppuccin_window_middle_separator "█ "
+set -g @catppuccin_window_right_separator "█ "
+set -g @catppuccin_window_number_position "left"
+set -g @catppuccin_window_status "no"
+
+set -g @catppuccin_window_default_fill "number"
+set -g @catppuccin_window_current_fill "number"
+
+# Status settings
+
+set -g @catppuccin_status_fill "all"
+
+set -g @catppuccin_status_modules_left "user"
+
+set -g @catppuccin_status_left_separator "█"
+set -g @catppuccin_status_right_separator "█"
+set -g @catppuccin_status_modules_right "session online_status battery date_time"
+
+# set -g @catppuccin_battery_icon "󰁹"
+# set -g @catppuccin_battery_color "green"
+
+set -g @catppuccin_date_time_text "%a %d-%h %H:%M:%S"
+set -g @catppuccin_date_time_color "white"
+#set -g @catppuccin_date_time_icon "null"
+
+set -g @online_icon "󰱔"
+set -g @offline_icon "󰅛"
+
+#set -g @catppuccin_status_modules_right "battery"
+
+#set -g @catppuccin_status_modules_right "#{battery_icon}#{battery_percentage} | %a %d-%h %H:%M '
+
+#set -g status-right "#{battery_icon}#{battery_percentage} | %a %d-%h %H:%M "
+
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.config/tmux/tpm/tpm'
