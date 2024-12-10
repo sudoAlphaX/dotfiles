@@ -3,7 +3,7 @@
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 
-set -g @plugin 'catppuccin/tmux'
+set -g @plugin 'catppuccin/tmux#0.3.0'
 
 set -g @plugin 'christoomey/vim-tmux-navigator'
 # set -g @plugin 'joshmedeski/tmux-nerd-font-window-name'
@@ -92,6 +92,10 @@ set -g @catppuccin_status_left_separator "█"
 set -g @catppuccin_status_right_separator "█"
 set -g @catppuccin_status_modules_right "session online_status battery date_time"
 
+set -g status-right ""
+set -agF status-right "#{E:@catppuccin_status_session}"
+set -agF status-right "#{E:@catppuccin_status_battery}"
+set -agF status-right "#{E:@catppuccin_online_status}"
 # set -g @catppuccin_battery_icon "󰁹"
 # set -g @catppuccin_battery_color "green"
 
