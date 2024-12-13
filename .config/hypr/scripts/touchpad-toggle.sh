@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STATUS_FILE=/tmp/touchpad.log
+STATUS_FILE=/tmp/touchpad-$(whoami).log
 
 enable_touchpad() {
   hyprctl keyword -r '$TOUCHPAD_ENABLED' "true"

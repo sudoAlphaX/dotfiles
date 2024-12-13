@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STATUS_FILE=/tmp/touchscreen.log
+STATUS_FILE=/tmp/touchscreen-$(whoami).log
 
 enable_touchscreen() {
   hyprctl keyword -r '$TOUCHSCREEN_ENABLED' "true"
