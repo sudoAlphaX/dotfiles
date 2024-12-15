@@ -1,3 +1,6 @@
 return {
-  require("which-key").add({ "<leader>t", "+terminal", icon = "" }),
+  "folke/which-key.nvim",
+  opts = {
+    preset = "classic",
+  },
 }
