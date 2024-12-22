@@ -53,3 +53,6 @@ map("n", "<leader>lS", "<leader>cS", { remap = true, desc = "LSP References/defi
 -- Terminal
 map("n", "<leader>T", "<leader>ft", { remap = true, desc = "Terminal" })
 map("n", "<leader>t", "<leader>fT", { remap = true, desc = "Terminal (cwd)" })
+
+-- Zoom
+map("n", "<leader>z", "<leader>uZ", { remap = true, desc = "Maximize" })
