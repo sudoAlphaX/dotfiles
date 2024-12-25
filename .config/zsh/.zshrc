@@ -1,5 +1,11 @@
 # zmodload zsh/zprof
 
+# Tmux on SSH (https://stackoverflow.com/a/40192494)
+if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
+  tmux attach-session -t ssh || tmux new-session -s ssh
+  exit # close the shell if tmux is detached/closed
+fi
+
 # Fix for gpg password prompt in tty
 export GPG_TTY=$TTY
 
@@ -112,15 +118,15 @@ HIST_STAMPS="yyyy-mm-dd"
 # Plugin Configuration
 
 # Tmux plugin
-if [[ $SSH_CONNECTION ]]; then 
-	export ZSH_TMUX_AUTOSTART=true
-	export ZSH_TMUX_AUTOQUIT=true
-	export ZSH_TMUX_AUTONAME_SESSION='ssh'
-else
-	export ZSH_TMUX_AUTOQUIT=false
-fi
-
-export ZSH_TMUX_CONFIG="$XDG_CONFIG_HOME/tmux/tmux.conf"
+# if [[ $SSH_CONNECTION ]]; then 
+# 	export ZSH_TMUX_AUTOSTART=true
+# 	export ZSH_TMUX_AUTOQUIT=true
+# 	export ZSH_TMUX_AUTONAME_SESSION='ssh'
+# else
+# 	export ZSH_TMUX_AUTOQUIT=false
+# fi
+#
+# export ZSH_TMUX_CONFIG="$XDG_CONFIG_HOME/tmux/tmux.conf"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
