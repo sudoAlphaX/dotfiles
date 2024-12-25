@@ -253,6 +253,7 @@ alias qmount="mount -o uid=$(id -u $(logname)),gid=$(id -g $(logname)) "
 # IP
 alias ipa="ip -color a"
 
+# Pipx autocomplete
 eval "$(register-python-argcomplete pipx)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
