@@ -24,6 +24,6 @@ else
 		tempState="normal"
 	fi
 
-	printf '{"text": "%s", "class": "%s"}\n' "$temp" "$tempState"
+  printf '{"text": "%s", "class": "%s", "tooltip": "%s RPM"}\n' "$temp" "$tempState" "$(cat /sys/devices/platform/dell_smm_hwmon/hwmon/hwmon[[:print:]]*/fan1_input)"
 
 fi
