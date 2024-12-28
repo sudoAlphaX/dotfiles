@@ -1,0 +1,38 @@
+#!/usr/bin/bash
+
+# This script is used to turn on hotspot if the connected wifi is in the allowed list
+
+# Variables
+source /etc/create_ap.conf
+allowed_aps=("SSN" "SNUC")
+ssid=$(iw dev "$WIFI_IFACE" info | awk '/ssid/ {print $2}')
+
+# Stop the hotspot
+if (create_ap --stop "$WIFI_IFACE"); then echo "Killed create_ap"; fi
+
+for ap in "${allowed_aps[@]}"; do
+  if [ "$ssid" == "$ap" ]; then
+
+    # Wait till the internet interface is up
+    while (! ip link show "$INTERNET_IFACE" >/dev/null 2>&1); do
+      sleep 1
+
+      # Terminate if the ssid changes
+      new_ssid=$(iw dev "$WIFI_IFACE" info | awk '/ssid/ {print $2}')
+      if [ "$new_ssid" != "$ssid" ]; then
+        echo "Terminating since ssid changed. Expected: $ssid. Actual: $new_ssid"
+        exit 0
+      fi
+    done
+
+    echo "INTERNET_IFACE $INTERNET_IFACE is up"
+
+    channel=$(iw dev "$WIFI_IFACE" info | awk '/channel/ {print $2}')
+
+    echo "Starting create_ap using $WIFI_IFACE on channel $channel"
+    create_ap --config /etc/create_ap.conf -c "$channel"
+
+    break
+  fi
+
+done
