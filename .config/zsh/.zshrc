@@ -139,7 +139,7 @@ plugins=(sudo gpg-agent git gitignore git-auto-fetch aliases alias-finder arduin
 source $ZSH_CUSTOM/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source $ZSH_CUSTOM/themes/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-
+[[ ! -f ${ZDOTDIR:-~}/.p10k.zsh ]] || source ${ZDOTDIR:-~}/.p10k.zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -259,8 +259,6 @@ alias ipa="ip -color a"
 # Pipx autocomplete
 eval "$(register-python-argcomplete pipx)"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ${ZDOTDIR:-~}/.p10k.zsh ]] || source ${ZDOTDIR:-~}/.p10k.zsh
 
 
 # zprof
