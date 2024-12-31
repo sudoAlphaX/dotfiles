@@ -259,7 +259,7 @@ alias ipa="ip -color a"
 eval "$(register-python-argcomplete pipx)"
 
 # Do not attempt autocorrection for specific commands
-nocorrectlist=("ytfzf" "mkdir")
+nocorrectlist=("ytfzf" "yt-dlp")
 for item in $nocorrectlist; do alias $item="nocorrect $item ";done
 
 
