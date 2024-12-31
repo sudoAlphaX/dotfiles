@@ -203,8 +203,6 @@ alias .5="cd ../../../../.."
 
 # Always copy contents of directories (r)ecursively and explain (v) what was done
 # alias cp="cp -irv"
-# Explain (v) what was done when moving a file
-alias mov="mv -iv"
 # rm command interactive
 alias dl="trash-put -v"
 alias del="rm -Iv"
@@ -246,6 +244,7 @@ alias paru="paru --sudoloop "
 
 # Rsync
 alias copy="rsync -rlptUDh --info=PROGRESS2 --mkpath "
+alias mov="copy --remove-source-files "
 
 # Rclone
 export RCLONE_PASSWORD_COMMAND="secret-tool lookup service rclone"
