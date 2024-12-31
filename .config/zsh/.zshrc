@@ -200,8 +200,6 @@ alias .5="cd ../../../../.."
 
 # Always copy contents of directories (r)ecursively and explain (v) what was done
 # alias cp="cp -irv"
-# Explain (v) what was done when moving a file
-alias mov="mv -iv"
 # rm command interactive
 alias dl="rm -Iv"
 alias del="rm -Iv"
@@ -240,6 +238,7 @@ alias pls="sudo "
 
 # Rsync
 alias copy="rsync -rlptUDh --info=PROGRESS2 --mkpath "
+alias mov="copy --remove-source-files "
 
 # IP
 alias ipa="ip -color a"
