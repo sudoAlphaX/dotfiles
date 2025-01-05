@@ -20,27 +20,8 @@ if [[ "$TERM" = "alacritty" && ! $SSH_CONNECTION ]]; then echo "$(hyprctl splash
 
 ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 
-
-# pyenv setup
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-
 # LS_COLORS
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
-
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="random" # set by `omz`
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -101,11 +82,7 @@ HIST_STAMPS="yyyy-mm-dd"
 #
 # export ZSH_TMUX_CONFIG="$XDG_CONFIG_HOME/tmux/tmux.conf"
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Plugins
 plugins=(sudo gpg-agent git gitignore git-auto-fetch aliases alias-finder arduino-cli colored-man-pages command-not-found extract universalarchive virtualenvwrapper z)
 source $ZSH_CUSTOM/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source $ZSH_CUSTOM/themes/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
@@ -116,19 +93,8 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
- #if [[ -n $SSH_CONNECTION ]]; then
- #  export EDITOR='vim'
- #else
- #  export EDITOR='mvim'
- #fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
 
 # Plugin Configuration
 
@@ -150,14 +116,8 @@ bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
 
 bindkey '^[OA' history-search-backward
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+############# Aliases #############
 
 alias zshconf="nvim $ZDOTDIR/.zshrc"
 alias tmuxconf="nvim $XDG_CONFIG_HOME/tmux/tmux.conf"
@@ -185,8 +145,6 @@ alias l.="ls -dlAF .* --color=auto"
 
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep="grep --color=auto "
-alias egrep="egrep --color=auto "
-alias fgrep="fgrep --color=auto "
 
 # Always try to (c)ontinue getting a partially-downloaded file and use XDG_DATA_HOME for wget-hsts file
 alias wget="wget -c --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""
@@ -195,7 +153,7 @@ alias wget="wget -c --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""
 # eval $(thefuck --alias)
 # alias f="fuck"
 
-# Use Neovim as default editor 
+# Use Neovim as default editor
 alias notesvim="NVIM_APPNAME=nvim-notesvim nvim"
 alias truenvim="NVIM_APPNAME=nvim nvim"
 
