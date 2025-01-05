@@ -15,6 +15,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="/data/data/com.termux/cache/"
 
+# Show p10k prompt
 [[ ! -f ${ZDOTDIR:-~}/.p10k.zsh ]] || source ${ZDOTDIR:-~}/.p10k.zsh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -26,38 +27,15 @@ fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 
-# Environment Variables
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to zsh configuration directory
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-export HISTFILE="$XDG_STATE_HOME/zsh/history"
-
-# Path to your oh-my-zsh installation.
-export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
-export ZSH_CUSTOM="$XDG_CONFIG_HOME/omz-custom"
-
-# Z plugin
-export _Z_DATA="$XDG_DATA_HOME/z"
 
 # pyenv setup
 # export PYENV_ROOT="$HOME/.pyenv"
 # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
 
-# Created by `pipx` on 2024-04-29 19:12:20
-export PATH="$PATH:$HOME/.local/bin"
-
-# WakaTime
-export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
-
 # LS_COLORS
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
 
-# nvim as MAN pager
-export MANPAGER='nvim +Man!'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -224,8 +202,6 @@ alias wget="wget -c --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""
 # alias f="fuck"
 
 # Use Neovim as default editor 
-export EDITOR="nvim"
-export NVIM_APPNAME=nvim-lazyvim
 alias notesvim="NVIM_APPNAME=nvim-notesvim nvim"
 alias truenvim="NVIM_APPNAME=nvim nvim"
 
