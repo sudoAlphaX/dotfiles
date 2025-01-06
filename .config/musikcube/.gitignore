@@ -1,0 +1,9 @@
+# Ignore everything
+*
+
+# Except
+!.gitignore
+!hotkeys.json
+!plugins.json
+!settings.json
+!themes/
