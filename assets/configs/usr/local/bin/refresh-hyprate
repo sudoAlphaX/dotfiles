@@ -1,0 +1,22 @@
+#!/bin/bash
+
+lowrate=48
+maxrate=60
+
+# https://www.reddit.com/r/hyprland/comments/1dhcasm/comment/lp3rxxi/
+set_refresh() {
+  for dir in /run/user/*; do
+    for hypr_dir in "$dir/hypr/"*/; do
+      socket="${hypr_dir}.socket.sock"
+      if [[ -S $socket ]]; then
+        echo -e "r/keyword \$refresh_rate" "$1" | socat - UNIX-CONNECT:"$socket"
+      fi
+    done
+  done
+}
+
+if [[ "$1" = "low" ]]; then
+  set_refresh $lowrate
+elif [[ "$1" = "high" ]]; then
+  set_refresh $maxrate
+fi
