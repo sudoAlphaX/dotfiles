@@ -37,7 +37,7 @@
     "~/Videos/Aniyomi/"
   ],
   "title_parser": "aie",
-  "tracker_enabled": true,
+  "tracker_enabled": false,
   "tracker_ignore_not_next": true,
   "tracker_interval": 10,
   "tracker_not_found_prompt": true,
