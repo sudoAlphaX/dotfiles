@@ -1,0 +1,10 @@
+[Unit]
+Description=Git Pull Service
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/git -C %h/.dotfiles/ pull
+
+[Install]
+WantedBy=default.target
