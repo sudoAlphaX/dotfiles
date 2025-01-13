@@ -6,9 +6,6 @@ if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
   exit # close the shell if tmux is detached/closed
 fi
 
-# Show p10k prompt
-[[ ! -f ${ZDOTDIR:-~}/.p10k.zsh ]] || source ${ZDOTDIR:-~}/.p10k.zsh
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -16,7 +13,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if [[ "$TERM" = "alacritty" && ! $SSH_CONNECTION ]]; then echo "$(hyprctl splash | lolcat -f &)"; fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 
@@ -186,5 +182,10 @@ eval "$(register-python-argcomplete pipx)"
 nocorrectlist=("ytfzf" "yt-dlp")
 for item in $nocorrectlist; do alias $item="nocorrect $item ";done
 
+# Hyprland splash
+if [[ "$TERM" = "alacritty" && ! $SSH_CONNECTION ]]; then echo "$(hyprctl splash | lolcat -f &)"; fi
+
+# Show p10k prompt
+[[ ! -f ${ZDOTDIR:-~}/.p10k.zsh ]] || source ${ZDOTDIR:-~}/.p10k.zsh
 
 # zprof
