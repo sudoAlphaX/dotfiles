@@ -6,18 +6,6 @@ if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
   exit # close the shell if tmux is detached/closed
 fi
 
-# Fix for gpg password prompt in tty
-export GPG_TTY=$TTY
-
-# XDG config variables
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_STATE_HOME="$HOME/.local/state"
-export XDG_CACHE_HOME="/data/data/com.termux/cache/"
-
-# Show p10k prompt
-[[ ! -f ${ZDOTDIR:-~}/.p10k.zsh ]] || source ${ZDOTDIR:-~}/.p10k.zsh
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -183,5 +171,7 @@ eval "$(register-python-argcomplete pipx)"
 nocorrectlist=("ytfzf" "yt-dlp")
 for item in $nocorrectlist; do alias $item="nocorrect $item ";done
 
+# Show p10k prompt
+[[ ! -f ${ZDOTDIR:-~}/.p10k.zsh ]] || source ${ZDOTDIR:-~}/.p10k.zsh
 
 # zprof
