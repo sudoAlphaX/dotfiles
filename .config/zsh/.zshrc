@@ -153,6 +153,9 @@ alias truenvim="NVIM_APPNAME=nvim nvim"
 
 alias nvimconf="cd $XDG_CONFIG_HOME/$NVIM_APPNAME/"
 
+# adb to use XDG_DATA_HOME
+alias adb='HOME="$XDG_DATA_HOME"/android adb'
+
 # Sudo with alias
 alias sudo="sudo "
 
