@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/sh
 
 #set high limits. example: if number is less than 10, it is considered safe.
 safe=30
@@ -9,9 +9,9 @@ updates="$(checkupdates --nocolor)"
 updatesSanitized="$(echo "$updates" | awk '{printf "%s\\n", $0}')"
 updatesCount=$(echo "$updates" | wc -l)
 
-if ((updatesCount <= safe)); then
+if [ "$updatesCount" -le "$safe" ]; then
   exit 0
-elif ((updatesCount <= normal)); then
+elif [ "$updatesCount" -le "$normal" ]; then
   class="normal"
 else
   class="high"
