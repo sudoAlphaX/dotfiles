@@ -1,3 +1,5 @@
+#!/usr/bin/sh
+
 # Script to unfocus Discord and focus the last focused application
 # To be executed on Hyprland startup
 

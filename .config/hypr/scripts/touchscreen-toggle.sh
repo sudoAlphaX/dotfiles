@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/sh
 
 STATUS_FILE=/tmp/touchscreen-$(whoami).log
 

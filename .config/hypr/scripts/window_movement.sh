@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 read -r direction value
 value="${value:-10}"
