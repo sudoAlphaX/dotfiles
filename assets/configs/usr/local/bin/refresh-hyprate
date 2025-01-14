@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/sh
 
 lowrate=48
 maxrate=60
@@ -8,15 +8,15 @@ set_refresh() {
   for dir in /run/user/*; do
     for hypr_dir in "$dir/hypr/"*/; do
       socket="${hypr_dir}.socket.sock"
-      if [[ -S $socket ]]; then
-        echo -e "r/keyword \$refresh_rate" "$1" | socat - UNIX-CONNECT:"$socket"
+      if [ -S "$socket" ]; then
+        echo "r/keyword \$refresh_rate" "$1" | socat - UNIX-CONNECT:"$socket" >/dev/null
       fi
     done
   done
 }
 
-if [[ "$1" = "low" ]]; then
+if [ "$1" = "low" ]; then
   set_refresh $lowrate
-elif [[ "$1" = "high" ]]; then
+elif [ "$1" = "high" ]; then
   set_refresh $maxrate
 fi
