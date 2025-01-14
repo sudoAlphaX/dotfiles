@@ -19,4 +19,10 @@ if [ "$1" = "low" ]; then
   set_refresh $lowrate
 elif [ "$1" = "high" ]; then
   set_refresh $maxrate
+else
+  if systemd-ac-power; then
+    set_refresh $maxrate
+  else
+    set_refresh $lowrate
+  fi
 fi
