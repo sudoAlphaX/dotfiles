@@ -77,9 +77,9 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Plugins
 plugins=(sudo gpg-agent git gitignore git-auto-fetch aliases alias-finder arduino-cli colored-man-pages command-not-found extract universalarchive virtualenvwrapper z)
-# source $ZSH_CUSTOM/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source $ZSH_CUSTOM/themes/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source $ZSH_CUSTOM/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
