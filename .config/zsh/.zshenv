@@ -47,3 +47,6 @@ export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 
 # .w3m
 export W3M_DIR="$XDG_DATA_HOME"/w3m
+
+# .virtualenvs
+export WORKON_HOME="$XDG_DATA_HOME/virtualenvs"
