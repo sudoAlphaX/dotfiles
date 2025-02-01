@@ -103,6 +103,9 @@ zstyle ':omz:plugins:alias-finder' cheaper yes
 bindkey '^I' menu-select
 bindkey "$terminfo[kcbt]" menu-select
 
+# Disable ~/. expansions
+zstyle ':completion:*' completer _complete _complete:-fuzzy _correct _approximate _ignored
+
 # Make Tab and ShiftTab change the selection in the menu
 bindkey -M menuselect '^I' menu-complete
 bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
