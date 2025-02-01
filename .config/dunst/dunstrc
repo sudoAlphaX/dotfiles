@@ -538,6 +538,20 @@
 	history_ignore=true
 	timeout=3
 
+[volume-mute]
+  summary="mute_event"
+  category="device"
+  format="Audio Muted"
+  history_ignore=true
+  timeout=3
+
+[volume-unmute]
+  summary="unmute_event"
+  category="device"
+  format="Audio Unmuted: %n%%"
+  history_ignore=true
+  timeout=3
+
 [temperature-critical]
 	summary="temperature_critical_event"
 	category="device"
