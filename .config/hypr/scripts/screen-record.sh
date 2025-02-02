@@ -5,7 +5,7 @@ pid=$(pidof wf-recorder)
 if [ "$pid" ]; then
   # Stop screen recording
   for id in $pid; do
-    while kill -INT "$id"; do
+    while kill -SIGINT "$id"; do
       sleep 1
     done
   done
