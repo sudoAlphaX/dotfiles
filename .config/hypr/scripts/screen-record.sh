@@ -10,9 +10,6 @@ if [ "$pid" ]; then
     done
   done
 
-  pactl unload-module module-loopback
-  pactl unload-module module-null-sink
-
   exit 0
 fi
 
@@ -40,6 +37,9 @@ if [ "$2" = "true" ]; then
 else
   wf-recorder --audio=combined.monitor -f "$filepath" -r 30 -c h264_vaapi -d /dev/dri/renderD128
 fi
+
+pactl unload-module module-loopback
+pactl unload-module module-null-sink
 
 ffmpegthumbnailer -i "$filepath" -o "$thumbnail" -s 0
 
