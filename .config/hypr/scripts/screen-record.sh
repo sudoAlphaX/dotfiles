@@ -29,9 +29,11 @@ for source in "${monitors[@]}"; do
 done
 
 mkdir -p "$HOME/Videos/wf-recorder/tmp"
+mkdir -p -m 0700 "/tmp/$(id -u)-wf-recorder-thumbnails"
 
 filename="$(date +%Y%m%d_%H%M%S)_$(hyprctl activewindow -j | jq -r .class).mp4"
 filepath="$HOME/Videos/wf-recorder$(if [ "$1" != "false" ]; then echo "/tmp"; fi)/$filename"
+thumbnail="/tmp/$(id -u)-wf-recorder-thumbnails/$filename.png"
 
 if [ "$2" = "true" ]; then
   wf-recorder -g "$(slurp)" --audio=combined.monitor -f "$filepath" -r 30 -c h264_vaapi -d /dev/dri/renderD128
@@ -39,9 +41,11 @@ else
   wf-recorder --audio=combined.monitor -f "$filepath" -r 30 -c h264_vaapi -d /dev/dri/renderD128
 fi
 
+ffmpegthumbnailer -i "$filepath" -o "$thumbnail" -s 0
+
 if [ "$1" != "false" ]; then
   wl-copy "file://$filepath" --type "text/uri-list"
-  notify-send -u low -a wf-recorder "Copied screen recording to clipboard"
+  notify-send -u low -a wf-recorder -i "$thumbnail" "Copied screen recording to clipboard"
 else
-  notify-send -u low -a wf-recorder "Saved screen recording to $filename"
+  notify-send -u low -a wf-recorder -i "$thumbnail" "Saved screen recording to $filename"
 fi
