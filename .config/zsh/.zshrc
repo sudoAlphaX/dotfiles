@@ -178,6 +178,9 @@ alias qmount="mount -o uid=$(id -u $(logname)),gid=$(id -g $(logname)) "
 # IP
 alias ipa="ip -color a"
 
+# Python venv
+alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
+
 # Pipx autocomplete
 eval "$(register-python-argcomplete pipx)"
 
