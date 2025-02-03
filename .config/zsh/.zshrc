@@ -166,7 +166,19 @@ alias pls="sudo "
 alias paru="paru --sudoloop "
 
 # Rsync
-alias copy="rsync -rlptUDh --info=PROGRESS2 --mkpath "
+rsyncflags="--recursive \
+--links \
+--times \
+--atimes \
+--devices \
+--specials \
+--info=PROGRESS2 \
+--human-readable \
+--mkpath \
+"
+alias copy="rsync $rsyncflags --perms --executability "
+
+alias extcopy="rsync $rsyncflags --info=NAME,STATS2 --verbose "
 alias mov="copy --remove-source-files "
 
 # Rclone
