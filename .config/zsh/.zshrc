@@ -167,6 +167,9 @@ alias mov="copy --remove-source-files "
 # IP
 alias ipa="ip -color a"
 
+# Python venv
+alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
+
 # Pipx autocomplete
 eval "$(register-python-argcomplete pipx)"
 
