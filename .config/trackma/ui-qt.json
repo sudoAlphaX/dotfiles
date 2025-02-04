@@ -27,14 +27,14 @@
     "remember_columns": false,
     "remember_geometry": false,
     "show_tray": true,
-    "sort_index": 1,
-    "sort_order": 0,
+    "sort_index": 5,
+    "sort_order": 1,
     "start_in_tray": true,
     "tray_api_icon": true,
     "visible_columns": [
         "Title",
         "Progress",
-        "Score",
+        "Next Episode",
         "Percent"
     ]
 }
