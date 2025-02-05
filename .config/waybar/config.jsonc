@@ -150,7 +150,7 @@
     "tooltip-format-wifi": "{ipaddr}\nSignal Strength: {signalStrength}%",
     "tooltip-format-ethernet": "{ipaddr}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "alacritty -T AlacrittyFloat -e nmtui-connect",
+    "on-click": "nmcli device wifi rescan; alacritty -T AlacrittyFloat -e nmtui-connect",
     "on-click-middle": "nm-connection-editor",
     "on-click-right": "rfkill toggle wlan"
   },
