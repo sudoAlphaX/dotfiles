@@ -63,7 +63,7 @@
     "return-type": "json",
     "format": "{}",
     "interval": 600,
-    "on-click": "hyprctl dispatch exec '[workspace special:s1] alacritty -e topgrade -t'"
+    "on-click": "hyprctl dispatch exec '[workspace special:s1] uwsm app -a topgrade -- alacritty -e topgrade -t'"
   },
   "clock": {
     "format": "{:%H:%M}",
