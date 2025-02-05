@@ -1,0 +1,31 @@
+# yt-dlp configuration
+
+# Parallel fragment download
+--concurrent-fragments 4
+
+# Only ASCII characters in filename
+--restrict-filenames
+
+# File format
+--merge-output-format mkv
+--remux-video mkv
+
+# Subtitles
+--sub-lang "en.*"
+--write-subs
+--write-auto-subs
+--embed-subs
+--compat-options no-keep-subs
+
+# Metadata
+--embed-thumbnail
+--embed-metadata
+--embed-chapters
+--embed-info-json
+
+# Sponsorblock
+--sponsorblock-mark all
+--sponsorblock-remove sponsor
+
+# Quality
+-S "res:1080"
