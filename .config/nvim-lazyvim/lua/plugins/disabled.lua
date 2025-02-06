@@ -35,8 +35,4 @@ return {
       notifier = { enabled = false },
     },
   },
-  {
-    "saghen/blink.cmp",
-    enabled = false,
-  },
 }
