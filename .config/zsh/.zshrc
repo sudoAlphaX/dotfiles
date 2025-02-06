@@ -106,6 +106,9 @@ bindkey "$terminfo[kcbt]" menu-select
 # Disable ~/. expansions
 zstyle ':completion:*' completer _complete _complete:-fuzzy _correct _approximate _ignored
 
+# Get completions after delay in typing
+zstyle ':autocomplete:*' delay 0.2  # seconds (float)
+
 # Make Tab and ShiftTab change the selection in the menu
 bindkey -M menuselect '^I' menu-complete
 bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
