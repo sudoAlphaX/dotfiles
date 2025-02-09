@@ -56,3 +56,6 @@ map("n", "<leader>t", "<leader>fT", { remap = true, desc = "Terminal (cwd)" })
 
 -- Zoom
 map("n", "<leader>z", "<leader>uZ", { remap = true, desc = "Maximize" })
+
+-- Select all
+map("n", "<leader>as", "ggVG", { remap = true, desc = "Select All" })
