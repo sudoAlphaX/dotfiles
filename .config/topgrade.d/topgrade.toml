@@ -91,7 +91,7 @@ no_self_update = true
 "Tmux plugins" = "$HOME/.config/tmux/tpm/bin/update_plugins all"
 # "Neovim plugins (main)" = "NVIM_APPNAME=nvim nvim --headless '+Lazy! sync' +qa"
 # "Neovim plugins (notesvim)" = "NVIM_APPNAME=nvim-notesvim nvim --headless '+Lazy! sync' +qa"
-"Neovim plugins (lazyvim)" = "NVIM_APPNAME=nvim-lazyvim nvim --headless '+Lazy! sync' +qa"
+# "Neovim plugins (lazyvim)" = "NVIM_APPNAME=nvim-lazyvim nvim --headless '+Lazy! sync' +qa"
 "Git submodules" = "cd ~/.dotfiles && git submodule foreach '(git checkout main || git checkout master) && git pull'; cd ~/"
 # "Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
 # "Custom command using interactive shell (unix)" = "-i vim_upgrade"
