@@ -528,7 +528,6 @@
 	category="device"
 	format="Brightness: %n%%"
 	history_ignore=true
-	new_icon="display-brightness-symbolic"
 	timeout=3
 
 [volume-change]
