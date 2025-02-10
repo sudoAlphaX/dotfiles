@@ -15,6 +15,7 @@ x-scheme-handler/mailto=userapp-Thunderbird-1UUAX2.desktop
 message/rfc822=userapp-Thunderbird-1UUAX2.desktop
 x-scheme-handler/mid=userapp-Thunderbird-1UUAX2.desktop
 image/png=imv.desktop
+x-scheme-handler/discord=vesktop.desktop
 
 [Added Associations]
 x-scheme-handler/http=librewolf.desktop;
