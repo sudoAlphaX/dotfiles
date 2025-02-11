@@ -78,8 +78,7 @@ no_self_update = true
 # Commands to run before anything
 [pre_commands]
 # "Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
-"Update Mirrors" = "journalctl --no-pager -b -f -u reflector.service&  sudo systemctl start reflector.service"
-
+# "Update Mirrors" = "sudo systemctl start reflector.service"
 
 # Commands to run after anything
 [post_commands]
