@@ -8,7 +8,6 @@
 
 # File format
 --merge-output-format mkv
---remux-video mkv
 
 # Subtitles
 --sub-lang "en.*"
@@ -29,3 +28,9 @@
 
 # Quality
 -S "res:1080"
+
+# Playlist download
+--alias playlist '-o "%(playlist_index)s-%(title)s.%(ext)s"'
+
+# Music download
+--alias music '-f 140 --no-embed-metadata --no-embed-info-json --no-embed-thumbnail --no-embed-subs --no-write-subs --no-write-auto-subs --no-embed-chapters --sponsorblock-mark -all --sponsorblock-remove music_offtopic'
