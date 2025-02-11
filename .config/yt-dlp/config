@@ -12,7 +12,6 @@
 # Subtitles
 --sub-lang "en.*"
 --write-subs
---write-auto-subs
 --embed-subs
 --compat-options no-keep-subs
 
