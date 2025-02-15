@@ -539,13 +539,15 @@
 	category="device"
 	format="Volume: %n%%"
 	history_ignore=true
+  set_stack_tag="volume-event"
 	timeout=3
 
 [volume-mute]
   summary="mute_event"
   category="device"
-  format="Audio Muted"
+  format="Volume: Muted"
   history_ignore=true
+  set_stack_tag="volume-event"
   timeout=3
 
 [volume-unmute]
@@ -553,6 +555,7 @@
   category="device"
   format="Audio Unmuted: %n%%"
   history_ignore=true
+  set_stack_tag="volume-event"
   timeout=3
 
 [temperature-critical]
