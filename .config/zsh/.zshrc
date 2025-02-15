@@ -185,6 +185,16 @@ alias ipa="ip -color a"
 # Python venv
 alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
 
+# Yazi change cwd on exit
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
 # Pipx autocomplete
 eval "$(register-python-argcomplete pipx)"
 
