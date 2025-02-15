@@ -165,17 +165,17 @@ alias pls="sudo "
 
 # Rsync
 rsyncflags="--recursive \
---links \
---times \
---atimes \
---devices \
---specials \
---info=PROGRESS2 \
---human-readable \
---mkpath \
-"
-alias copy="rsync $rsyncflags --perms --executability "
+  --links \
+  --times \
+  --atimes \
+  --devices \
+  --specials \
+  --info=PROGRESS2 \
+  --human-readable \
+  --mkpath \
+  "
 
+alias copy="rsync $rsyncflags --perms --executability "
 alias extcopy="rsync $rsyncflags --info=NAME,STATS2 --verbose "
 alias mov="copy --remove-source-files "
 
