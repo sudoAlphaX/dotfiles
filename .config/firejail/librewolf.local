@@ -20,3 +20,6 @@ dbus-user.talk org.freedesktop.portal.Desktop
 # Private dirs
 private-bin dbus-launch,dbus-send,librewolf,sh
 private-etc librewolf
+
+# Allow opening new browser window in existing parent process
+dbus-user.own io.gitlab.firefox.*
