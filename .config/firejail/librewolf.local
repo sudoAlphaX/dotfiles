@@ -23,3 +23,5 @@ private-etc librewolf
 
 # Allow opening new browser window in existing parent process
 dbus-user.own io.gitlab.firefox.*
+
+apparmor
