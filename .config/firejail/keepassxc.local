@@ -1,0 +1,31 @@
+# # Database path whitelist
+mkdir ${HOME}/Documents/Keepass
+whitelist ${HOME}/Documents/Keepass
+mkdir ${HOME}/Documents/Keefile
+whitelist ${HOME}/Documents/Keefile
+
+# Secret Service integration
+dbus-user.own org.freedesktop.secrets
+
+# Allow KeepassXC to access librewolf
+noblacklist ${HOME}/.librewolf
+mkdir ${HOME}/.librewolf/native-messaging-hosts
+mkfile ${HOME}/.librewolf/native-messaging-hosts/org.keepassxc.keepassxc_browser.json
+whitelist ${HOME}/.librewolf/native-messaging-hosts/org.keepassxc.keepassxc_browser.json
+noblacklist ${RUNUSER}/app
+
+# KeepassXC configuration
+mkdir ${HOME}/.cache/keepassxc
+mkdir ${HOME}/.config/keepassxc
+whitelist ${HOME}/.cache/keepassxc
+whitelist ${HOME}/.config/keepassxc
+whitelist ${HOME}/.config/KeePassXCrc
+include whitelist-common.inc
+
+# Notifications
+dbus-user.talk org.freedesktop.Notifications
+
+# Tray icon
+dbus-user.own org.kde.*
+dbus-user.talk org.kde.StatusNotifierWatcher
+
