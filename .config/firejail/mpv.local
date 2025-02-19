@@ -1,0 +1,4 @@
+# Mpris (https://github.com/netblue30/firejail/pull/5400#issuecomment-1266788859)
+ignore dbus-user none
+dbus-user filter
+dbus-user.own org.mpris.MediaPlayer2.*
