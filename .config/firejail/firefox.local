@@ -1,0 +1,12 @@
+# Private dirs support
+private-bin bash,dbus-launch,dbus-send,env,firefox,sh,which
+private-etc firefox
+
+# Inhibit screensaver
+dbus-user.talk org.freedesktop.ScreenSaver
+
+# Wayland Screensharing
+#dbus-user.talk org.freedesktop.portal.Desktop
+# Add the next line to your firefox.local if screen sharing sharing still does not work
+# with the above lines (might depend on the portal implementation).
+#ignore noroot

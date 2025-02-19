@@ -1,0 +1,19 @@
+# KeePassXC
+# https://github.com/netblue30/firejail/discussions/5444#discussioncomment-5825896
+noblacklist ${RUNUSER}/app
+mkdir ${RUNUSER}/app/org.keepassxc.KeePassXC
+whitelist ${RUNUSER}/app/org.keepassxc.KeePassXC
+private-bin keepassxc-proxy
+
+# Screen inhibiting
+dbus-user.talk org.freedesktop.ScreenSaver
+
+# Wayland screensharing
+dbus-user.talk org.freedesktop.portal.Desktop
+# Also add the next line to your librewolf.local if screensharing does not work with
+# the above lines (depends on the portal implementation).
+#ignore noroot
+
+# Private dirs
+private-bin dbus-launch,dbus-send,librewolf,sh
+private-etc librewolf
