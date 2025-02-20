@@ -1,3 +1,6 @@
 whitelist ${HOME}/Shared/Videos
 whitelist ${HOME}/Shared/Music
 whitelist ${HOME}/Shared/Pictures
+
+ignore nogroups
+ignore noroot
