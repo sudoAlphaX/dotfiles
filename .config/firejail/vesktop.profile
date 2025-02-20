@@ -1,3 +1,8 @@
+# Persistent local customizations
+include vesktop.local
+# Persistent global definitions
+include globals.local
+
 noblacklist ${HOME}/.config/vesktop
 
 mkdir ${HOME}/.config/vesktop
