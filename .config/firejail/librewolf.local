@@ -15,7 +15,7 @@ dbus-user.talk org.freedesktop.portal.Desktop
 #ignore noroot
 
 # Native notifications
-# dbus-user.talk org.freedesktop.Notifications
+dbus-user.talk org.freedesktop.Notifications
 
 # Private dirs
 private-bin dbus-launch,dbus-send,librewolf,sh

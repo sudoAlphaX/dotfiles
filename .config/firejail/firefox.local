@@ -5,6 +5,9 @@ private-etc firefox
 # Inhibit screensaver
 dbus-user.talk org.freedesktop.ScreenSaver
 
+# Native notifications
+dbus-user.talk org.freedesktop.Notifications
+
 # Wayland Screensharing
 #dbus-user.talk org.freedesktop.portal.Desktop
 # Add the next line to your firefox.local if screen sharing sharing still does not work
