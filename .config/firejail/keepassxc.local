@@ -28,6 +28,3 @@ dbus-user.talk org.freedesktop.Notifications
 # Tray icon
 dbus-user.own org.kde.*
 dbus-user.talk org.kde.StatusNotifierWatcher
-
-# Do not join the same sandbox (multi-user fix)
-ignore join-or-start keepassxc
