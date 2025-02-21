@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-STATUS_FILE=/tmp/touchpad-$(whoami).log
+STATUS_FILE=$XDG_RUNTIME_DIR/touchpad-status
 
 enable_touchpad() {
   hyprctl keyword -r '$TOUCHPAD_ENABLED' "true"

@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-STATUS_FILE=/tmp/touchscreen-$(whoami).log
+STATUS_FILE=$XDG_RUNTIME_DIR/touchscreen-status
 
 enable_touchscreen() {
   hyprctl keyword -r '$TOUCHSCREEN_ENABLED' "true"
