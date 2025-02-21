@@ -1,0 +1,2 @@
+noblacklist ${RUNUSER}/clipboard
+whitelist ${RUNUSER}/clipboard

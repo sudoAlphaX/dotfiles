@@ -1,2 +1,1 @@
-whitelist ${RUNUSER}/wf-recorder-thumbnails
 whitelist ${HOME}/Videos/wf-recorder
