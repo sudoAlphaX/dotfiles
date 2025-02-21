@@ -25,12 +25,18 @@ for source in "${monitors[@]}"; do
   pactl load-module module-loopback sink=combined source="$source"
 done
 
-mkdir -p "$HOME/Videos/wf-recorder/tmp"
-mkdir -p "$XDG_RUNTIME_DIR/wf-recorder-thumbnails"
-
 filename="$(date +%Y%m%d_%H%M%S)_$(hyprctl activewindow -j | jq -r .class).mp4"
-filepath="$HOME/Videos/wf-recorder$(if [ "$1" != "false" ]; then echo "/tmp"; fi)/$filename"
-thumbnail="/$XDG_RUNTIME_DIR/wf-recorder-thumbnails/$filename.png"
+
+if [ "$1" != "false" ]; then
+  mkdir -p "$XDG_RUNTIME_DIR/clipboard/wf-recorder"
+  filepath="$XDG_RUNTIME_DIR/clipboard/wf-recorder/$filename"
+else
+  mkdir -p "$HOME/Videos/wf-recorder"
+  filepath="$HOME/Videos/wf-recorder/$filename"
+fi
+
+mkdir -p "$XDG_RUNTIME_DIR/clipboard/wf-recorder-thumbnails"
+thumbnail="/$XDG_RUNTIME_DIR/clipboard/wf-recorder-thumbnails/$filename.png"
 
 if [ "$2" = "true" ]; then
   wf-recorder -g "$(slurp)" --audio=combined.monitor -f "$filepath" -r 30 -c h264_vaapi -d /dev/dri/renderD128
