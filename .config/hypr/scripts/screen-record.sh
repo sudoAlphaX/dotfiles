@@ -26,11 +26,11 @@ for source in "${monitors[@]}"; do
 done
 
 mkdir -p "$HOME/Videos/wf-recorder/tmp"
-mkdir -p "/run/user/$(id -u)/wf-recorder-thumbnails"
+mkdir -p "$XDG_RUNTIME_DIR/wf-recorder-thumbnails"
 
 filename="$(date +%Y%m%d_%H%M%S)_$(hyprctl activewindow -j | jq -r .class).mp4"
 filepath="$HOME/Videos/wf-recorder$(if [ "$1" != "false" ]; then echo "/tmp"; fi)/$filename"
-thumbnail="/run/user/$(id -u)/wf-recorder-thumbnails/$filename.png"
+thumbnail="/$XDG_RUNTIME_DIR/wf-recorder-thumbnails/$filename.png"
 
 if [ "$2" = "true" ]; then
   wf-recorder -g "$(slurp)" --audio=combined.monitor -f "$filepath" -r 30 -c h264_vaapi -d /dev/dri/renderD128
