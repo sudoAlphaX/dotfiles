@@ -21,7 +21,7 @@
 	url = https://github.com/catppuccin/bat
 [submodule ".config/hypr/assets/hyprpaper-gen"]
 	path = .config/hypr/assets/hyprpaper-gen
-	url = https://github.com/sudoAlphaX/hyprpaper-gen
+	url = https://github.com/BoopyTheFox/hyprpaper-gen
 [submodule ".config/bat/assets/catppuccin"]
 	path = .config/bat/assets/catppuccin
 	url = https://github.com/catppuccin/bat
