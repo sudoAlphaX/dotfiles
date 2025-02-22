@@ -1,6 +1,3 @@
-# Allow the runtime clipboard
-include runtime-clipboard.local
-
 # Do not join the same sandbox (multi-user fix)
 ignore join-or-start
 
