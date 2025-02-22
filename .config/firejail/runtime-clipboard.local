@@ -1,2 +1,2 @@
 mkdir ${RUNUSER}/clipboard
-noblacklist ${RUNUSER}/clipboard
+whitelist ${RUNUSER}/clipboard
