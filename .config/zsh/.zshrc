@@ -160,7 +160,7 @@ alias truenvim="NVIM_APPNAME=nvim nvim"
 alias nvimconf="cd $XDG_CONFIG_HOME/$NVIM_APPNAME/"
 
 # Sudo with alias
-alias sudo="sudo "
+# alias sudo="sudo " # Fix for nocorrect not found
 
 # Memes
 alias pls="sudo "
