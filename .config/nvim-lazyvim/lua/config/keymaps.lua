@@ -27,6 +27,7 @@ map("n", "<leader>r", "<leader>fr", { remap = true, desc = "Recent files" })
 
 -- Git
 map("n", "<leader>gH", "<CMD>FzfLua git_stash<CR>", { desc = "Git Stashes" })
+map("n", "<leader>gC", "<CMD>FzfLua git_branches<CR>", { desc = "Git Checkout" })
 
 -- Indentation shortcuts
 map("x", "<Tab>", ">gv")
