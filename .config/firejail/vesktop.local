@@ -1,4 +1,11 @@
 include runtime-clipboard.local
 
+# Allow read-write to .dotfiles to sync settings
 ignore read-only ${HOME}/.dotfiles
 
+# Tray icon
+dbus-user.own org.kde.*
+dbus-user.talk org.kde.StatusNotifierWatcher
+
+# Notifications
+dbus-user.talk org.freedesktop.Notifications
