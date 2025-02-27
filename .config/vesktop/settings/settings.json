@@ -269,7 +269,9 @@
             "additionalQuotesDelimiter": "|"
         },
         "MemberCount": {
-            "enabled": true
+            "enabled": true,
+            "memberList": true,
+            "toolTip": true
         },
         "MentionAvatars": {
             "enabled": false
@@ -653,7 +655,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1740561324518
+        "settingsSyncVersion": 1740655648349
     },
     "eagerPatches": false
 }
