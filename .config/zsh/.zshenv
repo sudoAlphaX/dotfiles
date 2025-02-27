@@ -27,6 +27,8 @@ export GPG_TTY=$TTY
 # Local binaries path
 export PATH="$PATH:$HOME/.local/bin"
 
+# Libvirt use system scope
+export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 ################ xdg-ninja $HOME cleanup ################
 
