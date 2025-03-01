@@ -218,7 +218,7 @@
     "icon-spacing": 4,
     "icon-size": 18,
     "transition-duration": 250,
-    "on-click": "playerctl pause",
+    "on-click": "if [[ \"$(playerctl status -p musikcube)\" == \"Playing\" ]]; then playerctl -p musikcube pause; else playerctl pause; fi",
     "modules": [
       {
         "type": "screenshare",
