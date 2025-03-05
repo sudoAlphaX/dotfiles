@@ -54,7 +54,7 @@
     }
   },
   "custom/user": {
-    "exec": "bash $HOME/.config/waybar/scripts/username.sh",
+    "exec": "whoami | sed -E 's/(.)(.*)/\\U\\1\\L\\2/'",
     "format": "{}"
   },
   "custom/pacman_updates": {
