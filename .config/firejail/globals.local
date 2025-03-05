@@ -1,3 +1,8 @@
 # Do not join the same sandbox (multi-user fix)
 ignore join-or-start
 
+# Blacklist sensitive directories
+blacklist ${HOME}/Documents/Keepass
+blacklist ${HOME}/Documents/Keefile
+blacklist ${HOME}/Documents/ID
+
