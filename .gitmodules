@@ -34,3 +34,6 @@
 [submodule ".config/zsh/assets/ohmyzsh"]
 	path = .config/zsh/assets/ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh/
+[submodule ".config/zsh/assets/custom/themes/powerlevel10k"]
+	path = .config/zsh/assets/custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k

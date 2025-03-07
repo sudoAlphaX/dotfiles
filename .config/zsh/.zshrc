@@ -1,5 +1,12 @@
+# p10k instant prompt
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 ##### omz configuration #####
 
+# Theme (p10k)
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Disable automatic updates
 zstyle ':omz:update' mode disabled
@@ -98,3 +105,6 @@ plugins+=(z)
 # Sourcing
 source $ZSH/oh-my-zsh.sh
 source $ZDOTDIR/.zshalias
+# Initialize p10k prompt
+[[ ! -f ${ZDOTDIR:-~}/.p10k.zsh ]] || source ${ZDOTDIR:-~}/.p10k.zsh
+
