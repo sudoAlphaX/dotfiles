@@ -139,7 +139,7 @@ bindkey '^[OA' history-search-backward
 ##### END zsh-autocomplete configuration #####
 
 # Hyprland splash
-if [[ "$TERM" = "alacritty" && ! $SSH_CONNECTION ]]; then echo "$(hyprctl splash | lolcat -f &)"; fi
+if [[ $XDG_SESSION_DESKTOP == "Hyprland" && $TERM == "alacritty" ]]; then echo "$(hyprctl splash | lolcat -f &)"; fi
 
 # Initialize p10k prompt
 [[ ! -f ${ZDOTDIR:-~}/.p10k.zsh ]] || source ${ZDOTDIR:-~}/.p10k.zsh
