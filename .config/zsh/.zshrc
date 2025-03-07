@@ -59,24 +59,62 @@ zstyle ':omz:plugins:alias-finder' longer no
 zstyle ':omz:plugins:alias-finder' exact no
 zstyle ':omz:plugins:alias-finder' cheaper yes
 
+# Notify when background jobs finish
 plugins+=(bgnotify)
 bgnotify_bell=true
-bgnotify_threshold=2
+bgnotify_threshold=60
 bgnotify_extraargs="-a zsh"
-# function bgnotify_formatted {
-#   ## $1=exit_status, $2=command, $3=elapsed_time
-#
-#   # Humanly readable elapsed time
-#   local elapsed="$(( $3 % 60 ))s"
-#   (( $3 < 60 ))   || elapsed="$((( $3 % 3600) / 60 ))m $elapsed"
-#   (( $3 < 3600 )) || elapsed="$((  $3 / 3600 ))h $elapsed"
-#
-#   [ $1 -eq 0 ] && title="Holy Smokes Batman" || title="Holy Graf Zeppelin"
-#   [ $1 -eq 0 ] && icon="$HOME/icons/success.png" || icon="$HOME/icons/fail.png"
-#   bgnotify "$title - took ${elapsed}" "$2" "$icon"
-# }
-#
+function bgnotify_formatted {
+  ## $1=exit_status, $2=command, $3=elapsed_time
 
+  local ignore=(
+    "lazygit"
+    "nvim"
+    "vim"
+    "nano"
+    "less"
+    "more"
+    "yt-x"
+    "fastanime"
+    "btop"
+    "htop"
+    "top"
+    "iotop"
+    "battop"
+    "nvimconf"
+    "zshconf"
+    "zsh"
+    "bash"
+    "sh"
+    "isd"
+    "journalctl"
+    "systemctl-tui"
+    "watch"
+    "python"
+    "python3"
+    "tmux"
+    "sleep"
+  )
+
+  if [[ " ${ignore[@]} " =~ " $2 " ]]; then
+    return
+  fi
+
+  # Humanly readable elapsed time
+  local elapsed="$(( $3 % 60 ))s"
+  (( $3 < 60 ))   || elapsed="$((( $3 % 3600) / 60 ))m $elapsed"
+  (( $3 < 3600 )) || elapsed="$((  $3 / 3600 ))h $elapsed"
+
+  if [[ $1 -eq 0 ]]; then
+    local bg_status="completed"
+  else
+    local bg_status="failed"
+  fi
+
+  bgnotify "$(echo $2 | awk '{print $1}') ${bg_status} - took ${elapsed} - $2"
+}
+
+# pkgfile command-not-found
 plugins+=(command-not-found)
 
 # Use <C-o> to copy current command to clipboard
@@ -108,7 +146,6 @@ plugins+=(virtualenvwrapper)
 
 # Z
 plugins+=(z)
-
 
 #### END omz plugins configuration #####
 
