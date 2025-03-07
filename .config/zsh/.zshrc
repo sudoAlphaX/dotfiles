@@ -49,8 +49,10 @@ HIST_STAMPS="yyyy-mm-dd"
 ##### omz plugins configuration #####
 plugins=()
 
+# als command to view aliases
 plugins+=(aliases)
 
+# Show when shortcuts are available
 plugins+=(alias-finder)
 zstyle ':omz:plugins:alias-finder' autoload yes
 zstyle ':omz:plugins:alias-finder' longer no
