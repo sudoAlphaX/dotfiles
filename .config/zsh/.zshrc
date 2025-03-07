@@ -98,7 +98,9 @@ function bgnotify_formatted {
     "ytfzf"
   )
 
-  if [[ " ${ignore[@]} " =~ " $2 " ]]; then
+  program=$(echo $2 | awk '{print $1}')
+
+  if [[ "${ignore[@]}" =~ "$program" ]]; then
     return
   fi
 
@@ -113,7 +115,7 @@ function bgnotify_formatted {
     local bg_status="failed"
   fi
 
-  bgnotify "$(echo $2 | awk '{print $1}') ${bg_status} - took ${elapsed} - $2"
+  bgnotify "$program ${bg_status} - took ${elapsed} - $2"
 }
 
 # pkgfile command-not-found
