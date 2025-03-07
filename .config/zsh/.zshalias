@@ -1,0 +1,84 @@
+# Quick configs for apps
+alias zshconf="nvim $ZDOTDIR/.zshrc"
+alias tmuxconf="nvim $XDG_CONFIG_HOME/tmux/tmux.conf"
+alias hyprconf="cd $XDG_CONFIG_HOME/hypr/"
+alias nvimconf="cd $XDG_CONFIG_HOME/$NVIM_APPNAME/"
+
+# Quick cd ..
+alias ..="cd .."
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+alias .4="cd ../../../../"
+alias .5="cd ../../../../.."
+
+# Always copy contents of directories (r)ecursively and explain (v) what was done
+# alias cp="cp -irv"
+
+# Interactive delete (and trash)
+alias dl="trash-put -v"
+alias del="rm -Iv"
+
+# mkdir with parents
+alias mkdir="mkdir -pv"
+
+# Hidden files
+alias l.="ls -dlAF .* --color=auto"
+
+# Grep auto colorize
+alias grep="grep --color=auto "
+
+# Always try to (c)ontinue getting a partially-downloaded file and use XDG_DATA_HOME for wget-hsts file
+alias wget="wget -c --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""
+
+# thefuck utility configuration and aliases
+# eval $(thefuck --alias)
+# alias f="fuck"
+
+# Alternate neovim profiles
+alias notesvim="NVIM_APPNAME=nvim-notesvim nvim"
+alias truenvim="NVIM_APPNAME=nvim nvim"
+
+# Sudo with alias
+# alias sudo="sudo " # Fix for nocorrect not found
+
+# Memes
+alias pls="sudo "
+
+# Rsync
+rsyncflags="--recursive \
+  --links \
+  --times \
+  --atimes \
+  --devices \
+  --specials \
+  --info=PROGRESS2 \
+  --human-readable \
+  --mkpath \
+  "
+
+alias copy="rsync $rsyncflags --perms --executability "
+alias extcopy="rsync $rsyncflags --info=NAME,STATS2 --verbose "
+alias mov="copy --remove-source-files "
+
+# Rclone
+export RCLONE_PASSWORD_COMMAND="secret-tool lookup service rclone"
+
+# Mount
+alias qmount="mount -o uid=$(id -u $(logname)),gid=$(id -g $(logname)) "
+
+# Colorized ip info
+alias ipa="ip -color a"
+
+# Create python venv
+alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
+
+# Yazi change cwd on exit
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
