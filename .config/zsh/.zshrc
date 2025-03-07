@@ -53,7 +53,7 @@ plugins=()
 plugins+=(aliases)
 
 # Show when shortcuts are available
-plugins+=(alias-finder)
+# plugins+=(alias-finder)
 zstyle ':omz:plugins:alias-finder' autoload yes
 zstyle ':omz:plugins:alias-finder' longer no
 zstyle ':omz:plugins:alias-finder' exact no
