@@ -11,6 +11,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# source zsh-autocomplete
+skip_global_compinit=1
+source $ZSH_CUSTOM/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 ##### omz configuration #####
 
@@ -21,7 +24,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 zstyle ':omz:update' mode disabled
 
 # Show loading prompt
-COMPLETION_WAITING_DOTS=true
+COMPLETION_WAITING_DOTS=false
 
 # Case insensitive match
 CASE_SENSITIVE=false
@@ -104,19 +107,34 @@ plugins+=(virtualenvwrapper)
 # Z
 plugins+=(z)
 
+
 #### END omz plugins configuration #####
 
 
 # LS_COLORS
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
 
-
-
 # Sourcing
 source $ZSH/oh-my-zsh.sh
 source $ZSH_CUSTOM/themes/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZDOTDIR/.zshalias
+
+##### zsh-autocomplete configuration #####
+
+zstyle ':completion:*' completer _complete _complete:-fuzzy _correct _approximate _ignored
+
+# Make Tab and ShiftTab go to the menu
+bindkey '^I' menu-select
+bindkey "$terminfo[kcbt]" menu-select
+
+# Make Tab and ShiftTab change the selection in the menu
+bindkey -M menuselect '^I' menu-complete
+bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
+
+bindkey '^[OA' history-search-backward
+
+##### END zsh-autocomplete configuration #####
 
 # Hyprland splash
 if [[ "$TERM" = "alacritty" && ! $SSH_CONNECTION ]]; then echo "$(hyprctl splash | lolcat -f &)"; fi
