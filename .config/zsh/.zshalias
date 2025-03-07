@@ -22,7 +22,11 @@ alias del="rm -Iv"
 # mkdir with parents
 alias mkdir="mkdir -pv"
 
-# Hidden files
+# ls aliases
+alias lt="ls -Ah --sort=time"
+alias ltr="lt --reverse"
+alias llt="lt -l"
+alias lltr="ltr -l"
 alias l.="ls -dlAF .* --color=auto"
 
 # Grep auto colorize
