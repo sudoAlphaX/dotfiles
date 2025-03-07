@@ -1,7 +1,16 @@
+# Tmux on SSH (https://stackoverflow.com/a/40192494)
+if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
+  tmux attach-session -t ssh || tmux new-session -s ssh
+  exit # close the shell if tmux is detached/closed
+fi
+
+export GPG_TTY=$TTY
+
 # p10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
 
 ##### omz configuration #####
 
@@ -26,7 +35,6 @@ DISABLE_MAGIC_FUNCTIONS=false
 # Command correction
 ENABLE_CORRECTION=true
 
-
 # Mark untracked files as dirty (for speed in large repositories)
 # DISABLE_UNTRACKED_FILES_DIRTY=true
 
@@ -34,9 +42,6 @@ ENABLE_CORRECTION=true
 HIST_STAMPS="yyyy-mm-dd"
 
 ##### END omz configuration #####
-
-# LS_COLORS
-export LS_COLORS="$(vivid generate catppuccin-mocha)"
 
 ##### omz plugins configuration #####
 plugins=()
@@ -99,12 +104,21 @@ plugins+=(virtualenvwrapper)
 # Z
 plugins+=(z)
 
-
 #### END omz plugins configuration #####
+
+
+# LS_COLORS
+export LS_COLORS="$(vivid generate catppuccin-mocha)"
+
+
 
 # Sourcing
 source $ZSH/oh-my-zsh.sh
 source $ZDOTDIR/.zshalias
+
+# Hyprland splash
+if [[ "$TERM" = "alacritty" && ! $SSH_CONNECTION ]]; then echo "$(hyprctl splash | lolcat -f &)"; fi
+
 # Initialize p10k prompt
 [[ ! -f ${ZDOTDIR:-~}/.p10k.zsh ]] || source ${ZDOTDIR:-~}/.p10k.zsh
 
