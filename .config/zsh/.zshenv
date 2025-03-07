@@ -10,6 +10,7 @@ export HISTFILE="$XDG_STATE_HOME/zsh/history"
 # Path to oh-my-zsh installation.
 export ZSH="$ZDOTDIR/assets/ohmyzsh/"
 export ZSH_CUSTOM="$ZDOTDIR/assets/custom"
+export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump"
 
 # Z plugin
 export _Z_DATA="$XDG_DATA_HOME/z"
