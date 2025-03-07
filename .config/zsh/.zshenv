@@ -53,3 +53,6 @@ export W3M_DIR="$XDG_DATA_HOME"/w3m
 
 # .virtualenvs
 export WORKON_HOME="$XDG_DATA_HOME/virtualenvs"
+
+# .texlive
+export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var
