@@ -8,8 +8,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 
 # Path to oh-my-zsh installation.
-export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
-export ZSH_CUSTOM="$XDG_CONFIG_HOME/omz-custom"
+export ZSH="$ZDOTDIR/assets/ohmyzsh/"
+export ZSH_CUSTOM="$ZDOTDIR/assets/custom"
 
 # Z plugin
 export _Z_DATA="$XDG_DATA_HOME/z"

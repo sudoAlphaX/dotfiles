@@ -31,3 +31,6 @@
 [submodule ".config/Kvantum/assets/catppuccin-Kvantum"]
 	path = .config/Kvantum/assets/catppuccin-Kvantum
 	url = https://github.com/catppuccin/Kvantum
+[submodule ".config/zsh/assets/ohmyzsh"]
+	path = .config/zsh/assets/ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh/
