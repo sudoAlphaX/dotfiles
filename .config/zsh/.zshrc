@@ -114,6 +114,8 @@ export LS_COLORS="$(vivid generate catppuccin-mocha)"
 
 # Sourcing
 source $ZSH/oh-my-zsh.sh
+source $ZSH_CUSTOM/themes/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
+source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZDOTDIR/.zshalias
 
 # Hyprland splash

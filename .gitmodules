@@ -37,3 +37,9 @@
 [submodule ".config/zsh/assets/custom/themes/powerlevel10k"]
 	path = .config/zsh/assets/custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k
+[submodule ".config/zsh/assets/custom/plugins/zsh-syntax-highlighting"]
+	path = .config/zsh/assets/custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule ".config/zsh/assets/custom/themes/zsh-syntax-highlighting"]
+	path = .config/zsh/assets/custom/themes/zsh-syntax-highlighting
+	url = https://github.com/catppuccin/zsh-syntax-highlighting
