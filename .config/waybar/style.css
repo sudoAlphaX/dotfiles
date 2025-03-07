@@ -84,6 +84,7 @@ button:hover {
 #disk,
 #temperature,
 #custom-temperature,
+#custom-cpufreq,
 #custom-pacman_updates,
 #backlight,
 #wireplumber,
@@ -146,6 +147,16 @@ button:hover {
 }
 
 #custom-temperature {
+    color: @green;
+    border-bottom: 2px solid @green;
+}
+
+#custom-cpufreq.high {
+    color: @red;
+    border-bottom: 2px solid @red;
+}
+
+#custom-cpufreq {
     color: @green;
     border-bottom: 2px solid @green;
 }

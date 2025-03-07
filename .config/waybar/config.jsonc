@@ -32,7 +32,8 @@
     "modules": [
       "custom/temperature",
       "cpu",
-      "memory"
+      "memory",
+      "custom/cpufreq"
     ]
   },
   "hyprland/workspaces": {
@@ -127,6 +128,13 @@
     "format": " {}°C",
     "interval": 10,
     "on-click": "alacritty -e watch -n 1 sensors"
+  },
+  "custom/cpufreq": {
+    "exec": "bash $HOME/.config/waybar/scripts/cpufreq.sh",
+    "return-type": "json",
+    "format": "󰓅 {}",
+    "interval": 10,
+    "on-click": "auto-cpufreq-gtk"
   },
   "cpu": {
     "format": " {usage}%",
