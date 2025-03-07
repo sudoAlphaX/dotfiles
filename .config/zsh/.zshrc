@@ -94,6 +94,8 @@ function bgnotify_formatted {
     "python3"
     "tmux"
     "sleep"
+    "mpv"
+    "ytfzf"
   )
 
   if [[ " ${ignore[@]} " =~ " $2 " ]]; then
