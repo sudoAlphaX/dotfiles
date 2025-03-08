@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+device="/dev/mapper/volgroup-cryptarchroot"
+tpm_device="auto"
+pcrs=(0 2 3 4 5 7 12)
+
+delete_slot=$(sudo systemd-cryptenroll --no-pager $device | grep tpm2 | tail -n 1 | awk '{print $1}')
+
+sudo systemd-cryptenroll --no-pager "$device" --wipe "$delete_slot"
+
+sudo systemd-cryptenroll "$device" --unlock-tpm2-device="$tpm_device" --tpm2-device="$tpm_device" --tpm2-pcrs="$(
+  IFS=+
+  echo "${pcrs[*]}"
+)"
