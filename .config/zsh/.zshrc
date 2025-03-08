@@ -96,6 +96,7 @@ function bgnotify_formatted {
     "sleep"
     "mpv"
     "ytfzf"
+    "ssh"
   )
 
   program=$(echo $2 | awk '{print $1}')
