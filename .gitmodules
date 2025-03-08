@@ -10,21 +10,6 @@
 [submodule ".config/bat/assets/catppuccin"]
 	path = .config/bat/assets/catppuccin
 	url = https://github.com/catppuccin/bat
-[submodule ".config/omz-custom/plugins/zsh-syntax-highlighting"]
-	path = .config/omz-custom/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule ".config/omz-custom/plugins/zsh-autocomplete"]
-	path = .config/omz-custom/plugins/zsh-autocomplete
-	url = https://github.com/marlonrichert/zsh-autocomplete
-[submodule ".config/omz-custom/themes/powerlevel10k"]
-	path = .config/omz-custom/themes/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k
 [submodule ".config/lazygit/assets/lazygit"]
 	path = .config/lazygit/assets/lazygit
 	url = https://github.com/catppuccin/lazygit
-[submodule ".config/omz-custom/themes/zsh-syntax-highlighting"]
-	path = .config/omz-custom/themes/zsh-syntax-highlighting
-	url = https://github.com/catppuccin/zsh-syntax-highlighting
-[submodule ".config/oh-my-zsh"]
-	path = .config/oh-my-zsh
-	url = https://github.com/ohmyzsh/ohmyzsh
