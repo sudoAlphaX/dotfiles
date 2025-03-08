@@ -29,19 +29,16 @@ if ! systemd-ac-power && [[ $performance_governor -eq 1 ]]; then
 fi
 
 format_freq() {
+  local freq=$1
 
-  if (($1 >= 1000000)); then
-    if [[ -n $2 ]]; then
-      formattedFreq=$(awk "BEGIN {printf \"%.1f GHz\", $avgFreq/1000000}")
+  if [[ -z $2 ]]; then
+    if (($1 >= 1000000)); then
+      formattedFreq=$(awk "BEGIN {printf \"%.1fG\", $freq/1000000}")
     else
-      formattedFreq=$(awk "BEGIN {printf \"%.1fG\", $avgFreq/1000000}")
+      formattedFreq=$(awk "BEGIN {printf \"%.0fM\", $freq/1000}")
     fi
   else
-    if [[ -n $2 ]]; then
-      formattedFreq=$(awk "BEGIN {printf \"%.0f MHz\", $avgFreq/1000}")
-    else
-      formattedFreq=$(awk "BEGIN {printf \"%.0fM\", $avgFreq/1000}")
-    fi
+    formattedFreq=$(awk "BEGIN {printf \"%.0f MHz\", $freq/1000}")
   fi
 
   echo "$formattedFreq"
