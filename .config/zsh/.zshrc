@@ -61,7 +61,7 @@ zstyle ':omz:plugins:alias-finder' cheaper yes
 plugins+=(bgnotify)
 bgnotify_bell=true
 bgnotify_threshold=60
-bgnotify_extraargs="-a zsh"
+bgnotify_extraargs="-a zsh -u low"
 function bgnotify_formatted {
   ## $1=exit_status, $2=command, $3=elapsed_time
 
