@@ -13,3 +13,6 @@
 [submodule ".config/lazygit/assets/lazygit"]
 	path = .config/lazygit/assets/lazygit
 	url = https://github.com/catppuccin/lazygit
+[submodule ".config/zsh/assets/ohmyzsh"]
+	path = .config/zsh/assets/ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh/
