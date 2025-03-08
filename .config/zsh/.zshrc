@@ -98,6 +98,7 @@ function bgnotify_formatted {
     "mpv"
     "ytfzf"
     "ssh"
+    "topgrade"
   )
 
   program=$(echo $2 | awk '{print $1}')
