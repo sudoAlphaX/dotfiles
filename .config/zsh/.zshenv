@@ -4,12 +4,14 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="/data/data/com.termux/cache/"
 export XDG_RUNTIME_DIR=$PREFIX/tmp
-# Path to zsh configuration directory
+
+# ZSH history
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 
 # Path to oh-my-zsh installation.
-export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
-export ZSH_CUSTOM="$XDG_CONFIG_HOME/omz-custom"
+export ZSH="$ZDOTDIR/assets/ohmyzsh/"
+export ZSH_CUSTOM="$ZDOTDIR/assets/custom"
+export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump"
 
 # Z plugin
 export _Z_DATA="$XDG_DATA_HOME/z"
@@ -26,7 +28,6 @@ export GPG_TTY=$TTY
 
 # Local binaries path
 export PATH="$PATH:$HOME/.local/bin"
-
 
 ################ xdg-ninja $HOME cleanup ################
 
@@ -50,3 +51,7 @@ export W3M_DIR="$XDG_DATA_HOME"/w3m
 
 # .virtualenvs
 export WORKON_HOME="$XDG_DATA_HOME/virtualenvs"
+
+# .texlive
+export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var
+
