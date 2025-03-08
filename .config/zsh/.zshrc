@@ -71,6 +71,7 @@ function bgnotify_formatted {
     "vim"
     "nano"
     "less"
+    "man"
     "more"
     "yt-x"
     "fastanime"
