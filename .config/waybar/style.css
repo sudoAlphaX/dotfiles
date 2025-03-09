@@ -151,6 +151,11 @@ button:hover {
     border-bottom: 2px solid @green;
 }
 
+#custom-cpufreq.low {
+    color: @blue;
+    border-bottom: 2px solid @blue;
+}
+
 #custom-cpufreq.high {
     color: @red;
     border-bottom: 2px solid @red;

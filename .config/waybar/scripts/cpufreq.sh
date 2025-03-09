@@ -2,7 +2,7 @@
 
 cpuFreqs=()
 totalFreq=0
-performance_governor=0
+auto_cpufreq_override_path="/opt/auto-cpufreq/override.pickle"
 
 for cpu in /sys/devices/system/cpu/cpu[0-9]*; do
   cpuNum=$(basename "$cpu")
@@ -11,10 +11,6 @@ for cpu in /sys/devices/system/cpu/cpu[0-9]*; do
 
   cpuGovernor=$(cat "$cpu/cpufreq/scaling_governor")
 
-  if [[ $cpuGovernor == "performance" ]]; then
-    performance_governor=1
-  fi
-
   cpuFreqs+=("$cpuNum: $cpuFreq, Governor: $cpuGovernor")
 
   totalFreq=$((totalFreq + cpuFreq))
@@ -22,10 +18,14 @@ done
 
 avgFreq=$((totalFreq / ${#cpuFreqs[@]}))
 
-class="normal"
-
-if ! systemd-ac-power && [[ $performance_governor -eq 1 ]]; then
+if [[ ! -f "$auto_cpufreq_override_path" ]]; then
+  class="normal"
+elif grep -q "performance" "$auto_cpufreq_override_path"; then
   class="high"
+elif grep -q "powersave" "$auto_cpufreq_override_path"; then
+  class="low"
+else
+  class="normal"
 fi
 
 format_freq() {
