@@ -3,6 +3,8 @@
 pid=$(pidof wf-recorder)
 
 if [ "$pid" ]; then
+  wl-copy --clear
+
   # Stop screen recording
   for id in $pid; do
     while kill -SIGINT "$id"; do
@@ -44,9 +46,6 @@ else
   wf-recorder --audio=combined.monitor -f "$filepath" -r 30 -c h264_vaapi -d /dev/dri/renderD128
 fi
 
-pactl unload-module module-loopback
-pactl unload-module module-null-sink
-
 ffmpegthumbnailer -i "$filepath" -o "$thumbnail" -s 0
 
 if [ "$1" != "false" ]; then
@@ -55,3 +54,6 @@ if [ "$1" != "false" ]; then
 else
   notify-send -u low -a wf-recorder -i "$thumbnail" "Saved screen recording to $filename"
 fi
+
+pactl unload-module module-loopback
+pactl unload-module module-null-sink
