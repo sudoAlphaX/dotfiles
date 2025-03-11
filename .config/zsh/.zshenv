@@ -56,3 +56,6 @@ export WORKON_HOME="$XDG_DATA_HOME/virtualenvs"
 
 # .texlive
 export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var
+
+# .gradle
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
