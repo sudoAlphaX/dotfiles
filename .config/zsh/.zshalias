@@ -86,3 +86,12 @@ function y() {
   fi
   rm -f -- "$tmp"
 }
+
+function tmux() {
+  local slice="tmux.slice"
+  if uwsm check is-active >/dev/null 2>&1; then
+    uwsm app -s "$slice" -- tmux "$@"
+  else
+    command tmux "$@"
+  fi
+}
