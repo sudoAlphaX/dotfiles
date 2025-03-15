@@ -4,7 +4,7 @@
 
 # Variables
 source /etc/create_ap.conf
-allowed_aps=("SSN" "SNUC")
+allowed_aps=("SSID")
 ssid=$(iw dev "$WIFI_IFACE" info | awk '/ssid/ {print $2}')
 
 # Stop the hotspot
