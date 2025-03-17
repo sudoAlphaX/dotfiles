@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 . /etc/create_ap.conf
 
 if [ "$1" = "$WIFI_IFACE" ]; then
