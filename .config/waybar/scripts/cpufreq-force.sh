@@ -3,7 +3,11 @@
 auto_cpufreq_override_path="/opt/auto-cpufreq/override.pickle"
 
 if [ ! -f "$auto_cpufreq_override_path" ]; then
-  pkexec auto-cpufreq --force performance
+  if systemd-ac-power; then
+    pkexec auto-cpufreq --force powersave
+  else
+    pkexec auto-cpufreq --force performance
+  fi
 else
   pkexec auto-cpufreq --force reset
 fi
