@@ -497,7 +497,7 @@
 	format="%s"
 	new_icon="$XDG_CONFIG_HOME/dunst/icons/touchpad/touchpad-disabled-symbolic.svg"
 	history_ignore=true
-  set_stack_tag="touchpad-toggle"
+  set_stack_tag="input-device-toggle"
 	timeout=3
 
 [touchpad-enabled]
@@ -506,7 +506,7 @@
 	format="%s"
   new_icon="$XDG_CONFIG_HOME/dunst/icons/touchpad/touchpad-enabled-symbolic.svg"
 	history_ignore=true
-  set_stack_tag="touchpad-toggle"
+  set_stack_tag="input-device-toggle"
 	timeout=3
 
 [touchscreen-disabled]
@@ -515,7 +515,7 @@
 	format="%s"
 	new_icon="/usr/share/icons/breeze-dark/devices/24/input-touchscreen-symbolic.svg"
 	history_ignore=true
-  set_stack_tag="touchscreen-toggle"
+  set_stack_tag="input-device-toggle"
 	timeout=3
 
 [touchscreen-enabled]
@@ -524,7 +524,7 @@
 	format="%s"
 	new_icon="/usr/share/icons/breeze-dark/devices/24/input-touchscreen-symbolic.svg"
 	history_ignore=true
-  set_stack_tag="touchscreen-toggle"
+  set_stack_tag="input-device-toggle"
 	timeout=3
 
 [brightness-change]
