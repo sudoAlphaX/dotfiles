@@ -6,7 +6,7 @@ normal=50
 # Values greater than $normal will be considered critical.
 
 updates="$(checkupdates --nocolor)"
-updatesSanitized="$(echo "$updates" | awk '{printf "%s\\n", $0}')"
+updatesSanitized="$(echo "$updates" | column -t | awk '{printf "%s\\n", $0}')"
 updatesCount=$(echo "$updates" | wc -l)
 
 if [ "$updatesCount" -le "$safe" ]; then

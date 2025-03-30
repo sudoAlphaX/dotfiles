@@ -59,7 +59,7 @@
     "format": "{}"
   },
   "custom/pacman_updates": {
-    "exec": "bash $HOME/.config/waybar/scripts/waybar-updates.sh",
+    "exec": "bash $HOME/.config/waybar/scripts/pacman-updates.sh",
     "hide-empty-text": false,
     "return-type": "json",
     "format": "{}",
