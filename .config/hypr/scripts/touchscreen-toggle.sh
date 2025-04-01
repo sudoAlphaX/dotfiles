@@ -1,25 +1,17 @@
 #!/usr/bin/sh
 
-STATUS_FILE=$XDG_RUNTIME_DIR/touchscreen-status
-
 enable_touchscreen() {
-  hyprctl keyword -r '$TOUCHSCREEN_ENABLED' "true"
-  echo "true" >"$STATUS_FILE"
+  hyprctl keyword input:touchdevice:enabled true
   notify-send --category=device --urgency=low "Touchscreen Enabled"
 }
 
 disable_touchscreen() {
-  hyprctl keyword -r '$TOUCHSCREEN_ENABLED' "false"
-  echo "false" >"$STATUS_FILE"
+  hyprctl keyword input:touchdevice:enabled false
   notify-send --category=device --urgency=low "Touchscreen Disabled"
 }
 
-if [ ! -f "$STATUS_FILE" ]; then
+if [ "$(hyprctl getoption -j input:touchdevice:enabled | jq .int)" = 0 ]; then
   enable_touchscreen
 else
-  if [ "$(cat "$STATUS_FILE")" = 'true' ]; then
-    disable_touchscreen
-  else
-    enable_touchscreen
-  fi
+  disable_touchscreen
 fi
