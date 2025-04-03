@@ -25,3 +25,6 @@ private-etc librewolf
 dbus-user.own io.gitlab.firefox.*
 
 apparmor
+
+# Shared clipboard
+include runtime-clipboard.local
