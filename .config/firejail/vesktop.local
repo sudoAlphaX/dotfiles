@@ -9,3 +9,7 @@ dbus-user.talk org.kde.StatusNotifierWatcher
 
 # Notifications
 dbus-user.talk org.freedesktop.Notifications
+
+# Whitelisr /run/user/<UID> for arrpc
+# Find a way to allow only /run/user/<UID>/discord-ipc-0
+whitelist ${RUNUSER}
