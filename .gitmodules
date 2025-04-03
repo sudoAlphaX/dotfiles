@@ -46,3 +46,6 @@
 [submodule "zsh-autocomplete"]
 	path = .config/zsh/assets/custom/plugins/zsh-autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete
+[submodule "trackma-source-hooks"]
+	path = .config/trackma/assets/trackma
+	url = https://github.com/z411/trackma
