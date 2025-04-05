@@ -28,6 +28,10 @@ alias ltr="lt --reverse"
 alias llt="lt -l"
 alias lltr="ltr -l"
 alias l.="ls -dlAF .* --color=auto"
+alias lv="ls -Ah --sort=version"
+alias lvr="lv --reverse"
+alias llv="lv -l"
+alias llvr="llv --reverse"
 
 # Grep auto colorize
 alias grep="grep --color=auto "
