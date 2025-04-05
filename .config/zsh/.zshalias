@@ -77,6 +77,9 @@ alias ipa="ip -color a"
 # Create python venv
 alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
 
+# Alias to start libvirt service
+alias virtmgr="systemctl start libvirtd && uwsm app -- virt-manager & disown"
+
 # Yazi change cwd on exit
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
