@@ -19,7 +19,7 @@ return {
     lazy = false,
     dependencies = { "MunifTanjim/nui.nvim" },
     keys = {
-      { "<leader>uH", "<cmd>:Hardtime toggle<CR>", desc = "Toggle Precognition" },
+      { "<leader>uH", "<cmd>:Hardtime toggle<CR>", desc = "Toggle Hardtime" },
     },
     opts = {
       disable_mouse = false,
