@@ -1,0 +1,2 @@
+ignore read-only ${HOME}/.dotfiles
+whitelist ${HOME}/.dotfiles/.config/FreeTube
