@@ -16,7 +16,7 @@ mpv_handler() {
       fi
     else
       if [[ $is_mpv_active -eq 1 ]]; then
-        ./touchpad-toggle.sh true >/dev/null
+        "$(dirname "$0")/touchpad-toggle.sh" true >/dev/null
       fi
       is_mpv_active=0
     fi
@@ -26,9 +26,9 @@ mpv_handler() {
   # Only process fullscreen events if MPV is the active window
   if [[ $is_mpv_active -eq 1 ]]; then
     if [[ "$event" == "fullscreen>>1" ]]; then
-      ./touchpad-toggle.sh false >/dev/null
+      "$(dirname "$0")/touchpad-toggle.sh" false >/dev/null
     elif [[ "$event" == "fullscreen>>0" ]]; then
-      ./touchpad-toggle.sh true >/dev/null
+      "$(dirname "$0")/touchpad-toggle.sh" true >/dev/null
     fi
   fi
 }
