@@ -11,9 +11,13 @@ mpv_handler() {
   if [[ "$event" =~ ^activewindow\>\> ]]; then
     # Update MPV active status
     if [[ "$event" =~ ^activewindow\>\>mpv ]]; then
-      is_mpv_active=1
+      if [[ $is_mpv_active -eq 0 ]]; then
+        is_mpv_active=1
+      fi
     else
-
+      if [[ $is_mpv_active -eq 1 ]]; then
+        ./touchpad-toggle.sh true >/dev/null
+      fi
       is_mpv_active=0
     fi
     return
