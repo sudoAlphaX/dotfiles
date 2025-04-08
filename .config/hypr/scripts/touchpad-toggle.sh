@@ -14,12 +14,22 @@ disable_touchpad() {
   notify-send --category=device --urgency=low "Touchpad Disabled"
 }
 
-if [ ! -f $STATUS_FILE ]; then
+toggle_touchpad() {
+  if [ ! -f "${STATUS_FILE}" ] || [ "$(cat "${STATUS_FILE}")" = 'false' ]; then
+    enable_touchpad
+  else
+    disable_touchpad
+  fi
+}
+
+# Handle arguments
+if [ $# -eq 0 ]; then
+  toggle_touchpad
+elif [ "$1" = "true" ]; then
+  enable_touchpad
+elif [ "$1" = "false" ]; then
   disable_touchpad
 else
-  if [ "$(cat $STATUS_FILE)" = 'true' ]; then
-    disable_touchpad
-  else
-    enable_touchpad
-  fi
+  echo "Error: Invalid argument. Use 'true', 'false', or no argument to toggle." >&2
+  exit 1
 fi
