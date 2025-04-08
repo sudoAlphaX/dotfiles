@@ -1,15 +1,16 @@
 #!/usr/bin/sh
 
 STATUS_FILE=$XDG_RUNTIME_DIR/touchpad-status
+device="dll07d0:01-044e:120b"
 
 enable_touchpad() {
-  hyprctl keyword -r '$TOUCHPAD_ENABLED' "true"
+  hyprctl keyword "device[$device]:enabled" 1
   echo "true" >$STATUS_FILE
   notify-send --category=device --urgency=low "Touchpad Enabled"
 }
 
 disable_touchpad() {
-  hyprctl keyword -r '$TOUCHPAD_ENABLED' "false"
+  hyprctl keyword "device[$device]:enabled" 0
   echo "false" >$STATUS_FILE
   notify-send --category=device --urgency=low "Touchpad Disabled"
 }
