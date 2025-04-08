@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function safeeyes-handler {
+function safeeyes_handler {
 
   if [[ ${1:0:10} == "openwindow" ]]; then
     if [[ $(cut -d "," -f 2,3,4 <<<"${1:12}") =~ ^special:safeeyes,safeeyes,SafeEyes-[0-9]$ ]]; then
@@ -12,4 +12,4 @@ function safeeyes-handler {
   fi
 }
 
-socat -U - "UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" | while read -r line; do safeeyes-handler "$line"; done
+socat -U - "UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" | while read -r line; do safeeyes_handler "$line"; done
