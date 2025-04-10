@@ -84,6 +84,44 @@ alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
 # Alias to start libvirt service
 alias virtmgr="systemctl start libvirtd && uwsm app -- virt-manager & disown"
 
+# systemctl aliases
+alias scs="systemctl status"
+alias scst="systemctl start"
+alias scsp="systemctl stop"
+alias scen="systemctl enable"
+alias scdis="systemctl disable"
+alias scf="systemctl --failed"
+
+# journalctl aliases
+alias jf="journalctl -f"
+alias jb="journalctl -b"
+alias ju="journalctl -u"
+alias jfb="journalctl -f -b"
+alias jbf="jfb"
+alias jfu="journalctl -f -u"
+alias jbu="journalctl -b -u"
+alias jbfu="journalctl -b -f -u"
+alias jfbu="jbfu"
+
+# systemctl --user aliases
+alias scus="systemctl --user status"
+alias scust="systemctl --user start"
+alias scusp="systemctl --user stop"
+alias scuen="systemctl --user enable"
+alias scudis="systemctl --user disable"
+alias scuf="systemctl --user --failed"
+
+# journalctl --user aliases
+alias juf="journalctl --user -f"
+alias jub="journalctl --user -b"
+alias juu="journalctl --user -u"
+alias jufb="journalctl --user -f -b"
+alias jubf="jufb"
+alias jufu="journalctl --user -f -u"
+alias jubu="journalctl --user -b -u"
+alias jubfu="journalctl --user -b -f -u"
+alias jufbu="jubfu"
+
 # Yazi change cwd on exit
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
