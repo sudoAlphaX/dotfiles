@@ -59,6 +59,7 @@ function sudo ()
 }
 
 alias sudo="sudo "
+alias esudo="sudo -E "
 
 # Memes
 alias pls="sudo "
