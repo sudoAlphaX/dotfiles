@@ -19,8 +19,8 @@ alias .5="cd ../../../../.."
 alias dl="trash-put -v"
 alias del="rm -Iv"
 
-# mkdir with parents
-alias mkdir="mkdir -pv"
+# mkdir with parents and nocorrect
+alias mkdir="nocorrect mkdir -pv"
 
 # ls aliases
 alias lt="ls -Ah --sort=time"
