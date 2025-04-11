@@ -134,6 +134,11 @@ alias jubu="journalctl --user -b -u"
 alias jubfu="journalctl --user -b -f -u"
 alias jufbu="jubfu"
 
+
+function aur-vote () {
+  AUR_AUTO_VOTE_PASSWORD="$(secret-tool lookup service aur)" command aur-auto-vote --no-unvote "$(secret-tool search service aur 2>&1 | grep "attribute.UserName" | cut -d "=" -f 2 | xargs)"
+}
+
 # Yazi change cwd on exit
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
