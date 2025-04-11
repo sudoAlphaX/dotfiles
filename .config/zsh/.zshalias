@@ -73,7 +73,8 @@ alias mov="copy --remove-source-files"
 export RCLONE_PASSWORD_COMMAND="secret-tool lookup service rclone"
 
 # Mount
-alias qmount="mount -o uid=$(id -u $(logname)),gid=$(id -g $(logname)) "
+alias qmount="udisksctl mount -b"
+alias qumount="udisksctl unmount -b"
 
 # Colorized ip info
 alias ipa="ip -color a"
