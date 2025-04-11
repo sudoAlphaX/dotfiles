@@ -47,8 +47,18 @@ alias wget="wget -c --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""
 alias notesvim="NVIM_APPNAME=nvim-notesvim nvim"
 alias truenvim="NVIM_APPNAME=nvim nvim"
 
-# Sudo with alias
-# alias sudo="sudo " # Fix for nocorrect not found
+# Sudo with alias and nocorrect fix
+function sudo ()
+{
+  if [ "$1" = "nocorrect" ]; then
+    shift
+    nocorrect command sudo "$@"
+  else
+    command sudo "$@"
+  fi
+}
+
+alias sudo="sudo "
 
 # Memes
 alias pls="sudo "
