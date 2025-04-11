@@ -51,7 +51,7 @@ alias truenvim="NVIM_APPNAME=nvim nvim"
 # alias sudo="sudo " # Fix for nocorrect not found
 
 # Memes
-function pls() { printf "\e[41m"; command sudo "$@"; printf "\e[0m"}
+alias pls="sudo run0 "
 
 # Rsync
 rsyncflags="--recursive \
