@@ -34,7 +34,7 @@ alias llv="lv -l"
 alias llvr="llv --reverse"
 
 # Grep auto colorize
-alias grep="grep --color=auto "
+alias grep="grep --color=auto"
 
 # Always try to (c)ontinue getting a partially-downloaded file and use XDG_DATA_HOME for wget-hsts file
 alias wget="wget -c --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""
@@ -65,9 +65,9 @@ rsyncflags="--recursive \
   --mkpath \
   "
 
-alias copy="rsync $rsyncflags --perms --executability "
-alias extcopy="rsync $rsyncflags --info=NAME,STATS2 --verbose "
-alias mov="copy --remove-source-files "
+alias copy="rsync $rsyncflags --perms --executability"
+alias extcopy="rsync $rsyncflags --info=NAME,STATS2 --verbose"
+alias mov="copy --remove-source-files"
 
 # Mount
 alias qmount="mount -o uid=$(id -u $(logname)),gid=$(id -g $(logname)) "
