@@ -1,4 +1,4 @@
-local XDG_CONFIG_HOME = os.getenv("XDG_CONFIG_HOME")
+local XDG_CONFIG_HOME = os.getenv("XDG_CONFIG_HOME") or os.getenv("HOME") .. "/.config"
 return {
   "mfussenegger/nvim-lint",
   optional = true,
