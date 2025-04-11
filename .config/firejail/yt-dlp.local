@@ -1,1 +1,4 @@
 include whitelist-player-common.inc
+
+whitelist ${HOME}/.config/yt-dlp/
+
