@@ -158,6 +158,7 @@ function tmux() {
   fi
 }
 
+
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo/sudo.plugin.zsh
 # <ESC>mx to move current command to tmux session
 __replace-buffer() {
@@ -173,6 +174,7 @@ __replace-buffer() {
     LBUFFER="${new}${space}${LBUFFER#$old }"
   fi
 }
+
 
 tmux-command-line() {
   # If line is empty, get the last run command from history
@@ -234,3 +236,34 @@ pls-command-line() {
 
 zle -N pls-command-line
 bindkey "\e"pls pls-command-line
+
+
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo/sudo.plugin.zsh
+# <ESC>fj to toggle firejail --noprofile for the current command
+firejail-noprofile-command-line() {
+  # If line is empty, get the last run command from history
+  [[ -z $BUFFER ]] && LBUFFER="$(fc -ln -1)"
+
+  # Save beginning space
+  local WHITESPACE=""
+  if [[ ${LBUFFER:0:1} = " " ]]; then
+    WHITESPACE=" "
+    LBUFFER="${LBUFFER:1}"
+  fi
+
+  {
+    # Simple firejail --noprofile toggle functionality
+    case "$BUFFER" in
+      firejail\ --noprofile\ *) __replace-buffer "firejail --noprofile" "" ;;
+      *) LBUFFER="firejail --noprofile $LBUFFER" ;;
+    esac
+  } always {
+    # Preserve beginning space
+    LBUFFER="${WHITESPACE}${LBUFFER}"
+
+    # Redisplay edit buffer (compatibility with zsh-syntax-highlighting)
+    zle && zle redisplay # only run redisplay if zle is enabled
+  }
+}
+zle -N firejail-noprofile-command-line
+bindkey "\e"fj firejail-noprofile-command-line
