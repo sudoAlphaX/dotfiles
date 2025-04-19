@@ -135,7 +135,7 @@
     "format": "󰓅 {}",
     "interval": 10,
     "on-click": "auto-cpufreq-gtk",
-    "on-click-right": "bash $HOME/.config/waybar/scripts/cpufreq-force.sh"
+    "on-click-right": "cpufreq-force"
   },
   "cpu": {
     "format": " {usage}%",
