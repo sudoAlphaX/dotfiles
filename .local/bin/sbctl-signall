@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-# Remove deleted files from database
-sudo sbctl verify 2>&1 | grep "does not exist" | awk '{print $2}' | sed 's/\/efi/sudo sbctl remove-file \/efi/e'
-
-# Sign all files that are not signed
-sudo sbctl verify 2>&1 | grep "not signed" | awk '{print $2}' | sed 's/\/efi/sudo sbctl sign -s \/efi/e'
