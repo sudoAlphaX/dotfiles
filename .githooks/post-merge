@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+HOOK_DIR="$(dirname "$0")/post-merge.d"
+
+if [ -d "$HOOK_DIR" ]; then
+  for script in "$HOOK_DIR"/*; do
+    if [ -x "$script" ]; then
+      echo "Running post merge hook: $(basename "$script")"
+      "$script"
+    fi
+  done
+fi
