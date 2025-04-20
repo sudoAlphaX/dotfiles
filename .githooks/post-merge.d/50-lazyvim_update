@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+# It looks at the commits just brought in, and if
+# one of them has the exact subject "lazyvim: update plugins",
+# it runs your headless Neovim update command.
+
+# figure out the old HEAD before the merge
+old_head="$(git rev-parse HEAD@\{1\})"
+new_head="$(git rev-parse HEAD)"
+
+# scan every new commit for our magic string
+git log --format='%H' "$old_head..$new_head" | while read -r sha; do
+  subject=$(git log -1 --format='%s' "$sha")
+  if [ "$subject" = "lazyvim: update plugins" ]; then
+    echo "Restoring LazyVim plugins to lockfile state"
+    nvim --headless "+Lazy! restore" +qa >/dev/null
+    break
+  fi
+done
