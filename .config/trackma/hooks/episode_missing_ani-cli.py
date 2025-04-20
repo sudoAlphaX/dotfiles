@@ -6,7 +6,7 @@ watch it via streaming automatically!
 """
 
 import shutil
-from subprocess import Popen, DEVNULL
+from subprocess import run, DEVNULL
 
 
 # Executed when trying to watch an episode that doesn't exist in your library
@@ -35,7 +35,17 @@ def episode_missing(engine, show, episode):
 
         cmd = " ".join(args[:-1]) + f" '{query}'"
         engine.msg.info("episode_missing", cmd)  # Show the command used
-        Popen(args, stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL)
+        output = run(args, stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL)
+        if output.returncode != 0:
+            engine.msg.info("episode_missing", "ani-cli failed")
+            run(
+                [
+                    "notify-send",
+                    "-a",
+                    "ani-cli",
+                    f'Unable to play Episode {episode} of anime: "{query}"',
+                ]
+            )
     else:
         engine.msg.info("episode_missing", "ani-cli was not found")
 
