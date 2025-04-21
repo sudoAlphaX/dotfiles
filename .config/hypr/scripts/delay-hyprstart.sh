@@ -6,3 +6,5 @@ while true; do
   fi
   sleep 1
 done
+
+sleep 2
