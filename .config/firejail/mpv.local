@@ -2,3 +2,6 @@
 ignore dbus-user none
 dbus-user filter
 dbus-user.own org.mpris.MediaPlayer2.*
+
+# Include local yt-dlp config for cookies
+include yt-dlp.local
