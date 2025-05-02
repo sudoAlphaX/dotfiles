@@ -144,6 +144,9 @@ alias jubu="journalctl --user -b -u"
 alias jubfu="journalctl --user -b -f -u"
 alias jufbu="jubfu"
 
+# mpv alias for easy clipboard playback
+alias mpvp="mpv \"\$(wl-paste)\""
+alias mpvpf="mpvp --ytdl-raw-options-add=\"cookies-from-browser=firefox\""
 
 function aur-vote () {
   AUR_AUTO_VOTE_PASSWORD="$(secret-tool lookup service aur)" command aur-auto-vote --no-unvote "$(secret-tool search service aur 2>&1 | grep "attribute.UserName" | cut -d "=" -f 2 | xargs)"
