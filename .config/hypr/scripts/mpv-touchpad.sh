@@ -4,6 +4,9 @@
 is_mpv_active=0
 is_mpv_fullscreen=0
 
+# Keyboard Backlight device
+backlight_device="dell::kbd_backlight"
+
 # Main handler function
 mpv_handler() {
   local event="$1"
@@ -13,12 +16,12 @@ mpv_handler() {
     # Update MPV active status
     if [[ "$event" =~ ^activewindow\>\>mpv ]]; then
       if [[ $is_mpv_fullscreen -eq 1 ]]; then
-        disable_touchpad
+        fullscreened
       fi
       is_mpv_active=1
     else
       if [[ $is_mpv_active -eq 1 && $is_mpv_fullscreen -eq 1 ]]; then
-        enable_touchpad
+        unfullscreened
       fi
       is_mpv_active=0
     fi
@@ -28,20 +31,22 @@ mpv_handler() {
   if [[ "$event" =~ ^fullscreen\>\> && $is_mpv_active -eq 1 ]]; then
     if [[ "$event" =~ ^fullscreen\>\>1 ]]; then
       is_mpv_fullscreen=1
-      disable_touchpad
+      fullscreened
     elif [[ "$event" =~ ^fullscreen\>\>0 ]]; then
       is_mpv_fullscreen=0
-      enable_touchpad
+      unfullscreened
     fi
   fi
 }
 
-disable_touchpad() {
+fullscreened() {
   "$(dirname "$0")/touchpad-toggle.sh" false >/dev/null
+  brightnessctl --save --device="$backlight_device" set 0% >/dev/null
 }
 
-enable_touchpad() {
+unfullscreened() {
   "$(dirname "$0")/touchpad-toggle.sh" true >/dev/null
+  brightnessctl --restore --device="$backlight_device" >/dev/null
 }
 
 # Connect to Hyprland socket and process events
