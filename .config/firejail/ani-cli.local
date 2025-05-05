@@ -1,2 +1,2 @@
 # ani-skip integration
-private-bin ani-skip,seq
+private-bin ani-skip,seq,ffprobe
