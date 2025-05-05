@@ -7,7 +7,7 @@
 --restrict-filenames
 
 # File format
---merge-output-format mkv
+-t mkv
 
 # Subtitles
 --sub-lang "en.*"
