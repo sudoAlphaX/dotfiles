@@ -6,6 +6,7 @@ is_mpv_fullscreen=0
 
 # Keyboard Backlight device
 backlight_device="dell::kbd_backlight"
+backlight_brightness=1
 
 # Main handler function
 mpv_handler() {
@@ -41,12 +42,13 @@ mpv_handler() {
 
 fullscreened() {
   "$(dirname "$0")/touchpad-toggle.sh" false >/dev/null
-  brightnessctl --save --device="$backlight_device" set 0% >/dev/null
+  backlight_brightness=$(brightnessctl --device="$backlight_device" --machine-readable get)
+  brightnessctl --save --device="$backlight_device" set 0 >/dev/null
 }
 
 unfullscreened() {
   "$(dirname "$0")/touchpad-toggle.sh" true >/dev/null
-  brightnessctl --restore --device="$backlight_device" >/dev/null
+  brightnessctl --device="$backlight_device" set "$backlight_brightness" >/dev/null
 }
 
 # Connect to Hyprland socket and process events
