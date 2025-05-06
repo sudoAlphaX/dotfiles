@@ -135,7 +135,7 @@
     "format": "󰓅 {}",
     "interval": 10,
     "on-click": "auto-cpufreq-gtk",
-    "on-click-right": "cpufreq-force"
+    "on-click-right": "notify-send -a auto-cpufreq \"$(cpufreq-force)\""
   },
   "cpu": {
     "format": " {usage}%",
