@@ -86,7 +86,9 @@
     ],
     "reverse-scrolling": true,
     "on-scroll-up": "brightnessctl --device='intel_backlight' set +1%",
-    "on-scroll-down": "brightnessctl --device='intel_backlight' --min-value=75 set 1%-"
+    "on-scroll-down": "brightnessctl --device='intel_backlight' --min-value=75 set 1%-",
+    "on-click": "notify-send -a Hyprland -u low \"$(refresh-hyprate low)\"",
+    "on-click-right": "notify-send -a Hyprland -u low \"$(refresh-hyprate high)\""
   },
   "battery": {
     "interval": 15,

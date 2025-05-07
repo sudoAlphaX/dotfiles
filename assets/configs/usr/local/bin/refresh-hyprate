@@ -17,12 +17,16 @@ set_refresh() {
 
 if [ "$1" = "low" ]; then
   set_refresh $lowrate
+  echo "Refresh rate low: $lowrate Hz"
 elif [ "$1" = "high" ]; then
   set_refresh $maxrate
+  echo "Refresh rate high: $maxrate Hz"
 else
   if systemd-ac-power; then
     set_refresh $maxrate
+    echo "Refresh rate high: $maxrate Hz"
   else
     set_refresh $lowrate
+    echo "Refresh rate low: $lowrate Hz"
   fi
 fi
