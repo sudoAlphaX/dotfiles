@@ -2,7 +2,7 @@
 
 while true; do
   if hyprctl version 2>/dev/null | grep -q "^Hyprland"; then
-    exit 0
+    break
   fi
   sleep 1
 done
