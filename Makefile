@@ -13,6 +13,7 @@ export VERBOSITY
 all: stow etc usr home scripts
 
 stow:
+	@echo "--- Stowing dotfiles ---"
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
 	for dir in $(STOW_IGNORE_DIRS); do \
 		mkdir -p $$V_FLAG $(HOME_DIR)/$$dir; \
@@ -25,21 +26,26 @@ stow:
 	done
 
 etc:
+	@echo "--- Installing etc configs ---"
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
 	sudo cp -T --recursive $$V_FLAG $(CONFIGS_DIR)/$@ /$@;
 
 usr:
+	@echo "--- Installing usr configs ---"
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
 	sudo cp -T --recursive $$V_FLAG $(CONFIGS_DIR)/$@ /$@;
 
 home:
+	@echo "--- Installing home configs ---"
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
 	for dir in $(shell ls /$@); do \
 		sudo cp -T --recursive $$V_FLAG $(CONFIGS_DIR)/$@/user /home/$$dir; \
 	done
 
 scripts:
+	@echo "--- Installing scripts ---"
 	@for script in $(shell ls $(SCRIPTS_DIR)); do \
+		echo "--- Installing $$script ---"; \
 		$(MAKE) -e -C $(SCRIPTS_DIR)/$$script install; \
 	done
 
