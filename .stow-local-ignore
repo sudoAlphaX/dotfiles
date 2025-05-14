@@ -29,3 +29,4 @@ _darcs
 ^/extsd
 ^/assets
 ^/.githooks
+Makefile
