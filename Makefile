@@ -1,11 +1,12 @@
 
 HOME_DIR = $(HOME)
 VERBOSITY ?= 0
-STOW_IGNORE_DIRS := btop fastanime musikcube obs-studio tmux trackma vesktop
+STOW_IGNORE_DIRS := fastanime tmux trackma
 
 all: stow
 
 stow:
+	@echo "--- Stowing dotfiles ---"
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
 	for dir in $(STOW_IGNORE_DIRS); do \
 		mkdir -p $$V_FLAG $(HOME_DIR)/$$dir; \
