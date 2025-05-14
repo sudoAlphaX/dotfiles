@@ -1,11 +1,16 @@
-
+# Variables
 HOME_DIR = $(HOME)
-VERBOSITY ?= 0
-CONFIGS_DIR = ./assets/configs
-export VERBOSITY
 STOW_IGNORE_DIRS := btop fastanime musikcube obs-studio tmux trackma vesktop
+CONFIGS_DIR = ./assets/configs
+SCRIPTS_DIR = ./assets/scripts
 
-all: stow
+VERBOSITY ?= 0
+export VERBOSITY
+
+
+# Targets
+
+all: stow etc usr home scripts
 
 stow:
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
@@ -33,4 +38,9 @@ home:
 		sudo cp -T --recursive $$V_FLAG $(CONFIGS_DIR)/$@/user /home/$$dir; \
 	done
 
-.PHONY: all stow etc usr home
+scripts:
+	@for script in $(shell ls $(SCRIPTS_DIR)); do \
+		$(MAKE) -e -C $(SCRIPTS_DIR)/$$script install; \
+	done
+
+.PHONY: all stow etc usr home scripts
