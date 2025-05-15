@@ -643,6 +643,9 @@
         },
         "BadgeAPI": {
             "enabled": true
+        },
+        "DisableDeepLinks": {
+            "enabled": true
         }
     },
     "notifications": {
@@ -655,7 +658,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1740655648349
+        "settingsSyncVersion": 1747343355274
     },
     "eagerPatches": false
 }
