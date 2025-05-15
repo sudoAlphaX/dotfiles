@@ -20,6 +20,10 @@ return {
     dependencies = { "MunifTanjim/nui.nvim" },
     keys = {
       { "<leader>uH", "<cmd>:Hardtime toggle<CR>", desc = "Toggle Hardtime" },
+      { "j", 'v:count == 0 ? "gj" : "j"', desc = "Down", mode = { "n", "x" }, expr = true, silent = true },
+      { "<Down>", 'v:count == 0 ? "gj" : "j"', desc = "Down", mode = { "n", "x" }, expr = true, silent = true },
+      { "k", 'v:count == 0 ? "gk" : "k"', desc = "Up", mode = { "n", "x" }, expr = true, silent = true },
+      { "<Up>", 'v:count == 0 ? "gk" : "k"', desc = "Up", mode = { "n", "x" }, expr = true, silent = true },
     },
     opts = {
       disable_mouse = false,
