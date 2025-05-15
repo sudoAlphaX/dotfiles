@@ -11,7 +11,7 @@ new_head="$(git rev-parse HEAD)"
 # scan every new commit for our magic string
 git log --format='%H' "$old_head..$new_head" | while read -r sha; do
   subject=$(git log -1 --format='%s' "$sha")
-  if [ "$subject" = "lazyvim: update plugins" ]; then
+  if echo "$subject" | grep -q -i "lazyvim: "; then
     echo "Restoring LazyVim plugins to lockfile state"
     nvim --headless "+Lazy! restore" +qa >/dev/null
     break
