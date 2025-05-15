@@ -10,7 +10,7 @@ export VERBOSITY
 
 # Targets
 
-all: stow etc usr home scripts
+all: stow etc usr scripts
 
 get: get-etc get-usr
 
