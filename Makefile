@@ -12,6 +12,8 @@ export VERBOSITY
 
 all: stow etc usr home scripts
 
+get: get-etc get-usr
+
 stow:
 	@echo "--- Stowing dotfiles ---"
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
@@ -47,6 +49,20 @@ scripts:
 	@for script in $(shell ls $(SCRIPTS_DIR)); do \
 		echo "--- Installing $$script ---"; \
 		$(MAKE) -e -C $(SCRIPTS_DIR)/$$script install; \
+	done
+
+get-etc:
+	@echo "--- Overwriting tracked $(subst get-,,$@) configs with system $(subst get-,,$@) configs ---"
+	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
+	find $(CONFIGS_DIR)/$(subst get-,,$@) -type f | while read -r line; do \
+		cp $$V_FLAG "$$(echo "$$line" | sed 's/^\.\/assets\/configs\/$(subst get-,,$@)\//\/$(subst get-,,$@)\//')" "$$line"; \
+	done
+
+get-usr:
+	@echo "--- Overwriting tracked $(subst get-,,$@) configs with system $(subst get-,,$@) configs ---"
+	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
+	find $(CONFIGS_DIR)/$(subst get-,,$@) -type f | while read -r line; do \
+		cp $$V_FLAG "$$(echo "$$line" | sed 's/^\.\/assets\/configs\/$(subst get-,,$@)\//\/$(subst get-,,$@)\//')" "$$line"; \
 	done
 
 .PHONY: all stow etc usr home scripts
