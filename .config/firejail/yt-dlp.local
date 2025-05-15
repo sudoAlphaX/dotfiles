@@ -1,5 +1,7 @@
 include whitelist-player-common.inc
 
+private-bin aria2c,phantomjs
+
 whitelist ${HOME}/.config/yt-dlp
 noblacklist ${HOME}/.mozilla
 whitelist ${HOME}/.mozilla
