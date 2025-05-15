@@ -28,6 +28,9 @@ return {
     opts = {
       disable_mouse = false,
       max_count = 5,
+      disabled_filetypes = {
+        "copilot-chat",
+      },
     },
   },
 }
