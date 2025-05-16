@@ -21,5 +21,16 @@ return {
     { "<leader>fsf", "<ESC><CMD>lua require('remote-sshfs.connections').find_files()<CR>", desc = "Remote Find Files" },
     { "<leader>fsg", "<ESC><CMD>lua require('remote-sshfs.connections').live_grep()<CR>", desc = "Remote Live Grep" },
   },
-  opts = {},
+  opts = {
+    handlers = {
+      on_disconnect = {
+        clean_mount_folders = true,
+      },
+    },
+    ui = {
+      confirm = {
+        connect = false,
+      },
+    },
+  },
 }
