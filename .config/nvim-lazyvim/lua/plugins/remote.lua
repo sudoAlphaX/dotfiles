@@ -18,8 +18,8 @@ return {
       "<ESC><CMD>lua require('remote-sshfs.api').edit()<CR>",
       desc = "Edit remote (SSH) configurations",
     },
-    { "<leader>fsf", "<ESC><CMD>lua require('remote-sshfs.connections').find_files()<CR>", desc = "Remote Find Files" },
-    { "<leader>fsg", "<ESC><CMD>lua require('remote-sshfs.connections').live_grep()<CR>", desc = "Remote Live Grep" },
+    { "<leader>fsf", "<ESC><CMD>lua require('remote-sshfs.api').find_files()<CR>", desc = "Remote Find Files" },
+    { "<leader>fsg", "<ESC><CMD>lua require('remote-sshfs.api').live_grep()<CR>", desc = "Remote Live Grep" },
   },
   opts = {
     handlers = {
