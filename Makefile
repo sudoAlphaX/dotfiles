@@ -95,6 +95,6 @@ update-submodules:
 
 update-nvim:
 	@echo "--- Updating neovim plugins ---"
-	@nvim --headless '+Lazy! update' +qa
+	@nvim --headless '+Lazy! sync' +qa
 
 .PHONY: all stow etc usr home scripts update update-submodules update-nvim help
