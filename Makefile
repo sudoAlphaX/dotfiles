@@ -10,7 +10,28 @@ export VERBOSITY
 
 # Targets
 
-all: stow etc usr scripts
+help:
+	@echo "--- Available targets ---"; \
+	echo "help: Show this help message"; \
+	echo "install: Install configs"; \
+	echo "--- Install targets ---"; \
+	echo "stow: Stow dotfiles"; \
+	echo "etc: Install etc configs"; \
+	echo "usr: Install usr configs"; \
+	echo "scripts: Install scripts"; \
+	echo "--- Install targets end ---"; \
+	echo "get: Get system configs"; \
+	echo "--- Get targets ---"; \
+	echo "get-etc: Get system etc configs"; \
+	echo "get-usr: Get system usr configs"; \
+	echo "--- Get targets end ---"; \
+	echo "update: Update git submodules and noevim plugins"; \
+	echo "--- Update targets ---"; \
+	echo "update-submodules: Update git submodules"; \
+	echo "update-nvim: Update neovim plugins"; \
+	echo "--- Update targets end ---"; \
+	echo "home: Install home configs"
+
 install: stow etc usr scripts
 
 get: get-etc get-usr
