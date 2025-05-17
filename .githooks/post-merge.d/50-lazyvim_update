@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 # It looks at the commits just brought in, and if
-# one of them has the exact subject "lazyvim: update plugins",
-# it runs your headless Neovim update command.
+# one of them has the subject "lazyvim: " in the commit message,
+# it runs the headless Neovim plugin restore command.
 
 # figure out the old HEAD before the merge
 old_head="$(git rev-parse HEAD@\{1\})"
