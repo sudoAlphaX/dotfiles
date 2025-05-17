@@ -1,8 +1,11 @@
-# # Database path whitelist
+# Database path whitelist
 mkdir ${HOME}/Documents/Keepass
 whitelist ${HOME}/Documents/Keepass
 mkdir ${HOME}/Documents/Keefile
 whitelist ${HOME}/Documents/Keefile
+# KeeShare
+mkdir ${HOME}/Shared/Documents/Keepass
+whitelist ${HOME}/Shared/Documents/Keepass
 
 # Secret Service integration
 dbus-user.own org.freedesktop.secrets
