@@ -3,13 +3,20 @@ HOME_DIR = $(HOME)
 VERBOSITY ?= 0
 STOW_IGNORE_DIRS := fastanime tmux trackma
 
-<<<<<<< HEAD
-all: stow
-=======
-
 # Targets
 
-all: stow etc usr scripts
+help:
+	@echo "--- Available targets ---"; \
+	echo "help: Show this help message"; \
+	echo "install: Install configs"; \
+	echo "--- Install targets ---"; \
+	echo "stow: Stow dotfiles"; \
+	echo "--- Get targets end ---"; \
+	echo "update: Update git submodules and noevim plugins"; \
+	echo "--- Update targets ---"; \
+	echo "update-submodules: Update git submodules"; \
+	echo "update-nvim: Update neovim plugins"; \
+	echo "--- Update targets end ---"; \
 
 install: stow
 update: update-submodules update-nvim
