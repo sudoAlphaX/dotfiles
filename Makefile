@@ -96,5 +96,6 @@ update-submodules:
 update-nvim:
 	@echo "--- Updating neovim plugins ---"
 	@nvim --headless '+Lazy! sync' +qa
+	@git commit ./.config/$${NVIM_APPNAME:-nvim}/lazy-lock.json -m "$$(echo $${NVIM_APPNAME:-nvim} | sed 's/^nvim-//'): update plugins"
 
 .PHONY: all stow etc usr home scripts update update-submodules update-nvim help
