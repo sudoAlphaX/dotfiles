@@ -11,8 +11,11 @@ export VERBOSITY
 # Targets
 
 all: stow etc usr scripts
+install: stow etc usr scripts
 
 get: get-etc get-usr
+
+update: update-submodules update-nvim
 
 stow:
 	@echo "--- Stowing dotfiles ---"
@@ -65,4 +68,12 @@ get-usr:
 		cp $$V_FLAG "$$(echo "$$line" | sed 's/^\.\/assets\/configs\/$(subst get-,,$@)\//\/$(subst get-,,$@)\//')" "$$line"; \
 	done
 
-.PHONY: all stow etc usr home scripts
+update-submodules:
+	@echo "--- Updating git submodules ---"
+	@cd ~/.dotfiles && git submodule foreach '(git checkout main || git checkout master) && git pull'
+
+update-nvim:
+	@echo "--- Updating neovim plugins ---"
+	@nvim --headless '+Lazy! update' +qa
+
+.PHONY: all stow etc usr home scripts update update-submodules update-nvim help
