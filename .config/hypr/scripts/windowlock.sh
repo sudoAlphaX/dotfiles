@@ -1,7 +1,14 @@
+#!/usr/bin/env bash
+
 window=$(hyprctl activewindow -j)
 window_id=$(echo "$window" | jq -r .address | sed 's/^0x//g')
+window_fullscreen_state=$(echo "$window" | jq -r .fullscreen)
 
 notify-send -a "Hyprland" "Locking screen on window: $(echo "$window" | jq -r ".class")"
+
+if [[ ! "$window_fullscreen_state" -eq 2 ]]; then
+  hyprctl dispatch fullscreen 0
+fi
 
 function windowlock_handler {
 
