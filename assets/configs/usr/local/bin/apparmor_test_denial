@@ -1,0 +1,9 @@
+#!/bin/bash
+# Script to test AppArmor denial
+echo "Attempting to write to /tmp/apparmor_denied_file.txt..."
+date > /tmp/apparmor_denied_file.txt
+if [ $? -eq 0 ]; then
+  echo "Write successful (AppArmor denial FAILED or profile not enforced)"
+else
+  echo "Write failed (This is the EXPECTED outcome for AppArmor denial test)"
+fi
