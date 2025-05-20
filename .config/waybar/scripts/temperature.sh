@@ -9,8 +9,8 @@ else
   rawTemp=$(cat "$path"/hwmon[[:print:]]*/temp1_input)
   temp=${rawTemp::-3}
 
-  notifyCriticalTemp=75
-  criticalTemp=68
+  notifyCriticalTemp=80
+  criticalTemp=70
   highTemp=60
 
   if ((temp >= notifyCriticalTemp)); then
