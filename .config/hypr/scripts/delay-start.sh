@@ -1,9 +1,12 @@
 #!/usr/bin/sh
 
-: "${2:=5}"
+app="$1"
+delay="$2"
 
-until [ "$(pgrep -x -u "$(whoami)" "$1")" ]; do sleep 1; done
+: "${delay:=5}"
 
-sleep "$2"
+until [ "$(pgrep -x -u "$(whoami)" "$app")" ]; do sleep 1; done
+
+sleep "$delay"
 
 exit 0
