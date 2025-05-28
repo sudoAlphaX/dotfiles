@@ -573,3 +573,8 @@
 	format="<b>CPU Temperature Critical: %n°C</b>"
 	history_ignore=true
   fullscreen=show
+
+[alarm-clock-applet]
+  appname="alarm-clock-applet"
+  timeout=0
+  fullscreen=show
