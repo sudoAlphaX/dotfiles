@@ -208,7 +208,7 @@
         "  "
       ]
     },
-    "on-click": "hyprctl dispatch exec '[float] pavucontrol'",
+    "on-click": "hyprctl dispatch exec '[float] pwvucontrol'",
     "on-click-right": "wpctl set-mute @DEFAULT_SINK@ toggle",
     "reverse-scrolling": true
   },
