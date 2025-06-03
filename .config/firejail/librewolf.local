@@ -5,26 +5,7 @@ mkdir ${RUNUSER}/app/org.keepassxc.KeePassXC
 whitelist ${RUNUSER}/app/org.keepassxc.KeePassXC
 private-bin keepassxc-proxy
 
-# Screen inhibiting
-dbus-user.talk org.freedesktop.ScreenSaver
-
-# Wayland screensharing
-dbus-user.talk org.freedesktop.portal.Desktop
-# Also add the next line to your librewolf.local if screensharing does not work with
-# the above lines (depends on the portal implementation).
-#ignore noroot
-
-# Native notifications
-dbus-user.talk org.freedesktop.Notifications
-
 # Private dirs
 private-bin dbus-launch,dbus-send,librewolf,sh
-private-etc librewolf
-
-# Allow opening new browser window in existing parent process
-dbus-user.own io.gitlab.firefox.*
 
 apparmor
-
-# Shared clipboard
-include runtime-clipboard.local
