@@ -31,3 +31,15 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 require("luasnip.loaders.from_vscode").lazy_load({
   paths = "./snippets",
 })
+
+-- Special keybindings for LaTeX editing
+vim.api.nvim_create_augroup("Keybinds", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = "Keybinds",
+  pattern = { "tex", "latex", "markdown" },
+  callback = function()
+    vim.api.nvim_buf_set_keymap(0, "i", ";", "$", { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(0, "i", "$", ";", { noremap = true, silent = true })
+  end,
+})
