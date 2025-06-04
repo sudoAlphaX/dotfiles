@@ -89,6 +89,14 @@ alias ipa="ip -color a"
 # Create python venv
 alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
 
+# ani-cli alias to download first 100 (almost all) episodes of an anime
+# Anime name is the current directory name
+alias anidl="ani-cli -d -e 1-100 "$(basename "$(realpath .)")""
+
+function aur-vote () {
+  AUR_AUTO_VOTE_PASSWORD="$(secret-tool lookup service aur)" command aur-auto-vote --no-unvote "$(secret-tool search service aur 2>&1 | grep "attribute.UserName" | cut -d "=" -f 2 | xargs)"
+}
+
 # Yazi change cwd on exit
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
