@@ -33,6 +33,10 @@ alias lvr="lv --reverse"
 alias llv="lv -l"
 alias llvr="llv --reverse"
 
+# Easy lazygit
+alias lg="lazygit"
+alias lz="lazygit"
+
 # Grep auto colorize
 alias grep="grep --color=auto"
 
