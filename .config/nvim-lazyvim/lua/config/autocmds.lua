@@ -31,5 +31,6 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = { "tex", "latex", "markdown" },
   callback = function()
     vim.api.nvim_buf_set_keymap(0, "i", ";", "$", { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(0, "i", "$", ";", { noremap = true, silent = true })
   end,
 })
