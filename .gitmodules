@@ -1,51 +1,51 @@
 [submodule "tpm"]
-	path = .config/tmux/tpm
+	path = dot-config/tmux/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule "rofi-git"]
-	path = .config/rofi/assets/rofi-git
+	path = dot-config/rofi/assets/rofi-git
 	url = https://www.github.com/sudoalphax/rofi
 [submodule "btop"]
-	path = .config/btop/btop
+	path = dot-config/btop/btop
 	url = https://github.com/catppuccin/btop
 [submodule "obs-catppuccin"]
-	path = .config/obs-studio/assets/obs
+	path = dot-config/obs-studio/assets/obs
 	url = https://github.com/catppuccin/obs
 [submodule "yazi-catppuccin"]
-	path = .config/yazi/assets/catppuccin-yazi
+	path = dot-config/yazi/assets/catppuccin-yazi
 	url = https://github.com/catppuccin/yazi
 [submodule "catppuccin-syntax-highlighting-bat"]
-	path = .config/yazi/assets/catppuccin-syntax-highlighting-bat
+	path = dot-config/yazi/assets/catppuccin-syntax-highlighting-bat
 	url = https://github.com/catppuccin/bat
 [submodule "hyprpaper-gen"]
-	path = .config/hypr/assets/hyprpaper-gen
+	path = dot-config/hypr/assets/hyprpaper-gen
 	url = https://github.com/BoopyTheFox/hyprpaper-gen
 [submodule "bat-catppuccin"]
-	path = .config/bat/assets/catppuccin
+	path = dot-config/bat/assets/catppuccin
 	url = https://github.com/catppuccin/bat
 [submodule "Wallpapers"]
 	path = Pictures/Wallpapers
 	url = https://github.com/sudoAlphaX/Wallpapers
 [submodule "lazygit-catppuccin"]
-	path = .config/lazygit/assets/lazygit
+	path = dot-config/lazygit/assets/lazygit
 	url = https://github.com/catppuccin/lazygit
 [submodule "Kvantum-catppuccin"]
-	path = .config/Kvantum/assets/catppuccin-Kvantum
+	path = dot-config/Kvantum/assets/catppuccin-Kvantum
 	url = https://github.com/catppuccin/Kvantum
 [submodule "ohmyzsh"]
-	path = .config/zsh/assets/ohmyzsh
+	path = dot-config/zsh/assets/ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh/
 [submodule "powerlevel10k"]
-	path = .config/zsh/assets/custom/themes/powerlevel10k
+	path = dot-config/zsh/assets/custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k
 [submodule "zsh-syntax-highlighting"]
-	path = .config/zsh/assets/custom/plugins/zsh-syntax-highlighting
+	path = dot-config/zsh/assets/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "zsh-syntax-highlighting-catppuccin"]
-	path = .config/zsh/assets/custom/themes/zsh-syntax-highlighting
+	path = dot-config/zsh/assets/custom/themes/zsh-syntax-highlighting
 	url = https://github.com/catppuccin/zsh-syntax-highlighting
 [submodule "zsh-autocomplete"]
-	path = .config/zsh/assets/custom/plugins/zsh-autocomplete
+	path = dot-config/zsh/assets/custom/plugins/zsh-autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete
 [submodule ".config/zathura/assets/zathura-catppuccin"]
-	path = .config/zathura/assets/zathura-catppuccin
+	path = dot-config/zathura/assets/zathura-catppuccin
 	url = https://github.com/catppuccin/zathura
