@@ -15,8 +15,13 @@ unmap("n", "<leader>bd")
 
 -- Buffers
 map("n", "<leader>bn", "<CMD>enew<CR>", { desc = "New Buffer" })
-map("n", "<leader>bx", "<CMD>bd<CR>", { desc = "Close Buffer" })
-map("n", "<leader>bX", "<CMD>bd!<CR>", { desc = "Force Close Buffer" })
+map("n", "<leader>bx", function()
+  Snacks.bufdelete()
+end, { desc = "Close Buffer" })
+map("n", "<leader>bd", "<leader>bx", { remap = true, desc = "Close Buffer" })
+map("n", "<leader>bX", function()
+  Snacks.bufdelete({ force = true })
+end, { desc = "Force Close Buffer" })
 map("n", "<leader>bb", "<leader>fb", { remap = true, desc = "List Buffers" })
 
 -- Find Files
