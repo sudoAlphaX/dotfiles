@@ -2,7 +2,7 @@ include runtime-clipboard.local
 
 # Allow read-write to .dotfiles to sync settings
 ignore read-only ${HOME}/.dotfiles
-whitelist ${HOME}/.dotfiles/.config/vesktop/
+whitelist ${HOME}/.dotfiles/dot-config/vesktop/
 
 # Tray icon
 dbus-user.own org.kde.*
