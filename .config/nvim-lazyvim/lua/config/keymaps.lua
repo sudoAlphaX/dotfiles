@@ -25,8 +25,14 @@ map("n", "<leader>o", "<leader>fF", { remap = true, desc = "Find Files (cwd)" })
 map("n", "<leader>/", "<leader>sG", { remap = true, desc = "Grep (cwd)" })
 map("n", "<leader>r", "<leader>fr", { remap = true, desc = "Recent files" })
 
--- Git
 map("n", "<leader>gH", "<CMD>FzfLua git_stash<CR>", { desc = "Git Stashes" })
+map("n", "<leader>gh", function()
+  Snacks.picker.git_stash()
+end, { desc = "Git Stashes" })
+
+map("n", "<leader>gc", function()
+  Snacks.picker.git_branches()
+end, { desc = "Git Checkout" })
 
 -- Indentation shortcuts
 map("x", "<Tab>", ">gv")

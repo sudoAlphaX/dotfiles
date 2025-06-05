@@ -34,5 +34,8 @@ return {
       dashboard = { enabled = false },
       notifier = { enabled = false },
     },
+    keys = {
+      { "<leader>n", false },
+    },
   },
 }

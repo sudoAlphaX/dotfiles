@@ -3,4 +3,4 @@
 -- Add any additional options here
 
 vim.g.snacks_animate = false
-vim.g.lazyvim_cmp = "nvim-cmp"
+-- vim.g.lazyvim_cmp = "nvim-cmp"

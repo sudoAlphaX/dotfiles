@@ -18,16 +18,17 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-
     -- import/override with your plugins
+
     { import = "lazyvim.plugins.extras.util.dot" },
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
     { import = "lazyvim.plugins.extras.util.octo" },
+
     { import = "lazyvim.plugins.extras.coding.luasnip" },
-    { import = "lazyvim.plugins.extras.coding.mini-surround" },
+
     { import = "lazyvim.plugins.extras.editor.mini-diff" },
-    -- { import = "lazyvim.plugins.extras.editor.telescope" },
     { import = "lazyvim.plugins.extras.editor.illuminate" },
+
     { import = "lazyvim.plugins.extras.lang.clangd" },
     { import = "lazyvim.plugins.extras.lang.git" },
     { import = "lazyvim.plugins.extras.lang.json" },
@@ -35,10 +36,12 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.python" },
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.toml" },
-    { import = "lazyvim.plugins.extras.formatting.black" },
     { import = "lazyvim.plugins.extras.lang.tex" },
+
+    { import = "lazyvim.plugins.extras.formatting.black" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
+
     { import = "lazyvim.plugins.extras.dap.core" },
-    { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
 
     { import = "plugins" },
   },
@@ -52,7 +55,14 @@ require("lazy").setup({
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
-  checker = { enabled = true, notify = false, frequency = 1209600 }, -- automatically check for plugin updates
+  checker = {
+    enabled = false,
+    notify = false,
+  },
+  change_detection = {
+    enabled = true,
+    notify = false, -- Turn off notification on config change
+  },
   performance = {
     rtp = {
       -- disable some rtp plugins
@@ -60,16 +70,12 @@ require("lazy").setup({
         "gzip",
         -- "matchit",
         -- "matchparen",
-        "netrwPlugin",
+        -- "netrwPlugin",
         "tarPlugin",
         "tohtml",
         "tutor",
         "zipPlugin",
       },
     },
-  },
-  change_detection = {
-    enabled = true,
-    notify = false, -- Turn off notification on config change
   },
 })
