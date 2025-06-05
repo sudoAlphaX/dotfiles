@@ -1,7 +1,7 @@
 # Variables
 HOME_DIR = $(HOME)
 STOW_CONFIG_NO_DIRS := btop fastanime musikcube obs-studio tmux trackma vesktop
-STOW_NO_DIRS := .local/bin .local/share/applications
+STOW_NO_DIRS := .local/bin .local/share/applications .local/share/spotdl
 CONFIGS_DIR = ./assets/configs
 SCRIPTS_DIR = ./assets/scripts
 
