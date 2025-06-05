@@ -30,7 +30,20 @@ map("n", "<leader>o", "<leader>fF", { remap = true, desc = "Find Files (cwd)" })
 map("n", "<leader>/", "<leader>sG", { remap = true, desc = "Grep (cwd)" })
 map("n", "<leader>r", "<leader>fr", { remap = true, desc = "Recent files" })
 
-map("n", "<leader>gH", "<CMD>FzfLua git_stash<CR>", { desc = "Git Stashes" })
+-- Explorer
+map("n", "<C-n>", function()
+  Snacks.picker.explorer({
+    cwd = LazyVim.root(),
+    win = {
+      list = {
+        keys = { ["<C-n>"] = { "close", mode = { "n", "i" } } }, -- Close explorer with <C-n>
+      },
+    },
+    jump = { close = false }, -- Close explorer after jumping to a file
+  })
+end, { remap = true, desc = "Explorer" })
+
+-- Git
 map("n", "<leader>gh", function()
   Snacks.picker.git_stash()
 end, { desc = "Git Stashes" })
