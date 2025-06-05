@@ -35,7 +35,7 @@ stow:
 	done ; \
 	stow --target=$(HOME) --dir=. --dotfiles --verbose=$(VERBOSITY) .
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
-	for dir in $(STOW_IGNORE_DIRS); do \
+	for dir in $(STOW_CONFIG_NO_DIRS); do \
 		rm -f $$V_FLAG $(HOME_DIR)/.config/$$dir/.tmp; \
 	done; \
 	for dir in $(STOW_NO_DIRS); do \
