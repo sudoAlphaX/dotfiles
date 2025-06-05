@@ -1,4 +1,3 @@
-
 HOME_DIR = $(HOME)
 STOW_CONFIG_NO_DIRS := btop fastanime musikcube obs-studio tmux trackma vesktop
 STOW_NO_DIRS := .local/bin
