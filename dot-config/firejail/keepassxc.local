@@ -6,6 +6,8 @@ whitelist ${HOME}/Documents/Keefile
 # KeeShare
 mkdir ${HOME}/Shared/Documents/Keepass
 whitelist ${HOME}/Shared/Documents/Keepass
+ignore nogroups
+ignore noroot
 
 # Secret Service integration
 dbus-user.own org.freedesktop.secrets
