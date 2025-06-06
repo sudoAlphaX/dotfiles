@@ -1,2 +1,1 @@
 include whitelist-player-common.inc
-include runtime-clipboard.local

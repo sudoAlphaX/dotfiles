@@ -1,5 +1,3 @@
-include runtime-clipboard.local
-
 # Allow read-write to .dotfiles to sync settings
 ignore read-only ${HOME}/.dotfiles
 whitelist ${HOME}/.dotfiles/dot-config/vesktop/
