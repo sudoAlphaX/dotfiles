@@ -1,2 +1,5 @@
 mkdir ${RUNUSER}/clipboard
 whitelist ${RUNUSER}/clipboard
+
+whitelist ${HOME}/tmp
+read-write ${HOME}/tmp
