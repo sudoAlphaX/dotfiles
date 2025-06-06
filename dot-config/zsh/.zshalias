@@ -33,6 +33,22 @@ alias lvr="lv --reverse"
 alias llv="lv -l"
 alias llvr="llv --reverse"
 
+# Check which package owns a file
+function whohas() {
+  if [ -z "$1" ]; then
+    echo "Usage: $0 <file>"
+    return 1
+  fi
+
+  if command -v "$1" >/dev/null; then
+    pacman -Qo "$(whereis -b $1 | awk '{print $2}')" 
+  elif test -e $1; then
+    pacman -Qo "$1"
+  else
+    echo "File '$1' not found."
+  fi
+}
+
 # Easy lazygit
 alias lg="lazygit"
 alias lz="lazygit"
