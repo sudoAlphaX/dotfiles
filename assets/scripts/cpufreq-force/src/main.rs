@@ -7,7 +7,7 @@ fn main() {
     match fs::metadata(override_path).is_ok() {
         // If file exists (governor override set)
         true => {
-            Command::new("auto-cpufreq")
+            Command::new("/usr/bin/auto-cpufreq")
                 .arg("--force")
                 .arg("reset")
                 .status()
@@ -17,20 +17,20 @@ fn main() {
         // If file does not exist (no governor override set)
         false => {
             // If connected to AC power
-            if Command::new("systemd-ac-power")
+            if Command::new("/usr/bin/systemd-ac-power")
                 .status()
                 .expect("Failed to execute systemd-ac-power")
                 .success()
             {
                 // Set powersave mode (inverse of default)
-                Command::new("auto-cpufreq")
+                Command::new("/usr/bin/auto-cpufreq")
                     .arg("--force")
                     .arg("powersave")
                     .status()
                     .expect("Failed to set powersave mode");
             } else {
                 // If on battery power, set performance mode
-                Command::new("auto-cpufreq")
+                Command::new("/usr/bin/auto-cpufreq")
                     .arg("--force")
                     .arg("performance")
                     .status()
