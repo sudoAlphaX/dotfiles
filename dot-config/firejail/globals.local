@@ -1,8 +1,6 @@
 # Do not join the same sandbox (multi-user fix)
 ignore join-or-start
 
-whitelist ${HOME}/tmp
-
 # Blacklist sensitive directories
 blacklist ${HOME}/Documents/Keepass
 blacklist ${HOME}/Documents/Keefile
