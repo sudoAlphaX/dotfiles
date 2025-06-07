@@ -2,5 +2,8 @@ whitelist ${HOME}/Shared/Videos
 whitelist ${HOME}/Shared/Music
 whitelist ${HOME}/Shared/Pictures
 
+whitelist ${HOME}/tmp
+read-write ${HOME}/tmp
+
 ignore nogroups
 ignore noroot
