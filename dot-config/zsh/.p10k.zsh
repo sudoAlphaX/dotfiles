@@ -1629,7 +1629,7 @@
   typeset -g POWERLEVEL9K_BATTERY_LOW_FOREGROUND=211
   # Show battery in green when it's charging or fully charged.
   typeset -g POWERLEVEL9K_BATTERY_{CHARGING,CHARGED}_FOREGROUND=151
-  # Show battery in yellow when it's discharging.
+  # Show battery in orange when it's discharging.
   typeset -g POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=216
   # Battery pictograms going from low to high level of charge.
   typeset -g POWERLEVEL9K_BATTERY_STAGES=
