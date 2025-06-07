@@ -30,15 +30,15 @@ done
 filename="$(date +%Y%m%d_%H%M%S)_$(hyprctl activewindow -j | jq -r .class).mp4"
 
 if [ "$1" != "false" ]; then
-  mkdir -p "$XDG_RUNTIME_DIR/clipboard/wf-recorder"
-  filepath="$XDG_RUNTIME_DIR/clipboard/wf-recorder/$filename"
+  mkdir -p "$HOME/tmp/clipboard/wf-recorder"
+  filepath="$HOME/tmp/clipboard/wf-recorder/$filename"
 else
   mkdir -p "$HOME/Videos/wf-recorder"
   filepath="$HOME/Videos/wf-recorder/$filename"
 fi
 
-mkdir -p "$XDG_RUNTIME_DIR/clipboard/wf-recorder-thumbnails"
-thumbnail="/$XDG_RUNTIME_DIR/clipboard/wf-recorder-thumbnails/$filename.png"
+mkdir -p "$HOME/tmp/clipboard/wf-recorder-thumbnails"
+thumbnail="$HOME/tmp/clipboard/wf-recorder-thumbnails/$filename.png"
 
 if [ "$2" = "true" ]; then
   wf-recorder -g "$(slurp)" --audio=combined.monitor -f "$filepath" -r 30 -c h264_vaapi -d /dev/dri/renderD128
