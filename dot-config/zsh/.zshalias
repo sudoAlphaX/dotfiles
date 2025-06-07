@@ -172,6 +172,9 @@ alias mpvpf="mpvp --ytdl-raw-options-add=\"cookies-from-browser=firefox\""
 # Anime name is the current directory name
 alias anidl="ani-cli -d -e 1-100 "$(basename "$(realpath .)")""
 
+# xdg-ninja
+alias xdg-maid="xdg-ninja --skip-ok --skip-unsupported"
+
 function aur-vote () {
   AUR_AUTO_VOTE_PASSWORD="$(secret-tool lookup service aur)" command aur-auto-vote --no-unvote "$(secret-tool search service aur 2>&1 | grep "attribute.UserName" | cut -d "=" -f 2 | xargs)"
 }
