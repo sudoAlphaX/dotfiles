@@ -66,15 +66,15 @@ setup: update-nvim update-tmux
 
 update-submodules:
 	@echo "--- Updating git submodules ---"
-	cd ~/.dotfiles && git submodule foreach '(git checkout main || git checkout master) && git pull'
+	cd ~/.dotfiles && git submodule foreach '(git checkout main || git checkout master) && git pull' > /dev/null
 
 update-nvim:
 	@echo "--- Updating neovim plugins ---"
 	nvim --headless '+Lazy! sync' +qa > /dev/null
-	@git commit ./.config/$${NVIM_APPNAME:-nvim}/lazy-lock.json -m "$$(echo $${NVIM_APPNAME:-nvim} | sed 's/^nvim-//'): update plugins" || echo "No changes to commit for nvim plugins"
+	@git commit ./dot-config/$${NVIM_APPNAME:-nvim}/lazy-lock.json -m "$$(echo $${NVIM_APPNAME:-nvim} | sed 's/^nvim-//'): update plugins" || echo "No changes to commit for nvim plugins"
 
 update-tmux:
 	@echo "--- Updating tmux plugins ---"
-	$(HOME)/.config/tmux/tpm/bin/update_plugins all
+	$(HOME)/.config/tmux/tpm/bin/update_plugins all > /dev/null
 
 .PHONY: all stow copy-stow update update-submodules update-nvim update-tmux setup help
