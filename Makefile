@@ -1,6 +1,7 @@
 HOME_DIR = $(HOME)
 STOW_CONFIG_NO_DIRS := btop fastanime musikcube obs-studio tmux trackma vesktop
 STOW_NO_DIRS := dot-local/bin dot-local/share/spotdl
+COPY_NO_STOW := dot-shortcuts
 VERBOSITY ?= 0
 STOW_IGNORE_DIRS := fastanime tmux trackma
 
@@ -19,7 +20,7 @@ help:
 	echo "update-nvim: Update neovim plugins"; \
 	echo "--- Update targets end ---"; \
 
-install: stow
+install: stow copy-stow
 update: update-submodules update-nvim
 
 stow:
@@ -44,6 +45,14 @@ stow:
 	for dir in $(STOW_NO_DIRS); do \
 		dir=$$(echo $$dir | sed 's/dot-/\./'); \
 		rm -f $$V_FLAG $(HOME_DIR)/$$dir/.tmp; \
+	done
+
+stow-copy:
+	@echo "--- Copying stow directories ---"
+	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
+	for dir in $(COPY_NO_STOW); do \
+		mkdir -p $$V_FLAG $(HOME_DIR)/$$(echo $$dir | sed 's/dot-/\./'); \
+		cp -T --recursive $$V_FLAG $$dir $(HOME_DIR)/$$(echo $$dir | sed 's/dot-/\./')/; \
 	done
 
 update-submodules:
