@@ -20,6 +20,7 @@ help:
 	echo "etc: Install etc configs"; \
 	echo "usr: Install usr configs"; \
 	echo "scripts: Install scripts"; \
+	echo "setup: Run various setup related commands"; \
 	echo "--- Install targets end ---"; \
 	echo "get: Get system configs"; \
 	echo "--- Get targets ---"; \
@@ -33,7 +34,7 @@ help:
 	echo "--- Update targets end ---"; \
 	echo "home: Install home configs"
 
-install: stow etc usr scripts
+install: stow etc usr scripts setup
 
 get: get-etc get-usr
 
@@ -101,16 +102,20 @@ get-usr:
 		cp $$V_FLAG "$$(echo "$$line" | sed 's/^\.\/assets\/configs\/$(subst get-,,$@)\//\/$(subst get-,,$@)\//')" "$$line"; \
 	done
 
+setup: update-nvim update-tmux
+	@echo "--- Running various setup related commands ---"
+	git config --local core.hooksPath .githooks/
+	bat cache --build
+
 update-submodules:
 	@echo "--- Updating git submodules ---"
-	@cd ~/.dotfiles && git submodule foreach '(git checkout main || git checkout master) && git pull'
+	cd ~/.dotfiles && git submodule foreach '(git checkout main || git checkout master) && git pull'
 
 update-nvim:
 	@echo "--- Updating neovim plugins ---"
-	@nvim --headless '+Lazy! sync' +qa
-	@git commit ./.config/$${NVIM_APPNAME:-nvim}/lazy-lock.json -m "$$(echo $${NVIM_APPNAME:-nvim} | sed 's/^nvim-//'): update plugins"
+	nvim --headless '+Lazy! sync' +qa
+	@git commit ./.config/$${NVIM_APPNAME:-nvim}/lazy-lock.json -m "$$(echo $${NVIM_APPNAME:-nvim} | sed 's/^nvim-//'): update plugins" || echo "No changes to commit for nvim plugins"
 
-.PHONY: all stow etc usr home scripts update update-submodules update-nvim help
 update-tmux:
 	@echo "--- Updating tmux plugins ---"
 	$(HOME)/.config/tmux/tpm/bin/update_plugins all
