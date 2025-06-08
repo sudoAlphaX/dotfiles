@@ -1,30 +1,30 @@
 [submodule ".config/tmux/tpm"]
-	path = .config/tmux/tpm
+	path = dot-config/tmux/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule ".config/yazi/assets/catppuccin-yazi"]
-	path = .config/yazi/assets/catppuccin-yazi
+	path = dot-config/yazi/assets/catppuccin-yazi
 	url = https://github.com/catppuccin/yazi
 [submodule ".config/yazi/assets/catppuccin-syntax-highlighting-bat"]
-	path = .config/yazi/assets/catppuccin-syntax-highlighting-bat
+	path = dot-config/yazi/assets/catppuccin-syntax-highlighting-bat
 	url = https://github.com/catppuccin/bat
 [submodule ".config/bat/assets/catppuccin"]
-	path = .config/bat/assets/catppuccin
+	path = dot-config/bat/assets/catppuccin
 	url = https://github.com/catppuccin/bat
 [submodule ".config/lazygit/assets/lazygit"]
-	path = .config/lazygit/assets/lazygit
+	path = dot-config/lazygit/assets/lazygit
 	url = https://github.com/catppuccin/lazygit
 [submodule ".config/zsh/assets/ohmyzsh"]
-	path = .config/zsh/assets/ohmyzsh
+	path = dot-config/zsh/assets/ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh/
 [submodule ".config/zsh/assets/custom/plugins/zsh-syntax-highlighting"]
-	path = .config/zsh/assets/custom/plugins/zsh-syntax-highlighting
+	path = dot-config/zsh/assets/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule ".config/zsh/assets/custom/plugins/zsh-autocomplete"]
-	path = .config/zsh/assets/custom/plugins/zsh-autocomplete
+	path = dot-config/zsh/assets/custom/plugins/zsh-autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete
 [submodule ".config/zsh/assets/custom/themes/zsh-syntax-highlighting"]
-	path = .config/zsh/assets/custom/themes/zsh-syntax-highlighting
+	path = dot-config/zsh/assets/custom/themes/zsh-syntax-highlighting
 	url = https://github.com/catppuccin/zsh-syntax-highlighting
 [submodule ".config/zsh/assets/custom/themes/powerlevel10k"]
-	path = .config/zsh/assets/custom/themes/powerlevel10k
+	path = dot-config/zsh/assets/custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k
