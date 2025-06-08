@@ -21,7 +21,7 @@ help:
 	echo "--- Update targets end ---"; \
 
 install: stow copy-stow
-update: update-submodules update-nvim
+update: update-submodules update-nvim update-tmux
 
 stow:
 	@echo "--- Stowing dotfiles ---"
@@ -64,4 +64,8 @@ update-nvim:
 	@nvim --headless '+Lazy! sync' +qa
 	@git commit ./.config/$${NVIM_APPNAME:-nvim}/lazy-lock.json -m "$$(echo $${NVIM_APPNAME:-nvim} | sed 's/^nvim-//'): update plugins"
 
-.PHONY: all stow update update-submodules update-nvim help
+update-tmux:
+	@echo "--- Updating tmux plugins ---"
+	$(HOME)/.config/tmux/tpm/bin/update_plugins all
+
+.PHONY: all stow update update-submodules update-nvim update-tmux help
