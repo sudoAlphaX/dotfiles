@@ -55,6 +55,7 @@ end, { desc = "Git Checkout" })
 -- Indentation shortcuts
 map("x", "<Tab>", ">gv")
 map("x", "<S-Tab>", "<gv")
+map("n", "<leader>c=", "gg=G''", { desc = "Indent Buffer" })
 
 -- Registers (Clipboard History)
 map("n", "<leader>p", '<leader>s"', { remap = true, desc = "Registers" })
