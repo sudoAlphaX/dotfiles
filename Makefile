@@ -13,14 +13,17 @@ help:
 	echo "install: Install configs"; \
 	echo "--- Install targets ---"; \
 	echo "stow: Stow dotfiles"; \
+	echo "scripts: Install scripts"; \
+	echo "setup: Run various setup related commands"; \
 	echo "--- Get targets end ---"; \
 	echo "update: Update git submodules and noevim plugins"; \
 	echo "--- Update targets ---"; \
 	echo "update-submodules: Update git submodules"; \
 	echo "update-nvim: Update neovim plugins"; \
 	echo "--- Update targets end ---"; \
+	echo "home: Install home configs"
 
-install: stow copy-stow
+install: stow copy-stow setup
 update: update-submodules update-nvim update-tmux
 
 stow:
@@ -55,17 +58,22 @@ stow-copy:
 		cp -T --recursive $$V_FLAG $$dir $(HOME_DIR)/$$(echo $$dir | sed 's/dot-/\./')/; \
 	done
 
+setup: update-nvim update-tmux
+	@echo "--- Running various setup related commands ---"
+	git config --local core.hooksPath .githooks/
+	bat cache --build
+
 update-submodules:
 	@echo "--- Updating git submodules ---"
-	@cd ~/.dotfiles && git submodule foreach '(git checkout main || git checkout master) && git pull'
+	cd ~/.dotfiles && git submodule foreach '(git checkout main || git checkout master) && git pull'
 
 update-nvim:
 	@echo "--- Updating neovim plugins ---"
-	@nvim --headless '+Lazy! sync' +qa
-	@git commit ./.config/$${NVIM_APPNAME:-nvim}/lazy-lock.json -m "$$(echo $${NVIM_APPNAME:-nvim} | sed 's/^nvim-//'): update plugins"
+	nvim --headless '+Lazy! sync' +qa
+	@git commit ./.config/$${NVIM_APPNAME:-nvim}/lazy-lock.json -m "$$(echo $${NVIM_APPNAME:-nvim} | sed 's/^nvim-//'): update plugins" || echo "No changes to commit for nvim plugins"
 
 update-tmux:
 	@echo "--- Updating tmux plugins ---"
 	$(HOME)/.config/tmux/tpm/bin/update_plugins all
 
-.PHONY: all stow update update-submodules update-nvim update-tmux help
+.PHONY: all stow copy-stow update update-submodules update-nvim update-tmux setup help
