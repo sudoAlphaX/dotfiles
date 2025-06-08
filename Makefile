@@ -34,7 +34,7 @@ help:
 	echo "--- Update targets end ---"; \
 	echo "home: Install home configs"
 
-install: stow etc usr scripts setup
+install: stow etc usr home scripts setup
 
 get: get-etc get-usr
 
@@ -52,14 +52,14 @@ stow:
 		dir=$$(echo $$dir | sed 's/dot-/\./'); \
 		mkdir -p $$V_FLAG $(HOME_DIR)/$$dir; \
 		touch $(HOME_DIR)/$$dir/.tmp; \
-	done ; \
+	done
 	stow --target=$(HOME) --dir=. --dotfiles --verbose=$(VERBOSITY) .
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
 	for dir in $(STOW_CONFIG_NO_DIRS); do \
 		dir=$$(echo $$dir | sed 's/dot-/\./'); \
 		rm -f $$V_FLAG $(HOME_DIR)/.config/$$dir/.tmp; \
 	done; \
-	for dir in $(STOW_NO_DIRS); do \
+		for dir in $(STOW_NO_DIRS); do \
 		dir=$$(echo $$dir | sed 's/dot-/\./'); \
 		rm -f $$V_FLAG $(HOME_DIR)/$$dir/.tmp; \
 	done
@@ -67,18 +67,33 @@ stow:
 etc:
 	@echo "--- Installing etc configs ---"
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
-	sudo cp -T --recursive $$V_FLAG $(CONFIGS_DIR)/$@ /$@;
+	find $(CONFIGS_DIR)/$@ -type f ! -executable | while read -r file; do \
+		sudo install $$V_FLAG -D --owner root --group root -m 644 $$file $$(echo $$file | sed 's/$(subst /,\/,$(CONFIGS_DIR))//g'); \
+	done; \
+	find $(CONFIGS_DIR)/$@ -type f -executable | while read -r file; do \
+		sudo install $$V_FLAG -D --owner root --group root -m 755 $$file $$(echo $$file | sed 's/$(subst /,\/,$(CONFIGS_DIR))//g'); \
+	done
 
 usr:
 	@echo "--- Installing usr configs ---"
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
-	sudo cp -T --recursive $$V_FLAG $(CONFIGS_DIR)/$@ /$@;
+	find $(CONFIGS_DIR)/$@ -type f ! -executable | while read -r file; do \
+		sudo install $$V_FLAG -D --owner root --group root -m 644 $$file $$(echo $$file | sed 's/$(subst /,\/,$(CONFIGS_DIR))//g'); \
+	done; \
+	find $(CONFIGS_DIR)/$@ -type f -executable | while read -r file; do \
+		sudo install $$V_FLAG -D --owner root --group root -m 755 $$file $$(echo $$file | sed 's/$(subst /,\/,$(CONFIGS_DIR))//g'); \
+	done
 
 home:
 	@echo "--- Installing home configs ---"
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
-	for dir in $(shell ls /$@); do \
-		sudo cp -T --recursive $$V_FLAG $(CONFIGS_DIR)/$@/user /home/$$dir; \
+	for user in $(shell ls /$@); do \
+		find $(CONFIGS_DIR)/$@ -type f ! -executable | while read -r file; do \
+			echo sudo install $$V_FLAG -D --owner $$user --group $$user -m 644 $$file $$(echo $$file | sed 's/$(subst /,\/,$(CONFIGS_DIR))//g'); \
+		done; \
+		find $(CONFIGS_DIR)/$@ -type f -executable | while read -r file; do \
+			echo sudo install $$V_FLAG -D --owner $$user --group $$user -m 755 $$file $$(echo $$file | sed 's/$(subst /,\/,$(CONFIGS_DIR))//g'); \
+		done; \
 	done
 
 scripts:
@@ -86,21 +101,21 @@ scripts:
 	@for script in $(shell ls $(SCRIPTS_DIR)); do \
 		echo "--- Installing $$script ---"; \
 		$(MAKE) -e -C $(SCRIPTS_DIR)/$$script install; \
-	done
+		done
 
 get-etc:
 	@echo "--- Overwriting tracked $(subst get-,,$@) configs with system $(subst get-,,$@) configs ---"
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
-	find $(CONFIGS_DIR)/$(subst get-,,$@) -type f | while read -r line; do \
-		cp $$V_FLAG "$$(echo "$$line" | sed 's/^\.\/assets\/configs\/$(subst get-,,$@)\//\/$(subst get-,,$@)\//')" "$$line"; \
-	done
+		find $(CONFIGS_DIR)/$(subst get-,,$@) -type f | while read -r line; do \
+			cp $$V_FLAG "$$(echo "$$line" | sed 's/^\.\/assets\/configs\/$(subst get-,,$@)\//\/$(subst get-,,$@)\//')" "$$line"; \
+		done
 
 get-usr:
 	@echo "--- Overwriting tracked $(subst get-,,$@) configs with system $(subst get-,,$@) configs ---"
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
-	find $(CONFIGS_DIR)/$(subst get-,,$@) -type f | while read -r line; do \
-		cp $$V_FLAG "$$(echo "$$line" | sed 's/^\.\/assets\/configs\/$(subst get-,,$@)\//\/$(subst get-,,$@)\//')" "$$line"; \
-	done
+		find $(CONFIGS_DIR)/$(subst get-,,$@) -type f | while read -r line; do \
+			cp $$V_FLAG "$$(echo "$$line" | sed 's/^\.\/assets\/configs\/$(subst get-,,$@)\//\/$(subst get-,,$@)\//')" "$$line"; \
+		done
 
 setup: update-nvim update-tmux
 	@echo "--- Running various setup related commands ---"
