@@ -1,0 +1,38 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use Time::Piece;
+use Time::Seconds;
+
+# Check if we have one argument
+if (@ARGV != 1) {
+    die "Usage: $0 <timediff>\n";
+}
+
+my ($timediff) = @ARGV;
+
+# Validate inputs are numeric
+die "Error: timediffs must be numeric values\n" 
+    unless $timediff =~ /^\d+$/;
+
+# Convert to days, hours, minutes, seconds
+my $days = int($timediff / 86400);
+my $hours = int(($timediff % 86400) / 3600);
+my $minutes = int(($timediff % 3600) / 60);
+my $seconds = $timediff % 60;
+
+# Format the output
+if ($days > 0) {
+    print "$days day" . ($days != 1 ? "s" : "") . " ";
+}
+if ($hours > 0 || ($days > 0 && ($minutes > 0 || $seconds > 0))) {
+    print "$hours hour" . ($hours != 1 ? "s" : "") . " ";
+}
+if ($minutes > 0 || ($days > 0 || $hours > 0) && $seconds > 0) {
+    print "$minutes minute" . ($minutes != 1 ? "s" : "") . " ";
+}
+if ($seconds > 0) {
+    print "$seconds second" . ($seconds != 1 ? "s" : "");
+}
+print "\n";
