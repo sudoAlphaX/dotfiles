@@ -37,7 +37,7 @@ install: stow etc usr scripts
 
 get: get-etc get-usr
 
-update: update-submodules update-nvim
+update: update-submodules update-nvim update-tmux
 
 stow:
 	@echo "--- Stowing dotfiles ---"
@@ -111,3 +111,8 @@ update-nvim:
 	@git commit ./.config/$${NVIM_APPNAME:-nvim}/lazy-lock.json -m "$$(echo $${NVIM_APPNAME:-nvim} | sed 's/^nvim-//'): update plugins"
 
 .PHONY: all stow etc usr home scripts update update-submodules update-nvim help
+update-tmux:
+	@echo "--- Updating tmux plugins ---"
+	$(HOME)/.config/tmux/tpm/bin/update_plugins all
+
+.PHONY: all stow etc usr home scripts update update-submodules update-nvim update-tmux help setup
