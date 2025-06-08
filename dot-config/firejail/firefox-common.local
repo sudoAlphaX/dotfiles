@@ -16,3 +16,7 @@ dbus-user.talk org.freedesktop.portal.Desktop
 # Also add the next line to firefox-common.local if screensharing does not work
 # with the above lines (depends on the portal implementation).
 #ignore noroot
+
+# Block DRM globally
+noexec ${HOME}
+noexec ${RUNUSER} breaks DRM binaries when using profile-sync-daemon.

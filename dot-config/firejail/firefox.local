@@ -1,3 +1,7 @@
 # Private dirs support
 private-bin bash,dbus-launch,dbus-send,env,firefox,sh,which
 private-bin basename,bash,cat,dirname,expr,false,firefox,firefox-wayland,getenforce,ln,mkdir,pidof,restorecon,rm,rmdir,sed,sh,tclsh,true,uname
+
+# Allow DRM
+ignore noexec ${HOME}
+ignore noexec ${RUNUSER}
