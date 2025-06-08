@@ -1,7 +1,7 @@
 # Variables
 HOME_DIR = $(HOME)
 STOW_CONFIG_NO_DIRS := btop fastanime musikcube obs-studio tmux trackma vesktop
-STOW_NO_DIRS := .local/bin .local/share/applications .local/share/spotdl
+STOW_NO_DIRS := dot-local/bin dot-local/share/applications dot-local/share/spotdl
 CONFIGS_DIR = ./assets/configs
 SCRIPTS_DIR = ./assets/scripts
 
@@ -43,19 +43,23 @@ stow:
 	@echo "--- Stowing dotfiles ---"
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
 	for dir in $(STOW_CONFIG_NO_DIRS); do \
+		dir=$$(echo $$dir | sed 's/dot-/\./'); \
 		mkdir -p $$V_FLAG $(HOME_DIR)/.config/$$dir; \
 		touch $(HOME_DIR)/.config/$$dir/.tmp; \
 	done; \
 	for dir in $(STOW_NO_DIRS); do \
+		dir=$$(echo $$dir | sed 's/dot-/\./'); \
 		mkdir -p $$V_FLAG $(HOME_DIR)/$$dir; \
 		touch $(HOME_DIR)/$$dir/.tmp; \
 	done ; \
 	stow --target=$(HOME) --dir=. --dotfiles --verbose=$(VERBOSITY) .
 	@V_FLAG=$$([ $(VERBOSITY) -gt 0 ] && echo "-v" || echo ""); \
 	for dir in $(STOW_CONFIG_NO_DIRS); do \
+		dir=$$(echo $$dir | sed 's/dot-/\./'); \
 		rm -f $$V_FLAG $(HOME_DIR)/.config/$$dir/.tmp; \
 	done; \
 	for dir in $(STOW_NO_DIRS); do \
+		dir=$$(echo $$dir | sed 's/dot-/\./'); \
 		rm -f $$V_FLAG $(HOME_DIR)/$$dir/.tmp; \
 	done
 
