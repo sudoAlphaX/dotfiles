@@ -36,11 +36,20 @@ help:
 	echo "--- Update targets end ---"; \
 	echo "home: Install home configs"
 
-install: stow etc usr home scripts setup
+install: scripts setup
+
+setup: setup-system setup-user
 
 get: get-etc get-usr
 
 update: update-submodules update-nvim update-tmux
+
+setup-system: etc usr home
+
+setup-user: stow update-nvim update-tmux
+	@echo "--- Running user setup commands ---"
+	git config --local core.hooksPath .githooks/
+	bat cache --build
 
 stow:
 	@echo "--- Stowing dotfiles ---"
@@ -111,11 +120,6 @@ get-usr:
 	@find $(CONFIGS_DIR)/$(subst get-,,$@) -type f | while read -r line; do \
 		cp $(V_FLAG) "$$(echo "$$line" | sed 's/^\.\/assets\/configs\/$(subst get-,,$@)\//\/$(subst get-,,$@)\//')" "$$line"; \
 	done
-
-setup: update-nvim update-tmux
-	@echo "--- Running various setup related commands ---"
-	git config --local core.hooksPath .githooks/
-	bat cache --build
 
 update-submodules:
 	@echo "--- Updating git submodules ---"
