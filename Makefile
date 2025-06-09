@@ -3,8 +3,8 @@ STOW_CONFIG_NO_DIRS := btop fastanime musikcube obs-studio tmux trackma vesktop
 STOW_NO_DIRS := dot-local/bin dot-local/share/spotdl
 COPY_NO_STOW := dot-shortcuts
 
-export VERBOSITY
 VERBOSITY ?= 0
+export VERBOSITY
 
 V_FLAG := $(shell [ $(VERBOSITY) -gt 0 ] && echo "-v" || echo "")
 
@@ -16,15 +16,16 @@ help:
 	echo "install: Install configs"; \
 	echo "--- Install targets ---"; \
 	echo "stow: Stow dotfiles"; \
+	echo "copy-stow: Copy directories that cannot be stowed"; \
 	echo "scripts: Install scripts"; \
 	echo "setup: Run various setup related commands"; \
 	echo "--- Get targets end ---"; \
-	echo "update: Update git submodules and noevim plugins"; \
+	echo "update: Update git submodules and neovim plugins"; \
 	echo "--- Update targets ---"; \
 	echo "update-submodules: Update git submodules"; \
 	echo "update-nvim: Update neovim plugins"; \
+	echo "update-tmux: Update tmux plugins"; \
 	echo "--- Update targets end ---"; \
-	echo "home: Install home configs"
 
 install: stow copy-stow setup
 update: update-submodules update-nvim update-tmux
@@ -40,7 +41,7 @@ stow:
 		dir=$$(echo $$dir | sed 's/dot-/\./'); \
 		mkdir -p $(V_FLAG) $(HOME_DIR)/$$dir; \
 		touch $(HOME_DIR)/$$dir/.tmp; \
-	done ; \
+	done
 	stow --target=$(HOME) --dir=. --dotfiles --verbose=$(VERBOSITY) .
 	@for dir in $(STOW_CONFIG_NO_DIRS); do \
 		dir=$$(echo $$dir | sed 's/dot-/\./'); \
