@@ -5,3 +5,8 @@ private-bin basename,bash,cat,dirname,expr,false,firefox,firefox-wayland,getenfo
 # Allow DRM
 ignore noexec ${HOME}
 ignore noexec ${RUNUSER}
+
+# Allow connections when network adapter changes
+ignore net
+ignore private-dev
+ignore private-etc
