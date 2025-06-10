@@ -64,6 +64,7 @@ setup:
 	@echo "--- Running various setup related commands ---"
 	git config --local core.hooksPath .githooks/
 	bat cache --build
+	tldr --update
 
 update-submodules:
 	@echo "--- Updating git submodules ---"
