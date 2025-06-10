@@ -60,7 +60,7 @@ stow-copy:
 		cp -T --recursive $$V_FLAG $$dir $(HOME_DIR)/$$(echo $$dir | sed 's/dot-/\./')/; \
 	done
 
-setup: update-nvim update-tmux
+setup:
 	@echo "--- Running various setup related commands ---"
 	git config --local core.hooksPath .githooks/
 	bat cache --build
