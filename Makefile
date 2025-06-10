@@ -46,7 +46,7 @@ update: update-submodules update-nvim update-tmux
 
 setup-system: etc usr home
 
-setup-user: stow update-nvim update-tmux
+setup-user: stow
 	@echo "--- Running user setup commands ---"
 	git config --local core.hooksPath .githooks/
 	bat cache --build
