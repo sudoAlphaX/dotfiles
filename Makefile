@@ -50,6 +50,7 @@ setup-user: stow
 	@echo "--- Running user setup commands ---"
 	git config --local core.hooksPath .githooks/
 	bat cache --build
+	tldr --update
 
 stow:
 	@echo "--- Stowing dotfiles ---"
