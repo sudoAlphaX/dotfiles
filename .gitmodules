@@ -46,6 +46,6 @@
 [submodule "zsh-autocomplete"]
 	path = dot-config/zsh/assets/custom/plugins/zsh-autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete
-[submodule ".config/zathura/assets/zathura-catppuccin"]
+[submodule "zathura-catppuccin"]
 	path = dot-config/zathura/assets/zathura-catppuccin
 	url = https://github.com/catppuccin/zathura
