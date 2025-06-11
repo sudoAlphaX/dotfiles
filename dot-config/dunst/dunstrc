@@ -500,6 +500,7 @@
   set_stack_tag="input-device-toggle"
 	timeout=3
   fullscreen=show
+  urgency=low
 
 [touchpad-enabled]
 	summary="Touchpad Enabled"
@@ -510,6 +511,7 @@
   set_stack_tag="input-device-toggle"
 	timeout=3
   fullscreen=show
+  urgency=low
 
 [touchscreen-disabled]
 	summary="Touchscreen Disabled"
@@ -520,6 +522,7 @@
   set_stack_tag="input-device-toggle"
 	timeout=3
   fullscreen=show
+  urgency=low
 
 [touchscreen-enabled]
 	summary="Touchscreen Enabled"
@@ -530,6 +533,7 @@
   set_stack_tag="input-device-toggle"
 	timeout=3
   fullscreen=show
+  urgency=low
 
 [brightness-change]
 	summary="brightness_event"
@@ -538,6 +542,7 @@
 	history_ignore=true
 	timeout=3
   fullscreen=show
+  urgency=low
 
 [volume-change]
 	summary="volume_event"
@@ -547,6 +552,7 @@
   set_stack_tag="volume-event"
 	timeout=3
   fullscreen=show
+  urgency=low
 
 [volume-mute]
   summary="mute_event"
@@ -556,6 +562,7 @@
   set_stack_tag="volume-event"
   timeout=3
   fullscreen=show
+  urgency=low
 
 [volume-unmute]
   summary="unmute_event"
@@ -565,19 +572,21 @@
   set_stack_tag="volume-event"
   timeout=3
   fullscreen=show
+  urgency=low
 
 [temperature-critical]
 	summary="temperature_critical_event"
 	category="device"
-	msg_urgency="critical"
 	format="<b>CPU Temperature Critical: %n°C</b>"
 	history_ignore=true
   fullscreen=show
+  urgency=critical
 
 [alarm-clock-applet]
   appname="alarm-clock-applet"
   timeout=0
   fullscreen=show
+  urgency=normal
 
 [keepassxc-secret-service-agent]
   appname="KeePassXC"
@@ -585,3 +594,5 @@
   set_stack_tag="keepassxc"
   history_ignore=true
   timeout=3
+  new_icon="$XDG_CONFIG_HOME/dunst/icons/apps/keepassxc.svg"
+  urgency=low
