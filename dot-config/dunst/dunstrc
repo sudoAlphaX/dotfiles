@@ -578,3 +578,10 @@
   appname="alarm-clock-applet"
   timeout=0
   fullscreen=show
+
+[keepassxc-secret-service-agent]
+  appname="KeePassXC"
+  summary="KeePassXC"
+  set_stack_tag="keepassxc"
+  history_ignore=true
+  timeout=3
