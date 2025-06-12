@@ -36,9 +36,10 @@ help:
 	echo "--- Update targets end ---"; \
 	echo "home: Install home configs"
 
-install: scripts setup
+install: stow scripts
+	@echo "Run make setup after reloading environment"
 
-setup: setup-system setup-user
+setup: setup-system setup-user update-nvim update-tmux
 
 get: get-etc get-usr
 
@@ -46,7 +47,7 @@ update: update-submodules update-nvim update-tmux
 
 setup-system: etc usr home
 
-setup-user: stow
+setup-user:
 	@echo "--- Running user setup commands ---"
 	git config --local core.hooksPath .githooks/
 	bat cache --build
