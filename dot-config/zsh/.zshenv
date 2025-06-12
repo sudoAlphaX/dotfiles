@@ -9,6 +9,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 # Path to zsh configuration directory
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
+mkdir -p "$(dirname "$HISTFILE")"
 
 # Path to oh-my-zsh installation.
 export ZSH="$ZDOTDIR/assets/ohmyzsh/"
