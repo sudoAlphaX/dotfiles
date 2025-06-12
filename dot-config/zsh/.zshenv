@@ -7,6 +7,7 @@ export XDG_RUNTIME_DIR=$PREFIX/tmp
 
 # ZSH history
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
+mkdir -p "$(dirname "$HISTFILE")"
 
 # Path to oh-my-zsh installation.
 export ZSH="$ZDOTDIR/assets/ohmyzsh/"
