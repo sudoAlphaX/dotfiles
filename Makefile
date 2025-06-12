@@ -29,6 +29,7 @@ help:
 
 install: stow copy-stow
 	@echo "Run make setup after reloading environment"
+
 update: update-submodules update-nvim update-tmux
 
 stow:
@@ -61,7 +62,7 @@ stow-copy:
 		cp -T --recursive $$V_FLAG $$dir $(HOME_DIR)/$$(echo $$dir | sed 's/dot-/\./')/; \
 	done
 
-setup:
+setup: update-nvim update-tmux
 	@echo "--- Running various setup related commands ---"
 	git config --local core.hooksPath .githooks/
 	bat cache --build
