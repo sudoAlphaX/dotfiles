@@ -11,8 +11,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Custom completions path
+fpath=("$HOME/.config/zsh/completions" $fpath)
+
 # source zsh-autocomplete
-skip_global_compinit=1
 source $ZSH_CUSTOM/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 ##### omz configuration #####
