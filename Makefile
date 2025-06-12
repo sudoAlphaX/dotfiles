@@ -27,7 +27,8 @@ help:
 	echo "update-tmux: Update tmux plugins"; \
 	echo "--- Update targets end ---"; \
 
-install: stow copy-stow setup
+install: stow copy-stow
+	@echo "Run make setup after reloading environment"
 update: update-submodules update-nvim update-tmux
 
 stow:
