@@ -26,7 +26,7 @@ ALLOW_GROUPS=""
 
 # sync users and groups from ALLOW_USERS and ALLOW_GROUPS to .snapshots
 # directory
-SYNC_ACL="yes"
+SYNC_ACL="no"
 
 
 # start comparing pre- and post-snapshot in background after creating
