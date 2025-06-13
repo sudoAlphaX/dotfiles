@@ -25,6 +25,12 @@ return {
         jsonls = {
           mason = false,
         },
+        stylua = {
+          mason = false,
+        },
+        codelldb = {
+          mason = false,
+        },
       },
     },
   },
