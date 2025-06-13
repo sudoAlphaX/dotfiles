@@ -32,6 +32,13 @@ install: stow copy-stow
 
 update: update-submodules update-nvim update-tmux
 
+setup: update-tmux
+	@echo "--- Running various setup related commands ---"
+	git config --local core.hooksPath .githooks/
+	bat cache --build
+	tldr --update
+	nvim --headless '+Lazy! restore' +qa > /dev/null
+
 stow:
 	@echo "--- Stowing dotfiles ---"
 	@for dir in $(STOW_CONFIG_NO_DIRS); do \
@@ -61,12 +68,6 @@ stow-copy:
 		mkdir -p $$V_FLAG $(HOME_DIR)/$$(echo $$dir | sed 's/dot-/\./'); \
 		cp -T --recursive $$V_FLAG $$dir $(HOME_DIR)/$$(echo $$dir | sed 's/dot-/\./')/; \
 	done
-
-setup: update-nvim update-tmux
-	@echo "--- Running various setup related commands ---"
-	git config --local core.hooksPath .githooks/
-	bat cache --build
-	tldr --update
 
 update-submodules:
 	@echo "--- Updating git submodules ---"
