@@ -39,7 +39,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.tex" },
 
     { import = "lazyvim.plugins.extras.formatting.black" },
-    { import = "lazyvim.plugins.extras.formatting.prettier" },
 
     { import = "lazyvim.plugins.extras.dap.core" },
 
