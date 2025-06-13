@@ -39,7 +39,7 @@ help:
 install: stow scripts
 	@echo "Run make setup after reloading environment"
 
-setup: setup-system setup-user update-nvim update-tmux
+setup: setup-system setup-user
 
 get: get-etc get-usr
 
@@ -47,11 +47,12 @@ update: update-submodules update-nvim update-tmux
 
 setup-system: etc usr home
 
-setup-user:
+setup-user: update-tmux
 	@echo "--- Running user setup commands ---"
 	git config --local core.hooksPath .githooks/
 	bat cache --build
 	tldr --update
+	nvim --headless '+Lazy! restore' +qa > /dev/null
 
 stow:
 	@echo "--- Stowing dotfiles ---"
