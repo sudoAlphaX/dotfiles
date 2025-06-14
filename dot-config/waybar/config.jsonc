@@ -125,7 +125,7 @@
     "on-click": "uwsm app -a sensors -- alacritty -e watch -n 1 sensors"
   },
   "custom/temperature": {
-    "exec": "bash $HOME/.config/waybar/scripts/temperature.sh /sys/devices/platform/coretemp.0/hwmon",
+    "exec": "bash $HOME/.config/waybar/scripts/temperature.sh",
     "return-type": "json",
     "format": " {}°C",
     "interval": 10,
