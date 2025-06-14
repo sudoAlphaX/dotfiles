@@ -95,7 +95,7 @@ alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
 
 # ani-cli alias to download first 100 (almost all) episodes of an anime
 # Anime name is the current directory name
-alias anidl="ani-cli -d -e 1-100 "$(basename "$(realpath .)")""
+alias anidl="ani-cli -d -e 1-100 \"\$(basename \"\$(realpath .)\")\""
 
 # xdg-ninja
 alias xdg-maid="xdg-ninja --skip-ok --skip-unsupported"
