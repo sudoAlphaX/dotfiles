@@ -35,6 +35,9 @@ export PATH="$PATH:$HOME/.local/bin"
 # Libvirt use system scope
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
+# Tmux socket path
+export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+
 ################ xdg-ninja $HOME cleanup ################
 
 # .wakatime
