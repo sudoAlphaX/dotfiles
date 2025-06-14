@@ -9,10 +9,12 @@ dbus-user.talk org.freedesktop.ScreenSaver
 #dbus-user.talk org.kde.JobViewServer
 #dbus-user.talk org.kde.kdeconnect
 #dbus-user.talk org.kde.kuiserver
-#
+
 # Add the next line to firefox-common.local to allow screensharing under
 # Wayland.
 dbus-user.talk org.freedesktop.portal.Desktop
+ignore noroot
+
 # Also add the next line to firefox-common.local if screensharing does not work
 # with the above lines (depends on the portal implementation).
 #ignore noroot
