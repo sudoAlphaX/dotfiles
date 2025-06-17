@@ -28,6 +28,7 @@
   "mini.hipatterns": { "branch": "main", "commit": "d71c21167d6bd5f21c9ecf90912c510f9edfc02b" },
   "mini.icons": { "branch": "main", "commit": "94848dad1589a199f876539bd79befb0c5e3abf0" },
   "mini.pairs": { "branch": "main", "commit": "42407ccb80ec59c84e7c91d815f42ed90a8cc093" },
+  "modes.nvim": { "branch": "main", "commit": "f53d51f5263bc64b6d86ae8ce14de52cc00b3f96" },
   "nerdy.nvim": { "branch": "main", "commit": "826a74b0e2d86548190ac4575cccd8d5b159c0a1" },
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
   "nvim-dap": { "branch": "master", "commit": "40a8189b8a57664a1850b0823fdcb3ac95b9f635" },

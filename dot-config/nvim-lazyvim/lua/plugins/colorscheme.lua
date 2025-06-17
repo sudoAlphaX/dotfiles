@@ -5,4 +5,11 @@ return {
       colorscheme = "catppuccin",
     },
   },
+  {
+    "mvllow/modes.nvim",
+    commit = "main",
+    opts = {
+      set_number = false,
+    },
+  },
 }
