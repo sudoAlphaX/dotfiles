@@ -164,9 +164,21 @@ alias jubu="journalctl --user -b -u"
 alias jubfu="journalctl --user -b -f -u"
 alias jufbu="jubfu"
 
-# mpv alias for easy clipboard playback
-alias mpvp="mpv \"\$(wl-paste)\""
-alias mpvpf="mpvp --ytdl-raw-options-add=\"cookies-from-browser=firefox\""
+function mpvp() {
+  local link=""
+
+  if [ -n "$1" ] && [ -f "$1" ]; then
+    link="$1"
+    shift
+  elif wl-paste | grep -qE "^https?://"; then
+    link="$(wl-paste)"
+  else
+    echo "Refusing to play. No link or file provided." >&2
+    return 1
+  fi
+
+  mpv "$link" "$@" || mpv --ytdl-raw-options-add="cookies-from-browser=firefox" "$link" "$@"
+}
 
 # ani-cli alias to download first 100 (almost all) episodes of an anime
 # Anime name is the current directory name
