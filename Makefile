@@ -52,7 +52,7 @@ setup-user: update-tmux
 	git config --local core.hooksPath .githooks/
 	bat cache --build
 	tldr --update
-	nvim --headless '+Lazy! restore' +qa > /dev/null
+	nvim --headless '+Lazy! restore' +qa
 
 stow:
 	@echo "--- Stowing dotfiles ---"
@@ -126,15 +126,15 @@ get-usr:
 
 update-submodules:
 	@echo "--- Updating git submodules ---"
-	cd ~/.dotfiles && git submodule foreach '(git checkout main || git checkout master) && git pull' > /dev/null
+	cd ~/.dotfiles && git submodule foreach '(git checkout main || git checkout master) && git pull'
 
 update-nvim:
 	@echo "--- Updating neovim plugins ---"
-	nvim --headless '+Lazy! sync' +qa > /dev/null
+	nvim --headless '+Lazy! sync' +qa
 	@git commit ./dot-config/$${NVIM_APPNAME:-nvim}/lazy-lock.json -m "$$(echo $${NVIM_APPNAME:-nvim} | sed 's/^nvim-//'): update plugins" || echo "No changes to commit for nvim plugins"
 
 update-tmux:
 	@echo "--- Updating tmux plugins ---"
-	$(HOME)/.config/tmux/tpm/bin/update_plugins all > /dev/null
+	$(HOME)/.config/tmux/tpm/bin/update_plugins all
 
 .PHONY: all stow etc usr home scripts update update-submodules update-nvim update-tmux help setup
