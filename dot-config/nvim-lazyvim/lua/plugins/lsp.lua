@@ -15,4 +15,14 @@ return {
       automatic_enable = true,
     },
   },
+  {
+    "johmsalas/text-case.nvim",
+    lazy = true,
+    keys = {
+      { "<leader>ct", desc = "+text-case" },
+    },
+    opts = {
+      prefix = "<leader>ct",
+    },
+  },
 }
