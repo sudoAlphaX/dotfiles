@@ -7,7 +7,7 @@ return {
   },
   {
     "mvllow/modes.nvim",
-    commit = "main",
+    branch = "main",
     opts = {
       colors = {
         copy = "#f9e2af",
