@@ -19,11 +19,12 @@ help:
 	echo "install: Install configs"; \
 	echo "--- Install targets ---"; \
 	echo "stow: Stow dotfiles"; \
+	echo "scripts: Install scripts"; \
 	echo "etc: Install etc configs"; \
 	echo "usr: Install usr configs"; \
-	echo "scripts: Install scripts"; \
-	echo "setup: Run various setup related commands"; \
+	echo "home: Install home configs"; \
 	echo "--- Install targets end ---"; \
+	echo "setup: Run user-specific setup commands"; \
 	echo "get: Get system configs"; \
 	echo "--- Get targets ---"; \
 	echo "get-etc: Get system etc configs"; \
@@ -36,18 +37,14 @@ help:
 	echo "--- Update targets end ---"; \
 	echo "home: Install home configs"
 
-install: stow scripts
+install: stow scripts etc usr home
 	@echo "Run make setup after reloading environment"
-
-setup: setup-system setup-user
 
 get: get-etc get-usr
 
 update: update-submodules update-nvim update-tmux
 
-setup-system: etc usr home
-
-setup-user: update-tmux
+setup: update-tmux
 	@echo "--- Running user setup commands ---"
 	git config --local core.hooksPath .githooks/
 	bat cache --build
