@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+if ! systemctl is-active --quiet warp-svc; then
+  echo "Warp service is not running. Starting it now..."
+  systemctl start warp-svc
+fi
+
+warp-cli disconnect
+warp-cli registration delete
+warp-cli registration new
+warp-cli connect
