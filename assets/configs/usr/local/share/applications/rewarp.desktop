@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ReWarp
+GenericName=Change Warp IP
+Comment=Script to re-register warp-cli to get a new IP address.
+Exec=rewarp
+Terminal=false
+Type=Application
+Categories=Network;
