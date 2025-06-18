@@ -20,7 +20,19 @@ window#waybar {
 }
 
 #custom-user {
-    margin-bottom: 2px;
+    margin: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#custom-icon {
+    margin: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#custom-music {
+    margin: 2px;
     padding-left: 8px;
     padding-right: 8px;
 }
@@ -38,6 +50,7 @@ button:hover {
 
 #workspaces button {
     padding: 0 1px;
+    margin: 2px 0;
     background-color: transparent;
     color: @white;
     border-bottom: 3px solid transparent;
@@ -78,7 +91,6 @@ button:hover {
 #pulseaudio,
 #clock,
 #battery,
-#backlight,
 #cpu,
 #memory,
 #disk,
@@ -88,7 +100,6 @@ button:hover {
 #custom-pacman_updates,
 #backlight,
 #wireplumber,
-#tray,
 #mode,
 #scratchpad {
     margin: 2px;

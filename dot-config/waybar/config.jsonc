@@ -10,6 +10,8 @@
     "custom/user"
   ],
   "modules-center": [
+    "custom/music",
+    "custom/icon",
     "hyprland/window"
   ],
   "modules-right": [
@@ -57,6 +59,14 @@
   "custom/user": {
     "exec": "whoami | sed -E 's/(.)(.*)/\\U\\1\\L\\2/'",
     "format": "{}"
+  },
+  "custom/icon": {
+    "format": "  "
+  },
+  "custom/music": {
+    "exec": "if [ \"$(playerctl status)\" = \"Playing\" ]; then echo \" $(playerctl metadata --format '{{title}}')\"; fi",
+    "format": "{}",
+    "interval": 10
   },
   "custom/pacman_updates": {
     "exec": "bash $HOME/.config/waybar/scripts/pacman-updates.sh",
