@@ -67,7 +67,9 @@
     "exec": "title=\"$(playerctl metadata --format '{{title}}')\"; echo \" $(if [ \"$(echo \"$title\" | wc -L)\" -gt 30 ]; then echo \"$(echo \"$title\" | cut -c1-20)...$(echo \"$title\" | rev | cut -c1-10 | rev)\"; else echo \"$title\"; fi )\"",
     "exec-if": "sh -c \"[ \"$(playerctl status)\" = \"Playing\" ]\"",
     "format": "{}",
-    "interval": 10
+    "interval": 10,
+    "on-click": "playerctl pause",
+    "on-click-rigt": "playerctl next"
   },
   "custom/pacman_updates": {
     "exec": "bash $HOME/.config/waybar/scripts/pacman-updates.sh",
