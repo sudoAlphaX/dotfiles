@@ -1,9 +1,7 @@
-#!/bin/bash
-
-sudo -v
+#!/usr/bin/env sh
 
 {
-  sudo systemctl start warp-svc.service
+  systemctl start warp-svc.service
 
   until
     [ "$(systemctl is-active warp-svc.service)" = "active" ]
