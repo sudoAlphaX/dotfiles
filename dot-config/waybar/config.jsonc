@@ -64,7 +64,8 @@
     "format": "  "
   },
   "custom/music": {
-    "exec": "if [ \"$(playerctl status)\" = \"Playing\" ]; then echo \" $(playerctl metadata --format '{{title}}')\"; fi",
+    "exec": "title=\"$(playerctl metadata --format '{{title}}')\"; echo \" $(if [ \"$(echo \"$title\" | wc -L)\" -gt 30 ]; then echo \"$(echo \"$title\" | cut -c1-20)...$(echo \"$title\" | rev | cut -c1-10 | rev)\"; else echo \"$title\"; fi )\"",
+    "exec-if": "sh -c \"[ \"$(playerctl status)\" = \"Playing\" ]\"",
     "format": "{}",
     "interval": 10
   },
