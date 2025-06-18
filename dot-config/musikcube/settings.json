@@ -1,5 +1,5 @@
 {
-  "AppQuitKey": "^D",
+  "AppQuitKey": "^X",
   "AsyncTrackListQueries": true,
   "AuddioApiToken": "",
   "AutoHideCommandBar": false,
