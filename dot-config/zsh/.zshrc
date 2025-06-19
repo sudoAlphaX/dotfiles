@@ -171,6 +171,7 @@ source $ZDOTDIR/.zshalias
 ##### zsh-autocomplete configuration #####
 
 zstyle ':completion:*' completer _complete _complete:-fuzzy _correct _approximate _ignored
+zstyle ':autocomplete:*' delay 0.2
 
 # Make Tab and ShiftTab go to the menu
 bindkey '^I' menu-select
