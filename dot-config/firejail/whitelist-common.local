@@ -1,2 +1,1 @@
 whitelist ${HOME}/tmp
-read-write ${HOME}/tmp
