@@ -188,7 +188,7 @@
     "tooltip-format-on": "Bluetooth device not connected",
     "tooltip-format-connected": "Connected to device: {device_alias} ({device_battery_percentage})",
     "on-click": "uwsm app -a bluetoothctl -- alacritty -T AlacrittyFloat -e bluetoothctl",
-    "on-click-middle": "bluetoothctl disconnect; IFS=$'\n'; for device in $(bluetoothctl devices Trusted); do echo $device | awk '{print $2}' | xargs bluetoothctl connect && break; done",
+    "on-click-middle": "bluetoothctl disconnect || IFS=$'\n'; for device in $(bluetoothctl devices Trusted); do echo $device | awk '{print $2}' | xargs bluetoothctl connect && break; done",
     "on-click-right": "rfkill toggle bluetooth"
   },
   "pulseaudio": {
