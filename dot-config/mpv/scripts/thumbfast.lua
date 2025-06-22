@@ -1,0 +1,1 @@
+../assets/thumbfast/thumbfast.lua

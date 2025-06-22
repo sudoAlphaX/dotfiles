@@ -49,3 +49,6 @@
 [submodule "zathura-catppuccin"]
 	path = dot-config/zathura/assets/zathura-catppuccin
 	url = https://github.com/catppuccin/zathura
+[submodule "mpv-thumbfast"]
+	path = dot-config/mpv/assets/thumbfast
+	url = https://github.com/po5/thumbfast
