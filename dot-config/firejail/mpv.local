@@ -1,9 +1,18 @@
-# Mpris (https://github.com/netblue30/firejail/pull/5400#issuecomment-1266788859)
+# mpv-mpris (https://github.com/netblue30/firejail/pull/5400#issuecomment-1266788859)
 ignore dbus-user none
 dbus-user filter
 dbus-user.own org.mpris.MediaPlayer2.*
 
+# Allow /bin/sh for scripts
+include allow-bin-sh.inc
+private-bin bash,sh
+
 # Include local yt-dlp config for cookies
 include yt-dlp.local
 
-private-etc alsa,asound.conf,ca-certificates,drirc,fonts,gnutls,igfx_user_feature.txt,igfx_user_feature_next.txt,libva.conf,login.defs,machine-id,mpv,pipewire,pkcs11,pulse,ssl,vdpau_wrapper.cfg,vulkan,xdg,xkb,yt-dlp,yt-dlp-plugins,yt-dlp.conf
+# mpv-thumbfast thumbnailer script
+ignore noexec /tmp
+ignore apparmor
+private-bin chmod,echo,ps,socat,tail,uname
+
+private-etc alsa,asound.conf,ca-certificates,drirc,fonts,gnutls,igfx_user_feature.txt,igfx_user_feature_next.txt,libva.conf,login.defs,machine-id,mpv,pipewire,pkcs11,pulse,ssl,tail,vdpau_wrapper.cfg,vulkan,xdg,xkb,yt-dlp,yt-dlp-plugins,yt-dlp.conf
