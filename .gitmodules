@@ -52,3 +52,7 @@
 [submodule "mpv-thumbfast"]
 	path = dot-config/mpv/assets/thumbfast
 	url = https://github.com/po5/thumbfast
+[submodule "mpv-thumbfast-osc"]
+	path = dot-config/mpv/assets/thumbfast-osc
+	url = https://github.com/po5/thumbfast
+	branch = vanilla-osc
