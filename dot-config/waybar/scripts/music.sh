@@ -5,7 +5,7 @@ max_length=30
 dots_pos=17
 icon=""
 
-output="$(playerctl metadata --format '{{status}}:{{playerName}}:{{artist}}:{{title}}')"
+output="$(playerctl metadata --format '{{status}}:{{playerName}}:{{artist}}:{{album}}:{{title}}')"
 
 status="$(echo "$output" | cut -d':' -f1)"
 
@@ -24,7 +24,8 @@ escape() {
 
 player="$(echo "$output" | cut -d':' -f2)"
 artist="$(echo "$output" | cut -d':' -f3)"
-title="$(echo "$output" | cut -d':' -f4-)"
+album="$(echo "$output" | cut -d':' -f4)"
+title="$(echo "$output" | cut -d':' -f5-)"
 
 # echo " $(if [ "$(echo "$title" | wc -L)" -gt 25 ]; then echo "$(echo "$title" | cut -c1-13)...$(echo "$title" | rev | cut -c1-7 | rev)"; else echo "$title"; fi )"",
 
@@ -34,9 +35,12 @@ else
   short_title="$title"
 fi
 
-printf '{"text": "%s %s", "tooltip": "Title: %s\\nArtist: %s\\nPlayer: %s"}\n' \
+printf '{"text": "%s %s", "tooltip": "Title: %s%s"}\n' \
   "$icon" \
   "$(escape "$short_title")" \
   "$(escape "$title")" \
-  "$(escape "$artist")" \
-  "$(escape "$player")"
+  "$(
+    if [ -n "$artist" ]; then printf '\\nArtist: %s' "$(escape "$artist")"; fi
+    if [ -n "$album" ]; then printf '\\nAlbum: %s' "$(escape "$album")"; fi
+    if [ -n "$player" ]; then printf '\\nPlayer: %s' "$(escape "$player")"; fi
+  )"
