@@ -65,8 +65,8 @@
     "on-click": "kill \"$(pgrep --euid \"$(whoami)\" waybar)\"; uwsm app -s s -- waybar"
   },
   "custom/music": {
-    "exec": "title=\"$(playerctl metadata --format '{{title}}')\"; echo \" $(if [ \"$(echo \"$title\" | wc -L)\" -gt 25 ]; then echo \"$(echo \"$title\" | cut -c1-13)...$(echo \"$title\" | rev | cut -c1-7 | rev)\"; else echo \"$title\"; fi )\"",
-    "exec-if": "sh -c \"[ \"$(playerctl status)\" = \"Playing\" ]\"",
+    "exec": "$HOME/.config/waybar/scripts/music.sh",
+    "return-type": "json",
     "format": "{}",
     "interval": 10,
     "on-click": "playerctl pause",
