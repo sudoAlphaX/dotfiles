@@ -25,7 +25,7 @@ escape() {
 player="$(echo "$output" | cut -d':' -f2)"
 artist="$(echo "$output" | cut -d':' -f3)"
 album="$(echo "$output" | cut -d':' -f4)"
-title="$(echo "$output" | cut -d':' -f5-)"
+title="$(echo "$output" | cut -d':' -f5- | sed 's/\.*$//')"
 
 # echo " $(if [ "$(echo "$title" | wc -L)" -gt 25 ]; then echo "$(echo "$title" | cut -c1-13)...$(echo "$title" | rev | cut -c1-7 | rev)"; else echo "$title"; fi )"",
 
