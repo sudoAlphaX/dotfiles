@@ -1,5 +1,5 @@
 # Fix for electron crash when default shell is dash
-private-bin bash
+include allow-bin-sh.inc
 
 # Hardened profile for Electron applications
 include electron-common-hardened.inc.profile
