@@ -131,7 +131,7 @@ plugins+=(copybuffer)
 plugins+=(fancy-ctrl-z)
 
 # Git
-plugins+=(git git-auto-fetch forgit)
+plugins+=(git git-auto-fetch forgit ugit)
 export FORGIT_FZF_DEFAULT_OPTS="
 --exact
 --cycle
