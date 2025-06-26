@@ -69,7 +69,7 @@
     "return-type": "json",
     "format": "{}",
     "interval": 10,
-    "on-click": "playerctl pause",
+    "on-click": "playerctl play-pause",
     "on-click-rigt": "playerctl next"
   },
   "custom/pacman_updates": {
