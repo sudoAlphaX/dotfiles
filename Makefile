@@ -123,7 +123,7 @@ get-usr:
 
 update-submodules:
 	@echo "--- Updating git submodules ---"
-	cd ~/.dotfiles && git submodule foreach '(git checkout main || git checkout master) && git pull'
+	cd ~/.dotfiles && git submodule foreach 'git pull'
 
 update-nvim:
 	@echo "--- Updating neovim plugins ---"
