@@ -131,7 +131,13 @@ plugins+=(copybuffer)
 plugins+=(fancy-ctrl-z)
 
 # Git
-plugins+=(git gitignore git-auto-fetch)
+plugins+=(git git-auto-fetch forgit)
+export FORGIT_FZF_DEFAULT_OPTS="
+--exact
+--cycle
+--border
+--reverse
+"
 
 # Use <ESC>+man or <ESC>+tldr to see prev command help
 plugins+=(man tldr)

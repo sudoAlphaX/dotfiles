@@ -28,3 +28,6 @@
 [submodule ".config/zsh/assets/custom/themes/powerlevel10k"]
 	path = dot-config/zsh/assets/custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k
+[submodule "zsh-forgit"]
+	path = dot-config/zsh/assets/custom/plugins/forgit
+	url = https://github.com/wfxr/forgit
