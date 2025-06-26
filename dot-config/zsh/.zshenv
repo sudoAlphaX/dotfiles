@@ -30,6 +30,9 @@ export GPG_TTY=$TTY
 # Local binaries path
 export PATH="$PATH:$HOME/.local/bin"
 
+# Lazygit use theme with different config
+export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/mauve.yml"
+
 ################ xdg-ninja $HOME cleanup ################
 
 # .wakatime
