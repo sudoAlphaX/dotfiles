@@ -38,6 +38,9 @@ export LIBVIRT_DEFAULT_URI="qemu:///system"
 # Tmux socket path
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 
+# Lazygit use theme with different config
+export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/mauve.yml"
+
 ################ xdg-ninja $HOME cleanup ################
 
 # .wakatime
