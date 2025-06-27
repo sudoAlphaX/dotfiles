@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Starting $(basename "$0")" "$@"
+
 # Track mpv activewindow state
 mpv_active=0
 mpv_fullscreen=0
@@ -57,12 +59,14 @@ fullscreened() {
   "$TOUCHPAD_TOGGLE" false >/dev/null 2>&1
   backlight_brightness=$(brightnessctl --device="$backlight_device" --machine-readable get)
   brightnessctl --save --device="$backlight_device" set 0 >/dev/null
+  echo "MPV fullscreened"
 }
 
 unfullscreened() {
   "$TOUCHPAD_TOGGLE" true >/dev/null 2>&1
   "$(dirname "$0")/touchpad-toggle.sh" true >/dev/null
   brightnessctl --device="$backlight_device" set "$backlight_brightness" >/dev/null
+  echo "MPV unfullscreened"
 }
 
 # Check if touchpad toggle exists

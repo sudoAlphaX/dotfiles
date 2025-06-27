@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Starting $(basename "$0")" "$@"
+
 backlight_device="dell::kbd_backlight"
 
 function safeeyes_handler {
@@ -8,11 +10,13 @@ function safeeyes_handler {
     if [[ $(cut -d "," -f 2,3,4 <<<"${1:12}") =~ ^special:safeeyes,safeeyes,SafeEyes-[0-9]$ ]]; then
       brightnessctl --device="$backlight_device" -s set 0
       hyprctl dispatch submap safeeyes
+      echo "SafeEyes window opened"
 
     fi
   elif [[ ${1} == "destroyworkspace>>special:safeeyes" ]]; then
     hyprctl dispatch submap reset
     brightnessctl --device="$backlight_device" -r
+    echo "SafeEyes window closed"
   fi
 }
 

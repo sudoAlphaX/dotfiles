@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
+echo "Starting $(basename "$0")" "$@"
+
 app="$1"
 delay="$2"
 

@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+echo "Starting $(basename "$0")" "$@"
+
 pid=$(pidof wf-recorder)
 
 if [ "$pid" ]; then

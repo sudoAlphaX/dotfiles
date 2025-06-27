@@ -10,6 +10,7 @@ enable_touchpad() {
   if [ "$show_notification" = "true" ]; then
     notify-send --category=device --urgency=low "Touchpad Enabled"
   fi
+  echo "Touchpad Enabled"
 }
 
 disable_touchpad() {
@@ -19,6 +20,7 @@ disable_touchpad() {
   if [ "$show_notification" = "true" ]; then
     notify-send --category=device --urgency=low "Touchpad Disabled"
   fi
+  echo "Touchpad Disabled"
 }
 
 toggle_touchpad() {

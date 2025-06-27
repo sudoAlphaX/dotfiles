@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
+echo "Starting $(basename "$0")" "$@"
+
 # Script to unfocus specified app (mostly autostarted) and focus the last focused application
 # To be executed on Hyprland startup
 

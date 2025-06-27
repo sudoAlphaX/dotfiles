@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
+echo "Starting $(basename "$0")" "$@"
+
 lowrate=48
 maxrate=60
 

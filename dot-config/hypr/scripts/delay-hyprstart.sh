@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+echo "Starting $(basename "$0")" "$@"
+
 delay="$1"
 
 : "${delay:=1}"
