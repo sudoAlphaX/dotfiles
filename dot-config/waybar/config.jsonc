@@ -62,7 +62,7 @@
   },
   "custom/icon": {
     "format": "  ",
-    "on-click": "kill \"$(pgrep --euid \"$(whoami)\" waybar)\"; uwsm app -s s -- waybar"
+    "on-click": "kill \"$(pgrep --euid \"$(whoami)\" waybar)\"; uwsm app -s s -t service -- waybar"
   },
   "custom/music": {
     "exec": "$HOME/.config/waybar/scripts/music.sh",
