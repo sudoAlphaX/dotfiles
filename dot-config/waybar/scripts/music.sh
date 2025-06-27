@@ -5,7 +5,7 @@ max_length=30
 dots_pos=17
 icon=""
 
-output="$(playerctl metadata --format '{{status}}:{{playerName}}:{{artist}}:{{album}}:{{title}}')"
+output="$(playerctl metadata --format '{{status}}:{{playerName}}:{{artist}}:{{album}}:{{title}}')" 2>/dev/null
 
 status="$(echo "$output" | cut -d':' -f1)"
 
