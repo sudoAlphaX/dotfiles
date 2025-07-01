@@ -21,7 +21,7 @@
   "kodi_user": "",
   "library_autoscan": true,
   "library_full_path": false,
-  "player": "/usr/bin/mpv",
+  "player": "mpv",
   "plex_host": "localhost",
   "plex_obey_update_wait_s": false,
   "plex_passwd": "",
