@@ -72,7 +72,7 @@
     "format": "{}",
     "interval": 10,
     "on-click": "playerctl play-pause",
-    "on-click-rigt": "playerctl next"
+    "on-click-right": "playerctl next"
   },
   "custom/pacman_updates": {
     "exec": "bash $HOME/.config/waybar/scripts/pacman-updates.sh",
