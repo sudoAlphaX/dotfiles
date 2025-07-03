@@ -1,2 +1,5 @@
 config:
   fallback-icon: ""
+
+icons:
+  lazysql: 
