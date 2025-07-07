@@ -164,6 +164,8 @@ alias jubu="journalctl --user -b -u"
 alias jubfu="journalctl --user -b -f -u"
 alias jufbu="jubfu"
 
+alias ino="arduino-cli"
+
 function mpvp() {
   local link=""
 
