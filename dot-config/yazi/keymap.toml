@@ -1,5 +1,6 @@
 [mgr]
 
 prepend_keymap = [
-{ on = "d", run = "remove --permanently", desc = "Permanently delete selected files" }, 
+  { on = "d", run = "remove --permanently", desc = "Permanently delete selected files" },
+  { on = "!", for = "unix", run = 'shell "$SHELL" --block', desc = "Open $SHELL here" },
 ]
