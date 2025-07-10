@@ -9,3 +9,8 @@ private-bin keepassxc-proxy
 private-bin dbus-launch,dbus-send,librewolf,sh
 
 apparmor
+
+# Allow connections when network adapter changes
+ignore net
+ignore private-dev
+ignore private-etc
