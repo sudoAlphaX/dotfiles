@@ -118,7 +118,7 @@ function qmount() {
   sudo mkdir "/mnt/$device" || return 1
   mkdir "$HOME/mnt/$device" || return 1
 
-  sudo mount "/dev/$device" /mnt/"$device" || return 1
+  sudo mount "$1" /mnt/"$device" || return 1
   mkdir "$HOME/mnt/$device" || return 1
 
   sudo bindfs -u "$(whoami)" -g "$(whoami)" /mnt/"$device" "$HOME/mnt/$device" || return 1
