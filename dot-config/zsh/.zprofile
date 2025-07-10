@@ -10,7 +10,7 @@ if [[ $(tty) = "/dev/tty1" || $(tty) = "/dev/tty2" ]]; then
       echo "Updating dotfiles..."
       git -C "$dotfiles_path" pull --autostash
     else
-      echo "No remote repository found, skipping update."
+      echo "Remote repository not found, skipping pull."
     fi
     exec uwsm start hyprland.desktop
   fi
