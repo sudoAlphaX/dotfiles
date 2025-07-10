@@ -103,9 +103,37 @@ alias mov="copy --remove-source-files"
 # Rclone
 export RCLONE_PASSWORD_COMMAND="secret-tool lookup service rclone"
 
-# Mount
-alias qmount="udisksctl mount -b"
-alias qumount="udisksctl unmount -b"
+# Quick Mount
+function qmount() {
+  device="$(basename "$1")"
+
+  if test -d "/mnt/$device"; then
+    sudo rmdir "/mnt/$device" || return 1
+  fi
+
+  if test -d "$HOME/mnt/$device"; then
+    rmdir "$HOME/mnt/$device" || return 1
+  fi
+
+  sudo mkdir "/mnt/$device" || return 1
+  mkdir "$HOME/mnt/$device" || return 1
+
+  sudo mount "/dev/$device" /mnt/"$device" || return 1
+  mkdir "$HOME/mnt/$device" || return 1
+
+  sudo bindfs -u "$(whoami)" -g "$(whoami)" /mnt/"$device" "$HOME/mnt/$device" || return 1
+
+}
+
+function qumount() {
+  device="$(basename "$1")"
+
+  sudo umount "$HOME/mnt/$device" || return 1
+  rmdir "$HOME/mnt/$device"
+
+  sudo umount "/mnt/$device" || return 1
+  sudo rmdir "/mnt/$device"
+}
 
 # Colorized ip info
 alias ipa="ip -color a"
