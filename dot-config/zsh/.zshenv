@@ -64,3 +64,6 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 
 # .rustup
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+
+# .azure
+export AZURE_CONFIG_DIR="$XDG_DATA_HOME"/azure
