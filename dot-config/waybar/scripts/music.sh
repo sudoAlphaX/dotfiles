@@ -3,14 +3,19 @@
 # Variables
 max_length=30
 dots_pos=17
-icon=""
 
 output="$(playerctl metadata --format '{{status}}:{{playerName}}:{{artist}}:{{album}}:{{title}}')" 2>/dev/null
 
 status="$(echo "$output" | cut -d':' -f1)"
 
-if [ "$status" != "Playing" ]; then
-  exit 1
+if [ "$status" = "Playing" ]; then
+  icon=""
+  class="playing"
+elif [ "$status" = "Paused" ]; then
+  icon=""
+  class="paused"
+else
+  exit 0
 fi
 
 escape() {
@@ -29,15 +34,15 @@ title="$(echo "$output" | cut -d':' -f5- | sed 's/\.*$//')"
 
 # echo " $(if [ "$(echo "$title" | wc -L)" -gt 25 ]; then echo "$(echo "$title" | cut -c1-13)...$(echo "$title" | rev | cut -c1-7 | rev)"; else echo "$title"; fi )"",
 
-if [ "$(echo "$title" | wc -L)" -gt $max_length ]; then
-  short_title="$(echo "$title" | cut -c1-"$dots_pos")...$(echo "$title" | rev | cut -c1-"$((max_length - dots_pos))" | rev)"
-else
-  short_title="$title"
-fi
-
-printf '{"text": "%s %s", "tooltip": "Title: %s%s"}\n' \
+# if [ "$(echo "$title" | wc -L)" -gt $max_length ]; then
+#   short_title="$(echo "$title" | cut -c1-"$dots_pos")...$(echo "$title" | rev | cut -c1-"$((max_length - dots_pos))" | rev)"
+# else
+#   short_title="$title"
+# fi
+#
+printf '{"text": "%s", "class": "%s", "tooltip": "Title: %s%s"}\n' \
   "$icon" \
-  "$(escape "$short_title")" \
+  "$class" \
   "$(escape "$title")" \
   "$(
     if [ -n "$artist" ]; then printf '\\nArtist: %s' "$(escape "$artist")"; fi

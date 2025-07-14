@@ -10,13 +10,13 @@
     "custom/user"
   ],
   "modules-center": [
-    "custom/music",
     "custom/icon",
     "hyprland/window"
   ],
   "modules-right": [
     "idle_inhibitor",
     "tray",
+    "custom/music",
     "privacy",
     "custom/pacman_updates",
     //   "keyboard-state",

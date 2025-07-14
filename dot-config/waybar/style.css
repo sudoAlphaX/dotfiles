@@ -31,12 +31,6 @@ window#waybar {
     padding-right: 4px;
 }
 
-#custom-music {
-    margin: 2px;
-    padding-left: 8px;
-    padding-right: 8px;
-}
-
 button {
     box-shadow: inset 0 -3px transparent;
     border: none;
@@ -98,6 +92,7 @@ button:hover {
 #custom-temperature,
 #custom-cpufreq,
 #custom-pacman_updates,
+#custom-music,
 #backlight,
 #wireplumber,
 #mode,
@@ -160,6 +155,11 @@ button:hover {
 #custom-temperature {
     color: @green;
     border-bottom: 2px solid @green;
+}
+
+#custom-music {
+  color: @white;
+  border-bottom: 2px solid @white;
 }
 
 #custom-cpufreq.low {
