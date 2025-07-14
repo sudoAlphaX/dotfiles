@@ -13,6 +13,7 @@ git log --format='%H' "$old_head..$new_head" | while read -r sha; do
   subject=$(git log -1 --format='%s' "$sha")
   if echo "$subject" | grep -q -i "lazyvim: "; then
     echo "Restoring LazyVim plugins to lockfile state"
+    git restore ./dot-config/nvim-lazyvim/lazy-lock.json
     nvim --headless "+Lazy! restore" +qa >/dev/null
     break
   fi
