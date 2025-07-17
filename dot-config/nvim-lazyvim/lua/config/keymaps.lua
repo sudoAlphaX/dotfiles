@@ -44,9 +44,9 @@ map("n", "<C-n>", function()
 end, { remap = true, desc = "Explorer" })
 
 -- Git
-map("n", "<leader>gh", function()
-  Snacks.picker.git_stash()
-end, { desc = "Git Stashes" })
+-- map("n", "<leader>gh", function()
+--   Snacks.picker.git_stash()
+-- end, { desc = "Git Stashes" })
 
 map("n", "<leader>gc", function()
   Snacks.picker.git_branches()
