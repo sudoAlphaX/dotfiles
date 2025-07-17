@@ -60,8 +60,10 @@ map("n", "<leader>c=", "gg=G''", { desc = "Indent Buffer" })
 -- Registers (Clipboard History)
 map("n", "<leader>p", '<leader>s"', { remap = true, desc = "Registers" })
 
+-- Commenting
 map("n", "<C-/>", "gcc", { remap = true })
 map("v", "<C-/>", "gc", { remap = true })
+
 -- Terminal
 map("n", "<leader>T", "<leader>ft", { remap = true, desc = "Terminal" })
 map("n", "<leader>t", "<leader>fT", { remap = true, desc = "Terminal (cwd)" })
