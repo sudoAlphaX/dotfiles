@@ -1,6 +1,9 @@
 # umask setting
 umask 0027
 
+# app2unit uwsm integration
+export APP2UNIT_SLICES='a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice'
+
 # XDG config variables
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
