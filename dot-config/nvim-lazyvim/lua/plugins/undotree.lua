@@ -4,7 +4,13 @@ return {
     dependencies = "nvim-lua/plenary.nvim",
     lazy = true,
     keys = {
-      { "<leader>sU", "<cmd>lua require('undotree').toggle()<cr>", "Undotree (plugin)" },
+      {
+        "<leader>sU",
+        function()
+          require("undotree").toggle()
+        end,
+        desc = "Undotree (plugin)",
+      },
     },
     opts = {
       position = "right",

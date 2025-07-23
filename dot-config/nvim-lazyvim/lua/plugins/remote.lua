@@ -11,15 +11,41 @@ return {
   },
   keys = {
 
-    { "<leader>fsc", "<ESC><CMD>lua require('remote-sshfs.api').connect()<CR>", desc = "Connect to remote" },
-    { "<leader>fsd", "<ESC><CMD>lua require('remote-sshfs.api').disconnect()<CR>", desc = "Disconnect from remote" },
+    {
+      "<leader>fsc",
+      function()
+        require("remote-sshfs.api").connect()
+      end,
+      desc = "Connect to remote",
+    },
+    {
+      "<leader>fsd",
+      function()
+        require("remote-sshfs.api").disconnect()
+      end,
+      desc = "Disconnect from remote",
+    },
     {
       "<leader>fse",
-      "<ESC><CMD>lua require('remote-sshfs.api').edit()<CR>",
+      function()
+        require("remote-sshfs.api").edit()
+      end,
       desc = "Edit remote (SSH) configurations",
     },
-    { "<leader>fsf", "<ESC><CMD>lua require('remote-sshfs.api').find_files()<CR>", desc = "Remote Find Files" },
-    { "<leader>fsg", "<ESC><CMD>lua require('remote-sshfs.api').live_grep()<CR>", desc = "Remote Live Grep" },
+    {
+      "<leader>fsf",
+      function()
+        require("remote-sshfs.api").find_files()
+      end,
+      desc = "Remote Find Files",
+    },
+    {
+      "<leader>fsg",
+      function()
+        require("remote-sshfs.api").live_grep()
+      end,
+      desc = "Remote Live Grep",
+    },
   },
   opts = {
     handlers = {
