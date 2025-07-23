@@ -25,4 +25,19 @@ return {
       prefix = "<leader>ct",
     },
   },
+  {
+    "Wansmer/symbol-usage.nvim",
+    keys = {
+      {
+        "<leader>cu",
+        function()
+          require("symbol-usage").toggle()
+        end,
+        desc = "Toggle symbol usage",
+      },
+    },
+    event = "LspAttach",
+    lazy = false,
+    opts = {},
+  },
 }
