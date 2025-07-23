@@ -4,7 +4,13 @@ return {
     lazy = false,
     enabled = true,
     keys = {
-      { "<leader>uP", "<cmd>lua require('precognition').toggle()<CR>", desc = "Toggle Precognition" },
+      {
+        "<leader>uP",
+        function()
+          require("precognition").toggle()
+        end,
+        desc = "Toggle Precognition",
+      },
     },
     opts = {
       showBlankVirtLine = false,
