@@ -31,7 +31,7 @@ return {
       {
         "<leader>cu",
         function()
-          require("symbol-usage").toggle()
+          require("symbol-usage").toggle_globally()
         end,
         desc = "Toggle symbol usage",
       },
