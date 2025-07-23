@@ -1,8 +1,20 @@
 return {
   "lewis6991/gitsigns.nvim",
   keys = {
-    { "<leader>go", "<ESC><CMD>Gitsigns toggle_word_diff<CR>", desc = "Toggle word diff" },
-    { "<leader>gO", "<ESC><CMD>Gitsigns toggle_deleted<CR>", desc = "Toggle deleted line diff" },
+    {
+      "<leader>go",
+      function()
+        require("gitsigns").toggle_word_diff()
+      end,
+      desc = "Toggle word diff",
+    },
+    {
+      "<leader>gO",
+      function()
+        require("gitsigns").toggle_deleted()
+      end,
+      desc = "Toggle deleted line diff",
+    },
   },
   opts = {
     current_line_blame = true,
