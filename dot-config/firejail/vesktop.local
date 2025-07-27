@@ -16,3 +16,8 @@ ignore noroot
 # Whitelisr /run/user/<UID> for arrpc
 # Find a way to allow only /run/user/<UID>/discord-ipc-0
 whitelist ${RUNUSER}
+
+# Allow connections when network adapter changes
+ignore net
+ignore private-dev
+ignore private-etc
