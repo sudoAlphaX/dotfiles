@@ -596,3 +596,7 @@
   timeout=3
   new_icon="$XDG_CONFIG_HOME/dunst/icons/apps/keepassxc.svg"
   urgency=low
+
+[hypridle-stack]
+  appname="hypridle"
+  set_stack_tag="hypridle"
