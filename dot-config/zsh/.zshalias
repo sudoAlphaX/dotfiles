@@ -68,7 +68,7 @@ alias notesvim="NVIM_APPNAME=nvim-notesvim nvim"
 alias truenvim="NVIM_APPNAME=nvim nvim"
 
 # Sudo with alias and nocorrect fix
-function sudo ()
+function sudo()
 {
   if [ "$1" = "nocorrect" ]; then
     shift
@@ -316,3 +316,33 @@ firejail-noprofile-command-line() {
 }
 zle -N firejail-noprofile-command-line
 bindkey "\e"fj firejail-noprofile-command-line
+
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo/sudo.plugin.zsh
+# <ESC>px to toggle proxychains for the current command
+proxychains-command-line() {
+  # If line is empty, get the last run command from history
+  [[ -z $BUFFER ]] && LBUFFER="$(fc -ln -1)"
+
+  # Save beginning space
+  local WHITESPACE=""
+  if [[ ${LBUFFER:0:1} = " " ]]; then
+    WHITESPACE=" "
+    LBUFFER="${LBUFFER:1}"
+  fi
+
+  {
+    # Simple proxychains toggle functionality
+    case "$BUFFER" in
+      proxychains\ *) __replace-buffer "proxychains" "" ;;
+      *) LBUFFER="proxychains $LBUFFER" ;;
+    esac
+  } always {
+    # Preserve beginning space
+    LBUFFER="${WHITESPACE}${LBUFFER}"
+
+    # Redisplay edit buffer (compatibility with zsh-syntax-highlighting)
+    zle && zle redisplay # only run redisplay if zle is enabled
+  }
+}
+zle -N proxychains-command-line
+bindkey "\e"px proxychains-command-line
