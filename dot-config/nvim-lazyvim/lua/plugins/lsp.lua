@@ -40,4 +40,12 @@ return {
     lazy = false,
     opts = {},
   },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    optional = true,
+    opts = {
+      max_lines = 5,
+      mode = "topline",
+    },
+  },
 }
