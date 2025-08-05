@@ -16,21 +16,6 @@ return {
         texlab = {
           mason = false,
         },
-        pyright = {
-          mason = false,
-        },
-        bashls = {
-          mason = false,
-        },
-        jsonls = {
-          mason = false,
-        },
-        stylua = {
-          mason = false,
-        },
-        codelldb = {
-          mason = false,
-        },
       },
     },
   },
