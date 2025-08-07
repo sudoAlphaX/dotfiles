@@ -154,6 +154,7 @@ alias respawn="systemctl soft-reboot"
 
 # systemctl aliases
 alias scs="systemctl status"
+alias scsl="scs -l "
 alias scst="systemctl start"
 alias scstp="systemctl stop"
 alias scr="systemctl restart"
@@ -174,6 +175,7 @@ alias jfbu="jbfu"
 
 # systemctl --user aliases
 alias scus="systemctl --user status"
+alias scusl="scus -l "
 alias scust="systemctl --user start"
 alias scustp="systemctl --user stop"
 alias scur="systemctl --user restart"
