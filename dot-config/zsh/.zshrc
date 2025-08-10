@@ -44,6 +44,10 @@ ENABLE_CORRECTION=true
 # History
 HIST_STAMPS="yyyy-mm-dd"
 
+## zsh configuration
+
+setopt HIST_IGNORE_ALL_DUPS
+
 ##### END omz configuration #####
 
 ##### omz plugins configuration #####
