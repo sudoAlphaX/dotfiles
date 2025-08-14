@@ -600,3 +600,7 @@
 [hypridle-stack]
   appname="hypridle"
   set_stack_tag="hypridle"
+
+[fastanime-notification-time]
+  appname="FastAnime"
+  timeout=5
