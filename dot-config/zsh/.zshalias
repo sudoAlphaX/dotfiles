@@ -88,7 +88,8 @@ alias mov="copy --remove-source-files"
 alias qmount="mount -o uid=$(id -u $(logname)),gid=$(id -g $(logname)) "
 
 # Colorized ip info
-alias ipa="ip -color a"
+alias ip="ip -c"
+alias ipa="ip a"
 
 # Create python venv
 alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
