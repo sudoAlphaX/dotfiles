@@ -136,7 +136,8 @@ function qumount() {
 }
 
 # Colorized ip info
-alias ipa="ip -color a"
+alias ip="ip -c"
+alias ipa="ip a"
 
 # Create python venv
 alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
