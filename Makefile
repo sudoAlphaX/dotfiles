@@ -1,5 +1,5 @@
 HOME_DIR = $(HOME)
-STOW_CONFIG_NO_DIRS := btop fastanime musikcube obs-studio tmux trackma vesktop
+STOW_CONFIG_NO_DIRS := btop fastanime musikcube obs-studio tmux trackma vesktop viu
 STOW_NO_DIRS := dot-local/bin dot-local/share/spotdl
 COPY_NO_STOW := dot-shortcuts
 
