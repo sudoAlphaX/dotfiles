@@ -5,6 +5,10 @@
 -- Autosave
 local function save()
   local buf = vim.api.nvim_get_current_buf()
+-- Autosave functionality
+-- Specify the filetypes for which autosave and keybindings should be enabled
+Autosave_filetypes = { "tex", "latex" }
+Autosave_filetypes = {}
 
   vim.api.nvim_buf_call(buf, function()
     vim.cmd("silent! write")
