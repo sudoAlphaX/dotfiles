@@ -5,6 +5,7 @@ ignore join-or-start
 blacklist ${HOME}/Documents/Keepass
 blacklist ${HOME}/Documents/Keefile
 blacklist ${HOME}/Documents/ID
+blacklist ${HOME}/Documents/Private
 
 # Allow access to user tmp directory
 read-write ${HOME}/tmp
