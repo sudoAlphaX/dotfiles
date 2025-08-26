@@ -5,6 +5,7 @@
 -- Autosave functionality
 -- Specify the filetypes for which autosave and keybindings should be enabled
 Autosave_filetypes = { "tex", "latex" }
+Autosave_filetypes = {}
 
 vim.api.nvim_create_augroup("AutoSave", { clear = true })
 
