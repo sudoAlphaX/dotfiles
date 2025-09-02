@@ -103,6 +103,10 @@ alias mov="copy --remove-source-files"
 # Rclone
 export RCLONE_PASSWORD_COMMAND="secret-tool lookup service rclone"
 
+# gocryptfs private folder
+alias pmount="mkdir -p \"$HOME/mnt/private\" && gocryptfs -extpass \"secret-tool lookup service gocryptfs-private\" \"$HOME/Documents/Private\" \"$HOME/mnt/private\""
+alias pumount="umount \"$HOME/mnt/private\""
+
 # Quick Mount
 function qmount() {
   device="$(basename "$1")"
