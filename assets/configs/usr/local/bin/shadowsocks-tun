@@ -1,0 +1,92 @@
+#!/usr/bin/env sh
+
+if [ $# -ne 1 ] && ! test -f "$1"; then
+  echo "Usage: $0 <shadowocks_config_path>"
+  exit 1
+fi
+
+SHADOWSOCKS_CONFIG_PATH="$1"
+SHADOWSOCKS_CONFIG="$(cat "$SHADOWSOCKS_CONFIG_PATH")"
+
+trap destroy HUP INT
+
+config() {
+  key="$1"
+  echo "$SHADOWSOCKS_CONFIG" | jq -r ".$key"
+}
+
+prepare() {
+  ip tuntap del name "$(config tun_interface_name)" mode tun 2>/dev/null || true
+}
+
+create() {
+
+  prepare
+
+  # Create TUN interface
+  ip tuntap add name "$(config tun_interface_name)" mode tun
+  ip link set up dev "$(config tun_interface_name)"
+  ip addr add "$(config tun_interface_address)" dev "$(config tun_interface_name)"
+
+  server_ip="$(config "server")"
+
+  # Get default details (to exclude packets to server from looping)
+  defaults="$(ip -j route | jq '.[] | select(.dst=="default")')"
+  default_iface="$(echo "$defaults" | jq -r .dev)"
+  default_gateway="$(echo "$defaults" | jq -r .gateway)"
+  ip route add "$server_ip" via "$default_gateway" dev "$default_iface" metric 100
+
+  # Exclude DNS server(s) from tunnel
+  grep '^nameserver' /etc/resolv.conf | awk '{print $2}' |
+    while IFS= read -r dns_ip; do
+      ip route add "$dns_ip" via "$default_gateway" dev "$default_iface" metric 100
+    done
+
+  # Set TUN device as default with a higher metric
+  ip route add default dev "$(config tun_interface_name)" metric 100
+
+}
+
+destroy() {
+
+  # Delete default route via TUN interface
+  ip route del default dev "$(config tun_interface_name)"
+
+  # Delete routes to DNS servers via default gateway
+  grep '^nameserver' /etc/resolv.conf | awk '{print $2}' |
+    while IFS= read -r dns_ip; do
+      ip route del "$dns_ip"
+    done
+
+  # Delete route to server via default gateway
+  server_ip="$(config server)"
+  ip route del "$server_ip"
+
+  # Set link to down
+  ip link set down dev "$(config tun_interface_name)"
+
+  # Clean up TUN interface
+  ip addr del "$(config tun_interface_address)" dev "$(config tun_interface_name)"
+  ip tuntap del name "$(config tun_interface_name)" mode tun
+}
+
+connect() {
+
+  sslocal -s "$(config server):$(config server_port)" \
+    -k "$(config password)" \
+    -m "$(config method)" \
+    --protocol tun \
+    --tcp-fast-open \
+    --tun-interface-name "$(config tun_interface_name)" \
+    --tun-interface-address "$(config tun_interface_address)"
+
+  # sslocal -c "$SHADOWSOCKS_CONFIG_PATH"
+
+}
+
+main() {
+  create
+  connect
+}
+
+main
