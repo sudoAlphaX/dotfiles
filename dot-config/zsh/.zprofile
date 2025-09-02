@@ -1,3 +1,7 @@
+# Autostart ssh-agent
+eval $(ssh-agent)
+
+# Dotfiles auto-update
 dotfiles_path="$HOME/.dotfiles"
 
 if [[ $(tty) = "/dev/tty1" || $(tty) = "/dev/tty2" ]]; then
