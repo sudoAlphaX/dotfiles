@@ -13,9 +13,6 @@
 [submodule "bat-catppuccin"]
 	path = dot-config/bat/assets/catppuccin
 	url = https://github.com/catppuccin/bat
-[submodule "Wallpapers"]
-	path = Pictures/Wallpapers
-	url = https://github.com/sudoAlphaX/Wallpapers
 [submodule "lazygit-catppuccin"]
 	path = dot-config/lazygit/assets/lazygit
 	url = https://github.com/catppuccin/lazygit
