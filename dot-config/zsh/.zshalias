@@ -34,20 +34,20 @@ alias llv="lv -l"
 alias llvr="llv --reverse"
 
 # Check which package owns a file
-function whohas() {
-  if [ -z "$1" ]; then
-    echo "Usage: $0 <file>"
-    return 1
-  fi
-
-  if command -v "$1" >/dev/null; then
-    pacman -Qo "$(whereis -b $1 | awk '{print $2}')" 
-  elif test -e $1; then
-    pacman -Qo "$1"
-  else
-    echo "File '$1' not found."
-  fi
-}
+# function whohas() {
+#   if [ -z "$1" ]; then
+#     echo "Usage: $0 <file>"
+#     return 1
+#   fi
+#
+#   if command -v "$1" >/dev/null; then
+#     pacman -Qo "$(whereis -b $1 | awk '{print $2}')" 
+#   elif test -e $1; then
+#     pacman -Qo "$1"
+#   else
+#     echo "File '$1' not found."
+#   fi
+# }
 
 # Easy lazygit
 alias lg="lazygit"
@@ -146,9 +146,6 @@ alias ipa="ip a"
 # Create python venv
 alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
 
-# Alias to start libvirt service
-alias virtmgr="systemctl start libvirtd && uwsm app -- virt-manager & disown"
-
 # Fun shutdown aliases
 alias byebye="systemctl poweroff"
 alias goodbye="systemctl poweroff -i"
@@ -201,32 +198,12 @@ alias jufbu="jubfu"
 
 alias ino="arduino-cli"
 
-function mpvp() {
-  local link=""
-
-  if [ -n "$1" ] && [ -f "$1" ]; then
-    link="$1"
-    shift
-  elif wl-paste | grep -qE "^https?://"; then
-    link="$(wl-paste)"
-  else
-    echo "Refusing to play. No link or file provided." >&2
-    return 1
-  fi
-
-  mpv "$link" "$@" || mpv --ytdl-raw-options-add="cookies-from-browser=firefox" "$link" "$@"
-}
-
 # ani-cli alias to download first 100 (almost all) episodes of an anime
 # Anime name is the current directory name
 alias anidl="ani-cli -d -e 1-100 \"\$(basename \"\$(realpath .)\")\""
 
 # xdg-ninja
 alias xdg-maid="xdg-ninja --skip-ok --skip-unsupported"
-
-function aur-vote () {
-  AUR_AUTO_VOTE_PASSWORD="$(secret-tool lookup service aur)" command aur-auto-vote --no-unvote "$(secret-tool search service aur 2>&1 | grep "attribute.UserName" | cut -d "=" -f 2 | xargs)"
-}
 
 # Yazi change cwd on exit
 function y() {
@@ -237,16 +214,6 @@ function y() {
   fi
   rm -f -- "$tmp"
 }
-
-function tmux() {
-  local slice="tmux.slice"
-  if uwsm check is-active >/dev/null 2>&1; then
-    uwsm app -s "$slice" -- tmux "$@"
-  else
-    command tmux "$@"
-  fi
-}
-
 
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo/sudo.plugin.zsh
 # <ESC>mx to move current command to tmux session
@@ -293,36 +260,6 @@ tmux-command-line() {
 
 zle -N tmux-command-line
 bindkey "\e"mx tmux-command-line
-
-# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo/sudo.plugin.zsh
-# <ESC>fj to toggle firejail --noprofile for the current command
-firejail-noprofile-command-line() {
-  # If line is empty, get the last run command from history
-  [[ -z $BUFFER ]] && LBUFFER="$(fc -ln -1)"
-
-  # Save beginning space
-  local WHITESPACE=""
-  if [[ ${LBUFFER:0:1} = " " ]]; then
-    WHITESPACE=" "
-    LBUFFER="${LBUFFER:1}"
-  fi
-
-  {
-    # Simple firejail --noprofile toggle functionality
-    case "$BUFFER" in
-      firejail\ --noprofile\ *) __replace-buffer "firejail --noprofile" "" ;;
-      *) LBUFFER="firejail --noprofile $LBUFFER" ;;
-    esac
-  } always {
-    # Preserve beginning space
-    LBUFFER="${WHITESPACE}${LBUFFER}"
-
-    # Redisplay edit buffer (compatibility with zsh-syntax-highlighting)
-    zle && zle redisplay # only run redisplay if zle is enabled
-  }
-}
-zle -N firejail-noprofile-command-line
-bindkey "\e"fj firejail-noprofile-command-line
 
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo/sudo.plugin.zsh
 # <ESC>px to toggle proxychains for the current command

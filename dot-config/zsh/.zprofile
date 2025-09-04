@@ -18,6 +18,5 @@ if [[ $(tty) = "/dev/tty1" || $(tty) = "/dev/tty2" ]]; then
     else
       echo "Remote repository not found, skipping pull."
     fi
-    exec uwsm start hyprland.desktop
   fi
 fi

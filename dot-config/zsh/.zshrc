@@ -66,7 +66,7 @@ zstyle ':omz:plugins:alias-finder' exact no
 zstyle ':omz:plugins:alias-finder' cheaper yes
 
 # Notify when background jobs finish
-plugins+=(bgnotify)
+# plugins+=(bgnotify)
 bgnotify_bell=true
 bgnotify_threshold=300
 bgnotify_extraargs="-a zsh -u low"
@@ -198,9 +198,6 @@ bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
 bindkey '^[OA' history-search-backward
 
 ##### END zsh-autocomplete configuration #####
-
-# Hyprland splash
-if [[ $XDG_SESSION_DESKTOP == "Hyprland" && $TERM == "alacritty" ]]; then echo "$(hyprctl splash | lolcat -f &)"; fi
 
 # Initialize p10k prompt
 [[ ! -f ${ZDOTDIR:-~}/.p10k.zsh ]] || source ${ZDOTDIR:-~}/.p10k.zsh
