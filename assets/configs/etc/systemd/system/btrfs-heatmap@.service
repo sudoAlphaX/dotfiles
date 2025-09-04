@@ -1,9 +1,0 @@
-[Unit]
-Description=Btrfs Heatmap dump service for %I
-ConditionPathIsMountPoint=%I
-RequiresMountsFor=%I
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/btrfs-heatmap -o /var/cache/btrfs-heatmap/%I/ /%I
-Restart=on-failure

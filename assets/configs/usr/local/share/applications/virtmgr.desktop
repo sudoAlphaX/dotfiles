@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=virtmgr
-Comment=Manage virtual machines
-Exec=sh -c 'if ! systemctl is-active libvirtd; then pkexec systemctl start libvirtd; fi && exec virt-manager'
-Icon=virt-manager
-Terminal=false
-Categories=System;Emulator;Virtualization;
-StartupNotify=true

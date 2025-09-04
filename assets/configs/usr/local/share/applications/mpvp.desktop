@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=mpvp
-Comment=Play video from link in clipboard (using yt-dlp)
-Exec=sh -c 'link="$(wl-paste)"; if echo "$link" | grep -qE "^http(s)?://"; then notify-send -u low -a mpvp -i mpv "Playing: " "$link"; mpv "$link" || mpv --ytdl-raw-options-add="cookies-from-browser=firefox" "$link"; else notify-send -a mpvp -i mpv "Refusing to play: " "$link"; fi'
-Icon=mpv
-Terminal=false
-Categories=AudioVideo;Audio;Video;Player;TV;
-StartupWMClass=mpv
