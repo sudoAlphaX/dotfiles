@@ -1,5 +1,0 @@
-# ani-skip integration
-private-bin ani-skip,ffprobe,seq
-
-# mpv plugins
-private-etc mpv

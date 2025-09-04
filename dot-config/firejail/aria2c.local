@@ -1,5 +1,0 @@
-include whitelist-player-common.inc
-
-mkdir ${HOME}/.cache/aria2
-noblacklist ${HOME}/.cache/aria2
-whitelist ${HOME}/.cache/aria2

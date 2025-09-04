@@ -1,24 +1,15 @@
 [submodule "tpm"]
 	path = dot-config/tmux/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "rofi-git"]
-	path = dot-config/rofi/assets/rofi-git
-	url = https://www.github.com/sudoalphax/rofi
 [submodule "btop"]
 	path = dot-config/btop/btop
 	url = https://github.com/catppuccin/btop
-[submodule "obs-catppuccin"]
-	path = dot-config/obs-studio/assets/obs
-	url = https://github.com/catppuccin/obs
 [submodule "yazi-catppuccin"]
 	path = dot-config/yazi/assets/catppuccin-yazi
 	url = https://github.com/catppuccin/yazi
 [submodule "catppuccin-syntax-highlighting-bat"]
 	path = dot-config/yazi/assets/catppuccin-syntax-highlighting-bat
 	url = https://github.com/catppuccin/bat
-[submodule "hyprpaper-gen"]
-	path = dot-config/hypr/assets/hyprpaper-gen
-	url = https://github.com/BoopyTheFox/hyprpaper-gen
 [submodule "bat-catppuccin"]
 	path = dot-config/bat/assets/catppuccin
 	url = https://github.com/catppuccin/bat
@@ -28,9 +19,6 @@
 [submodule "lazygit-catppuccin"]
 	path = dot-config/lazygit/assets/lazygit
 	url = https://github.com/catppuccin/lazygit
-[submodule "Kvantum-catppuccin"]
-	path = dot-config/Kvantum/assets/catppuccin-Kvantum
-	url = https://github.com/catppuccin/Kvantum
 [submodule "ohmyzsh"]
 	path = dot-config/zsh/assets/ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh/
@@ -46,16 +34,6 @@
 [submodule "zsh-autocomplete"]
 	path = dot-config/zsh/assets/custom/plugins/zsh-autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete
-[submodule "zathura-catppuccin"]
-	path = dot-config/zathura/assets/zathura-catppuccin
-	url = https://github.com/catppuccin/zathura
-[submodule "mpv-thumbfast"]
-	path = dot-config/mpv/assets/thumbfast
-	url = https://github.com/po5/thumbfast
-[submodule "mpv-thumbfast-osc"]
-	path = dot-config/mpv/assets/thumbfast-osc
-	url = https://github.com/po5/thumbfast
-	branch = vanilla-osc
 [submodule "zsh-forgit"]
 	path = dot-config/zsh/assets/custom/plugins/forgit
 	url = https://github.com/wfxr/forgit
