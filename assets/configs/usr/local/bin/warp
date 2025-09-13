@@ -1,7 +1,9 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 {
   systemctl start warp-svc.service
+
+  warp-taskbar
 
   until
     [ "$(systemctl is-active warp-svc.service)" = "active" ]
@@ -28,6 +30,7 @@
 
   echo "WARP connected"
   notify-send -u low "WARP connected"
+
 } >/dev/null 2>&1 &
 
 disown
