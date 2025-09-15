@@ -7,9 +7,11 @@ increment_value="$1"
 speaker_sink="alsa_output.pci-0000_00_1f.3.analog-stereo"
 current_volume=$(pactl get-sink-volume "$sink" | grep -oP '\d?\d?\d%' | tail --lines=1 | sed 's/%//g') # Get the right speaker's volume
 
+MAX_VOLUME=150
+
 new_volume=$((current_volume + $1))
-if [ "$new_volume" -gt 100 ]; then
-  new_volume=100
+if [ "$new_volume" -gt "$MAX_VOLUME" ]; then
+  new_volume="$MAX_VOLUME"
   increment_value="+0"
 fi
 
