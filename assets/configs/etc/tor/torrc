@@ -133,7 +133,7 @@ RelayBandwidthBurst 1 GBytes # But allow bursts up to 200KB (1600Kb)
 ## hibernating.
 ##
 ## Set a maximum of 40 gigabytes each way per period.
-AccountingMax 5 TBytes
+AccountingMax 10 TBytes
 ## Each period starts daily at midnight (AccountingMax is per day)
 #AccountingStart day 00:00
 ## Each period starts on the 3rd of the month at 15:00 (AccountingMax
