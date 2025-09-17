@@ -76,3 +76,17 @@ export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
 # .azure
 export AZURE_CONFIG_DIR="$XDG_DATA_HOME"/azure
+
+# .docker
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+
+# .lesshst
+export LESSHISTFILE="${XDG_STATE_HOME}"/lesshst
+
+# .npm
+export NPM_CONFIG_INIT_MODULE="$XDG_CONFIG_HOME"/npm/config/npm-init.js
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"/npm
+export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR"/npm
+
+# .sqlite_history
+export SQLITE_HISTORY="$XDG_CACHE_HOME"/sqlite_history
