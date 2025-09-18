@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+IFACE="$1"
+STATUS="$2"
+
+SHADOWSOCKS_CONFIG_PATH="/etc/shadowsocks-rust/config_tun.json"
+
+# Ignore tun interfaces
+if echo "$IFACE" | grep -q "tun"; then
+  exit 0
+fi
+
+if [ "$STATUS" = "up" ]; then
+  ss-tun -c "$SHADOWSOCKS_CONFIG_PATH" "$IFACE"
+elif [ "$STATUS" = "down" ]; then
+  ss-tun -d
+fi
