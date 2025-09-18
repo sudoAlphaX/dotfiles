@@ -1,23 +1,14 @@
 #!/usr/bin/env sh
 
-# Ensure the script is run as root
-if [ "$(id -u)" -ne 0 ]; then
-  echo "This script must be run as root." >&2
-  exit 1
-fi
-
-if [ $# -ne 1 ] || ! test -f "$1"; then
-  echo "Usage: sudo $0 <shadowocks_config_path>"
+if [ $# -ne 1 ] && ! test -f "$1"; then
+  echo "Usage: $0 <shadowocks_config_path>"
   exit 1
 fi
 
 SHADOWSOCKS_CONFIG_PATH="$1"
 SHADOWSOCKS_CONFIG="$(cat "$SHADOWSOCKS_CONFIG_PATH")"
-SS_USER="shadowsocks-tun" # Dedicated user for running sslocal to bypass the tunnel
-FWMARK="10"               # A fwmark to identify packets from the sslocal process
-ROUTING_TABLE="100"       # A separate routing table for the sslocal process
 
-trap destroy EXIT HUP INT TERM
+trap destroy HUP INT
 
 config() {
   key="$1"
@@ -25,81 +16,71 @@ config() {
 }
 
 prepare() {
-  echo "Preparing network environment"
   ip tuntap del name "$(config tun_interface_name)" mode tun 2>/dev/null || true
 }
 
 create() {
+
   prepare
 
-  echo "Creating TUN interface"
-  ip tuntap add name "$(config tun_interface_name)" mode tun user "$SS_USER"
+  # Create TUN interface
+  ip tuntap add name "$(config tun_interface_name)" mode tun
   ip link set up dev "$(config tun_interface_name)"
   ip addr add "$(config tun_interface_address)" dev "$(config tun_interface_name)"
 
-  # Get default route details
+  server_ip="$(config "server")"
+
+  # Get default details (to exclude packets to server from looping)
   defaults="$(ip -j route | jq '.[] | select(.dst=="default")')"
   default_iface="$(echo "$defaults" | jq -r .dev)"
   default_gateway="$(echo "$defaults" | jq -r .gateway)"
+  ip route add "$server_ip" via "$default_gateway" dev "$default_iface" metric 100
 
-  echo "Setting up policy-based routing"
+  # Exclude DNS server(s) from tunnel
+  grep '^nameserver' /etc/resolv.conf | awk '{print $2}' |
+    while IFS= read -r dns_ip; do
+      ip route add "$dns_ip" via "$default_gateway" dev "$default_iface" metric 100
+    done
 
-  # Mark packets from the sslocal user
-  iptables -t mangle -A OUTPUT -m owner --uid-owner "$SS_USER" -j MARK --set-mark "$FWMARK"
+  # Set TUN device as default with a higher metric
+  ip route add default dev "$(config tun_interface_name)" metric 100
 
-  # Create a rule to use a separate routing table for marked packets
-  ip rule add fwmark "$FWMARK" lookup "$ROUTING_TABLE"
-
-  # Add a route to the separate table for the sslocal process
-  # This ensures sslocal's own traffic can reach the server.
-  ip route add default via "$default_gateway" dev "$default_iface" table "$ROUTING_TABLE"
-
-  # Route all other traffic through the TUN device in the main table
-  ip route add default dev "$(config tun_interface_name)" metric 50
-
-  # Add other LAN subnets if needed.
-
-  echo "Network setup complete. Default route is via TUN interface."
 }
 
 destroy() {
-  echo "Cleaning up network configuration..."
 
-  # Delete main default route via TUN interface
-  ip route del default dev "$(config tun_interface_name)" 2>/dev/null || true
+  # Delete default route via TUN interface
+  ip route del default dev "$(config tun_interface_name)"
 
-  # Delete the policy routing rule
-  ip rule del fwmark "$FWMARK" lookup "$ROUTING_TABLE" 2>/dev/null || true
+  # Delete routes to DNS servers via default gateway
+  grep '^nameserver' /etc/resolv.conf | awk '{print $2}' |
+    while IFS= read -r dns_ip; do
+      ip route del "$dns_ip"
+    done
 
-  # Delete the iptables marking rule
-  # Check if rule exists before deleting to avoid errors on exit
-  iptables -t mangle -C OUTPUT -m owner --uid-owner "$SS_USER" -j MARK --set-mark "$FWMARK" 2>/dev/null &&
-    iptables -t mangle -D OUTPUT -m owner --uid-owner "$SS_USER" -j MARK --set-mark "$FWMARK"
+  # Delete route to server via default gateway
+  server_ip="$(config server)"
+  ip route del "$server_ip"
 
-  # Flush the custom routing table
-  ip route flush table "$ROUTING_TABLE" 2>/dev/null || true
+  # Set link to down
+  ip link set down dev "$(config tun_interface_name)"
 
   # Clean up TUN interface
-  ip link set down dev "$(config tun_interface_name)" 2>/dev/null || true
-  ip tuntap del name "$(config tun_interface_name)" mode tun 2>/dev/null || true
-
-  echo "Cleanup complete"
+  ip addr del "$(config tun_interface_address)" dev "$(config tun_interface_name)"
+  ip tuntap del name "$(config tun_interface_name)" mode tun
 }
 
 connect() {
-  echo "Starting sslocal as user '$SS_USER'..."
 
-  # Run sslocal as the dedicated user. All packets from this process will now be marked by iptables.
-
-  sslocal \
-    -s "$(config server):$(config server_port)" \
+  sslocal -s "$(config server):$(config server_port)" \
     -k "$(config password)" \
     -m "$(config method)" \
     --protocol tun \
     --tcp-fast-open \
     --tun-interface-name "$(config tun_interface_name)" \
     --tun-interface-address "$(config tun_interface_address)"
-  # --dns google
+
+  # sslocal -c "$SHADOWSOCKS_CONFIG_PATH"
 
 }
 
