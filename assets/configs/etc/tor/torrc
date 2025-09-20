@@ -229,7 +229,7 @@ ExitRelay 0
 #ExitPolicy accept *:119 # accept nntp ports on IPv4 and IPv6 as well as default exit policy
 #ExitPolicy accept *4:119 # accept nntp ports on IPv4 only as well as default exit policy
 #ExitPolicy accept6 *6:119 # accept nntp ports on IPv6 only as well as default exit policy
-#ExitPolicy reject *:* # no exits allowed
+ExitPolicy reject *:* # no exits allowed
 
 ## Bridge relays (or "bridges") are Tor relays that aren't listed in the
 ## main directory. Since there is no complete public list of them, even an
