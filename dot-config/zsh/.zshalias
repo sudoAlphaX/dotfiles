@@ -147,6 +147,7 @@ alias ipa="ip a"
 alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
 
 # Fun shutdown aliases
+alias rebot="systemctl reboot"
 alias byebye="systemctl poweroff"
 alias goodbye="systemctl poweroff -i"
 alias zzz="systemctl suspend"
