@@ -150,6 +150,7 @@ alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
 alias virtmgr="systemctl start libvirtd && uwsm app -- virt-manager & disown"
 
 # Fun shutdown aliases
+alias rebot="systemctl reboot"
 alias byebye="systemctl poweroff"
 alias goodbye="systemctl poweroff -i"
 alias zzz="systemctl suspend"
