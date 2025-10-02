@@ -46,5 +46,7 @@
   "tracker_update_close": true,
   "tracker_update_prompt": false,
   "tracker_update_wait_s": 300,
-  "use_hooks": true
+  "use_hooks": true,
+  "ani_skip": true,
+  "autoplay_next": true
 }
