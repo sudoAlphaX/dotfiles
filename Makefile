@@ -32,12 +32,13 @@ install: stow copy-stow
 
 update: update-submodules update-nvim update-tmux
 
-setup: update-tmux
-	@echo "--- Running various setup related commands ---"
+setup:
+	@echo "--- Running user setup commands ---"
 	git config --local core.hooksPath .githooks/
 	bat cache --build
 	tldr --update
 	nvim --headless '+Lazy! restore' +qa
+	$(HOME)/.config/tmux/tpm/bin/install_plugins
 
 stow:
 	@echo "--- Stowing dotfiles ---"
