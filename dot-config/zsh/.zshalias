@@ -218,6 +218,22 @@ function mpvp() {
   mpv "$link" "$@" || mpv --ytdl-raw-options-add="cookies-from-browser=firefox" "$link" "$@"
 }
 
+function ytdl() {
+  local link=""
+
+  if [ -n "$1" ] && [ -f "$1" ]; then
+    link="$1"
+    shift
+  elif wl-paste | grep -qE "^https?://"; then
+    link="$(wl-paste)"
+  else
+    echo "Refusing to download. No link or file provided." >&2
+    return 1
+  fi
+
+  yt-dlp "$link" "$@" || yt-dlp --cookies-from-browser=firefox "$link" "$@"
+}
+
 # ani-cli alias to download first 100 (almost all) episodes of an anime
 # Anime name is the current directory name
 alias anidl="ani-cli -d -e 1-100 \"\$(basename \"\$(realpath .)\")\""
