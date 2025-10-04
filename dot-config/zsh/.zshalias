@@ -199,6 +199,20 @@ alias jufbu="jubfu"
 
 alias ino="arduino-cli"
 
+function ytdl() {
+  local link=""
+
+  if [ -n "$1" ] && [ -f "$1" ]; then
+    link="$1"
+    shift
+  else
+    echo "Refusing to download. No link or file provided." >&2
+  fi
+    return 1
+
+  yt-dlp "$link" "$@"
+}
+
 # ani-cli alias to download first 100 (almost all) episodes of an anime
 # Anime name is the current directory name
 alias anidl="ani-cli -d -e 1-100 \"\$(basename \"\$(realpath .)\")\""
