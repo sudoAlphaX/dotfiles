@@ -94,6 +94,22 @@ alias ipa="ip a"
 # Create python venv
 alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
 
+function ytdl() {
+  local link=""
+
+  if [ -n "$1" ] && [ -f "$1" ]; then
+    link="$1"
+    shift
+  elif termux-clipboard-get | grep -qE "^https?://"; then
+    link="$(termux-clipboard-get)"
+  else
+    echo "Refusing to download. No link or file provided." >&2
+    return 1
+  fi
+
+  yt-dlp "$link" "$@" || yt-dlp --cookies-from-browser=firefox "$link" "$@"
+}
+
 # ani-cli alias to download first 100 (almost all) episodes of an anime
 # Anime name is the current directory name
 alias anidl="ani-cli -d -e 1-100 \"\$(basename \"\$(realpath .)\")\""
