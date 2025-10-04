@@ -96,10 +96,10 @@ home:
 	@echo "--- Installing home configs ---"
 	@for user in $(shell ls /$@); do \
 		find $(CONFIGS_DIR)/$@ -type f ! -executable | while read -r file; do \
-			sudo install $(V_FLAG) -D --owner $$user --group $$user -m 644 $$file $$(echo $$file | sed 's/$(subst /,\/,$(CONFIGS_DIR))//g'); \
+			sudo install $(V_FLAG) -D --owner $$user --group $$user -m 644 $$file $$(echo $$file | sed 's/$(subst /,\/,$(CONFIGS_DIR))//g' | sed "s/user/$$user/g"); \
 		done; \
 		find $(CONFIGS_DIR)/$@ -type f -executable | while read -r file; do \
-			sudo install $(V_FLAG) -D --owner $$user --group $$user -m 755 $$file $$(echo $$file | sed 's/$(subst /,\/,$(CONFIGS_DIR))//g'); \
+			sudo install $(V_FLAG) -D --owner $$user --group $$user -m 755 $$file $$(echo $$file | sed 's/$(subst /,\/,$(CONFIGS_DIR))//g' | sed "s/user/$$user/g"); \
 		done; \
 	done
 
