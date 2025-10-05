@@ -107,7 +107,7 @@ function ytdl() {
     return 1
   fi
 
-  yt-dlp "$link" "$@" || yt-dlp --cookies-from-browser=firefox "$link" "$@"
+  yt-dlp "$link" "$@"
 }
 
 # ani-cli alias to download first 100 (almost all) episodes of an anime
