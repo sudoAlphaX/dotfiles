@@ -1,24 +1,21 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-ignored=("zen" "lts")
+preferred="arch"
 current=$(uname -r)
 device="/dev/mapper/volgroup-cryptarchroot"
 
-if [[ -z $KERNELVERSION ]]; then
-  echo "KERNELVERSION is not set"
+if [ -z "$KERNELVERSION" ]; then
+  echo "KERNELVERSION is not set. Exiting"
   exit 0
 fi
 
-# If the kernel version is in the ignored list, exit
-for ignored_kernel in "${ignored[@]}"; do
-  if [[ "$KERNELVERSION" == *"$ignored_kernel"* || "$current" == *"$ignored_kernel"* ]]; then
-    echo "Kernel version $KERNELVERSION or current kernel $current is in the ignored list"
-    exit 0
-  fi
-done
+if ! echo "$KERNELVERSION" | grep -q "$preferred" || ! echo "$current" | grep -q "$preferred"; then
+  echo "Processing kernel not preferred ($preferred). Exiting"
+  exit 0
+fi
 
-if [[ $KERNELVERSION == "$current" ]]; then
-  echo "Current kernel $current is the same as KERNELVERSION $KERNELVERSION"
+if [ "$KERNELVERSION" = "$current" ]; then
+  echo "Current kernel $current is the same as KERNELVERSION $KERNELVERSION". Exiting.
   exit 0
 fi
 
