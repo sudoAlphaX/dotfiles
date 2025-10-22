@@ -93,6 +93,7 @@ rsyncflags="--recursive \
   --specials \
   --info=PROGRESS2 \
   --human-readable \
+  --partial \
   --mkpath \
   "
 
