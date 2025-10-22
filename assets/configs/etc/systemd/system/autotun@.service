@@ -1,0 +1,13 @@
+[Unit]
+Description=Add default route for tun device %i
+After=sys-subsystem-net-devices-%i.device
+Requires=sys-subsystem-net-devices-%i.device
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/ip route add default dev %i metric 100
+ExecStop=/usr/bin/ip route del default dev %i
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
