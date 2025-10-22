@@ -2,7 +2,7 @@ return {
   {
     "tris203/precognition.nvim",
     lazy = false,
-    enabled = true,
+    enabled = false,
     keys = {
       {
         "<leader>uP",
