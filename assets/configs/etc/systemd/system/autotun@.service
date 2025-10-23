@@ -5,6 +5,7 @@ Requires=sys-subsystem-net-devices-%i.device
 
 [Service]
 Type=oneshot
+ExecStartPre=/usr/bin/sh -c 'until ip link show %i | grep -q "state UP"; do sleep 1; done'
 ExecStart=/usr/bin/ip route add default dev %i metric 100
 ExecStop=/usr/bin/ip route del default dev %i
 RemainAfterExit=yes
