@@ -3,6 +3,8 @@
 IFACE="$1"
 STATUS="$2"
 
+ALLOWED_APS="SSN SNUC"
+WIFI_IFACE="wlan0"
 SHADOWSOCKS_CONFIG_PATH="/etc/shadowsocks-rust/config_tun.json"
 
 # Ignore tun interfaces
@@ -12,6 +14,19 @@ fi
 
 if [ "$STATUS" = "up" ]; then
   ss-tun -c "$SHADOWSOCKS_CONFIG_PATH" "$IFACE"
+
+  if [ "$IFACE" = "$WIFI_IFACE" ]; then
+    ssid=$(iw dev "$WIFI_IFACE" info | awk '/ssid/ {print $2}')
+
+    case " $ALLOWED_APS " in
+    *" $ssid "*)
+      systemctl start autotun@"$(jq -r '.tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")"
+      ;;
+    esac
+  fi
+
 elif [ "$STATUS" = "down" ]; then
+
+  systemctl stop autotun@"$(jq -r '.tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")"
   ss-tun -d
 fi
