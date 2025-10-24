@@ -3,7 +3,7 @@
 IFACE="$1"
 STATUS="$2"
 
-ALLOWED_APS="SSN SNUC"
+ALLOWED_APS="SSN SNUC SSN-LG_2.4"
 WIFI_IFACE="wlan0"
 SHADOWSOCKS_CONFIG_PATH="/etc/shadowsocks-rust/config_tun.json"
 
