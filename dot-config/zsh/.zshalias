@@ -265,6 +265,47 @@ function tmux() {
   fi
 }
 
+# Hotspot control for android device via adb over ssh
+function hotspot() {
+  local DEFAULT_HOTSPOT_DEVICE="rootdevmobile"
+  local device action
+
+  # parse args
+  if [[ $# -eq 0 ]]; then
+    device="$DEFAULT_HOTSPOT_DEVICE"
+    action="on"
+  elif [[ $# -eq 1 ]]; then
+    if [[ "$1" == "off" ]]; then
+      device="$DEFAULT_HOTSPOT_DEVICE"
+      action="off"
+    elif [[ "$1" == "on" ]]; then
+      device="$DEFAULT_HOTSPOT_DEVICE"
+      action="on"
+    else
+      device="$1"
+      action="on"
+    fi
+  elif [[ $# -eq 2 ]]; then
+    device="$1"
+    action="$2"
+  else
+    echo "usage: hotspot [device] [on|off]"
+    return 1
+  fi
+
+  # validate
+  if [[ "$action" != "on" && "$action" != "off" ]]; then
+    echo "invalid action: $action"
+    return 1
+  fi
+
+  # run command
+  if [[ "$action" == "on" ]]; then
+    ssh -o LogLevel=ERROR "$device" "am broadcast -a dev.shadoe.delta.action.START_SOFT_AP -n dev.shadoe.delta/.SoftApBroadcastReceiver"
+  else
+    ssh -o LogLevel=ERROR "$device" "am broadcast -a dev.shadoe.delta.action.STOP_SOFT_AP -n dev.shadoe.delta/.SoftApBroadcastReceiver"
+  fi
+}
 
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo/sudo.plugin.zsh
 # <ESC>mx to move current command to tmux session
