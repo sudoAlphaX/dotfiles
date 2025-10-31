@@ -15,7 +15,7 @@ return {
       save_path = "~/Pictures/nvim",
       watermark = "",
       bg_theme = "grape", -- Disable theming by bg_padding = 0
-      bg_padding = 0,
+      bg_padding = 25,
       has_breadcrumbs = true,
       has_line_number = false,
       show_workspace = true,
