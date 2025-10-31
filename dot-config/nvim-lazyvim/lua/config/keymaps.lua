@@ -9,8 +9,8 @@ local unmap = vim.keymap.del
 map("n", ";", ":")
 
 -- Bufferline Tabs
-map("n", "<Tab>", "<CMD>BufferLineCycleNext<CR>")
-map("n", "<S-Tab>", "<CMD>BufferLineCyclePrev<CR>")
+map("n", "<S-Tab>", "<CMD>BufferLineCycleNext<CR>")
+map("n", "<C-Tab>", "<CMD>BufferLineCyclePrev<CR>")
 unmap("n", "<leader>bd")
 
 -- Buffers
