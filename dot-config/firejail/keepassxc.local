@@ -39,3 +39,7 @@ dbus-user.talk org.freedesktop.Notifications
 # Tray icon
 dbus-user.own org.kde.*
 dbus-user.talk org.kde.StatusNotifierWatcher
+
+# SSH agent
+noblacklist ${HOME}/.ssh
+whitelist ${HOME}/.ssh/agent
