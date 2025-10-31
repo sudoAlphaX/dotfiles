@@ -45,7 +45,8 @@ export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
 
 # .android
 export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
-alias adb='HOME="$XDG_DATA_HOME"/android adb'
+export ANDROID_HOME="$ANDROID_USER_HOME/sdk"
+alias adb='HOME="$ANDROID_USER_HOME" adb'
 
 # .cargo
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
@@ -87,3 +88,6 @@ export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR"/npm
 
 # .sqlite_history
 export SQLITE_HISTORY="$XDG_CACHE_HOME"/sqlite_history
+
+# .psql_history
+export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
