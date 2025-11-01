@@ -15,6 +15,7 @@ return {
               height = 0.4,
               row = 1,
             },
+            desc = "Open Copilot Chat (Inline)",
           })
         end,
       },
@@ -24,6 +25,27 @@ return {
       model = "claude-sonnet-4",
       auto_insert_mode = true,
       auto_fold = true,
+    },
+  },
+  {
+    "folke/sidekick.nvim",
+    optional = true,
+    keys = {
+      {
+        "<leader>au",
+        function()
+          require("sidekick.nes").update()
+        end,
+        desc = "Update Sidekick NES",
+      },
+    },
+    opts = {
+      cli = {
+        mux = {
+          enabled = true,
+          backend = "tmux",
+        },
+      },
     },
   },
 }
