@@ -10,5 +10,6 @@
     ],
     "customTitleBar": false,
     "appBadge": true,
-    "tray": true
+    "tray": true,
+    "hardwareVideoAcceleration": true
 }

@@ -126,7 +126,18 @@
             "enabled": false
         },
         "ConsoleJanitor": {
-            "enabled": false
+            "enabled": false,
+            "disableLoggers": false,
+            "disableSpotifyLogger": true,
+            "whitelistedLoggers": "GatewaySocket; Routing/Utils",
+            "allowLevel": {
+                "error": true,
+                "warn": false,
+                "trace": false,
+                "log": false,
+                "info": false,
+                "debug": false
+            }
         },
         "ConsoleShortcuts": {
             "enabled": false
@@ -221,7 +232,7 @@
             "enabled": true
         },
         "FullSearchContext": {
-            "enabled": false
+            "enabled": true
         },
         "GameActivityToggle": {
             "enabled": false
@@ -255,7 +266,17 @@
             "enabled": true
         },
         "LastFMRichPresence": {
-            "enabled": false
+            "enabled": false,
+            "shareUsername": false,
+            "shareSong": true,
+            "hideWithSpotify": true,
+            "hideWithActivity": false,
+            "statusName": "some music",
+            "statusDisplayType": "off",
+            "nameFormat": "status-name",
+            "useListeningStatus": false,
+            "missingArt": "lastfmLogo",
+            "showLastFmLogo": true
         },
         "LoadingQuotes": {
             "enabled": false,
@@ -346,7 +367,7 @@
             "enabled": false
         },
         "NoProfileThemes": {
-            "enabled": false
+            "enabled": true
         },
         "NoReplyMention": {
             "enabled": false
@@ -449,7 +470,11 @@
             "enabled": false
         },
         "ReviewDB": {
-            "enabled": false
+            "enabled": false,
+            "notifyReviews": true,
+            "showWarning": true,
+            "hideTimestamps": false,
+            "hideBlockedUsers": true
         },
         "RoleColorEverywhere": {
             "enabled": false
@@ -608,7 +633,7 @@
             "enabled": false
         },
         "YoutubeAdblock": {
-            "enabled": false
+            "enabled": true
         },
         "NoTrack": {
             "enabled": true,
@@ -646,6 +671,12 @@
         },
         "ExpressionCloner": {
             "enabled": false
+        },
+        "CopyStickerLinks": {
+            "enabled": false
+        },
+        "ImageFilename": {
+            "enabled": true
         }
     },
     "notifications": {
@@ -658,7 +689,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1749994204006
+        "settingsSyncVersion": 1762019913339
     },
     "eagerPatches": false
 }
