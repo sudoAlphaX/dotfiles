@@ -37,6 +37,7 @@ connect() {
     -s "$(config server):$(config server_port)" \
     -k "$(config password)" \
     -m "$(config method)" \
+    -U \
     --protocol tun \
     --tcp-fast-open \
     --tun-interface-name "$(config tun_interface_name)" \
