@@ -301,7 +301,9 @@ function hotspot() {
 
   # run command
   if [[ "$action" == "on" ]]; then
-    ssh -o LogLevel=ERROR "$device" "am broadcast -a dev.shadoe.delta.action.START_SOFT_AP -n dev.shadoe.delta/.SoftApBroadcastReceiver"
+    ssh -o LogLevel=ERROR "$device" \
+      "nohup sh -c 'am broadcast -a dev.shadoe.delta.action.START_SOFT_AP -n dev.shadoe.delta/.SoftApBroadcastReceiver &&
+      svc wifi disable'"
   else
     ssh -o LogLevel=ERROR "$device" "am broadcast -a dev.shadoe.delta.action.STOP_SOFT_AP -n dev.shadoe.delta/.SoftApBroadcastReceiver"
   fi
