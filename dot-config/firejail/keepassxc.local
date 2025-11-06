@@ -3,6 +3,7 @@ mkdir ${HOME}/Documents/Keepass
 whitelist ${HOME}/Documents/Keepass
 mkdir ${HOME}/Documents/Keefile
 whitelist ${HOME}/Documents/Keefile
+
 # KeeShare
 mkdir ${HOME}/Shared/Documents/Keepass
 whitelist ${HOME}/Shared/Documents/Keepass
@@ -18,6 +19,11 @@ mkdir ${HOME}/.librewolf/native-messaging-hosts
 mkfile ${HOME}/.librewolf/native-messaging-hosts/org.keepassxc.keepassxc_browser.json
 whitelist ${HOME}/.librewolf/native-messaging-hosts/org.keepassxc.keepassxc_browser.json
 noblacklist ${RUNUSER}/app
+
+# Allow KeepassXC to access thunderbird
+mkdir ${HOME}/.mozilla/native-messaging-hosts
+mkfile ${HOME}/.mozilla/native-messaging-hosts/de.kkapsner.keepassxc_mail.json
+whitelist ${HOME}/.mozilla/native-messaging-hosts/de.kkapsner.keepassxc_mail.json
 
 # KeepassXC configuration
 mkdir ${HOME}/.cache/keepassxc
