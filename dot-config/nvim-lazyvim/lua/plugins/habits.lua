@@ -76,6 +76,7 @@ return {
   {
     "m4xshen/hardtime.nvim",
     lazy = false,
+    event = "VeryLazy",
     dependencies = { "MunifTanjim/nui.nvim" },
     keys = {
       { "<leader>uH", "<cmd>:Hardtime toggle<CR>", desc = "Toggle Hardtime" },
