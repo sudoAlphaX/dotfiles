@@ -9,6 +9,6 @@ return {
       desc = "Toggle screenkey",
     },
   },
-  lazy = false,
+  lazy = true,
   version = "*", -- or branch = "main", to use the latest commit
 }
