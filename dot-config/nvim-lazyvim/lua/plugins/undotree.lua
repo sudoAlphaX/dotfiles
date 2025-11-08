@@ -9,7 +9,7 @@ return {
         function()
           require("undotree").toggle()
         end,
-        desc = "Undotree (plugin)",
+        desc = "Undotree (pane)",
       },
     },
     opts = {
