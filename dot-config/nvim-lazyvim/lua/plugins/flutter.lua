@@ -13,7 +13,7 @@ return {
         enabled = true,
       },
       debugger = {
-        enabled = true,
+        enabled = false,
       },
       lsp = {
         color = {
