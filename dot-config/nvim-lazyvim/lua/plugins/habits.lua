@@ -1,8 +1,7 @@
 return {
-
   {
     "tris203/precognition.nvim",
-    event = "VeryLazy", -- load after core UI
+    event = "VeryLazy",
     opts = {
       showBlankVirtLine = false,
       disabled_fts = { "man", "gitcommit" },
@@ -16,7 +15,6 @@ return {
       local timer = vim.uv.new_timer()
       local shown, enabled = false, true
 
-      -- start a delayed show after user stops moving/typing
       local function schedule_show()
         if timer:is_active() then
           timer:stop()
@@ -31,7 +29,6 @@ return {
         end)
       end
 
-      -- hide immediately and restart countdown
       local function hide_and_reset()
         if not enabled then
           return
@@ -46,12 +43,11 @@ return {
         schedule_show()
       end
 
-      -- use motion and insert events instead of per-key hook
-      vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI", "InsertCharPre" }, {
+      -- only fire on normal/visual moves
+      vim.api.nvim_create_autocmd("CursorMoved", {
         callback = hide_and_reset,
       })
 
-      -- Snacks toggle integration
       vim.schedule(function()
         Snacks.toggle({
           name = "Precognition",
