@@ -24,5 +24,24 @@ return {
         },
       },
     },
+    config = function(_, opts)
+      require("flutter-tools").setup(opts)
+
+      pcall(vim.keymap.del, "n", "<leader>cf")
+      pcall(vim.keymap.del, "n", "<leader>cF")
+
+      local wk = require("which-key")
+      wk.add({
+        { "<leader>cF", "<cmd>LazyFormat<cr>", desc = "Format" },
+        { "<leader>cf", group = "Flutter" },
+        { "<leader>cfr", "<cmd>FlutterRun<cr>", desc = "Run App" },
+        { "<leader>cfR", "<cmd>FlutterRestart<cr>", desc = "Restart App" },
+        { "<leader>cfd", "<cmd>FlutterDevices<cr>", desc = "Select Device" },
+        { "<leader>cfq", "<cmd>FlutterQuit<cr>", desc = "Quit App" },
+        { "<leader>cfl", "<cmd>FlutterLogToggle<cr>", desc = "Toggle Logs" },
+        { "<leader>cfL", "<cmd>FlutterLogClear<cr>", desc = "Clear Logs" },
+        { "<leader>cfo", "<cmd>FlutterOutlineToggle<cr>", desc = "Toggle Outline" },
+      })
+    end,
   },
 }
