@@ -2,8 +2,7 @@ return {
 
   {
     "tris203/precognition.nvim",
-    lazy = false,
-    enabled = true,
+    event = "VeryLazy", -- load after core UI
     opts = {
       showBlankVirtLine = false,
       disabled_fts = { "man", "gitcommit" },
@@ -15,14 +14,28 @@ return {
 
       local idle_ms = 1000
       local timer = vim.uv.new_timer()
-      local shown = false
-      local enabled = true -- default ON
+      local shown, enabled = false, true
 
-      vim.on_key(function()
+      -- start a delayed show after user stops moving/typing
+      local function schedule_show()
+        if timer:is_active() then
+          timer:stop()
+        end
+        timer:start(idle_ms, 0, function()
+          vim.schedule(function()
+            if enabled and not shown then
+              shown = true
+              pcall(precog.show)
+            end
+          end)
+        end)
+      end
+
+      -- hide immediately and restart countdown
+      local function hide_and_reset()
         if not enabled then
           return
-        end -- respect toggle
-
+        end
         if timer:is_active() then
           timer:stop()
         end
@@ -30,18 +43,15 @@ return {
           shown = false
           pcall(precog.hide)
         end
+        schedule_show()
+      end
 
-        timer:start(idle_ms, 0, function()
-          vim.schedule(function()
-            if enabled then
-              shown = true
-              pcall(precog.show)
-            end
-          end)
-        end)
-      end, vim.api.nvim_create_namespace("precognition-idle"))
+      -- use motion and insert events instead of per-key hook
+      vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI", "InsertCharPre" }, {
+        callback = hide_and_reset,
+      })
 
-      -- Snacks toggle
+      -- Snacks toggle integration
       vim.schedule(function()
         Snacks.toggle({
           name = "Precognition",
@@ -55,6 +65,8 @@ return {
                 timer:stop()
               end
               pcall(precog.hide)
+            else
+              schedule_show()
             end
           end,
         }):map("<leader>uP")
