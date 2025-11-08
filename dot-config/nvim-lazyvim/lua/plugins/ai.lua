@@ -15,9 +15,10 @@ return {
               height = 0.4,
               row = 1,
             },
-            desc = "Open Copilot Chat (Inline)",
           })
         end,
+        desc = "Open Copilot Chat (Inline)",
+        mode = { "n", "v" },
       },
     },
     opts = {
