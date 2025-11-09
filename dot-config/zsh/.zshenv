@@ -41,6 +41,9 @@ export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/ma
 # Systemd disable pager
 export SYSTEMD_PAGER="cat"
 
+# Chrome(ium) executable (for Flutter web)
+export CHROME_EXECUTABLE="$(where chromium | head -n 1)"
+
 ################ xdg-ninja $HOME cleanup ################
 
 # .wakatime
