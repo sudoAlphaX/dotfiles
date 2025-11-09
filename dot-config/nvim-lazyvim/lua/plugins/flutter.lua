@@ -38,6 +38,8 @@ return {
         { "<leader>cfR", "<cmd>FlutterRestart<cr>", desc = "Restart App" },
         { "<leader>cfd", "<cmd>FlutterDevices<cr>", desc = "Select Device" },
         { "<leader>cfq", "<cmd>FlutterQuit<cr>", desc = "Quit App" },
+        { "<leader>cfg", "<cmd>FlutterPubGet<cr>", desc = "Get Packages" },
+        { "<leader>cfG", "<cmd>FlutterPubUpgrade<cr>", desc = "Upgrade Packages" },
         { "<leader>cfl", "<cmd>FlutterLogToggle<cr>", desc = "Toggle Logs" },
         { "<leader>cfL", "<cmd>FlutterLogClear<cr>", desc = "Clear Logs" },
         { "<leader>cfo", "<cmd>FlutterOutlineToggle<cr>", desc = "Toggle Outline" },
