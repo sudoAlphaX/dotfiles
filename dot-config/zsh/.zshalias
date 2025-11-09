@@ -275,6 +275,17 @@ function hotspot() {
   fi
 }
 
+function qadb() {
+  local DEFAULT_ROOT_DEVICE="rootdevmobile"
+  local DEFAULT_ADB_DEVICE="devmobile"
+
+  ssh "$DEFAULT_ROOT_DEVICE" "nohup sh -c 'setprop service.adb.tcp.port 5555 &&
+    stop adbd &&
+    start adbd'"
+
+  adb connect "$DEFAULT_ADB_DEVICE"
+}
+
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo/sudo.plugin.zsh
 # <ESC>mx to move current command to tmux session
 __replace-buffer() {
