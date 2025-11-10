@@ -21,7 +21,7 @@ return {
         end
         timer:start(idle_ms, 0, function()
           vim.schedule(function()
-            if enabled and not shown then
+            if enabled and not shown and vim.api.nvim_get_mode().mode == "n" then
               shown = true
               pcall(precog.show)
             end
@@ -43,9 +43,23 @@ return {
         schedule_show()
       end
 
-      -- only fire on normal/visual moves
+      -- only react to motion in Normal/Visual modes
       vim.api.nvim_create_autocmd("CursorMoved", {
         callback = hide_and_reset,
+      })
+
+      -- stop timer + hide when entering Insert mode
+      vim.api.nvim_create_autocmd("ModeChanged", {
+        pattern = "*:i*",
+        callback = function()
+          if timer:is_active() then
+            timer:stop()
+          end
+          if shown then
+            shown = false
+            pcall(precog.hide)
+          end
+        end,
       })
 
       vim.schedule(function()
