@@ -1,0 +1,1 @@
+firejail --profile=${HOME}/.config/firejail/copilot.local --noblacklist=${PWD} --whitelist=${PWD} /usr/bin/copilot "$@"

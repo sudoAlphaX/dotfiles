@@ -1,0 +1,64 @@
+# Save this file as "application.profile" (change "application" with the
+# program name) in ~/.config/firejail directory. Firejail will find it
+# automatically every time you sandbox your application.
+#
+# Run "firejail application" to test it. In the file there are
+# some other commands you can try. Enable them by removing the "#".
+
+# Firejail profile for copilot
+# Persistent local customizations
+#include copilot.local
+# Persistent global definitions
+#include globals.local
+
+quiet
+
+### Enable as many of them as you can! A very important one is
+### "disable-exec.inc". This will make among other things your home
+### and /tmp directories non-executable.
+include disable-common.inc	# dangerous directories like ~/.ssh and ~/.gnupg
+#include disable-devel.inc	# development tools such as gcc and gdb
+include disable-exec.inc	# non-executable directories such as /var, /tmp, and /home
+#include disable-interpreters.inc	# perl, python, lua etc.
+# include disable-programs.inc	# user configuration for programs such as firefox, vlc etc.
+include disable-xdg.inc	# standard user directories: Documents, Pictures, Videos, Music
+
+noblacklist ${HOME}/.config/github-copilot
+whitelist ${HOME}/.config/github-copilot
+noblacklist ${HOME}/.config/git
+whitelist ${HOME}/.config/git
+read-only ${HOME}/.config/git
+
+noblacklist ${HOME}/repos
+whitelist ${HOME}/repos
+noblacklist ${HOME}/WIP
+whitelist ${HOME}/WIP
+
+apparmor	# if you have AppArmor running, try this one!
+caps.drop all
+ipc-namespace
+netfilter
+no3d	# disable 3D acceleration
+nodvd	# disable DVD and CD devices
+nogroups	# disable supplementary user groups
+noinput	# disable input devices
+nonewprivs
+noprinters
+noroot
+restrict-namespaces
+notv	# disable DVB TV devices
+nou2f	# disable U2F devices
+novideo	# disable video capture devices
+netfilter
+seccomp
+
+disable-mnt	# no access to /mnt, /media, /run/mount and /run/media
+private-cache	# run with an empty ~/.cache directory
+private-dev
+private-etc
+private-tmp
+
+allow-debuggers
+
+#dbus-user none
+dbus-system none
