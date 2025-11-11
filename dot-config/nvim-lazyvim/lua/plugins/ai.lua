@@ -8,6 +8,7 @@ return {
         function()
           require("CopilotChat").open({
             selection = require("CopilotChat.select").buffer,
+            sticky = { "#buffer" },
             window = {
               layout = "float",
               relative = "cursor",
@@ -20,9 +21,21 @@ return {
         desc = "Open Copilot Chat (Inline)",
         mode = { "n", "v" },
       },
+      {
+        "<leader>aA",
+        function()
+          require("CopilotChat").open({
+            selection = require("CopilotChat.select").buffer,
+            sticky = { "#buffer" },
+          })
+        end,
+        desc = "Open Copilot Chat",
+        mode = { "n", "v" },
+      },
     },
     opts = {
       selection = require("CopilotChat.select").buffer,
+      sticky = { "#buffer" },
       model = "claude-sonnet-4",
       auto_insert_mode = true,
       auto_fold = true,
