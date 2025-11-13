@@ -9,7 +9,7 @@
 # Persistent local customizations
 #include copilot.local
 # Persistent global definitions
-#include globals.local
+include globals.local
 
 quiet
 
@@ -22,6 +22,12 @@ include disable-exec.inc	# non-executable directories such as /var, /tmp, and /h
 #include disable-interpreters.inc	# perl, python, lua etc.
 # include disable-programs.inc	# user configuration for programs such as firefox, vlc etc.
 include disable-xdg.inc	# standard user directories: Documents, Pictures, Videos, Music
+
+include whitelist-common.inc
+include whitelist-run-common.inc
+include whitelist-runuser-common.inc
+include whitelist-usr-share-common.inc
+include whitelist-var-common.inc
 
 noblacklist ${HOME}/.config/github-copilot
 whitelist ${HOME}/.config/github-copilot
