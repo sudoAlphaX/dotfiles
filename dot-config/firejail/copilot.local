@@ -11,8 +11,6 @@
 # Persistent global definitions
 include globals.local
 
-quiet
-
 ### Enable as many of them as you can! A very important one is
 ### "disable-exec.inc". This will make among other things your home
 ### and /tmp directories non-executable.
