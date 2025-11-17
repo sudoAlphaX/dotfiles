@@ -289,7 +289,8 @@
         "MemberCount": {
             "enabled": true,
             "memberList": true,
-            "toolTip": true
+            "toolTip": true,
+            "voiceActivity": true
         },
         "MentionAvatars": {
             "enabled": false
@@ -301,7 +302,8 @@
             "enabled": true,
             "latency": 5,
             "detectDiscordKotlin": true,
-            "showMillis": false
+            "showMillis": false,
+            "ignoreSelf": false
         },
         "MessageLinkEmbeds": {
             "enabled": false
@@ -676,7 +678,8 @@
             "enabled": false
         },
         "ImageFilename": {
-            "enabled": true
+            "enabled": true,
+            "showFullUrl": false
         }
     },
     "notifications": {
@@ -689,7 +692,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1762019913339
+        "settingsSyncVersion": 1763381565200
     },
     "eagerPatches": false
 }
