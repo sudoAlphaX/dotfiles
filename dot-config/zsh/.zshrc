@@ -1,6 +1,6 @@
 # Tmux on SSH (https://stackoverflow.com/a/40192494)
 if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
-  systemd-inhibit sh -c 'tmux attach-session -t ssh || tmux new-session -s ssh'
+  systemd-inhibit --what=idle --why="SSH session connected in tmux" sh -c 'tmux attach-session -t ssh || tmux new-session -s ssh'
   exit # close the shell if tmux is detached/closed
 fi
 
