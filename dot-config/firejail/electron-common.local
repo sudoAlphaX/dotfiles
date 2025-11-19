@@ -1,5 +1,9 @@
 # Fix for electron crash when default shell is dash
 include allow-bin-sh.inc
 
+# Allow for systemd-resolv stub resolver
+include whitelist-run-common.inc
+
 # Hardened profile for Electron applications
 include electron-common-hardened.inc.profile
+
