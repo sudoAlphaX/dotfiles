@@ -18,6 +18,6 @@ ignore noroot
 whitelist ${RUNUSER}
 
 # Allow connections when network adapter changes
-ignore net
-ignore private-dev
-ignore private-etc
+# ignore net
+# ignore private-dev
+# ignore private-etc
