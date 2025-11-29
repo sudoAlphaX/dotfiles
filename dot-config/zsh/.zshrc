@@ -189,9 +189,9 @@ zstyle ':autocomplete:*' delay 0.2
 bindkey '^I' menu-select
 bindkey "$terminfo[kcbt]" menu-select
 
-# Make Tab and ShiftTab change the selection in the menu
-bindkey -M menuselect '^I' menu-complete
-bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
+# # Make Tab and ShiftTab change the selection in the menu
+# bindkey -M menuselect '^I' menu-complete
+# bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
 
 bindkey '^[OA' history-search-backward
 
