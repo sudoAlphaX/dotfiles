@@ -131,6 +131,9 @@ plugins+=(command-not-found)
 # Use <C-o> to copy current command to clipboard
 plugins+=(copybuffer)
 
+# direnv
+plugins+=(direnv)
+
 # Use <C-z> to fg suspended job
 plugins+=(fancy-ctrl-z)
 
