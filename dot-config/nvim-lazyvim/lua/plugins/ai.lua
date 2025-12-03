@@ -76,11 +76,12 @@ return {
           require("sidekick.nes").update()
         end,
         desc = "Update Sidekick NES",
+        mode = { "n", "x" },
       },
-
       {
         "<leader>aa",
         vim.NIL,
+        mode = { "n", "x" },
       },
       {
         "<leader>aA",
@@ -88,6 +89,7 @@ return {
           require("sidekick.cli").toggle()
         end,
         desc = "Sidekick Toggle CLI",
+        mode = { "n", "x" },
       },
       { "<leader>as", vim.NIL },
       {
@@ -107,7 +109,7 @@ return {
         end,
         desc = "Detach a CLI Session",
       },
-      { "<leader>at", vim.NIL },
+      { "<leader>at", vim.NIL, mode = { "n", "x" } },
       {
         "<leader>aT",
         function()
@@ -116,13 +118,14 @@ return {
         mode = { "x", "n" },
         desc = "Send This",
       },
-      { "<leader>af", vim.NIL },
+      { "<leader>af", vim.NIL, mode = { "n", "x" } },
       {
         "<leader>aF",
         function()
           require("sidekick.cli").send({ msg = "{file}" })
         end,
         desc = "Send File",
+        mode = { "n", "x" },
       },
       { "<leader>av", vim.NIL },
       {
@@ -133,7 +136,7 @@ return {
         mode = { "x" },
         desc = "Send Visual Selection",
       },
-      { "<leader>ap", vim.NIL },
+      { "<leader>ap", vim.NIL, mode = { "n", "x" } },
       {
         "<leader>aP",
         function()
