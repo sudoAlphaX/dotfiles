@@ -82,3 +82,4 @@ audio/mp2=mpv.desktop
 audio/x-matroska=mpv.desktop
 audio/x-wavpack=mpv.desktop
 audio/vnd.rn-realaudio=mpv.desktop
+x-scheme-handler/freetube=FreeTube.desktop
