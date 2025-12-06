@@ -2,6 +2,7 @@ return {
   {
     "mistricky/codesnap.nvim",
     build = "make",
+    tag = "v1.6.3",
     lazy = true,
     cmd = {
       "CodeSnap",
