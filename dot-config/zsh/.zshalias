@@ -101,6 +101,11 @@ alias copy="rsync $rsyncflags --perms --executability"
 alias extcopy="rsync $rsyncflags --info=NAME,STATS2 --verbose"
 alias mov="copy --remove-source-files"
 
+# Systemd inhibit (no idle)
+function si() {
+  systemd-inhibit --what=idle --why="$1" "$@"
+}
+
 # Rclone
 export RCLONE_PASSWORD_COMMAND="secret-tool lookup service rclone"
 
