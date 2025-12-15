@@ -1,7 +1,42 @@
+use std::env;
 use std::fs;
 use std::process::Command;
 
 fn main() {
+    // Collect command line arguments
+    let args: Vec<String> = env::args().collect();
+
+    // Check for --reset flag
+    if args.contains(&"--reset".to_string()) {
+        Command::new("/usr/bin/auto-cpufreq")
+            .arg("--force")
+            .arg("reset")
+            .status()
+            .expect("Failed to set reset mode");
+        return;
+    }
+
+    // Check for --powersave flag
+    if args.contains(&"--powersave".to_string()) {
+        Command::new("/usr/bin/auto-cpufreq")
+            .arg("--force")
+            .arg("powersave")
+            .status()
+            .expect("Failed to set powersave mode");
+        return;
+    }
+
+    // Check for --performance flag
+    if args.contains(&"--performance".to_string()) {
+        Command::new("/usr/bin/auto-cpufreq")
+            .arg("--force")
+            .arg("performance")
+            .status()
+            .expect("Failed to set performance mode");
+        return;
+    }
+
+    // --- Original Logic (Default Behaviour) ---
     let override_path = "/opt/auto-cpufreq/override.pickle";
 
     match fs::metadata(override_path).is_ok() {
