@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 CPUFREQ_OVERRIDE_FILE=/opt/auto-cpufreq/override.pickle
-PERFORMANCE_MODE_SECONDS=30
+PERFORMANCE_MODE_SECONDS=60
 
 CPUFREQ_PERFORMANCE_MODE="performance"
 CPUFREQ_POWERSAVE_MODE="powersave"
