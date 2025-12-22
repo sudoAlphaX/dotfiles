@@ -4,29 +4,22 @@ IFACE="$1"
 STATUS="$2"
 
 ALLOWED_APS="SSN SNUC SSN-LG_2.4"
-WIFI_IFACE="wlan0"
 SHADOWSOCKS_CONFIG_PATH="/etc/shadowsocks-rust/config_tun.json"
 
-# Ignore tun interfaces
-if echo "$IFACE" | grep -q "tun"; then
-  exit 0
-fi
+if [ "$IFACE" = "$(jq -r '.outbound_bind_interface' <"$SHADOWSOCKS_CONFIG_PATH")" ]; then
 
-if [ "$STATUS" = "up" ]; then
-  ss-tun -c "$SHADOWSOCKS_CONFIG_PATH" "$IFACE"
+  if [ "$STATUS" = "up" ]; then
 
-  if [ "$IFACE" = "$WIFI_IFACE" ]; then
     ssid=$(iw dev "$WIFI_IFACE" info | awk '/ssid/ {print $2}')
 
     case " $ALLOWED_APS " in
     *" $ssid "*)
-      systemctl start autotun@"$(jq -r '.tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")"
+      ip route add default dev "$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")" metric 100
       ;;
     esac
   fi
 
 elif [ "$STATUS" = "down" ]; then
 
-  systemctl stop autotun@"$(jq -r '.tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")"
-  ss-tun -d
+  ip route del default dev "$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")" metric 100
 fi
