@@ -7,7 +7,7 @@
 --restrict-filenames
 
 # File format
--t mkv
+-t mp4
 
 # Subtitles
 --sub-lang "en.*"
