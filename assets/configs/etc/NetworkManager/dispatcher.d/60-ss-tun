@@ -4,22 +4,24 @@ IFACE="$1"
 STATUS="$2"
 
 ALLOWED_APS="SSN SNUC SSN-LG_2.4"
-SHADOWSOCKS_CONFIG_PATH="/etc/shadowsocks-rust/config_tun.json"
+SHADOWSOCKS_CONFIG_PATH="/etc/shadowsocks-rust/devserver.json"
 
-if [ "$IFACE" = "$(jq -r '.outbound_bind_interface' <"$SHADOWSOCKS_CONFIG_PATH")" ]; then
+jq -r '.outbound_bind_interface' <"$SHADOWSOCKS_CONFIG_PATH"
 
-  if [ "$STATUS" = "up" ]; then
+if systemctl is-active shadowsocks-rust@"$(basename "$SHADOWSOCKS_CONFIG_PATH" .json)"; then
+  if [ "$IFACE" = "$(jq -r '.outbound_bind_interface' <"$SHADOWSOCKS_CONFIG_PATH")" ]; then
 
-    ssid=$(iw dev "$WIFI_IFACE" info | awk '/ssid/ {print $2}')
+    if [ "$STATUS" = "up" ]; then
 
-    case " $ALLOWED_APS " in
-    *" $ssid "*)
-      ip route add default dev "$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")" metric 100
-      ;;
-    esac
+      ssid=$(iw dev "$IFACE" info | awk '/ssid/ {print $2}')
+      case " $ALLOWED_APS " in
+      *" $ssid "*)
+        ip route replace default dev "$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")" metric 100
+        ;;
+      esac
+
+    elif [ "$STATUS" = "down" ]; then
+      ip route del default dev "$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")" metric 100
+    fi
   fi
-
-elif [ "$STATUS" = "down" ]; then
-
-  ip route del default dev "$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")" metric 100
 fi
