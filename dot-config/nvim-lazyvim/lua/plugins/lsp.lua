@@ -37,7 +37,7 @@ return {
       },
     },
     event = "LspAttach",
-    lazy = false,
+    lazy = true,
     opts = {},
   },
   {
