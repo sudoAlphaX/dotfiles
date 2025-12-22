@@ -27,7 +27,7 @@ map("n", "<leader>bb", "<leader>fb", { remap = true, desc = "List Buffers" })
 -- Find Files
 map("n", "<leader> ", "<leader>ff", { remap = true, desc = "Find Files (Root Dir)" })
 map("n", "<leader>o", "<leader>fF", { remap = true, desc = "Find Files (cwd)" })
-map("n", "<leader>/", "<leader>sG", { remap = true, desc = "Grep (cwd)" })
+map("n", "<leader>/", "<leader>sg", { remap = true, desc = "Grep (Root Dir)" })
 map("n", "<leader>r", "<leader>fr", { remap = true, desc = "Recent files" })
 
 -- Explorer
