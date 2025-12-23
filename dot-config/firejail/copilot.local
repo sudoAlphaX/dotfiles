@@ -26,17 +26,13 @@ include whitelist-runuser-common.inc
 include whitelist-usr-share-common.inc
 include whitelist-var-common.inc
 
-noblacklist ${HOME}/.config/github-copilot
 whitelist ${HOME}/.config/github-copilot
-noblacklist ${HOME}/.local/state/.copilot
+whitelist ${HOME}/.config/.copilot
 whitelist ${HOME}/.local/state/.copilot
-noblacklist ${HOME}/.config/git
 whitelist ${HOME}/.config/git
 read-only ${HOME}/.config/git
 
-noblacklist ${HOME}/repos
 whitelist ${HOME}/repos
-noblacklist ${HOME}/WIP
 whitelist ${HOME}/WIP
 
 apparmor	# if you have AppArmor running, try this one!
