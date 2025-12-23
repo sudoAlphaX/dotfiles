@@ -16,9 +16,8 @@ include globals.local
 ### and /tmp directories non-executable.
 include disable-common.inc	# dangerous directories like ~/.ssh and ~/.gnupg
 #include disable-devel.inc	# development tools such as gcc and gdb
-include disable-exec.inc	# non-executable directories such as /var, /tmp, and /home
-#include disable-interpreters.inc	# perl, python, lua etc.
-# include disable-programs.inc	# user configuration for programs such as firefox, vlc etc.
+# include disable-exec.inc	# non-executable directories such as /var, /tmp, and /home
+include disable-programs.inc	# user configuration for programs such as firefox, vlc etc.
 include disable-xdg.inc	# standard user directories: Documents, Pictures, Videos, Music
 
 include whitelist-common.inc
@@ -29,6 +28,8 @@ include whitelist-var-common.inc
 
 noblacklist ${HOME}/.config/github-copilot
 whitelist ${HOME}/.config/github-copilot
+noblacklist ${HOME}/.local/state/.copilot
+whitelist ${HOME}/.local/state/.copilot
 noblacklist ${HOME}/.config/git
 whitelist ${HOME}/.config/git
 read-only ${HOME}/.config/git
@@ -60,5 +61,5 @@ private-tmp
 
 allow-debuggers
 
-#dbus-user none
+# dbus-user none
 dbus-system none
