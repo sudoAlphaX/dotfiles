@@ -26,6 +26,8 @@ include whitelist-runuser-common.inc
 include whitelist-usr-share-common.inc
 include whitelist-var-common.inc
 
+whitelist ${HOME}/.local/share
+whitelist ${HOME}/.cache
 whitelist ${HOME}/.config/github-copilot
 whitelist ${HOME}/.config/.copilot
 whitelist ${HOME}/.local/state/.copilot
@@ -52,6 +54,7 @@ novideo	# disable video capture devices
 seccomp
 netfilter
 
+private-etc gcrypt,gitconfig,login.def,netsvc.conf,nsswitch.conf,resolv.conf,ssl,svc.conf
 disable-mnt	# no access to /mnt, /media, /run/mount and /run/media
 private-tmp
 
