@@ -1,0 +1,10 @@
+[Unit]
+Description=Start KDE Connectd
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kdeconnectd --replace -platform offscreen 
+Restart=always
+
+[Install]
+WantedBy=default.target
