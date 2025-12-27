@@ -3,8 +3,8 @@ Description=Start KDE Connectd
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/kdeconnectd -platform offscreen
-Restart=on-failure
+ExecStart=/usr/bin/kdeconnectd --replace -platform offscreen 
+Restart=always
 
 [Install]
 WantedBy=default.target
