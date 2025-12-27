@@ -1,1 +1,18 @@
+include allow-bin-sh.inc
 private-bin bash
+
+
+# mpv integration
+ignore quiet
+
+ignore include disable-programs.inc
+ignore include disable-shell.inc
+
+private-etc mpv
+
+ignore dbus-user none
+ignore dbus-system none
+
+ignore restrict-namespaces
+
+include mpv.profile

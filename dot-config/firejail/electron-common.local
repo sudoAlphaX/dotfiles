@@ -6,4 +6,3 @@ include whitelist-run-common.inc
 
 # Hardened profile for Electron applications
 include electron-common-hardened.inc.profile
-
