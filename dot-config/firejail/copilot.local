@@ -37,7 +37,6 @@ read-only ${HOME}/.config/git
 whitelist ${HOME}/repos
 whitelist ${HOME}/WIP
 
-apparmor	# if you have AppArmor running, try this one!
 caps.drop all
 ipc-namespace
 no3d	# disable 3D acceleration
