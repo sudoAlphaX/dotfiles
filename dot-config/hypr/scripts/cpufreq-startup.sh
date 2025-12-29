@@ -16,4 +16,10 @@ elif grep $CPUFREQ_POWERSAVE_MODE $CPUFREQ_OVERRIDE_FILE; then
   cpufreq-force --performance
   sleep $PERFORMANCE_MODE_SECONDS
   cpufreq-force --powersave
+
+else
+  # Performance mode
+  cpufreq-force --performance
+  sleep $PERFORMANCE_MODE_SECONDS
+  cpufreq-force --reset
 fi
