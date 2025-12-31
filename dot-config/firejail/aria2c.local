@@ -5,3 +5,4 @@ noblacklist ${HOME}/.cache/aria2
 whitelist ${HOME}/.cache/aria2
 
 whitelist ${HOME}/Shared/Downloads
+whitelist ${HOME}/Shared/Games
