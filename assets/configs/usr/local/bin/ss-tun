@@ -40,6 +40,7 @@ connect() {
     -U \
     --protocol tun \
     --tcp-fast-open \
+    -6 \
     --tun-interface-name "$(config tun_interface_name)" \
     --tun-interface-address "$(config tun_interface_address)" \
     --outbound-bind-interface "$OUTBOUND_BIND_INTERFACE" \
