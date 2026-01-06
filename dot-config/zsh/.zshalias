@@ -98,8 +98,10 @@ function run0()
 # run0 or doas
 if [ -n "$WAYLAND_DISPLAY" ]; then
   alias ele="run0 "
+  alias eledit="sudoedit "
 else
   alias ele="doas "
+  alias eledit="sudoedit "
 fi
 
 
