@@ -1,6 +1,6 @@
 
 # subvolume to snapshot
-SUBVOLUME="/home/personal"
+SUBVOLUME="/home/pranaovs"
 
 # filesystem type
 FSTYPE="btrfs"
@@ -21,7 +21,7 @@ COMPRESSION="gzip"
 
 
 # users and groups allowed to work with config
-ALLOW_USERS="personal"
+ALLOW_USERS="pranaovs"
 ALLOW_GROUPS=""
 
 # sync users and groups from ALLOW_USERS and ALLOW_GROUPS to .snapshots
