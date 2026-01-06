@@ -1,0 +1,15 @@
+# Allow java
+include allow-java.inc
+noblacklist ${HOME}/.openjfx
+mkdir ${HOME}/.openjfx
+whitelist ${HOME}/.openjfx
+
+mkdir ${HOME}/Shared/Games
+whitelist ${HOME}/Shared/Games
+
+# Tray icon
+dbus-user.own org.kde.*
+dbus-user.talk org.kde.StatusNotifierWatcher
+
+# Discord
+whitelist ${RUNUSER}/discord-ipc-*
