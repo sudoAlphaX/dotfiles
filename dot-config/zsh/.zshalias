@@ -368,7 +368,7 @@ ele-noprofile-command-line() {
   {
     # Simple ele --noprofile toggle functionality
     case "$BUFFER" in
-      ele\ --noprofile\ *) __replace-buffer "ele" "" ;;
+      ele\ *) __replace-buffer "ele" "" ;;
       *) LBUFFER="ele $LBUFFER" ;;
     esac
   } always {
