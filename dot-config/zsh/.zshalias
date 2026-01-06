@@ -212,6 +212,37 @@ __tmux-replace-buffer() {
   fi
 }
 
+
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo/sudo.plugin.zsh
+# <ESC><ESC> to toggle ele for the current command
+ele-noprofile-command-line() {
+  # If line is empty, get the last run command from history
+  [[ -z $BUFFER ]] && LBUFFER="$(fc -ln -1)"
+
+  # Save beginning space
+  local WHITESPACE=""
+  if [[ ${LBUFFER:0:1} = " " ]]; then
+    WHITESPACE=" "
+    LBUFFER="${LBUFFER:1}"
+  fi
+
+  {
+    # Simple ele --noprofile toggle functionality
+    case "$BUFFER" in
+      ele\ *) __replace-buffer "ele" "" ;;
+      *) LBUFFER="ele $LBUFFER" ;;
+    esac
+  } always {
+    # Preserve beginning space
+    LBUFFER="${WHITESPACE}${LBUFFER}"
+
+    # Redisplay edit buffer (compatibility with zsh-syntax-highlighting)
+    zle && zle redisplay # only run redisplay if zle is enabled
+  }
+}
+zle -N ele-noprofile-command-line
+bindkey "\e\e" ele-noprofile-command-line
+
 tmux-command-line() {
   # If line is empty, get the last run command from history
   [[ -z $BUFFER ]] && LBUFFER="$(fc -ln -1)"
