@@ -82,7 +82,26 @@ alias sudo="sudo "
 alias esudo="sudo -E "
 
 # Memes
-alias pls="sudo run0 "
+alias pls="run0 "
+
+# run0 with alias and nocorrect fix
+function run0()
+{
+  if [ "$1" = "nocorrect" ]; then
+    shift
+    nocorrect command run0 "$@"
+  else
+    command run0 "$@"
+  fi
+}
+
+# run0 or doas
+if [ -n "$WAYLAND_DISPLAY" ]; then
+  alias ele="run0 "
+else
+  alias ele="doas "
+fi
+
 
 # Rsync
 rsyncflags="--recursive \
@@ -210,13 +229,6 @@ alias jubfu="journalctl --user -b -f -u"
 alias jufbu="jubfu"
 
 alias ino="arduino-cli"
-
-# run0 or doas
-if [ -n "$WAYLAND_DISPLAY" ]; then
-  alias ele="run0 "
-else
-  alias ele="doas "
-fi
 
 function mpvp() {
   local link=""
