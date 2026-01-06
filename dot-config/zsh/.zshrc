@@ -155,7 +155,7 @@ plugins+=(man tldr)
 plugins+=(safe-paste)
 
 # Use <ESC><ESC> to prefix command with sudo
-plugins+=(sudo)
+# plugins+=(sudo)
 
 # ufw completion
 plugins+=(ufw)
