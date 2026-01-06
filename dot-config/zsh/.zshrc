@@ -141,12 +141,7 @@ plugins+=(fancy-ctrl-z)
 
 # Git
 plugins+=(git git-auto-fetch forgit ugit)
-export FORGIT_FZF_DEFAULT_OPTS="
---exact
---cycle
---border
---reverse
-"
+export FORGIT_FZF_DEFAULT_OPTS="--exact --cycle --border --reverse"
 
 # Use <ESC>+man or <ESC>+tldr to see prev command help
 plugins+=(man tldr)
