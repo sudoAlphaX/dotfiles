@@ -66,7 +66,22 @@ alias sudo="sudo "
 alias esudo="sudo -E "
 
 # Memes
-alias pls="sudo "
+alias pls="run0 "
+
+# run0 with alias and nocorrect fix
+function run0()
+{
+  if [ "$1" = "nocorrect" ]; then
+    shift
+    nocorrect command run0 "$@"
+  else
+    command run0 "$@"
+  fi
+}
+
+alias ele="sudo "
+alias eledit="sudoedit "
+
 
 # Rsync
 rsyncflags="--recursive \
