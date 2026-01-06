@@ -22,3 +22,6 @@ ignore noroot
 # Block DRM globally
 noexec ${HOME}
 noexec ${RUNUSER} # breaks DRM binaries when using profile-sync-daemon.
+
+# profile-sync-daemon
+whitelist ${RUNUSER}/psd
