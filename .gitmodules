@@ -16,9 +16,6 @@
 [submodule "catppuccin-syntax-highlighting-bat"]
 	path = dot-config/yazi/assets/catppuccin-syntax-highlighting-bat
 	url = https://github.com/catppuccin/bat
-[submodule "hyprpaper-gen"]
-	path = dot-config/hypr/assets/hyprpaper-gen
-	url = https://github.com/BoopyTheFox/hyprpaper-gen
 [submodule "bat-catppuccin"]
 	path = dot-config/bat/assets/catppuccin
 	url = https://github.com/catppuccin/bat
