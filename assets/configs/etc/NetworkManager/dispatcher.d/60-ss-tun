@@ -16,7 +16,9 @@ if systemctl is-active shadowsocks-rust@"$(basename "$SHADOWSOCKS_CONFIG_PATH" .
       ssid=$(iw dev "$IFACE" info | awk '/ssid/ {print $2}')
       case " $ALLOWED_APS " in
       *" $ssid "*)
-        ip route replace default dev "$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")" metric 100
+        if [ -f "/opt/autotun/$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")" ]; then
+          ip route replace default dev "$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")" metric 100
+        fi
         ;;
       esac
 
