@@ -44,6 +44,10 @@ ENABLE_CORRECTION=true
 # History
 HIST_STAMPS="yyyy-mm-dd"
 
+# Set vim mode
+# set -o vi
+# bindkey -v '^?' backward-delete-char
+
 ## zsh configuration
 
 setopt HIST_IGNORE_ALL_DUPS
