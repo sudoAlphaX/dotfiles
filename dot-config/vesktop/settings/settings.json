@@ -680,6 +680,9 @@
         "ImageFilename": {
             "enabled": true,
             "showFullUrl": false
+        },
+        "MoreQuickReactions": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -692,7 +695,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1765879985452
+        "settingsSyncVersion": 1767869513863
     },
     "eagerPatches": false,
     "uiElements": {
