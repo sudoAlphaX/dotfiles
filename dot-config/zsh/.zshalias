@@ -82,7 +82,28 @@ alias sudo="sudo "
 alias esudo="sudo -E "
 
 # Memes
-alias pls="sudo run0 "
+alias pls="run0 "
+
+# run0 with alias and nocorrect fix
+function run0()
+{
+  if [ "$1" = "nocorrect" ]; then
+    shift
+    nocorrect command run0 "$@"
+  else
+    command run0 "$@"
+  fi
+}
+
+# run0 or sudo
+if [ -n "$WAYLAND_DISPLAY" ]; then
+  alias ele="run0 "
+  alias eledit="sudoedit "
+else
+  alias ele="sudo "
+  alias eledit="sudoedit "
+fi
+
 
 # Rsync
 rsyncflags="--recursive \
@@ -291,8 +312,6 @@ function qadb() {
   adb connect "$DEFAULT_ADB_DEVICE"
 }
 
-# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo/sudo.plugin.zsh
-# <ESC>mx to move current command to tmux session
 __replace-buffer() {
   local old=$1 new=$2 space=${2:+ }
 
@@ -307,10 +326,9 @@ __replace-buffer() {
   fi
 }
 
-
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo/sudo.plugin.zsh
-# <ESC><ESC> to toggle run0 for the current command
-ele-noprofile-command-line() {
+# <ESC><ESC> to toggle ele (elevated) for the current command
+ele-command-line() {
   # If line is empty, get the last run command from history
   [[ -z $BUFFER ]] && LBUFFER="$(fc -ln -1)"
 
@@ -322,8 +340,40 @@ ele-noprofile-command-line() {
   fi
 
   {
-    # Simple ele --noprofile toggle functionality
+    # If $SUDO_EDITOR or $VISUAL are defined, then use that as $EDITOR
+    # Else use the default $EDITOR
+    local EDITOR=${SUDO_EDITOR:-${VISUAL:-$EDITOR}}
+
+    # If $EDITOR is not set, just toggle the sudo prefix on and off
+    if [[ -z "$EDITOR" ]]; then
+      case "$BUFFER" in
+        eledit\ *) __replace-buffer "eledit" "" ;;
+        ele\ *) __replace-buffer "ele" "" ;;
+        *) LBUFFER="ele $LBUFFER" ;;
+      esac
+      return
+    fi
+
+    # Check if the typed command is really an alias to $EDITOR
+
+    # Get the first part of the typed command
+    local cmd="${${(Az)BUFFER}[1]}"
+    # Get the first part of the alias of the same name as $cmd, or $cmd if no alias matches
+    local realcmd="${${(Az)aliases[$cmd]}[1]:-$cmd}"
+    # Get the first part of the $EDITOR command ($EDITOR may have arguments after it)
+    local editorcmd="${${(Az)EDITOR}[1]}"
+    if [[ "$realcmd" = (\$EDITOR|$editorcmd|${editorcmd:c}) \
+      || "${realcmd:c}" = ($editorcmd|${editorcmd:c}) ]] \
+      || builtin which -a "$realcmd" | command grep -Fx -q "$editorcmd"; then
+      __replace-buffer "$cmd" "eledit"
+      return
+    fi
+
+    # Check for editor commands in the typed command and replace accordingly
     case "$BUFFER" in
+      $editorcmd\ *) __replace-buffer "$editorcmd" "eledit" ;;
+      \$EDITOR\ *) __replace-buffer '$EDITOR' "eledit" ;;
+      eledit\ *) __replace-buffer "eledit" "$EDITOR" ;;
       ele\ *) __replace-buffer "ele" "" ;;
       *) LBUFFER="ele $LBUFFER" ;;
     esac
@@ -335,9 +385,16 @@ ele-noprofile-command-line() {
     zle && zle redisplay # only run redisplay if zle is enabled
   }
 }
-zle -N ele-noprofile-command-line
-bindkey "\e\e" ele-noprofile-command-line
 
+zle -N ele-command-line
+
+# Defined shortcut keys: [Esc] [Esc]
+bindkey -M emacs '\e\e' ele-command-line
+bindkey -M vicmd '\e\e' ele-command-line
+bindkey -M viins '\e\e' ele-command-line
+
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo/sudo.plugin.zsh
+# <ESC>mx to move current command to tmux session
 tmux-command-line() {
   # If line is empty, get the last run command from history
   [[ -z $BUFFER ]] && LBUFFER="$(fc -ln -1)"
