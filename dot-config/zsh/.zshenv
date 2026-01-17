@@ -86,3 +86,9 @@ export SQLITE_HISTORY="$XDG_CACHE_HOME"/sqlite_history
 
 # .psql_history
 export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
+
+# .wine
+export WINEPREFIX="$XDG_DATA_HOME"/wine
+
+# .dotnet
+export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
