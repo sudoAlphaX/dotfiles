@@ -1,7 +1,6 @@
 include allow-bin-sh.inc
 private-bin bash
 
-
 # mpv integration
 ignore quiet
 

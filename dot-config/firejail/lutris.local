@@ -4,7 +4,6 @@ noblacklist ${HOME}/.openjfx
 mkdir ${HOME}/.openjfx
 whitelist ${HOME}/.openjfx
 
-
 # Shared dir
 ignore noroot
 ignore nogroups
