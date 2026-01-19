@@ -1,6 +1,6 @@
 # Variables
 HOME_DIR = $(HOME)
-STOW_CONFIG_NO_DIRS := btop fastanime jellyfin-mpv-shim musikcube obs-studio psd tmux trackma vesktop viu
+STOW_CONFIG_NO_DIRS := btop fastanime jellyfin-mpv-shim musikcube obs-studio psd tmux trackma vesktop viu systemd/user
 STOW_NO_DIRS := dot-local/bin dot-local/share/applications dot-local/share/spotdl dot-local/share/dbus-1/services
 CONFIGS_DIR = ./assets/configs
 SCRIPTS_DIR = ./assets/scripts
