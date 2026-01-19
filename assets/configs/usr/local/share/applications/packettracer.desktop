@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Cisco Packet Tracer
+Exec=/usr/bin/firejail --profile=packettracer --appimage /usr/lib/packettracer/packettracer.AppImage
+Terminal=false
+Categories=Utility
