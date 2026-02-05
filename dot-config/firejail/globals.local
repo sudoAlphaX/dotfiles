@@ -9,3 +9,6 @@ blacklist ${HOME}/Documents/Private
 
 # Allow access to user tmp directory
 read-write ${HOME}/tmp
+
+read-only ${HOME}/.local/bin
+read-only ${HOME}/.local/share/applications
