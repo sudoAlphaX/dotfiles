@@ -30,7 +30,7 @@ export MANPAGER='nvim +Man!'
 export GPG_TTY=$TTY
 
 # Local binaries path
-export PATH="$HOME/.local/bin:$XDG_DATA_HOME/cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Lazygit use theme with different config
 export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/mauve.yml"
