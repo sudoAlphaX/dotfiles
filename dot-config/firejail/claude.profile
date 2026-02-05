@@ -1,0 +1,63 @@
+# Save this file as "application.profile" (change "application" with the
+# program name) in ~/.config/firejail directory. Firejail will find it
+# automatically every time you sandbox your application.
+#
+# Run "firejail application" to test it. In the file there are
+# some other commands you can try. Enable them by removing the "#".
+
+# Firejail profile for claude
+# Persistent local customizations
+#include claude.local
+# Persistent global definitions
+# include globals.local
+
+### Enable as many of them as you can! A very important one is
+### "disable-exec.inc". This will make among other things your home
+### and /tmp directories non-executable.
+include disable-common.inc	# dangerous directories like ~/.ssh and ~/.gnupg
+#include disable-devel.inc	# development tools such as gcc and gdb
+# include disable-exec.inc	# non-executable directories such as /var, /tmp, and /home
+# include disable-programs.inc	# user configuration for programs such as firefox, vlc etc.
+include disable-xdg.inc	# standard user directories: Documents, Pictures, Videos, Music
+
+include whitelist-common.inc
+include whitelist-run-common.inc
+include whitelist-runuser-common.inc
+include whitelist-usr-share-common.inc
+include whitelist-var-common.inc
+
+whitelist ${HOME}/.local/share
+whitelist ${HOME}/.cache
+whitelist ${HOME}/.claude
+whitelist ${HOME}/.claude.json*
+whitelist ${HOME}/.config/git
+read-only ${HOME}/.config/git
+
+
+whitelist ${HOME}/repos
+whitelist ${HOME}/WIP
+
+caps.drop all
+ipc-namespace
+no3d	# disable 3D acceleration
+nodvd	# disable DVD and CD devices
+nogroups	# disable supplementary user groups
+noinput	# disable input devices
+nonewprivs
+noprinters
+noroot
+restrict-namespaces
+notv	# disable DVB TV devices
+nou2f	# disable U2F devices
+novideo	# disable video capture devices
+seccomp
+netfilter
+
+# private-etc gcrypt,gitconfig,login.def,netsvc.conf,nsswitch.conf,resolv.conf,ssl,svc.conf
+disable-mnt	# no access to /mnt, /media, /run/mount and /run/media
+private-tmp
+
+allow-debuggers
+
+dbus-user none
+dbus-system none
