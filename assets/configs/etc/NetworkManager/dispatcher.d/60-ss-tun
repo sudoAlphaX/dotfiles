@@ -17,13 +17,13 @@ if systemctl is-active shadowsocks-rust@"$(basename "$SHADOWSOCKS_CONFIG_PATH" .
       case " $ALLOWED_APS " in
       *" $ssid "*)
         if [ -f "/opt/autotun/$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")" ]; then
-          ip route replace default dev "$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")" metric 100
+          systemctl start autotun@"$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")"
         fi
         ;;
       esac
 
     elif [ "$STATUS" = "down" ]; then
-      ip route del default dev "$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")" metric 100
+      systemctl stop autotun@"$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")"
     fi
   fi
 fi
