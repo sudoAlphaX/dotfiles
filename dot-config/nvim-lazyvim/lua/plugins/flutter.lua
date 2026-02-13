@@ -8,6 +8,7 @@ return {
       "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
     opts = {
+      root_patterns = { "pubspec.yaml", ".fvmrc", ".git" },
       fvm = true,
       widget_guides = {
         enabled = true,
