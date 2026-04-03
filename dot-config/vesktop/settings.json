@@ -11,5 +11,8 @@
     "customTitleBar": false,
     "appBadge": true,
     "tray": true,
-    "hardwareVideoAcceleration": true
+    "hardwareVideoAcceleration": true,
+    "staticTitle": false,
+    "enableMenu": true,
+    "splashPixelated": false
 }

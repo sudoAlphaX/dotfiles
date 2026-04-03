@@ -23,13 +23,13 @@
             "enabled": false
         },
         "MemberListDecoratorsAPI": {
-            "enabled": false
+            "enabled": true
         },
         "MessageAccessoriesAPI": {
             "enabled": true
         },
         "MessageDecorationsAPI": {
-            "enabled": false
+            "enabled": true
         },
         "MessageEventsAPI": {
             "enabled": true
@@ -321,9 +321,6 @@
             "ignoreChannels": "",
             "ignoreGuilds": ""
         },
-        "MessageTags": {
-            "enabled": false
-        },
         "MoreCommands": {
             "enabled": false
         },
@@ -433,7 +430,11 @@
             "enabled": false
         },
         "PlatformIndicators": {
-            "enabled": false
+            "enabled": true,
+            "colorMobileIndicator": true,
+            "list": true,
+            "badges": true,
+            "messages": true
         },
         "PreviewMessage": {
             "enabled": false
@@ -683,6 +684,12 @@
         },
         "MoreQuickReactions": {
             "enabled": false
+        },
+        "CustomCommands": {
+            "enabled": false
+        },
+        "NoDefaultHangStatus": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -695,7 +702,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1767869513863
+        "settingsSyncVersion": 1774715485923
     },
     "eagerPatches": false,
     "uiElements": {
