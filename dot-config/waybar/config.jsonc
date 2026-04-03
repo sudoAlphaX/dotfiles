@@ -18,6 +18,7 @@
     "tray",
     "custom/music",
     "privacy",
+    "custom/minecraft",
     "custom/pacman_updates",
     //   "keyboard-state",
     "network",
@@ -84,6 +85,14 @@
     "format": "{}",
     "interval": 600,
     "on-click": "hyprctl dispatch exec '[workspace special:s1] uwsm app -a topgrade -- alacritty -e topgrade -t'"
+  },
+  "custom/minecraft": {
+    "exec": "bash $HOME/.config/waybar/scripts/minecraft.sh",
+    "hide-empty-text": false,
+    "return-type": "json",
+    "format": "{}",
+    "interval": 60,
+    "on-click": "hyprctl dispatch exec 'uwsm app -- lutris lutris:rungame/minecraft-java-edition'"
   },
   "custom/autotun": {
     "exec": "bash $HOME/.config/waybar/scripts/autotun.sh",

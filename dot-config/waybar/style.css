@@ -94,6 +94,7 @@ button:hover {
 #custom-pacman_updates,
 #custom-music,
 #custom-autotun,
+#custom-minecraft,
 #backlight,
 #wireplumber,
 #mode,
@@ -191,6 +192,16 @@ button:hover {
 #custom-pacman_updates {
     color: @white;
     border-bottom: 2px solid @white;
+}
+
+#custom-minecraft.critical {
+    color: @red;
+    border-bottom: 2px solid @red;
+}
+
+#custom-minecraft {
+  color: @green;
+  border-bottom: 2px solid @green;
 }
 
 #custom-autotun.enabled {
