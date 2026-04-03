@@ -150,7 +150,7 @@
       "high": 70,
       "critical": 90
     },
-    "on-click": "uwsm app -a free -- alacritty -e watch -n 1 free -h",
+    "on-click": "hyprctl dispatch exec 'uwsm app -a free -- alacritty -e watch -n 1 free -h'",
     "tooltip-format": "{used} GB/{total} GB used ({percentage}%)\n{swapUsed} GB/{swapTotal} GB swap used ({swapPercentage}%)"
   },
   "temperature": {
@@ -158,14 +158,14 @@
     "format": " {temperatureC}°C",
     "format-critical": " {temperatureC}°C",
     "critical-threshold": 70,
-    "on-click": "uwsm app -a sensors -- alacritty -e watch -n 1 sensors"
+    "on-click": "hyprctl dispatch exec 'uwsm app -a sensors -- alacritty -e watch -n 1 sensors'"
   },
   "custom/temperature": {
     "exec": "bash $HOME/.config/waybar/scripts/temperature.sh",
     "return-type": "json",
     "format": " {}°C",
     "interval": 10,
-    "on-click": "uwsm app -a sensors -- alacritty -e watch -n 1 sensors"
+    "on-click": "hyprctl dispatch exec 'uwsm app -a sensors -- alacritty -e watch -n 1 sensors'"
   },
   "custom/cpufreq": {
     "exec": "bash $HOME/.config/waybar/scripts/cpufreq.sh",
@@ -181,7 +181,7 @@
       "high": 70,
       "critical": 90
     },
-    "on-click": "uwsm app -a htop -- alacritty -e htop"
+    "on-click": "hyprctl dispatch exec 'uwsm app -a htop -- alacritty -e htop'"
   },
   "network": {
     "format-ethernet": "  {ifname}",
@@ -197,8 +197,8 @@
     "tooltip-format-wifi": "{ipaddr}\nSignal Strength: {signalStrength}%",
     "tooltip-format-ethernet": "{ipaddr}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "nmcli device wifi rescan; uwsm app -a nmtui-connect -- alacritty -T AlacrittyFloat -e nmtui-connect",
-    "on-click-middle": "uwsm app -- nm-connection-editor",
+    "on-click": "nmcli device wifi rescan; hyprctl dispatch exec 'uwsm app -a nmtui-connect -- alacritty -T AlacrittyFloat -e nmtui-connect'",
+    "on-click-middle": "hyprctl dispatch exec 'uwsm app -- nm-connection-editor'",
     "on-click-right": "rfkill toggle wlan"
   },
   "bluetooth": {
@@ -210,7 +210,7 @@
     "tooltip-format-off": "Bluetooth off",
     "tooltip-format-on": "Bluetooth device not connected",
     "tooltip-format-connected": "Connected to device: {device_alias} ({device_battery_percentage})",
-    "on-click": "uwsm app -a bluetoothctl -- alacritty -T AlacrittyFloat -e bluetoothctl",
+    "on-click": "hyprctl dispatch exec 'uwsm app -a bluetoothctl -- alacritty -T AlacrittyFloat -e bluetoothctl'",
     "on-click-middle": "bluetoothctl disconnect || IFS=$'\n'; for device in $(bluetoothctl devices Trusted); do (echo $device | awk '{print $2}' | xargs bluetoothctl connect &); done",
     "on-click-right": "rfkill toggle bluetooth"
   },
