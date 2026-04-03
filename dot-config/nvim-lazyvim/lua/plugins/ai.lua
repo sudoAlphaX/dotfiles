@@ -61,7 +61,6 @@ return {
     opts = {
       selection = require("CopilotChat.select").buffer,
       sticky = { "#buffer" },
-      model = "claude-sonnet-4",
       auto_insert_mode = true,
       auto_fold = true,
     },
