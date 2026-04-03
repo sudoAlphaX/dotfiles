@@ -141,7 +141,7 @@ button:hover {
 
 #custom-temperature.critical {
     color: @green;
-    border-bottom: 2px solid @green;    
+    border-bottom: 2px solid @green;
     animation-name: blink;
     animation-duration: 0.75s;
     animation-timing-function: linear;
@@ -222,7 +222,7 @@ button:hover {
 
 #cpu.critical {
     color: @teal;
-    border-bottom: 2px solid @teal;    
+    border-bottom: 2px solid @teal;
     animation-name: blink;
     animation-duration: 0.75s;
     animation-timing-function: linear;
@@ -232,7 +232,7 @@ button:hover {
 
 #memory.critical {
     color: @pink;
-    border-bottom: 2px solid @pink;    
+    border-bottom: 2px solid @pink;
     animation-name: blink;
     animation-duration: 0.75s;
     animation-timing-function: linear;
@@ -292,12 +292,12 @@ button:hover {
 
 #battery.critical:not(.charging) {
     color: @green;
-    border-bottom: 2px solid @green;    
+    border-bottom: 2px solid @green;
     animation-name: blink;
     animation-duration: 0.75s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    animation-direction: alternate;        
+    animation-direction: alternate;
 }
 
 
