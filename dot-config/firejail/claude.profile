@@ -29,6 +29,7 @@ include whitelist-var-common.inc
 whitelist ${HOME}/.local/share
 whitelist ${HOME}/.cache
 whitelist ${HOME}/.claude
+whitelist ${HOME}/fvm
 whitelist ${HOME}/.claude.json*
 whitelist ${HOME}/.config/git
 read-only ${HOME}/.config/git
