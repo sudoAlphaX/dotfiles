@@ -44,6 +44,10 @@ export SYSTEMD_PAGER="cat"
 # Chrome(ium) executable (for Flutter web)
 export CHROME_EXECUTABLE="$(where chromium | head -n 1)"
 
+# Docker Host (for podman)
+export DOCKER_HOST="unix://${XDG_RUNTIME_DIR}/podman/podman.sock"
+
+
 ################ xdg-ninja $HOME cleanup ################
 
 # .wakatime
