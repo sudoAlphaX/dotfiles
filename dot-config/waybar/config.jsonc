@@ -21,6 +21,7 @@
     "custom/pacman_updates",
     //   "keyboard-state",
     "network",
+    "custom/autotun",
     "bluetooth",
     "group/hardware",
     "backlight",
@@ -83,6 +84,14 @@
     "format": "{}",
     "interval": 600,
     "on-click": "hyprctl dispatch exec '[workspace special:s1] uwsm app -a topgrade -- alacritty -e topgrade -t'"
+  },
+  "custom/autotun": {
+    "exec": "bash $HOME/.config/waybar/scripts/autotun.sh",
+    "hide-empty-text": false,
+    "return-type": "json",
+    "format": "{}",
+    "interval": 10,
+    "on-click": "bash $HOME/.config/waybar/scripts/autotun.sh --toggle"
   },
   "clock": {
     "format": "{:%H:%M}",

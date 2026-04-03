@@ -93,6 +93,7 @@ button:hover {
 #custom-cpufreq,
 #custom-pacman_updates,
 #custom-music,
+#custom-autotun,
 #backlight,
 #wireplumber,
 #mode,
@@ -190,6 +191,16 @@ button:hover {
 #custom-pacman_updates {
     color: @white;
     border-bottom: 2px solid @white;
+}
+
+#custom-autotun.enabled {
+  color: @green;
+  border-bottom: 2px solid @green;
+}
+
+#custom-autotun.disabled {
+  color: @red;
+  border-bottom: 2px solid @red;
 }
 
 #cpu.high,
