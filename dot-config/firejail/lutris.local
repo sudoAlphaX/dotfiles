@@ -22,3 +22,6 @@ dbus-user.talk org.kde.StatusNotifierWatcher
 
 # Discord
 whitelist ${RUNUSER}/discord-ipc-*
+
+# tmp extraction for simple-voice-chat mod minecraft
+ignore noexec /tmp
