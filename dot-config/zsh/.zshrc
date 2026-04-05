@@ -175,6 +175,56 @@ YSU_MESSAGE_FORMAT="$(tput setaf 211)%command$(tput sgr0) $(tput setaf 221)->$(t
 #### END omz plugins configuration #####
 
 
+#### command wrappers ####
+
+# App wrapper pipeline — each block maps apps to wrappers
+# Wrappers are applied inner-to-outer (first registered = innermost)
+typeset -gA _app_wrappers=()
+
+__app-dispatch() {
+  local app=$1; shift
+  local bin
+  bin=$(command -v "$app") || { echo "command not found: $app" >&2; return 127 }
+  local -a _wrap_cmd=("$bin" "$@")
+  local _wrapper
+  for _wrapper in ${=_app_wrappers[$app]}; do
+    "__${_wrapper}-apply" "$app"
+  done
+  "${_wrap_cmd[@]}"
+}
+
+# Systemd-inhibit wrapper
+inhibit_apps=(claude copilot cp mv rsync mov copy topgrade)
+
+__inhibit-apply() {
+  _wrap_cmd=(systemd-inhibit --what=idle --why="$1" "${_wrap_cmd[@]}")
+}
+
+for _app in $inhibit_apps; do _app_wrappers[$_app]+="inhibit "; done
+unset _app
+
+# Tmux wrapper
+tmux_apps=(claude copilot)
+
+__tmux-apply() {
+  if [[ -z "$TMUX" ]]; then
+    local _sess="$1-$(basename "$PWD")"
+    _wrap_cmd=(tmux new-session -A -s "$_sess" -- "${_wrap_cmd[@]}")
+  fi
+}
+
+for _app in $tmux_apps; do _app_wrappers[$_app]+="tmux "; done
+unset _app
+
+# Generate wrapper functions for all registered apps
+for _app in ${(k)_app_wrappers}; do
+  eval "function $_app() { __app-dispatch $_app \"\$@\" }"
+done
+unset _app
+
+
+#### END command wrappers ####
+
 # LS_COLORS
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
 
