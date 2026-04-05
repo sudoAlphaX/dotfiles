@@ -235,6 +235,13 @@ source $ZSH_CUSTOM/themes/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-sy
 source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZDOTDIR/.zshalias
 
+##### unalias commands #####
+
+unalias cp
+unalias mv
+
+##### END unalias commands #####
+
 ##### zsh-autocomplete configuration #####
 
 zstyle ':completion:*' completer _complete _complete:-fuzzy _correct _approximate _ignored
