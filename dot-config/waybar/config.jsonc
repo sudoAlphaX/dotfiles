@@ -172,8 +172,8 @@
     "return-type": "json",
     "format": "󰓅 {}",
     "interval": 10,
-    "on-click": "auto-cpufreq-gtk",
-    "on-click-right": "notify-send -u low -a auto-cpufreq \"$(cpufreq-force)\""
+    "on-click": "notify-send -u low -a auto-cpufreq \"$(cpufreq-force)\"",
+    "on-click-middle": "auto-cpufreq-gtk"
   },
   "cpu": {
     "format": " {usage}%",
