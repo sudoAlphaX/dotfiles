@@ -28,8 +28,7 @@ if [ "$online" = "false" ]; then
   printf '{"text": "󰍳 X", "class": "critical", "tooltip": "The server is offline."}\n'
   exit 0
 elif [ "$players" = "0" ]; then
-  players_display=" None"
-  class="normal"
+  exit 0
 else
   class="normal"
   players_display=""
