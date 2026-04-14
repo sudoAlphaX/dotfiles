@@ -47,6 +47,8 @@ export CHROME_EXECUTABLE="$(where chromium | head -n 1)"
 # Docker Host (for podman)
 export DOCKER_HOST="unix://${XDG_RUNTIME_DIR}/podman/podman.sock"
 
+# SSH agent socket
+export SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/ssh-agent.socket
 
 ################ xdg-ninja $HOME cleanup ################
 

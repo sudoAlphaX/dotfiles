@@ -1,8 +1,3 @@
-# Autostart ssh-agent
-if [ -z "$SSH_AUTH_SOCK" ]; then
-    eval "$(ssh-agent)" >/dev/null
-fi
-
 # Dotfiles auto-update
 dotfiles_path="$HOME/.dotfiles"
 

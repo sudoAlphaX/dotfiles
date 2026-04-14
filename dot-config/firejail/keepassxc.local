@@ -47,5 +47,5 @@ dbus-user.own org.kde.*
 dbus-user.talk org.kde.StatusNotifierWatcher
 
 # SSH agent
-noblacklist ${HOME}/.ssh
-whitelist ${HOME}/.ssh/agent
+noblacklist ${RUNUSER}/ssh-agent.socket
+whitelist ${RUNUSER}/ssh-agent.socket
