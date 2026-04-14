@@ -1,6 +1,6 @@
 # Tmux on SSH (https://stackoverflow.com/a/40192494)
 if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
-  systemd-inhibit --what=idle --why="SSH session connected in tmux" sh -c 'tmux attach-session -t ssh || tmux new-session -s ssh'
+  systemd-inhibit --what=sleep --why="SSH session connected in tmux" sh -c 'tmux attach-session -t ssh || tmux new-session -s ssh'
   exit # close the shell if tmux is detached/closed
 fi
 
@@ -197,7 +197,7 @@ __app-dispatch() {
 inhibit_apps=(claude copilot cp mv rsync mov copy topgrade)
 
 __inhibit-apply() {
-  _wrap_cmd=(systemd-inhibit --what=idle --why="$1" "${_wrap_cmd[@]}")
+  _wrap_cmd=(systemd-inhibit --what=sleep --why="$1 - automated zsh hook action" "${_wrap_cmd[@]}")
 }
 
 for _app in $inhibit_apps; do _app_wrappers[$_app]+="inhibit "; done
