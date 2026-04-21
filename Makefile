@@ -124,7 +124,7 @@ get-usr:
 
 update-submodules:
 	@echo "--- Updating git submodules ---"
-	cd ~/.dotfiles && git submodule foreach 'git pull'
+	git submodule foreach 'git pull'
 
 update-nvim:
 	@echo "--- Updating neovim plugins ---"
