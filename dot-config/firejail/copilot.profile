@@ -8,6 +8,7 @@ include globals.local
 
 whitelist ${HOME}/.config/github-copilot
 whitelist ${HOME}/.config/.copilot
+whitelist ${HOME}/.copilot
 whitelist ${HOME}/.local/state/.copilot
 
-ignore dbus-user none
+dbus-user.own org.freedesktop.secrets

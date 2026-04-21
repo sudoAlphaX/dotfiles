@@ -49,5 +49,4 @@ private-tmp
 
 allow-debuggers
 
-dbus-user none
 dbus-system none
