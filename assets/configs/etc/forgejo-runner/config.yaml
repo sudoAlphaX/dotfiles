@@ -263,3 +263,14 @@ server:
   # pending jobs. If `fetch_interval` is not defined on a connection,
   # `runner.fetch_interval` is used. Note that Forgejo Runner might enforce a
   # minimum value for certain instances like Codeberg.
+
+  connections:
+    codeberg-1:
+      url: https://codeberg.org/
+      uuid: 46a45373-4677-470c-b984-fecafa780c8d
+      token_url: file:$CREDENTIALS_DIRECTORY/46a45373-4677-470c-b984-fecafa780c8d.token
+
+    codeberg-2:
+      url: https://codeberg.org/
+      uuid: fc6b7281-2f23-4685-a8dc-04038d871f38
+      token_url: file:$CREDENTIALS_DIRECTORY/fc6b7281-2f23-4685-a8dc-04038d871f38.token
