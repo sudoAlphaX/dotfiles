@@ -5,7 +5,7 @@
   "auto_play": true,
   "check_updates": false,
   "client_uuid": "6f149826-74a6-4050-955b-2036af57c5f7",
-  "connect_retry_mins": 0,
+  "connect_retry_mins": 1,
   "direct_paths": false,
   "discord_presence": true,
   "display_mirroring": false,
