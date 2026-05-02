@@ -14,5 +14,6 @@
     "hardwareVideoAcceleration": true,
     "staticTitle": false,
     "enableMenu": true,
-    "splashPixelated": false
+    "splashPixelated": false,
+    "enableSplashScreen": false
 }
