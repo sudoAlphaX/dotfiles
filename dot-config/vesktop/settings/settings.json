@@ -1,7 +1,7 @@
 {
     "autoUpdate": true,
     "autoUpdateNotification": true,
-    "useQuickCss": true,
+    "useQuickCss": false,
     "themeLinks": [
         "https://catppuccin.github.io/discord/dist/catppuccin-mocha-mauve.theme.css"
     ],
@@ -690,6 +690,9 @@
         },
         "NoDefaultHangStatus": {
             "enabled": false
+        },
+        "CharacterCounter": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -702,7 +705,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1774715485923
+        "settingsSyncVersion": 1777510911444
     },
     "eagerPatches": false,
     "uiElements": {
