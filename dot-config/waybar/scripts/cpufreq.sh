@@ -2,9 +2,9 @@
 
 cpuFreqs=()
 totalFreq=0
-auto_cpufreq_override_path="/opt/auto-cpufreq/override.pickle"
+profile=$(tlpctl get)
 
-for cpu in /sys/devices/system/cpu/cpu[0-9]*; do
+for cpu in $(printf '%s\n' /sys/devices/system/cpu/cpu[0-9]* | sort -V); do
   cpuNum=$(basename "$cpu")
 
   cpuFreq=$(cat "$cpu/cpufreq/scaling_cur_freq")
@@ -18,15 +18,20 @@ done
 
 avgFreq=$((totalFreq / ${#cpuFreqs[@]}))
 
-if [[ ! -f "$auto_cpufreq_override_path" ]]; then
+case "$profile" in
+balanced)
   class="normal"
-elif grep -q "performance" "$auto_cpufreq_override_path"; then
-  class="high"
-elif grep -q "powersave" "$auto_cpufreq_override_path"; then
+  ;;
+power-saver)
   class="low"
-else
-  class="normal"
-fi
+  ;;
+performance)
+  class="high"
+  ;;
+*)
+  class="unknown"
+  ;;
+esac
 
 format_freq() {
   local freq=$1
@@ -49,7 +54,7 @@ for i in "${!cpuFreqs[@]}"; do
   cpuInfo="${cpuFreqs[$i]}"
   cpuNum=$(echo "$cpuInfo" | cut -d':' -f1)
   cpuFreqVal=$(echo "$cpuInfo" | cut -d':' -f2 | cut -d',' -f1)
-  formatted=$(format_freq "$cpuFreqVal" 1)
+  formatted=$(format_freq "$cpuFreqVal")
 
   [[ -n "$tooltip" ]] && tooltip+="\n"
   tooltip+="${cpuNum}: ${formatted}"

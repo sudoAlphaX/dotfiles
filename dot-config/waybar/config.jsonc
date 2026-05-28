@@ -171,9 +171,9 @@
     "exec": "bash $HOME/.config/waybar/scripts/cpufreq.sh",
     "return-type": "json",
     "format": "󰓅 {}",
-    "interval": 10,
-    "on-click": "notify-send -u low -a auto-cpufreq \"$(cpufreq-force)\"",
-    "on-click-middle": "auto-cpufreq-gtk"
+    "on-click": "$HOME/.config/waybar/scripts/tlp-switch.sh left",
+    "on-click-right": "$HOME/.config/waybar/scripts/tlp-switch.sh right",
+    "interval": 5
   },
   "cpu": {
     "format": " {usage}%",
