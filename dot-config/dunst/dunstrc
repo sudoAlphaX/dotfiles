@@ -539,6 +539,7 @@
 	summary="brightness_event"
 	category="device"
 	format="Brightness: %n%%"
+  set_stack_tag="brightness-event"
 	history_ignore=true
 	timeout=3
   fullscreen=show
@@ -581,6 +582,15 @@
 	history_ignore=true
   fullscreen=show
   urgency=critical
+
+[power-profiles]
+  appname="platform-profile"
+  set_stack_tag="platform_profile"
+  format="<b>%s</b>\n%b"
+  history_ignore=true
+  timeout=3
+  urgency=low
+  fullscreen=show
 
 [alarm-clock-applet]
   appname="alarm-clock-applet"
