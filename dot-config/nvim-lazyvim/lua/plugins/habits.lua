@@ -2,6 +2,7 @@ return {
   {
     "tris203/precognition.nvim",
     event = "VeryLazy",
+    enabled = false,
     opts = {
       showBlankVirtLine = false,
       disabled_fts = { "man", "gitcommit" },
