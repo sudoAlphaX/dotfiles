@@ -16,14 +16,14 @@ return {
       debugger = {
         enabled = false,
       },
-      lsp = {
-        color = {
-          enabled = true,
-          background = true, -- highlight the background
-          foreground = false, -- highlight the foreground
-          virtual_text = false, -- show the highlight using virtual text
-        },
-      },
+      -- lsp = {
+      --   color = {
+      --     enabled = true,
+      --     background = true, -- highlight the background
+      --     foreground = false, -- highlight the foreground
+      --     virtual_text = false, -- show the highlight using virtual text
+      --   },
+      -- },
     },
     config = function(_, opts)
       require("flutter-tools").setup(opts)
