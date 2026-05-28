@@ -24,7 +24,7 @@ whitelist ${HOME}/.config/git
 read-only ${HOME}/.config/git
 
 
-whitelist ${HOME}/repos
+whitelist ${HOME}/Projects
 whitelist ${HOME}/WIP
 
 caps.drop all
