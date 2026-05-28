@@ -3,7 +3,7 @@
 echo "Starting $(basename "$0")" "$@"
 
 temp_script="$HOME/.config/waybar/scripts/temperature.sh"
-critical_temp=80
+critical_temp=85
 refresh_time=10
 
 if [ ! -f "$temp_script" ]; then

@@ -174,9 +174,14 @@ button:hover {
     border-bottom: 2px solid @red;
 }
 
-#custom-cpufreq {
+#custom-cpufreq.normal {
     color: @green;
     border-bottom: 2px solid @green;
+}
+
+#custom-cpufreq {
+    color: @yellow;
+    border-bottom: 2px solid @yellow;
 }
 
 #custom-pacman_updates.high {
