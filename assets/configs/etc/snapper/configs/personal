@@ -1,6 +1,6 @@
 
 # subvolume to snapshot
-SUBVOLUME="/home/pranaovs"
+SUBVOLUME="/home/personal"
 
 # filesystem type
 FSTYPE="btrfs"
@@ -21,7 +21,7 @@ COMPRESSION="gzip"
 
 
 # users and groups allowed to work with config
-ALLOW_USERS="pranaovs"
+ALLOW_USERS=""
 ALLOW_GROUPS=""
 
 # sync users and groups from ALLOW_USERS and ALLOW_GROUPS to .snapshots
@@ -51,13 +51,12 @@ TIMELINE_CLEANUP="yes"
 
 # limits for timeline cleanup
 TIMELINE_MIN_AGE="3600"
-TIMELINE_LIMIT_HOURLY="5"
-TIMELINE_LIMIT_DAILY="4"
-TIMELINE_LIMIT_WEEKLY="3"
-TIMELINE_LIMIT_MONTHLY="2"
+TIMELINE_LIMIT_HOURLY="4-12"
+TIMELINE_LIMIT_DAILY="4-7"
+TIMELINE_LIMIT_WEEKLY="3-4"
+TIMELINE_LIMIT_MONTHLY="2-3"
 TIMELINE_LIMIT_QUARTERLY="0"
 TIMELINE_LIMIT_YEARLY="0"
-
 
 # cleanup empty pre-post-pairs
 EMPTY_PRE_POST_CLEANUP="yes"
