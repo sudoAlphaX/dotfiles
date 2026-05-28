@@ -1,0 +1,8 @@
+#%PAM-1.0
+auth [success=ignore default=1] pam_fprintd.so delay=500000 max-tries=5
+auth [success=done default=ignore] /lib/security/pam_howdy.so
+
+auth       include      system-auth
+account    include      system-auth
+password   include      system-auth
+session    include      system-auth
