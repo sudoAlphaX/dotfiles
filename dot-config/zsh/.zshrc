@@ -169,7 +169,7 @@ plugins+=(virtualenvwrapper)
 plugins+=(z)
 
 # Alias reminder (alias-finder alternative)
-plugins+=(zsh-you-should-use)
+# plugins+=(zsh-you-should-use)
 YSU_MESSAGE_FORMAT="$(tput setaf 211)%command$(tput sgr0) $(tput setaf 221)->$(tput sgr0) $(tput setaf 151)%alias$(tput sgr0)"
 
 #### END omz plugins configuration #####
