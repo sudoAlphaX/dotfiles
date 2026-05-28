@@ -1,5 +1,6 @@
 # Allow java
 include allow-java.inc
+whitelist /usr/share/java
 noblacklist ${HOME}/.openjfx
 mkdir ${HOME}/.openjfx
 whitelist ${HOME}/.openjfx
@@ -16,6 +17,18 @@ mkdir ${HOME}/Shared/Downloads
 noblacklist ${HOME}/Shared/Downloads
 whitelist ${HOME}/Shared/Downloads
 
+noblacklist ${HOME}/.cache/umu
+mkdir ${HOME}/.cache/umu
+whitelist ${HOME}/.cache/umu
+
+noblacklist ${HOME}/.local/share/umu
+mkdir ${HOME}/.local/share/umu
+whitelist ${HOME}/.local/share/umu
+
+noblacklist ${HOME}/.local/share/Steam
+mkdir ${HOME}/.local/share/Steam
+whitelist ${HOME}/.local/share/Steam
+
 # Tray icon
 dbus-user.own org.kde.*
 dbus-user.talk org.kde.StatusNotifierWatcher
@@ -25,3 +38,6 @@ whitelist ${RUNUSER}/discord-ipc-*
 
 # tmp extraction for simple-voice-chat mod minecraft
 ignore noexec /tmp
+
+ignore restrict-namespaces
+ignore seccomp
