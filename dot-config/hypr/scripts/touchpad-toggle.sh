@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 STATUS_FILE=$XDG_RUNTIME_DIR/touchpad-status
-device="dll07d0:01-044e:120b"
+device="elan06fa:00-04f3:327e-touchpad"
 
 enable_touchpad() {
   show_notification=${1:-true}
