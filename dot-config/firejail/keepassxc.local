@@ -1,8 +1,6 @@
 # Database path whitelist
 mkdir ${HOME}/Documents/Keepass
 whitelist ${HOME}/Documents/Keepass
-mkdir ${HOME}/Documents/Keefile
-whitelist ${HOME}/Documents/Keefile
 
 # KeeShare
 mkdir ${HOME}/Shared/Documents/Keepass
@@ -36,8 +34,6 @@ include whitelist-common.inc
 # Whitelist Keepass Database
 noblacklist ${HOME}/Documents/Keepass
 whitelist ${HOME}/Documents/Keepass
-noblacklist ${HOME}/Documents/Keefile
-whitelist ${HOME}/Documents/Keefile
 
 # Notifications
 dbus-user.talk org.freedesktop.Notifications
