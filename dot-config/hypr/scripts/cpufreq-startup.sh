@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/sh
 
 CPUFREQ_OVERRIDE_FILE=/opt/auto-cpufreq/override.pickle
 PERFORMANCE_MODE_SECONDS=60

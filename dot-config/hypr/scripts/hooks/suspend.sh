@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/sh
 
 PRE_DIR="$(dirname "$0")/pre-suspend.d"
 POST_DIR="$(dirname "$0")/post-suspend.d"

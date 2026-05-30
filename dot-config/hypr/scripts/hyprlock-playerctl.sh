@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/sh
 
 icon=""
 output="$(playerctl metadata --format '{{status}}:{{playerName}}:{{artist}}:{{album}}:{{title}}')" 2>/dev/null

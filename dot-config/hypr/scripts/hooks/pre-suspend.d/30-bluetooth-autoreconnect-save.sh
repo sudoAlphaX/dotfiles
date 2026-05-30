@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/sh
 
 LOG_PATH="$XDG_RUNTIME_DIR/bluetooth-autoreconnect"
 LOG_FILE="$LOG_PATH/devices"

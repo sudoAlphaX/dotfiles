@@ -1,3 +1,3 @@
-#!/usr/bin/env sh
+#!/usr/bin/sh
 
 notify-send -a hypridle "Suspending $(hostname)"

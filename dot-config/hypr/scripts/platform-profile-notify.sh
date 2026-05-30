@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/sh
 
 # The file to monitor
 FILE="/sys/firmware/acpi/platform_profile"
