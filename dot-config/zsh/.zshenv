@@ -30,7 +30,7 @@ export MANPAGER='nvim +Man!'
 export GPG_TTY=$TTY
 
 # Local binaries path
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator"
 
 # Libvirt use system scope
 export LIBVIRT_DEFAULT_URI="qemu:///system"
@@ -56,9 +56,9 @@ export SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/ssh-agent.socket
 export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
 
 # .android
-export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
+export ANDROID_USER_HOME="$XDG_DATA_HOME/android"
+export ANDROID_AVD_HOME="$ANDROID_USER_HOME/avd"
 export ANDROID_HOME="$ANDROID_USER_HOME/sdk"
-alias adb='HOME="$ANDROID_USER_HOME" adb'
 
 # .cargo
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
