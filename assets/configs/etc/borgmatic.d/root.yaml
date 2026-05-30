@@ -648,12 +648,12 @@ verbosity: 1
 # Display progress as each file or archive is processed when running
 # supported actions. Corresponds to the "--progress" flag on those
 # actions. Defaults to false.
-# progress: true
+progress: false
 
 # Display statistics for an archive when running supported actions.
 # Corresponds to the "--stats" flag on those actions. Defaults to
 # false.
-# statistics: true
+statistics: true
 
 # Display details for each file or archive as it is processed when
 # running supported actions. Corresponds to the "--list" flag on those
