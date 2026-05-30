@@ -1,0 +1,7 @@
+#!/bin/sh
+profile=$(cat /sys/firmware/acpi/platform_profile)
+case "$profile" in
+low-power) exec tlp power-saver ;;
+balanced) exec tlp balanced ;;
+performance) exec tlp performance ;;
+esac

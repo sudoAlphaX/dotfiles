@@ -1,0 +1,6 @@
+[Unit]
+Description=Apply TLP profile from platform_profile
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/platform-profile-to-tlp

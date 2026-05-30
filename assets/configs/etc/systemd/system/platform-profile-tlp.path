@@ -1,0 +1,9 @@
+[Unit]
+Description=Watch platform_profile for changes
+
+[Path]
+PathModified=/sys/firmware/acpi/platform_profile
+Unit=platform-profile-tlp.service
+
+[Install]
+WantedBy=paths.target
