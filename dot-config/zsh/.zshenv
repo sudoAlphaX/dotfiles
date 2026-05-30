@@ -30,7 +30,7 @@ export MANPAGER='nvim +Man!'
 export GPG_TTY=$TTY
 
 # Local binaries path
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator"
 
 # Lazygit use theme with different config
 export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/mauve.yml"
@@ -51,9 +51,9 @@ export DOCKER_HOST="unix://${XDG_RUNTIME_DIR}/podman/podman.sock"
 export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
 
 # .android
-export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
+export ANDROID_USER_HOME="$XDG_DATA_HOME/android"
+export ANDROID_AVD_HOME="$ANDROID_USER_HOME/avd"
 export ANDROID_HOME="$ANDROID_USER_HOME/sdk"
-alias adb='HOME="$ANDROID_USER_HOME" adb'
 
 # .cargo
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
