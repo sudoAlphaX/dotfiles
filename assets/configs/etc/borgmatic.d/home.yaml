@@ -221,7 +221,7 @@ exclude_caches: true
 # encryption. Quote the value if it contains punctuation, so it parses
 # correctly. And backslash any quote or backslash literals as well.
 # Defaults to not set. Supports the "{credential ...}" syntax.
-encryption_passphrase: "{credential systemd home}"
+encryption_passphrase: "{credential systemd borgmatic-home}"
 
 # Number of seconds between each checkpoint during a long-running
 # backup. See https://borgbackup.readthedocs.io/en/stable/faq.html for
@@ -284,7 +284,7 @@ encryption_passphrase: "{credential systemd home}"
 
 # Command to use instead of "ssh". This can be used to specify ssh
 # options. Defaults to not set.
-# ssh_command: ssh -i /root/.ssh/id_ed25519
+ssh_command: ssh -i /root/.ssh/borg
 
 # Base path used for various Borg directories. Defaults to $HOME,
 # ~$USER, or ~.
@@ -1953,15 +1953,15 @@ btrfs:
 # umount_command: /usr/local/bin/umount
 
 # Configuration for integration with systemd credentials.
-systemd:
-  # Command to use instead of "systemd-creds". Only used as a
-  # fallback when borgmatic is run outside of a systemd service.
-  # systemd_creds_command: /usr/local/bin/systemd-creds
+# systemd:
+# Command to use instead of "systemd-creds". Only used as a
+# fallback when borgmatic is run outside of a systemd service.
+# systemd_creds_command: /usr/local/bin/systemd-creds
 
-  # Directory containing encrypted credentials for
-  # "systemd-creds" to use instead of
-  # "/etc/credstore.encrypted".
-  encrypted_credentials_directory: /etc/credstore.encrypted/borgmatic/
+# Directory containing encrypted credentials for
+# "systemd-creds" to use instead of
+# "/etc/credstore.encrypted".
+# encrypted_credentials_directory: /etc/credstore.encrypted/borgmatic/
 
 # Configuration for integration with Docker or Podman secrets.
 # container:
