@@ -121,10 +121,10 @@
       "󰃠"
     ],
     "reverse-scrolling": true,
-    "on-scroll-up": "brightnessctl --device='intel_backlight' set +1%",
-    "on-scroll-down": "brightnessctl --device='intel_backlight' --min-value=75 set 1%-",
-    "on-click": "brightnessctl --device='intel_backlight' --min-value=75 set 1%-",
-    "on-click-right": "brightnessctl --device='intel_backlight' set +1%"
+    "on-scroll-up": "brightnessctl --device='amdgpu_bl1' set +1%",
+    "on-scroll-down": "brightnessctl --device='amdgpu_bl1' set 1%-",
+    "on-click": "brightnessctl --device='amdgpu_bl1' set 1%-",
+    "on-click-right": "brightnessctl --device='amdgpu_bl1' set +1%"
   },
   "battery": {
     "interval": 15,
