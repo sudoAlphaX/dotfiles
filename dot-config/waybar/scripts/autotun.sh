@@ -15,11 +15,13 @@ fi
 
 if systemctl is-active --quiet autotun@"$tun_iface"; then
   class="enabled"
+  status="ON"
 else
   class="disabled"
+  status="OFF"
 fi
 
 printf '{"text": "󰖂 %s", "class": "%s", "tooltip": "%s"}\n' \
-  "$tun_iface" \
+  "$status" \
   "$class" \
   "$(ip route show default | awk '{printf "%s\\n",$0}' | sed 's/\\n$//')"
