@@ -607,6 +607,13 @@
   new_icon="$XDG_CONFIG_HOME/dunst/icons/apps/keepassxc.svg"
   urgency=low
 
+[usbguard-qt]
+  appname="usbguard-qt"
+  set_stack_tag="usbguard"
+  format="<b>%s</b>\n%b"
+  fullscreen=show
+	new_icon="$XDG_CONFIG_HOME/dunst/icons/apps/usbguard.svg"
+
 [hypridle-stack]
   appname="hypridle"
   set_stack_tag="hypridle"
