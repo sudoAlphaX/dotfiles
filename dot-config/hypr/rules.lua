@@ -224,26 +224,22 @@ hl.permission({ binary = "/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland",
 -- Event listeners ("rules" that react to Hyprland events). Shared state used by these lives in
 -- variables.lua (set_touchpad/touchpad_enabled, windowlock_addr/windowlock_disarm).
 
--- While any window is in real fullscreen (mode 2, not maximize), disable the touchpad and dim
--- the keyboard backlight; restore both on exit. Native, generic replacement for the old
--- scripts/mpv-touchpad.sh socat daemon (now applies to any window, not just mpv). The touchpad
--- toggle keybind that shares this state lives in keybinds.lua.
+-- Whenever the *currently focused* window is in real fullscreen (mode 2, not maximize),
+-- disable the touchpad and dim the keyboard backlight; restore both as soon as focus moves to
+-- a window that is not fullscreen-2 (or away from any window). Native, generic replacement for
+-- the old scripts/mpv-touchpad.sh socat daemon (now applies to any window, not just mpv). The
+-- touchpad toggle keybind that shares this state lives in keybinds.lua.
 -- NOTE: verify the window `fullscreen` field reports 2 for true fullscreen on your version.
 local fullscreen_active = false
 local touchpad_before_fullscreen = true
-hl.on("window.fullscreen", function()
-	local any_fullscreen = false
-	for _, win in ipairs(hl.get_windows()) do
-		if win.fullscreen == 2 then
-			any_fullscreen = true
-			break
-		end
+local function sync_fullscreen_state()
+	local active = hl.get_active_window()
+	local is_fullscreen = active ~= nil and active.fullscreen == 2
+	if is_fullscreen == fullscreen_active then
+		return -- the focused window's fullscreen-2 status hasn't changed
 	end
-	if any_fullscreen == fullscreen_active then
-		return -- no net change in whether something is fullscreen
-	end
-	fullscreen_active = any_fullscreen
-	if any_fullscreen then
+	fullscreen_active = is_fullscreen
+	if is_fullscreen then
 		touchpad_before_fullscreen = touchpad_enabled
 		set_touchpad(false)
 		hl.exec_cmd("brightnessctl --device='" .. KBD_BACKLIGHT .. "' -s set 0") -- -s saves the current level
@@ -251,7 +247,9 @@ hl.on("window.fullscreen", function()
 		set_touchpad(touchpad_before_fullscreen) -- restore the pre-fullscreen touchpad state
 		hl.exec_cmd("brightnessctl --device='" .. KBD_BACKLIGHT .. "' -r") -- -r restores the saved level
 	end
-end)
+end
+hl.on("window.fullscreen", sync_fullscreen_state) -- the focused window toggled fullscreen
+hl.on("window.active", sync_fullscreen_state) -- focus moved to a different window
 
 -- Window lock (was scripts/windowlock.sh socat daemon): lock the session the moment focus
 -- leaves the window that the SHIFT+ALT+l keybind armed (see keybinds.lua), then disarm.
