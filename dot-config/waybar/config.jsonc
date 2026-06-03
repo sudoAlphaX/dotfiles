@@ -42,8 +42,8 @@
   },
   "hyprland/workspaces": {
     "format": "{id}",
-    "on-scroll-up": "hyprctl dispatch workspace e-1",
-    "on-scroll-down": "hyprctl dispatch workspace e+1"
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
   },
   "hyprland/window": {
     "format": "{class}",
@@ -84,7 +84,7 @@
     "return-type": "json",
     "format": "{}",
     "interval": 600,
-    "on-click": "hyprctl dispatch exec '[workspace special:s1] uwsm app -a topgrade -- alacritty -e topgrade -t'"
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"uwsm app -a topgrade -- alacritty -e topgrade -t\", { workspace = \"special:s1\" })'"
   },
   "custom/minecraft": {
     "exec": "bash $HOME/.config/waybar/scripts/minecraft.sh",
@@ -92,7 +92,7 @@
     "return-type": "json",
     "format": "{}",
     "interval": 60,
-    "on-click": "hyprctl dispatch exec 'uwsm app -- lutris lutris:rungame/minecraft-java-edition'"
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"uwsm app -- lutris lutris:rungame/minecraft-java-edition\")'"
   },
   "custom/autotun": {
     "exec": "bash $HOME/.config/waybar/scripts/autotun.sh",
@@ -150,7 +150,7 @@
       "high": 70,
       "critical": 90
     },
-    "on-click": "hyprctl dispatch exec 'uwsm app -a free -- alacritty -e watch -n 1 free -h'",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"uwsm app -a free -- alacritty -e watch -n 1 free -h\")'",
     "tooltip-format": "{used} GB/{total} GB used ({percentage}%)\n{swapUsed} GB/{swapTotal} GB swap used ({swapPercentage}%)"
   },
   "temperature": {
@@ -158,14 +158,14 @@
     "format": " {temperatureC}°C",
     "format-critical": " {temperatureC}°C",
     "critical-threshold": 70,
-    "on-click": "hyprctl dispatch exec 'uwsm app -a sensors -- alacritty -e watch -n 1 sensors'"
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"uwsm app -a sensors -- alacritty -e watch -n 1 sensors\")'"
   },
   "custom/temperature": {
     "exec": "bash $HOME/.config/waybar/scripts/temperature.sh",
     "return-type": "json",
     "format": " {}°C",
     "interval": 10,
-    "on-click": "hyprctl dispatch exec 'uwsm app -a sensors -- alacritty -e watch -n 1 sensors'"
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"uwsm app -a sensors -- alacritty -e watch -n 1 sensors\")'"
   },
   "custom/cpufreq": {
     "exec": "bash $HOME/.config/waybar/scripts/cpufreq.sh",
@@ -181,7 +181,7 @@
       "high": 70,
       "critical": 90
     },
-    "on-click": "hyprctl dispatch exec 'uwsm app -a htop -- alacritty -e htop'"
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"uwsm app -a htop -- alacritty -e htop\")'"
   },
   "network": {
     "format-ethernet": "  {ifname}",
@@ -197,8 +197,8 @@
     "tooltip-format-wifi": "{ipaddr}\nSignal Strength: {signalStrength}%",
     "tooltip-format-ethernet": "{ipaddr}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "nmcli device wifi rescan; hyprctl dispatch exec 'uwsm app -a nmtui-connect -- alacritty -T AlacrittyFloat -e nmtui-connect'",
-    "on-click-middle": "hyprctl dispatch exec 'uwsm app -- nm-connection-editor'",
+    "on-click": "nmcli device wifi rescan; hyprctl dispatch 'hl.dsp.exec_cmd(\"uwsm app -a nmtui-connect -- alacritty -e nmtui-connect\", { float = true, center = true, no_blur = true })'",
+    "on-click-middle": "hyprctl dispatch 'hl.dsp.exec_cmd(\"uwsm app -- nm-connection-editor\")'",
     "on-click-right": "rfkill toggle wlan"
   },
   "bluetooth": {
@@ -210,7 +210,7 @@
     "tooltip-format-off": "Bluetooth off",
     "tooltip-format-on": "Bluetooth device not connected",
     "tooltip-format-connected": "Connected to device: {device_alias} ({device_battery_percentage})",
-    "on-click": "hyprctl dispatch exec 'uwsm app -a bluetoothctl -- alacritty -T AlacrittyFloat -e bluetoothctl'",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"uwsm app -a bluetoothctl -- alacritty -e bluetoothctl\", { float = true, center = true, no_blur = true })'",
     "on-click-middle": "bluetoothctl disconnect || IFS=$'\n'; for device in $(bluetoothctl devices Trusted); do (echo $device | awk '{print $2}' | xargs bluetoothctl connect &); done",
     "on-click-right": "rfkill toggle bluetooth"
   },
@@ -244,7 +244,7 @@
         "  "
       ]
     },
-    "on-click": "hyprctl dispatch exec '[float] pwvucontrol'",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"uwsm app -- pwvucontrol\", { float = true, center = true, no_blur = true })'",
     "on-click-right": "wpctl set-mute @DEFAULT_SINK@ toggle",
     "reverse-scrolling": true
   },
