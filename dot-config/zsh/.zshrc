@@ -163,7 +163,7 @@ plugins+=(ufw)
 plugins+=(extract universalarchive)
 
 # Auto activate python virtualenv
-plugins+=(virtualenvwrapper)
+# plugins+=(virtualenvwrapper)
 
 # Z
 plugins+=(z)
