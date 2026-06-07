@@ -1,0 +1,9 @@
+[Unit]
+Description=Automount Hetzner Storage Box (devcanister/files)
+
+[Automount]
+Where=/mnt/storagebox
+TimeoutIdleSec=600
+
+[Install]
+WantedBy=multi-user.target
