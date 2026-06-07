@@ -87,6 +87,23 @@ hl.layer_rule({
 	match = { namespace = "notifications" },
 })
 
+-- KDE Connect pointer
+hl.window_rule({
+	name = "kde-connect-pointer",
+	float = true,
+	pin = true,
+	no_initial_focus = true,
+	allows_input = false,
+	rounding = 0,
+	border_size = 0,
+	no_blur = true,
+	no_shadow = true,
+	no_anim = true,
+	move = { 0, 0 },
+	size = { "monitor_w", "monitor_h" }, -- full monitor
+	match = { initial_class = "org.kde.kdeconnect.daemon", initial_title = "KDE Connect Daemon" },
+})
+
 -- Pip variables
 local PIP_ROUNDING = 0
 local PIP_POS_X = 1061
