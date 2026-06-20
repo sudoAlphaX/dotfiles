@@ -23,10 +23,16 @@ hl.bind(MAINMOD .. " + TAB", hl.dsp.focus({ workspace = "previous" }))
 hl.bind("ALT + TAB", hl.dsp.focus({ last = true }))
 hl.bind(MAINMOD .. " + SHIFT + TAB", hl.dsp.window.move({ workspace = "previous", follow = true }))
 hl.bind(MAINMOD .. " + e", hl.dsp.exec_cmd(terminal(FILEMANAGER_APP)))
-hl.bind(MAINMOD .. " + SHIFT + e", hl.dsp.exec_cmd(terminal(FILEMANAGER_APP), { float = true, center = true, no_blur = true }))
+hl.bind(
+	MAINMOD .. " + SHIFT + e",
+	hl.dsp.exec_cmd(terminal(FILEMANAGER_APP), { float = true, center = true, no_blur = true })
+)
 hl.bind(MAINMOD .. " + CTRL + x", hl.dsp.window.signal({ signal = 9 })) -- SIGKILL the focused window's process
 hl.bind(MAINMOD .. " + C", hl.dsp.exec_cmd(terminal(CALCULATOR_APP)))
-hl.bind(MAINMOD .. " + SHIFT + C", hl.dsp.exec_cmd(terminal(CALCULATOR_APP), { float = true, center = true, no_blur = true }))
+hl.bind(
+	MAINMOD .. " + SHIFT + C",
+	hl.dsp.exec_cmd(terminal(CALCULATOR_APP), { float = true, center = true, no_blur = true })
+)
 
 -- Navigating and moving windows to workspaces
 hl.bind(MAINMOD .. " + CTRL + code:35", hl.dsp.focus({ workspace = "r+1" })) -- use ] to go to the next workspace
