@@ -604,7 +604,6 @@
   set_stack_tag="keepassxc"
   history_ignore=true
   timeout=3
-  new_icon="$XDG_CONFIG_HOME/dunst/icons/apps/keepassxc.svg"
   urgency=low
 
 [usbguard-qt]
