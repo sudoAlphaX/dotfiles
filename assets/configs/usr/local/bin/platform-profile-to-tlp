@@ -1,4 +1,6 @@
 #!/bin/sh
+sleep 2
+
 profile=$(cat /sys/firmware/acpi/platform_profile)
 case "$profile" in
 low-power) exec tlp power-saver ;;
