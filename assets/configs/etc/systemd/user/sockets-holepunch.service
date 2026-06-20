@@ -1,0 +1,12 @@
+[Unit]
+Description=Link host sockets to XDG_RUNTIME_DIR
+After=basic.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/ln -sf /mnt/wayland-1 %t/wayland-1
+ExecStart=/usr/bin/ln -sf /mnt/pipewire-0 %t/pipewire-0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
