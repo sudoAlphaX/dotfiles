@@ -12,7 +12,7 @@ hl.config({
 		resize_on_border = true,
 		extend_border_grab_area = 12,
 
-		allow_tearing = false,
+		allow_tearing = true, -- rules.lua matches only content type 'game'
 
 		layout = "dwindle",
 

@@ -218,6 +218,19 @@ hl.window_rule({
 	match = { class = "ueberzugpp_.*" },
 })
 
+-- Screen tearing for games
+hl.window_rule({
+	name = "game-tearing-xdg-tag",
+	match = { content = "game" },
+	immediate = true,
+})
+
+hl.window_rule({
+	name = "game-tearing-gamescope",
+	match = { initial_class = "gamescope" },
+	immediate = true,
+})
+
 -- Permissions
 hl.permission({ binary = "/usr/bin/grim", type = "screencopy", mode = "allow" })
 hl.permission({ binary = "/usr/bin/wf-recorder", type = "screencopy", mode = "allow" })
