@@ -16,3 +16,7 @@ ignore apparmor
 private-bin chmod,echo,ps,socat,tail,uname
 
 private-etc alsa,asound.conf,ca-certificates,drirc,fonts,gnutls,igfx_user_feature.txt,igfx_user_feature_next.txt,libva.conf,login.defs,machine-id,mpv,pipewire,pkcs11,pulse,ssl,tail,vdpau_wrapper.cfg,vulkan,xdg,xkb,yt-dlp,yt-dlp-plugins,yt-dlp.conf
+
+# jellyfin-mpv-shim
+noblacklist ${HOME}/.config/jellyfin-mpv-shim
+whitelist ${HOME}/.config/jellyfin-mpv-shim
