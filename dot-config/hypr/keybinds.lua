@@ -206,7 +206,9 @@ local VOL_FLAGS = { locked = true, submap_universal = true }
 local PLAYER_VOL_FLAGS = { repeating = true, locked = true, submap_universal = true }
 hl.bind(
 	"XF86AudioRaiseVolume",
-	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_SINK@ 0.05+; " .. volume_notify("audio-volume-high-symbolic.svg")),
+	hl.dsp.exec_cmd(
+		"wpctl set-volume -l 1.25 @DEFAULT_SINK@ 0.05+; " .. volume_notify("audio-volume-high-symbolic.svg")
+	),
 	VOL_FLAGS
 )
 hl.bind(
@@ -216,7 +218,9 @@ hl.bind(
 )
 hl.bind(
 	"SHIFT + XF86AudioRaiseVolume",
-	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_SINK@ 0.01+; " .. volume_notify("audio-volume-high-symbolic.svg")),
+	hl.dsp.exec_cmd(
+		"wpctl set-volume -l 1.25 @DEFAULT_SINK@ 0.01+; " .. volume_notify("audio-volume-high-symbolic.svg")
+	),
 	VOL_FLAGS
 )
 hl.bind(
