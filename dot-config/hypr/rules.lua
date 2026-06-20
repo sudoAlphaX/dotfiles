@@ -35,6 +35,11 @@ hl.workspace_rule({
 	persistent = false,
 })
 hl.workspace_rule({
+	workspace = "special:s6",
+	on_created_empty = "[workspace special:s6] " .. terminal("radeontop -c -T"),
+	persistent = false,
+})
+hl.workspace_rule({
 	workspace = "special:s7",
 	on_created_empty = "[workspace special:s7] " .. terminal("nvtop -d 15"),
 	persistent = false,
