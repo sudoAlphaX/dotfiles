@@ -8,8 +8,9 @@ include agents.local
 include disable-common.inc	# dangerous directories like ~/.ssh and ~/.gnupg
 #include disable-devel.inc	# development tools such as gcc and gdb
 # include disable-exec.inc	# non-executable directories such as /var, /tmp, and /home
-# include disable-programs.inc	# user configuration for programs such as firefox, vlc etc.
+include disable-programs.inc	# user configuration for programs such as firefox, vlc etc.
 include disable-xdg.inc	# standard user directories: Documents, Pictures, Videos, Music
+include disable-proc.inc
 
 include whitelist-common.inc
 include whitelist-run-common.inc
