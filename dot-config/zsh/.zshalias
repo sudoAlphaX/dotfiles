@@ -177,7 +177,8 @@ alias mkvenv="python -m venv .venv && source ./.venv/bin/activate"
 alias virtmgr="systemctl start libvirtd && uwsm app -- virt-manager & disown"
 
 # Flutter using fvm
-alias f="fvm flutter "
+f() { fvm flutter "$@"; }
+compdef f=flutter 2>/dev/null
 
 # Fun shutdown aliases
 alias rebot="systemctl reboot"
@@ -189,8 +190,7 @@ alias jesus="systemctl reboot -i"
 alias respawn="systemctl soft-reboot"
 
 # systemctl aliases
-alias scs="systemctl status"
-alias scsl="scs -l "
+alias scs="systemctl status -l"
 alias scst="systemctl start"
 alias scstp="systemctl stop"
 alias scr="systemctl restart"
