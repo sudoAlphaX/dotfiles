@@ -18,7 +18,8 @@ include whitelist-runuser-common.inc
 include whitelist-usr-share-common.inc
 include whitelist-var-common.inc
 
-whitelist ${HOME}/.local/share
+# whitelist ${HOME}/.local/share
+whitelist ${HOME}/.local/go
 whitelist ${HOME}/.cache
 whitelist ${HOME}/fvm
 whitelist ${HOME}/.config/git
