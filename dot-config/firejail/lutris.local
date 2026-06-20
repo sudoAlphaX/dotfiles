@@ -17,7 +17,6 @@ ignore private-tmp
 ignore noroot
 ignore nogroups
 
-mkdir ${HOME}/Shared/Games
 noblacklist ${HOME}/Shared/Games
 whitelist ${HOME}/Shared/Games
 
