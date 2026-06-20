@@ -44,7 +44,7 @@ hl.on("hyprland.start", function()
 	-- mpv-touchpad.sh replaced by the native window.fullscreen handler in keybinds.lua
 	hl.exec_cmd(UWSM_SERVICE_B .. CONF_DIR .. "/scripts/temperature-notify.sh")
 	hl.exec_cmd(UWSM_SERVICE_B .. CONF_DIR .. "/scripts/platform-profile-notify.sh")
-	hl.exec_cmd(UWSM_SERVICE_S .. "hyprsunset -i")
+	hl.exec_cmd('uwsm app -s s -t service -p "StandardOutput=null" -p "Restart=on-failure" -- ' .. "hyprsunset -i")
 	after_app(
 		"hyprsunset",
 		UWSM_SERVICE_S
