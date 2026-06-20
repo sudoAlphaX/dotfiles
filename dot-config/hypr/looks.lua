@@ -55,7 +55,7 @@ hl.config({
 	},
 
 	render = {
-		direct_scanout = 1,
+		direct_scanout = 2,
 		expand_undersized_textures = false,
 	},
 
