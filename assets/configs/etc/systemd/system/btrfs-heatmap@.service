@@ -5,5 +5,5 @@ RequiresMountsFor=%I
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/btrfs-heatmap -o /var/cache/btrfs-heatmap/%I/ /%I
+ExecStart=/usr/bin/btrfs-heatmap -o /var/log/btrfs-heatmap/%I/ /%I
 Restart=on-failure
