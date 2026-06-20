@@ -50,6 +50,9 @@ export DOCKER_HOST="unix://${XDG_RUNTIME_DIR}/podman/podman.sock"
 # SSH agent socket
 export SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/ssh-agent.socket
 
+# Ollama localhost base
+export OLLAMA_API_BASE="http://localhost:11434"
+
 ################ xdg-ninja $HOME cleanup ################
 
 # .wakatime
