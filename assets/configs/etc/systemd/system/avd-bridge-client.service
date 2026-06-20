@@ -1,0 +1,6 @@
+[Unit]
+Requires=avd-bridge-client.socket
+After=avd-bridge-client.socket
+
+[Service]
+ExecStart=/usr/lib/systemd/systemd-socket-proxyd /run/avd-bridge/avd.sock
