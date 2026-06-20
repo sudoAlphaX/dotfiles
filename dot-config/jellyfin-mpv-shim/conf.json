@@ -77,7 +77,7 @@
   "seek_v_exact": false,
   "shader_pack_custom": false,
   "shader_pack_enable": true,
-  "shader_pack_profile": null,
+  "shader_pack_profile": "anime4k-fast-aa",
   "shader_pack_remember": true,
   "shader_pack_subtype": "lq",
   "skip_credits_always": false,
