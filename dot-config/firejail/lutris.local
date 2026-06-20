@@ -5,6 +5,14 @@ noblacklist ${HOME}/.openjfx
 mkdir ${HOME}/.openjfx
 whitelist ${HOME}/.openjfx
 
+# Allow lua (gamescope)
+include allow-lua.inc
+
+# If you use gamescope, add the following to lutris.local to work around a bug
+# (see #6191):
+ignore noroot
+ignore private-tmp
+
 # Shared dir
 ignore noroot
 ignore nogroups
