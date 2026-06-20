@@ -195,7 +195,7 @@ __app-dispatch() {
 }
 
 # Systemd-inhibit wrapper
-inhibit_apps=(claude copilot cp mv rsync mov copy topgrade)
+inhibit_apps=(claude copilot codex cp mv rsync mov copy topgrade lftp aria2c crush pi)
 
 __inhibit-apply() {
   _wrap_cmd=(systemd-inhibit --what=sleep --why="$1 - automated zsh hook action" "${_wrap_cmd[@]}")
@@ -205,7 +205,7 @@ for _app in $inhibit_apps; do _app_wrappers[$_app]+="inhibit "; done
 unset _app
 
 # Tmux wrapper
-tmux_apps=(claude copilot)
+tmux_apps=(claude copilot codex crush pi aria2c lftp)
 
 __tmux-apply() {
   if [[ -z "$TMUX" ]]; then
