@@ -1,0 +1,10 @@
+[Unit]
+Description=Unix socket bridge to Ollama
+
+[Socket]
+ListenStream=/run/ollama-bridge/ollama.sock
+SocketMode=0660
+RuntimeDirectory=ollama-bridge
+
+[Install]
+WantedBy=sockets.target

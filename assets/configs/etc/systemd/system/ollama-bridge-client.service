@@ -1,0 +1,2 @@
+[Service]
+ExecStart=/usr/lib/systemd/systemd-socket-proxyd /run/ollama-bridge/ollama.sock
