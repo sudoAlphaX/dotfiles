@@ -19,3 +19,6 @@ whitelist ${HOME}/.mozilla/native-messaging-hosts/de.kkapsner.keepassxc_mail.jso
 
 include whitelist-run-common.inc
 include whitelist-runuser-common.inc
+
+dbus-user filter
+dbus-user.talk org.freedesktop.secrets
