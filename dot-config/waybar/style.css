@@ -92,6 +92,7 @@ button:hover {
 #custom-temperature,
 #custom-cpufreq,
 #custom-pacman_updates,
+#custom-ollama,
 #custom-music,
 #custom-autotun,
 #custom-minecraft,
@@ -182,6 +183,11 @@ button:hover {
 #custom-cpufreq {
     color: @yellow;
     border-bottom: 2px solid @yellow;
+}
+
+#custom-ollama {
+    color: @teal;
+    border-bottom: 2px solid @teal;
 }
 
 #custom-pacman_updates.high {
