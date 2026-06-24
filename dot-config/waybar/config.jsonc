@@ -80,7 +80,7 @@
     "on-scroll-down": "playerctl volume 0.1-"
   },
   "custom/pacman_updates": {
-    "exec": "bash $HOME/.config/waybar/scripts/pacman-updates.sh",
+    "exec": "$HOME/.config/waybar/scripts/pacman-updates.sh",
     "hide-empty-text": false,
     "return-type": "json",
     "format": "{}",
@@ -96,7 +96,7 @@
     "on-click": "$HOME/.config/waybar/scripts/ollama-running.sh --kill"
   },
   "custom/minecraft": {
-    "exec": "bash $HOME/.config/waybar/scripts/minecraft.sh",
+    "exec": "$HOME/.config/waybar/scripts/minecraft.sh",
     "hide-empty-text": false,
     "return-type": "json",
     "format": "{}",
@@ -104,12 +104,12 @@
     "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"uwsm app -- lutris lutris:rungame/minecraft-java-edition\")'"
   },
   "custom/autotun": {
-    "exec": "bash $HOME/.config/waybar/scripts/autotun.sh",
+    "exec": "$HOME/.config/waybar/scripts/autotun.sh",
     "hide-empty-text": false,
     "return-type": "json",
     "format": "{}",
     "interval": 10,
-    "on-click": "bash $HOME/.config/waybar/scripts/autotun.sh --toggle"
+    "on-click": "$HOME/.config/waybar/scripts/autotun.sh --toggle"
   },
   "clock": {
     "format": "{:%H:%M}",
@@ -170,14 +170,14 @@
     "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"uwsm app -a sensors -- alacritty -e watch -n 1 sensors\")'"
   },
   "custom/temperature": {
-    "exec": "bash $HOME/.config/waybar/scripts/temperature.sh",
+    "exec": "$HOME/.config/waybar/scripts/temperature.sh",
     "return-type": "json",
     "format": " {}°C",
     "interval": 10,
     "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"uwsm app -a sensors -- alacritty -e watch -n 1 sensors\")'"
   },
   "custom/cpufreq": {
-    "exec": "bash $HOME/.config/waybar/scripts/cpufreq.sh",
+    "exec": "$HOME/.config/waybar/scripts/cpufreq.sh",
     "return-type": "json",
     "format": "󰓅 {}",
     "on-click": "$HOME/.config/waybar/scripts/tlp-switch.sh left",
