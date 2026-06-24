@@ -234,7 +234,7 @@ source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh) # fzf history
 source $ZSH_CUSTOM/themes/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-source $ZDOTDIR/.zshalias
+source $ZDOTDIR/zshalias
 
 ##### unalias commands #####
 
