@@ -100,7 +100,7 @@
   "skip_intro_always": true,
   "skip_intro_enable": true,
   "stop_cmd": null,
-  "stop_idle": false,
+  "stop_idle": true,
   "subtitle_color": "#FFFFFFFF",
   "subtitle_position": "bottom",
   "subtitle_size": 100,
