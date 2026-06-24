@@ -10,9 +10,7 @@ hl.window_rule({ match = { float = false, workspace = "w[t1]s[false]" }, roundin
 -- Music players
 hl.workspace_rule({
 	workspace = "special:music",
-	on_created_empty = "[workspace special:music] "
-		.. UWSM_APP
-		.. "librewolf --new-window 'https://music.youtube.com/'",
+	on_created_empty = "[workspace special:music] " .. terminal("ytm"),
 	persistent = false,
 })
 hl.bind(MAINMOD .. " + m", hl.dsp.workspace.toggle_special("music"))
