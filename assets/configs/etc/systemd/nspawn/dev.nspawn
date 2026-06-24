@@ -1,0 +1,44 @@
+[Exec]
+Boot=yes
+# Guest Root != Host Root
+PrivateUsers=pick
+Environment=WAYLAND_DISPLAY=wayland-1
+Environment=DISPLAY=:0
+
+[Files]
+Bind=/home/personal/tmp:/home/dev/tmp:idmap
+
+# Host files
+BindReadOnly=/home/personal/.config/zsh:/home/dev/.config/zsh:idmap
+BindReadOnly=/home/personal/.config/nvim-lazyvim:/home/dev/.config/nvim-lazyvim:idmap
+BindReadOnly=/home/personal/.config/lazygit:/home/dev/.config/lazygit:idmap
+BindReadOnly=/home/personal/.config/tmux/plugins:/home/dev/.config/tmux/plugins:idmap
+BindReadOnly=/home/personal/.config/tmux/tmux.conf:/home/dev/.config/tmux/tmux.conf:idmap
+BindReadOnly=/home/personal/.config/tmux/tpm:/home/dev/.config/tmux/tpm:idmap
+BindReadOnly=/home/personal/.config/wakatime/.wakatime.cfg:/home/dev/.config/wakatime/.wakatime.cfg:idmap
+BindReadOnly=/home/personal/.config/tmux/tmux-nerd-font-window-name.yml:/home/dev/.config/tmux/tmux-nerd-font-window-name.yml:idmap
+BindReadOnly=/etc/zsh:/etc/zsh:idmap
+BindReadOnly=/etc/zshenv:/etc/zshenv:idmap
+
+Bind=/home/personal/.claude:/home/dev/.claude:idmap
+Bind=/home/personal/.claude.json:/home/dev/.claude.json:idmap
+Bind=/home/personal/.pi:/home/dev/.pi:idmap
+Bind=/home/personal/.config/crush:/home/dev/.config/crush:idmap
+BindReadOnly=/run/ollama-bridge/ollama.sock:/run/ollama-bridge/ollama.sock:idmap
+BindReadOnly=/run/avd-bridge/avd.sock:/run/avd-bridge/avd.sock:idmap
+
+# Graphics
+Bind=/dev/dri
+
+# Wayland/PipeWire sockets
+# Bind=/run/user/1001/wayland-1:/run/user/1001/wayland-1:idmap
+# Bind=/run/user/1001/pipewire-0:/run/user/1001/pipewire-0:idmap
+
+# Bind the host sockets to a stable location in the container
+# Enable sockets-holepunch.service user service
+Bind=/run/user/1001/wayland-1:/mnt/wayland-1:idmap
+Bind=/run/user/1001/pipewire-0:/mnt/pipewire-0:idmap
+Bind=/tmp/.X11-unix:/tmp/.X11-unix:idmap
+
+[Network]
+VirtualEthernet=yes
