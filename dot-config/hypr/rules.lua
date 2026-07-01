@@ -66,6 +66,11 @@ hl.window_rule({
 	workspace = "special:discord",
 	match = { initial_class = "vesktop" },
 })
+hl.workspace_rule({
+	workspace = "special:discord",
+	on_created_empty = "[workspace special:discord] killall vesktop; " .. UWSM_APP_A .. "vesktop",
+	persistent = false,
+})
 
 -- Thunderbird inside special workspace (safety net: the silent autostart exec in hyprland.lua
 -- can't reliably track the window because uwsm launches it into a detached systemd scope, so it
