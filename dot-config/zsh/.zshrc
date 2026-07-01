@@ -197,7 +197,9 @@ __app-dispatch() {
 # Systemd-inhibit wrapper
 inhibit_apps=(claude copilot codex cp mv rsync mov copy topgrade lftp aria2c crush pi)
 
+systemd-inhibit --what=sleep --why=probe true 2>/dev/null && _inhibit_ok=1
 __inhibit-apply() {
+  [[ -n $_inhibit_ok ]] || return  # ponytail: no logind -> run command bare, no upgrade needed
   _wrap_cmd=(systemd-inhibit --what=sleep --why="$1 - automated zsh hook action" "${_wrap_cmd[@]}")
 }
 
