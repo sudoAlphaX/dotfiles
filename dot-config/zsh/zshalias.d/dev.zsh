@@ -88,3 +88,35 @@ function dev() {
     /bin/sh -c "cd ${(q)dst} 2>/dev/null; exec /usr/bin/tmux"
 }
 
+function dedev() {
+  # logger
+  local _c_reset=$'\e[0m' _c_dim=$'\e[2m' _c_blue=$'\e[34m' _c_grn=$'\e[32m' _c_red=$'\e[31m'
+  [[ -t 2 ]] || { _c_reset= _c_dim= _c_blue= _c_grn= _c_red=; }
+  local log() { print -u2 -r -- "${_c_blue}dev❯${_c_reset} $*"; }
+  local warn() { print -u2 -r -- "${_c_red}dev❯${_c_reset} $*"; }
+
+  local src
+  if src=$(git rev-parse --show-toplevel 2>/dev/null); then
+    log "git repo root: ${_c_dim}${src}${_c_reset}"
+  else
+    src=$PWD
+    log "not a git repo, using cwd: ${_c_dim}${src}${_c_reset}"
+  fi
+
+  src=${src:A}                       # realpath + resolve symlinks
+  local name=${src:t}
+  local dst=/home/dev/$name
+
+  # Unique name derived from the path to prevent duplicates
+  # readable, deterministic name from the full path
+  local esc; esc=$(systemd-escape -p -- "$src")
+  esc=${esc//\\x[0-9a-f][0-9a-f]/-}                # collapse \xNN escapes to '-'
+  local mname="${esc}"
+  (( ${#mname} > 64 )) && { mname=${mname[1,64]}; warn "name truncated to 64 chars"; }
+  log "machine: ${_c_grn}${mname}${_c_reset}"
+
+  ! sudo machinectl status "$mname" >/dev/null && { warn "machine ${mname} is not running"; return 1; }
+
+  sudo machinectl stop "$mname" >/dev/null || { warn "failed to stop ${mname}"; return 1; }
+  log "stopped ${mname}"
+}
