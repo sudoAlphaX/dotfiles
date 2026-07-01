@@ -67,16 +67,17 @@ hl.on("hyprland.start", function()
 	hl.dispatch(
 		hl.dsp.exec_cmd(DELAY_ONLINE .. UWSM_APP .. "vesktop > /dev/null", { workspace = "special:discord silent" })
 	)
+	unfocus_on_appear("vesktop", 2)
 	-- hl.dispatch(hl.dsp.exec_cmd(TMUX_OPEN .. " Hyprland", { workspace = "special:s1 silent" }))
 	-- hl.dispatch(hl.dsp.exec_cmd(terminal("radeontop -c -T"), { workspace = "special:s6 silent" }))
 	hl.dispatch(hl.dsp.exec_cmd(terminal("nvtop -d 15"), { workspace = "special:s7 silent" }))
 	hl.dispatch(hl.dsp.exec_cmd(terminal("battop -d 20"), { workspace = "special:s8 silent" }))
 	hl.dispatch(hl.dsp.exec_cmd(terminal("btop"), { workspace = "special:s9 silent" }))
 	hl.dispatch(hl.dsp.exec_cmd(DELAY_ONLINE .. UWSM_APP_A .. "thunderbird", { workspace = "special:s10 silent" }))
+	unfocus_on_appear("thunderbird")
 
 	-- Keep these autostarted apps from stealing focus when they open (uwsm makes the silent
 	-- exec rule unreliable — see unfocus_on_appear in variables.lua):
-	-- unfocus_on_appear("vesktop", 2)
 	-- hl.exec_cmd("node " .. os.getenv("HOME") .. "/.dotfiles/assets/utilities/arrpc/src")
 end)
 
