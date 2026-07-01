@@ -35,3 +35,10 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.api.nvim_buf_set_keymap(0, "i", "$", ";", { noremap = true, silent = true })
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.colorcolumn = "80"
+  end,
+})
