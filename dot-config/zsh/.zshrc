@@ -185,7 +185,7 @@ typeset -gA _app_wrappers=()
 __app-dispatch() {
   local app=$1; shift
   local bin
-  bin=$(command -v "$app") || { echo "command not found: $app" >&2; return 127 }
+  bin=$(whence -p "$app") || { echo "command not found: $app" >&2; return 127 }
   local -a _wrap_cmd=("$bin" "$@")
   local _wrapper
   for _wrapper in ${=_app_wrappers[$app]}; do
