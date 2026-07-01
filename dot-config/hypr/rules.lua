@@ -241,6 +241,13 @@ hl.window_rule({
 	immediate = true,
 })
 
+hl.window_rule({
+	name = "game-tearing-steam",
+	match = { initial_class = "steam_app_default" },
+	content = "game",
+	immediate = true,
+})
+
 -- Permissions
 hl.permission({ binary = "/usr/bin/grim", type = "screencopy", mode = "allow" })
 hl.permission({ binary = "/usr/bin/wf-recorder", type = "screencopy", mode = "allow" })
