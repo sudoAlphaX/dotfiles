@@ -24,7 +24,7 @@ function dev() {
   # readable, deterministic name from the full path
   local esc; esc=$(systemd-escape -p -- "$src")
   esc=${esc//\\x[0-9a-f][0-9a-f]/-}                # collapse \xNN escapes to '-'
-  local mname="dev-${esc}"
+  local mname="${esc}"
   (( ${#mname} > 64 )) && { mname=${mname[1,64]}; warn "name truncated to 64 chars"; }
 
   local link=/run/systemd/nspawn/${mname}.nspawn
@@ -32,17 +32,23 @@ function dev() {
   log "machine: ${_c_grn}${mname}${_c_reset}"
 
 
+  local started=0
   if sudo machinectl status "$mname" &>/dev/null; then
     log "already running"
+  elif sudo machinectl image-status "$mname" &>/dev/null; then
+    # Persistent machine of this name exists: start it instead of an ephemeral.
+    log "starting persistent machine"
+    sudo machinectl start "$mname" || { warn "failed to start ${mname}"; return 1; }
+    started=1
   else
     log "mount: ${src} ${_c_dim}->${_c_reset} ${dst} ${_c_dim}(idmap)${_c_reset}"
     log "starting ephemeral container"
     sudo systemctl reset-failed "$mname" 2>/dev/null
     sudo mkdir -p /run/systemd/nspawn
 
-    # per-machine settings = dev.nspawn + extra bind (CLI --bind loses to
+    # per-machine settings = dev-1000.nspawn + extra bind (CLI --bind loses to
     # the file's Bind= under --settings=override, so put it in the file too)
-    sudo cp /etc/systemd/nspawn/dev.nspawn "$link"
+    sudo cp "/etc/systemd/nspawn/dev-$(id -u).nspawn" "$link"
     printf '\n[Files]\nBind=%s:%s:idmap\n' "$src" "$dst" | sudo tee -a "$link" >/dev/null
 
     # Using systemd-run because machinectl will recognize the machine only if the directory exists in /var/lib/machines/$mname
@@ -53,7 +59,7 @@ function dev() {
         /usr/bin/systemd-nspawn \
           --keep-unit \
           --machine="$mname" \
-          --directory=/var/lib/machines/dev \
+          --directory="/var/lib/machines/dev-$(id -u)" \
           --ephemeral \
           --settings=override \
           ; then
@@ -61,12 +67,15 @@ function dev() {
       sudo rm -f "$link"
       return 1
     fi
+    started=1
+  fi
 
+  if (( started )); then
     log "booting"
     local -i waited=0
     until [[ $(sudo systemctl --machine="$mname" is-system-running 2>/dev/null) == (running|degraded) ]]; do
       sleep 1
-      if (( ++waited > 30 )); then      # ~30s
+      if (( ++waited > 120 )); then
         warn "timed out waiting for boot"
         return 1
       fi
@@ -76,5 +85,6 @@ function dev() {
 
   log "opening tmux in ${dst}"
   sudo machinectl shell dev@"$mname" \
-    /bin/sh -c "cd ${(q)dst} && exec /usr/bin/tmux"
+    /bin/sh -c "cd ${(q)dst} 2>/dev/null; exec /usr/bin/tmux"
 }
+
