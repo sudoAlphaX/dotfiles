@@ -20,7 +20,7 @@
     "privacy",
     // "custom/minecraft",
     "custom/pacman_updates",
-    "custom/ollama",
+    "custom/llama_swap",
     //   "keyboard-state",
     "network",
     "custom/autotun",
@@ -86,6 +86,14 @@
     "format": "{}",
     "interval": 600,
     "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"uwsm app -a topgrade -- alacritty -e topgrade -t\", { workspace = \"special:s1\" })'"
+  },
+  "custom/llama_swap": {
+    "exec": "$HOME/.config/waybar/scripts/llama-swap-running.sh",
+    "hide-empty-text": true,
+    "return-type": "json",
+    "format": "{}",
+    "interval": 10,
+    "on-click": "$HOME/.config/waybar/scripts/llama-swap-running.sh --kill"
   },
   "custom/ollama": {
     "exec": "$HOME/.config/waybar/scripts/ollama-running.sh",

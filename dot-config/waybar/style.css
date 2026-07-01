@@ -93,6 +93,7 @@ button:hover {
 #custom-cpufreq,
 #custom-pacman_updates,
 #custom-ollama,
+#custom-llama_swap,
 #custom-music,
 #custom-autotun,
 #custom-minecraft,
@@ -186,6 +187,11 @@ button:hover {
 }
 
 #custom-ollama {
+    color: @teal;
+    border-bottom: 2px solid @teal;
+}
+
+#custom-llama_swap {
     color: @teal;
     border-bottom: 2px solid @teal;
 }
