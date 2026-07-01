@@ -199,10 +199,12 @@
             "emojiSize": 48,
             "hyperLinkText": "{{NAME}}",
             "useHyperLinks": true,
-            "disableEmbedPermissionCheck": false
+            "disableEmbedPermissionCheck": false,
+            "stickerSize": 160
         },
         "FakeProfileThemes": {
-            "enabled": false
+            "enabled": false,
+            "nitroFirst": true
         },
         "FavoriteEmojiFirst": {
             "enabled": true
@@ -648,7 +650,8 @@
         },
         "Settings": {
             "enabled": true,
-            "settingsLocation": "aboveNitro"
+            "settingsLocation": "aboveNitro",
+            "includeVencordInfoWhenCopying": true
         },
         "SupportHelper": {
             "enabled": true
@@ -693,6 +696,12 @@
         },
         "CharacterCounter": {
             "enabled": false
+        },
+        "NoMiddleClickPaste": {
+            "enabled": false
+        },
+        "ConcatenatedComponentExtractor": {
+            "enabled": true
         }
     },
     "notifications": {
@@ -705,11 +714,12 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1777510911444
+        "settingsSyncVersion": 1782322715886
     },
     "eagerPatches": false,
     "uiElements": {
         "chatBarButtons": {},
         "messagePopoverButtons": {}
-    }
+    },
+    "windowsMaterial": "none"
 }
