@@ -1,8 +1,7 @@
 return {
   {
     "mistricky/codesnap.nvim",
-    build = "make",
-    tag = "v1.6.3",
+    tag = "v2.0.0",
     lazy = true,
     cmd = {
       "CodeSnap",
@@ -12,14 +11,17 @@ return {
       "CodeSnapASCII",
     },
     opts = {
-      mac_window_bar = false,
-      save_path = "~/Pictures/nvim",
-      watermark = "",
-      bg_theme = "grape", -- Disable theming by bg_padding = 0
-      bg_padding = 25,
-      has_breadcrumbs = true,
-      has_line_number = false,
-      show_workspace = true,
+      snapshot_config = {
+        background = "#00000000",
+        window = {
+          mac_window_bar = false,
+          margin = {
+            x = 0,
+            y = 0,
+          },
+          radius = 0,
+        },
+      },
     },
   },
 }
