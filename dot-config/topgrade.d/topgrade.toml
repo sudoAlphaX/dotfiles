@@ -19,10 +19,12 @@ disable = [
   "poetry",
   "config_update",
   "auto_cpufreq",
-  "shell",
-  "rustup",
-  "uv",
   "vim",
+  "pi",
+  "yarn",
+  "node",
+  "pnpm",
+  "shell",
 ]
 
 # Ignore failures for these steps
