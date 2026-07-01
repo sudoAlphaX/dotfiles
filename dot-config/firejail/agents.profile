@@ -25,9 +25,7 @@ whitelist ${HOME}/fvm
 whitelist ${HOME}/.config/git
 read-only ${HOME}/.config/git
 
-
 whitelist ${HOME}/Projects
-whitelist ${HOME}/WIP
 
 caps.drop all
 ipc-namespace
