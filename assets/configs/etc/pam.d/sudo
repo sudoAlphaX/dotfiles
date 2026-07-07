@@ -5,3 +5,4 @@ auth [success=done default=ignore] /lib/security/pam_howdy.so
 auth		include		system-auth
 account		include		system-auth
 session		include		system-auth
+session         optional        pam_systemd.so class=none
