@@ -247,6 +247,12 @@ hl.window_rule({
 	content = "game",
 	immediate = true,
 })
+hl.window_rule({
+	name = "game-tearing-steam",
+	match = { initial_class = ".*\\.exe$" },
+	content = "game",
+	immediate = true,
+})
 
 -- Permissions
 hl.permission({ binary = "/usr/bin/grim", type = "screencopy", mode = "allow" })
