@@ -141,6 +141,12 @@ plugins+=(copybuffer)
 # direnv
 plugins+=(direnv)
 
+# eza
+# plugins+=(eza)
+zstyle ':omz:plugins:eza' 'git-status' yes
+zstyle ':omz:plugins:eza' 'show-group' no
+zstyle ':omz:plugins:eza' 'size-prefix' binary
+
 # Use <C-z> to fg suspended job
 plugins+=(fancy-ctrl-z)
 
