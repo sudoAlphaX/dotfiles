@@ -1,0 +1,22 @@
+#!/bin/sh
+THRESHOLD=20
+FLAG=/run/lowbat-saver.lock
+CMD="tlp power-saver"
+BAT=/sys/class/power_supply/BAT0
+
+upower --monitor | while read -r _; do
+  read -r status <"$BAT/status"
+
+  # re-arm if battery is not discharging (plugged in or full)
+  if [ "$status" != Discharging ]; then
+    [ -f "$FLAG" ] && rm -f "$FLAG"
+    continue
+  fi
+
+  [ -f "$FLAG" ] && continue # already fired this cycle
+
+  read -r cap <"$BAT/capacity"
+  if [ "$cap" -le "$THRESHOLD" ]; then
+    eval "$CMD" && touch "$FLAG"
+  fi
+done

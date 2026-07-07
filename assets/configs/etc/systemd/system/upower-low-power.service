@@ -1,0 +1,12 @@
+[Unit]
+Description=Fire tlp power-saver once per discharge cycle below threshold
+After=upower.service
+Wants=upower.service
+
+[Service]
+ExecStart=/usr/local/bin/lowbat-saver
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
