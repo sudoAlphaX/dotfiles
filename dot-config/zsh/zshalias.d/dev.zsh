@@ -72,14 +72,13 @@ function dev() {
 
   if (( started )); then
     log "booting"
-    local -i waited=0
-    until [[ $(sudo systemctl --machine="$mname" is-system-running 2>/dev/null) == (running|degraded) ]]; do
-      sleep 1
-      if (( ++waited > 120 )); then
-        warn "timed out waiting for boot"
-        return 1
-      fi
-    done
+    if ! sudo timeout 120 zsh -c "
+      until [[ \$(systemctl --machine=${(q)mname} is-system-running 2>/dev/null) == (running|degraded) ]]; do
+        sleep 1
+      done"; then
+      warn "timed out waiting for boot"
+      return 1
+    fi
     log "ready"
   fi
 
