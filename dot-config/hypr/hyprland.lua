@@ -41,7 +41,7 @@ hl.on("hyprland.start", function()
 	-- safeeyes-inhibit.sh replaced by the native window.open/workspace.removed handlers in keybinds.lua
 	after_app("vesktop", UWSM_SERVICE_B .. "mprisence")
 	hl.exec_cmd(DELAY_ONLINE .. UWSM_SERVICE_B .. "rescrobbled")
-	after_app("dunst", UWSM_SERVICE_B .. CONF_DIR .. "/scripts/bluetooth-autoconnect.sh") -- note: now restarts on failure
+	hl.exec_cmd(UWSM_SERVICE_B .. CONF_DIR .. "/scripts/bluetooth-autoconnect.sh")
 	-- mpv-touchpad.sh replaced by the native window.fullscreen handler in keybinds.lua
 	hl.exec_cmd(UWSM_SERVICE_B .. CONF_DIR .. "/scripts/temperature-notify.sh")
 	hl.exec_cmd(UWSM_SERVICE_B .. CONF_DIR .. "/scripts/platform-profile-notify.sh")
