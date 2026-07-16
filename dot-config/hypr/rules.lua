@@ -250,13 +250,21 @@ hl.window_rule({
 
 hl.window_rule({
 	name = "game-tearing-steam",
-	match = { initial_class = "steam_app_default" },
+	match = { initial_class = "steam_app_.*" },
 	content = "game",
 	immediate = true,
 })
+
 hl.window_rule({
 	name = "game-tearing-steam",
 	match = { initial_class = ".*\\.exe$" },
+	content = "game",
+	immediate = true,
+})
+
+hl.window_rule({
+	name = "game-tearing-minecraft",
+	match = { initial_class = ".*Minecraft.*" },
 	content = "game",
 	immediate = true,
 })
