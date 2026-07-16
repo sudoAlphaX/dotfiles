@@ -208,7 +208,7 @@ inhibit_apps=(claude copilot codex cp mv rsync mov copy topgrade lftp aria2c cru
 
 systemd-inhibit --what=sleep --why=probe true 2>/dev/null && _inhibit_ok=1
 __inhibit-apply() {
-  [[ -n $_inhibit_ok ]] || return  # ponytail: no logind -> run command bare, no upgrade needed
+  [[ -n $_inhibit_ok ]] || return
   _wrap_cmd=(systemd-inhibit --what=sleep --why="$1 - automated zsh hook action" "${_wrap_cmd[@]}")
 }
 
@@ -246,6 +246,14 @@ source <(fzf --zsh) # fzf history
 source $ZSH_CUSTOM/themes/zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZDOTDIR/zshalias
+
+##### zsh configuration #####
+
+HISTSIZE=100000
+SAVEHIST=100000
+setopt INC_APPEND_HISTORY
+
+##### END zsh configuration #####
 
 ##### unalias commands #####
 
