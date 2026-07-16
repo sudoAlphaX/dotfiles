@@ -47,4 +47,6 @@ return {
       })
     end,
   },
+  { "RobertBrunhage/flutter-riverpod-snippets" },
+  { "neovim/nvim-lspconfig", opts = { servers = { dartls = { enabled = false } } } },
 }
