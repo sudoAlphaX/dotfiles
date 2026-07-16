@@ -1,0 +1,6 @@
+[Unit]
+Description=Conservation mode off (charge to 100%)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sh -c 'echo 0 > /sys/class/power_supply/BAT0/extensions/ideapad_laptop/conservation_mode'

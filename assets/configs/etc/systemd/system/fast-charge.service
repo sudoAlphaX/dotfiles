@@ -1,0 +1,6 @@
+[Unit]
+Description=Enable fast charging
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sh -c 'echo Fast > /sys/class/power_supply/BAT0/charge_types'

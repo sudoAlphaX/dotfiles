@@ -1,0 +1,9 @@
+[Unit]
+Description=Conservation mode off (charge to 100%) at 05:30
+
+[Timer]
+OnCalendar=Mon..Fri *-*-* 05:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
