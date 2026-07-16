@@ -6,3 +6,6 @@ whitelist ${HOME}/.cache/aria2
 
 whitelist ${HOME}/Shared/Downloads
 whitelist ${HOME}/Shared/Games
+
+noblacklist ${HOME}/.netrc
+whitelist ${HOME}/.netrc
