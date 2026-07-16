@@ -192,6 +192,9 @@ __app-dispatch() {
   local app=$1; shift
   local bin
   bin=$(whence -p "$app") || { echo "command not found: $app" >&2; return 127 }
+
+  (( $+compstate )) && { "$bin" "$@"; return }
+
   local -a _wrap_cmd=("$bin" "$@")
   local _wrapper
   for _wrapper in ${=_app_wrappers[$app]}; do
