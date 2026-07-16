@@ -2,7 +2,7 @@ hl.config({
 	-- https://wiki.hyprland.org/Configuring/Variables/#general
 	general = {
 		gaps_in = 2,
-		gaps_out = 5,
+		gaps_out = 3,
 
 		border_size = 3,
 
@@ -25,7 +25,7 @@ hl.config({
 
 	-- https://wiki.hyprland.org/Configuring/Variables/#decoration
 	decoration = {
-		rounding = 10,
+		rounding = 0,
 
 		-- Change transparency of focused and unfocused windows
 		active_opacity = 1.0,
@@ -51,7 +51,7 @@ hl.config({
 
 	-- https://wiki.hyprland.org/Configuring/Variables/#animations
 	animations = {
-		enabled = true,
+		enabled = false,
 	},
 
 	render = {
