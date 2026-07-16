@@ -120,7 +120,7 @@ rsyncflags="--recursive \
   "
 
 alias copy="rsync $rsyncflags --perms --executability"
-alias extcopy="rsync $rsyncflags --info=NAME,STATS2 --verbose"
+alias extcopy="rsync $rsyncflags --info=NAME,STATS2 --verbose --inplace"
 alias mov="copy --remove-source-files"
 
 # Systemd inhibit suspend
