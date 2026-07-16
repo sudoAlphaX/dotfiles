@@ -110,16 +110,13 @@ scripts:
 		$(MAKE) -e -C $(SCRIPTS_DIR)/$$script install; \
 	done
 
-get-etc:
+get-etc get-usr:
 	@echo "--- Overwriting tracked $(subst get-,,$@) configs with system $(subst get-,,$@) configs ---"
-	@find $(CONFIGS_DIR)/$(subst get-,,$@) -type f | while read -r line; do \
-		cp $(V_FLAG) "$$(echo "$$line" | sed 's/^\.\/assets\/configs\/$(subst get-,,$@)\//\/$(subst get-,,$@)\//')" "$$line"; \
+	@find $(CONFIGS_DIR)/$(subst get-,,$@) -type f ! -executable | while read -r line; do \
+		sudo install $(V_FLAG) -o $$USER -g $$USER -m 644 "$$(echo "$$line" | sed 's/^\.\/assets\/configs\/$(subst get-,,$@)\//\/$(subst get-,,$@)\//')" "$$line"; \
 	done
-
-get-usr:
-	@echo "--- Overwriting tracked $(subst get-,,$@) configs with system $(subst get-,,$@) configs ---"
-	@find $(CONFIGS_DIR)/$(subst get-,,$@) -type f | while read -r line; do \
-		cp $(V_FLAG) "$$(echo "$$line" | sed 's/^\.\/assets\/configs\/$(subst get-,,$@)\//\/$(subst get-,,$@)\//')" "$$line"; \
+	@find $(CONFIGS_DIR)/$(subst get-,,$@) -type f -executable | while read -r line; do \
+		sudo install $(V_FLAG) -o $$USER -g $$USER -m 755 "$$(echo "$$line" | sed 's/^\.\/assets\/configs\/$(subst get-,,$@)\//\/$(subst get-,,$@)\//')" "$$line"; \
 	done
 
 update-submodules:
