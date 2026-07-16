@@ -10,18 +10,17 @@ SNUC
 SSN-LG_2.4
 OnePlus Nord 5 5G"
 
-if tailscale ping -c 10 "$TS_EXITNODE" >/dev/null 2>&1; then
+if [ "$STATUS" = "up" ]; then
 
-  if [ "$STATUS" = "up" ]; then
-
-    ssid=$(iw dev "$IFACE" link | sed -n 's/^\tSSID: //p')
-    if printf '%s\n' "$ALLOWED_APS" | grep -Fxq "$ssid"; then
-      if [ -f "/opt/autots/$TS_EXITNODE" ]; then
+  ssid=$(iw dev "$IFACE" link | sed -n 's/^\tSSID: //p')
+  if printf '%s\n' "$ALLOWED_APS" | grep -Fxq "$ssid"; then
+    if [ -f "/opt/autots/$TS_EXITNODE" ]; then
+      if tailscale ping -c 10 "$TS_EXITNODE" >/dev/null 2>&1; then
         tailscale set --exit-node="$TS_EXITNODE"
       fi
     fi
-
-  elif [ "$STATUS" = "down" ]; then
-    tailscale set --exit-node=
   fi
+
+elif [ "$STATUS" = "down" ]; then
+  tailscale set --exit-node=
 fi
