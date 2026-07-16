@@ -1,9 +1,13 @@
-#!/usr/bin/env sh
+#!/usr/bin/sh
 
 IFACE="$1"
 STATUS="$2"
 
-ALLOWED_APS="SSN SNUC SSN-LG_2.4"
+ALLOWED_APS="SSN
+SNUC
+SSN-LG_2.4
+OnePlus Nord 5 5G"
+
 SHADOWSOCKS_CONFIG_PATH="/etc/shadowsocks-rust/devserver.json"
 
 jq -r '.outbound_bind_interface' <"$SHADOWSOCKS_CONFIG_PATH"
@@ -13,14 +17,12 @@ if systemctl is-active shadowsocks-rust@"$(basename "$SHADOWSOCKS_CONFIG_PATH" .
 
     if [ "$STATUS" = "up" ]; then
 
-      ssid=$(iw dev "$IFACE" info | awk '/ssid/ {print $2}')
-      case " $ALLOWED_APS " in
-      *" $ssid "*)
+      ssid=$(iw dev "$IFACE" link | sed -n 's/^\tSSID: //p')
+      if printf '%s\n' "$ALLOWED_APS" | grep -Fxq "$ssid"; then
         if [ -f "/opt/autotun/$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")" ]; then
           systemctl start autotun@"$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")"
         fi
-        ;;
-      esac
+      fi
 
     elif [ "$STATUS" = "down" ]; then
       systemctl stop autotun@"$(jq -r '.locals[] | select(.protocol=="tun") | .tun_interface_name' <"$SHADOWSOCKS_CONFIG_PATH")"
