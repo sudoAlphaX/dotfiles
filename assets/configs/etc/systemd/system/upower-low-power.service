@@ -4,7 +4,7 @@ After=upower.service
 Wants=upower.service
 
 [Service]
-ExecStart=/usr/local/bin/lowbat-saver
+ExecStart=/usr/local/bin/upower-low-power
 Restart=always
 RestartSec=5
 
