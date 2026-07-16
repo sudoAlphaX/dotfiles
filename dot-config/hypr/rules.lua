@@ -51,7 +51,14 @@ hl.workspace_rule({
 })
 hl.workspace_rule({
 	workspace = "special:s9",
-	on_created_empty = "[workspace special:s9] " .. terminal("btop"),
+	on_created_empty = "[workspace special:s9] "
+		.. "uwsm app -a "
+		.. "btop"
+		.. " -- "
+		.. TERMINAL_COMMAND
+		.. " -o font.size=12.0"
+		.. " -e "
+		.. "btop",
 	persistent = false,
 })
 hl.workspace_rule({

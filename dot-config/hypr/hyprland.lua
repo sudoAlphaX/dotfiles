@@ -72,7 +72,12 @@ hl.on("hyprland.start", function()
 	-- hl.dispatch(hl.dsp.exec_cmd(terminal("radeontop -c -T"), { workspace = "special:s6 silent" }))
 	hl.dispatch(hl.dsp.exec_cmd(terminal("nvtop -d 15"), { workspace = "special:s7 silent" }))
 	hl.dispatch(hl.dsp.exec_cmd(terminal("battop -d 20"), { workspace = "special:s8 silent" }))
-	hl.dispatch(hl.dsp.exec_cmd(terminal("btop"), { workspace = "special:s9 silent" }))
+	hl.dispatch(
+		hl.dsp.exec_cmd(
+			"uwsm app -a " .. "btop" .. " -- " .. TERMINAL_COMMAND .. " -o font.size=12.0" .. " -e " .. "btop",
+			{ workspace = "special:s9 silent" }
+		)
+	)
 	hl.dispatch(hl.dsp.exec_cmd(DELAY_ONLINE .. UWSM_APP_A .. "thunderbird", { workspace = "special:s10 silent" }))
 	unfocus_on_appear("thunderbird")
 
