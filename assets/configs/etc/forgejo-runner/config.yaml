@@ -61,6 +61,7 @@ runner:
   labels:
     - ubuntu-latest:docker://ghcr.io/catthehacker/ubuntu:act-latest
     - self-hosted:docker://node:18-alpine
+    - self-hosted-dedicated:docker://node:18-alpine
     - self-hosted-medium:docker://node:18-alpine
 
 cache:
