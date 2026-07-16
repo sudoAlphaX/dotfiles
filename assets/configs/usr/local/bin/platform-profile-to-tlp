@@ -1,7 +1,11 @@
 #!/bin/sh
-sleep 2
-
 profile=$(cat /sys/firmware/acpi/platform_profile)
+stamp=/run/platform-profile-tlp.last
+
+# skip if unchanged
+[ "$(cat "$stamp" 2>/dev/null)" = "$profile" ] && exit 0
+echo "$profile" >"$stamp"
+
 case "$profile" in
 low-power) exec tlp power-saver ;;
 balanced) exec tlp balanced ;;
