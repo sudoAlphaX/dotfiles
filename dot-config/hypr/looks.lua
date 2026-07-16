@@ -69,6 +69,7 @@ hl.config({
 
 	-- https://wiki.hyprland.org/Configuring/Variables/#misc
 	misc = {
+		vrr = 3,
 		force_default_wallpaper = -1,
 		animate_manual_resizes = true,
 		disable_hyprland_logo = false,
