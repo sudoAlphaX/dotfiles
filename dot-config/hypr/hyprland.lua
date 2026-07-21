@@ -36,7 +36,7 @@ hl.on("hyprland.start", function()
 	after_app("dunst", UWSM_SERVICE_B .. "btrfs-desktop-notification")
 	after_app("dunst", UWSM_SERVICE_B .. "fumon")
 	after_waybar(UWSM_SERVICE_B .. "usbguard-qt")
-	after_waybar(UWSM_SERVICE_B .. "arch-audit-gtk")
+	after_waybar(DELAY_ONLINE .. UWSM_SERVICE_B .. "arch-audit-gtk")
 	after_app("dunst", UWSM_APP_S .. "alarm-clock-applet -h")
 	-- safeeyes-inhibit.sh replaced by the native window.open/workspace.removed handlers in keybinds.lua
 	after_app("vesktop", UWSM_SERVICE_B .. "mprisence")
