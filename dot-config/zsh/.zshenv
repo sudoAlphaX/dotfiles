@@ -53,6 +53,9 @@ export SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/ssh-agent.socket
 # Ollama localhost base
 export OLLAMA_API_BASE="http://localhost:11434"
 
+# huggingface models
+export HF_HUB_CACHE=/srv/models
+
 ################ xdg-ninja $HOME cleanup ################
 
 # .wakatime
