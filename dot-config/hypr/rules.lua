@@ -300,9 +300,18 @@ hl.permission({ binary = "/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland",
 -- NOTE: verify the window `fullscreen` field reports 2 for true fullscreen on your version.
 local fullscreen_active = false
 local touchpad_before_fullscreen = true
+local FULLSCREEN_IGNORE_CLASSES = { "virt-manager" }
 local function sync_fullscreen_state()
 	local active = hl.get_active_window()
 	local is_fullscreen = active ~= nil and active.fullscreen == 2
+	if is_fullscreen then
+		for _, class in ipairs(FULLSCREEN_IGNORE_CLASSES) do
+			if active.class == class then
+				is_fullscreen = false
+				break
+			end
+		end
+	end
 	if is_fullscreen == fullscreen_active then
 		return -- the focused window's fullscreen-2 status hasn't changed
 	end
