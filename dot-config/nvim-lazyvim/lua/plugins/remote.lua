@@ -10,7 +10,6 @@ return {
     "RemoteSSHFSLiveGrep",
   },
   keys = {
-
     {
       "<leader>fsc",
       function()
