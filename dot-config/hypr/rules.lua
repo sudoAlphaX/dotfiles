@@ -235,38 +235,30 @@ hl.window_rule({
 	match = { class = "ueberzugpp_.*" },
 })
 
--- Screen tearing for games
+-- Tag games as content type "game" so VRR (misc:vrr=3, FreeSync 40-60Hz panel)
+-- and direct scanout (render:direct_scanout=2) engage.
 hl.window_rule({
-	name = "game-tearing-xdg-tag",
-	match = { content = "game" },
-	immediate = true,
-})
-
-hl.window_rule({
-	name = "game-tearing-gamescope",
+	name = "game-gamescope",
 	match = { initial_class = "gamescope" },
 	immediate = true,
 })
 
 hl.window_rule({
-	name = "game-tearing-steam",
+	name = "game-steam",
 	match = { initial_class = "^steam_app_.*$" },
 	content = "game",
-	immediate = true,
 })
 
 hl.window_rule({
-	name = "game-tearing-steam",
-	match = { initial_class = ".*\\.exe$" },
+	name = "game-exe",
+	match = { initial_class = "^.*\\.exe$" },
 	content = "game",
-	immediate = true,
 })
 
 hl.window_rule({
-	name = "game-tearing-minecraft",
+	name = "game-minecraft",
 	match = { initial_class = "^.*Minecraft.*$" },
 	content = "game",
-	immediate = true,
 })
 
 -- Permissions
