@@ -1,6 +1,6 @@
 {
     "allow_postpone": true,
-    "fade_in_break_screen": true,
+    "fade_in_break_screen": false,
     "fade_in_break_screen_duration": 1500,
     "long_break_duration": 60,
     "long_break_interval": 75,
