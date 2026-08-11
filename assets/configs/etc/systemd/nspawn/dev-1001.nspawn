@@ -17,8 +17,8 @@ BindReadOnly=/home/personal/.config/tmux/tmux.conf:/home/dev/.config/tmux/tmux.c
 BindReadOnly=/home/personal/.config/tmux/tpm:/home/dev/.config/tmux/tpm:idmap
 BindReadOnly=/home/personal/.config/wakatime/.wakatime.cfg:/home/dev/.config/wakatime/.wakatime.cfg:idmap
 BindReadOnly=/home/personal/.config/tmux/tmux-nerd-font-window-name.yml:/home/dev/.config/tmux/tmux-nerd-font-window-name.yml:idmap
-BindReadOnly=/etc/zsh:/etc/zsh:idmap
-BindReadOnly=/etc/zshenv:/etc/zshenv:idmap
+BindReadOnly=/etc/zsh/zshenv:/etc/zsh/zshenv:idmap
+BindReadOnly=/etc/pacman.d/mirrorlist:/etc/pacman.d/mirrorlist:idmap
 
 Bind=/home/personal/.claude:/home/dev/.claude:idmap
 Bind=/home/personal/.claude.json:/home/dev/.claude.json:idmap
