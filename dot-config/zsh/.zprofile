@@ -9,7 +9,7 @@ if [[ $(tty) = "/dev/tty1" || $(tty) = "/dev/tty2" ]]; then
     if ( (echo "$remote" | grep -qE '^(http|https|ssh)://') && nm-online -q -t 0 && ping -q -c 1 -w 2 github.com >/dev/null) ||
       [[ -d "$remote/.git" ]]; then
       echo "Updating dotfiles..."
-      git -C "$dotfiles_path" pull --autostash
+      timeout 5s git -C "$dotfiles_path" pull --autostash
     else
       echo "Remote repository not found, skipping pull."
     fi
