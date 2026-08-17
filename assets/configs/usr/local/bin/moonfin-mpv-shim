@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+# Start jellyfin-mpv-shim in its own process group
+setsid jellyfin-mpv-shim &
+SHIM_PID=$!
+
+cleanup() {
+  # Kill the entire process group created by setsid
+  kill -- "-$SHIM_PID" 2>/dev/null || true
+}
+
+trap cleanup EXIT INT TERM
+
+moonfin

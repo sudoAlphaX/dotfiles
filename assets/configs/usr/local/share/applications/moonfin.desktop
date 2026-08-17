@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Moonfin (mpv-shim)
+Exec=moonfin-mpv-shim
+Icon=org.moonfin.linux
+Categories=AudioVideo;Video;
+Comment=Jellyfin & Emby media client
+Terminal=false
+StartupWMClass=org.moonfin.linux
