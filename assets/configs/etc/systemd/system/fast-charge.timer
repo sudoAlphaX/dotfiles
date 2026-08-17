@@ -2,7 +2,7 @@
 Description=Enable fast charging at 07:00
 
 [Timer]
-OnCalendar=Mon..Fri *-*-* 07:00:00
+OnCalendar=Mon..Sat *-*-* 07:00:00
 Persistent=true
 
 [Install]

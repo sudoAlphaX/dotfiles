@@ -2,7 +2,7 @@
 Description=Conservation mode on (cap at 80%) at 15:30
 
 [Timer]
-OnCalendar=Mon..Fri *-*-* 15:30:00
+OnCalendar=Mon..Sat *-*-* 15:30:00
 Persistent=true
 
 [Install]
