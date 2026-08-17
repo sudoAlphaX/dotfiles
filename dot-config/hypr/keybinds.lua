@@ -208,7 +208,7 @@ local function player_volume_notify()
 		.. ICONS_PATH
 		.. [[/audio/audio-volume-medium-symbolic.svg --expire-time 3000 --hint=int:value:"$(printf %0.f "$(echo "$(playerctl volume)" '*' 100 | bc )")" volume_event]]
 end
-local VOL_FLAGS = { locked = true, submap_universal = true }
+local VOL_FLAGS = { locked = true, submap_universal = false }
 local PLAYER_VOL_FLAGS = { repeating = true, locked = true, submap_universal = true }
 hl.bind(
 	"XF86AudioRaiseVolume",
@@ -454,4 +454,45 @@ hl.bind(MAINMOD .. " + SHIFT + minus", function()
 end)
 hl.bind(MAINMOD .. " + SHIFT + KP_SUBTRACT", function()
 	hl.config({ cursor = { zoom_factor = 1 } })
+end)
+
+-- Amazon Remote
+hl.bind("XF86MediaSelectProgramGuide", hl.dsp.submap("amazon_remote"))
+hl.define_submap("amazon_remote", function()
+	-- brightness
+	hl.bind("up", hl.dsp.exec_cmd(brightness_cmd("-m s +5%", "display-brightness-high-symbolic.svg")))
+	hl.bind(
+		"down",
+		hl.dsp.exec_cmd(brightness_cmd("--min-value=75 -m s 5%-", "display-brightness-medium-symbolic.svg"))
+	)
+	hl.bind("left", hl.dsp.exec_cmd(brightness_cmd("-m s 1%-", "display-brightness-high-symbolic.svg")))
+	hl.bind(
+		"right",
+		hl.dsp.exec_cmd(brightness_cmd("--min-value=75 -m s +1%", "display-brightness-medium-symbolic.svg"))
+	)
+
+	-- volume
+	hl.bind(
+		"XF86AudioRaiseVolume",
+		hl.dsp.exec_cmd(
+			"wpctl set-volume -l 1.25 @DEFAULT_SINK@ 0.01+; " .. volume_notify("audio-volume-high-symbolic.svg")
+		)
+	)
+	hl.bind(
+		"XF86AudioLowerVolume",
+		hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_SINK@ 0.01-; " .. volume_notify("audio-volume-medium-symbolic.svg"))
+	)
+
+	hl.bind("XF86HomePage", function()
+		hl.dispatch(hl.dsp.exec_cmd(UWSM_APP .. "moonfin-mpv-shim"))
+		hl.dispatch(hl.dsp.submap("reset"))
+	end)
+
+	hl.bind("XF86Back", function()
+		hl.dispatch(hl.dsp.window.close())
+		hl.dispatch(hl.dsp.submap("reset"))
+	end)
+
+	hl.bind("XF86MediaSelectProgramGuide", hl.dsp.submap("reset"))
+	hl.bind("Escape", hl.dsp.submap("reset"))
 end)
