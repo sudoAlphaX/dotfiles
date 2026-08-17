@@ -613,6 +613,11 @@
   fullscreen=show
 	new_icon="$XDG_CONFIG_HOME/dunst/icons/apps/usbguard.svg"
 
+[sshd]
+  appname="sshd"
+  format="<b>%s</b>\n%b"
+  fullscreen=show
+
 [hypridle-stack]
   appname="hypridle"
   set_stack_tag="hypridle"

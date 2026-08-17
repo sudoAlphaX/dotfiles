@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for uid in $(loginctl list-users --no-legend | awk '{print $1}'); do
+  user=$(loginctl show-user "$uid" -p Name --value)
+
+  systemd-run --machine="$user@.host" --user --quiet \
+    notify-send --app-name=sshd \
+    "SSH login successful" \
+    "User $PAM_USER logged in from ${PAM_RHOST:-unknown}"
+done
