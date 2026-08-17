@@ -20,3 +20,5 @@ private-etc alsa,asound.conf,ca-certificates,drirc,fonts,gnutls,igfx_user_featur
 # jellyfin-mpv-shim
 noblacklist ${HOME}/.config/jellyfin-mpv-shim
 whitelist ${HOME}/.config/jellyfin-mpv-shim
+
+private-bin ffmpeg,ffprobe
