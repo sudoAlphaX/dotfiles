@@ -226,6 +226,22 @@ alias jufbu="jubfu"
 
 alias ino="arduino-cli"
 
+function mpvp() {
+  local link=""
+
+  if [ -n "$1" ] && [ -f "$1" ]; then
+    link="$1"
+    shift
+  elif wl-paste | grep -qE "^https?://"; then
+    link="$(wl-paste)"
+  else
+    echo "Refusing to play. No link or file provided." >&2
+    return 1
+  fi
+
+  mpv "$link" "$@" || mpv --ytdl-raw-options-add="ignore-errors=" --ytdl-raw-options-add="cookies-from-browser=firefox" "$link" "$@"
+}
+
 function ytdl() {
   local link=""
 
@@ -237,7 +253,7 @@ function ytdl() {
   fi
     return 1
 
-  yt-dlp "$link" "$@"
+  yt-dlp "$link" "$@" || yt-dlp -i --cookies-from-browser=firefox "$link" "$@"
 }
 
 # ani-cli alias to download first 100 (almost all) episodes of an anime
