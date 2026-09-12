@@ -246,7 +246,7 @@ function mpvp() {
     return 1
   fi
 
-  mpv "$link" "$@" || mpv --ytdl-raw-options-add="cookies-from-browser=firefox" "$link" "$@"
+  mpv "$link" "$@" || mpv --ytdl-raw-options-add="ignore-errors=" --ytdl-raw-options-add="cookies-from-browser=firefox" "$link" "$@"
 }
 
 function ytdl() {
@@ -262,7 +262,7 @@ function ytdl() {
     return 1
   fi
 
-  yt-dlp "$link" "$@" || yt-dlp --cookies-from-browser=firefox "$link" "$@"
+  yt-dlp "$link" "$@" || yt-dlp -i --cookies-from-browser=firefox "$link" "$@"
 }
 
 # ani-cli alias to download first 100 (almost all) episodes of an anime
