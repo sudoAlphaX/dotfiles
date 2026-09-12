@@ -4,8 +4,7 @@ After=basic.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/ln -sf /mnt/wayland-1 %t/wayland-1
-ExecStart=/usr/bin/ln -sf /mnt/pipewire-0 %t/pipewire-0
+ExecStart=/usr/bin/ln -sf /mnt/sockets/pipewire-0 %t/pipewire-0
 RemainAfterExit=yes
 
 [Install]

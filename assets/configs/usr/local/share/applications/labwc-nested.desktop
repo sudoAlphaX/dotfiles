@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Nested labwc
+Comment=Nested labwc session for the systemd-nspawn container
+Exec=sh -c "u=\$(id -u); mkdir -p -m 700 /run/user/\$u/ba; exec env XDG_RUNTIME_DIR=/run/user/\$u/ba WAYLAND_DISPLAY=/run/user/\$u/wayland-1 labwc"
+Icon=utilities-terminal
+Terminal=false
+StartupNotify=false
+Categories=System;

@@ -31,6 +31,7 @@ function dev() {
 
   log "machine: ${_c_grn}${mname}${_c_reset}"
 
+  mkdir -p /run/user/$(id -u)/labwc
 
   local started=0
   if sudo machinectl status "$mname" &>/dev/null; then
