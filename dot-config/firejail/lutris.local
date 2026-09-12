@@ -36,6 +36,9 @@ noblacklist ${HOME}/.local/share/Steam
 mkdir ${HOME}/.local/share/Steam
 whitelist ${HOME}/.local/share/Steam
 
+noblacklist ${HOME}/mnt/GaYmeZ
+whitelist ${HOME}/mnt/GaYmeZ
+
 # Tray icon
 dbus-user.own org.kde.*
 dbus-user.talk org.kde.StatusNotifierWatcher

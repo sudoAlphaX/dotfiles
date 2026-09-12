@@ -1,2 +1,5 @@
 whitelist ${HOME}/Shared/SteamLibrary
 whitelist ${HOME}/Shared/Games
+
+noblacklist ${HOME}/mnt/GaYmeZ
+whitelist ${HOME}/mnt/GaYmeZ
