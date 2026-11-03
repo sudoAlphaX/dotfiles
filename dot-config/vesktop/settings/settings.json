@@ -35,7 +35,7 @@
             "enabled": true
         },
         "MessagePopoverAPI": {
-            "enabled": false
+            "enabled": true
         },
         "MessageUpdaterAPI": {
             "enabled": true
@@ -489,9 +489,9 @@
         "ShikiCodeblocks": {
             "enabled": true,
             "theme": "https://raw.githubusercontent.com/shikijs/textmate-grammars-themes/2d87559c7601a928b9f7e0f0dda243d2fb6d4499/packages/tm-themes/themes/dark-plus.json",
-            "tryHljs": "SECONDARY",
             "useDevIcon": "GREYSCALE",
-            "bgOpacity": 100
+            "bgOpacity": 100,
+            "tryDiscordHighlighter": "SECONDARY"
         },
         "ShowAllMessageButtons": {
             "enabled": false
@@ -662,9 +662,6 @@
         "DisableDeepLinks": {
             "enabled": true
         },
-        "ExpressionCloner": {
-            "enabled": false
-        },
         "CopyStickerLinks": {
             "enabled": false
         },
@@ -702,6 +699,15 @@
             "useListeningStatus": false,
             "missingArt": "lastfmLogo",
             "showLogo": true
+        },
+        "AddAttachments": {
+            "enabled": false
+        },
+        "GifProviderSwitcher": {
+            "enabled": false
+        },
+        "ExpressionManager": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -714,12 +720,13 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1786476035745
+        "settingsSyncVersion": 1793629275010
     },
     "eagerPatches": false,
     "uiElements": {
         "chatBarButtons": {},
         "messagePopoverButtons": {}
     },
-    "windowsMaterial": "none"
+    "windowsMaterial": "none",
+    "nativeTitleBar": false
 }
