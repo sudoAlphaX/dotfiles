@@ -30,6 +30,7 @@ whitelist ${HOME}/.cache/keepassxc
 whitelist ${HOME}/.config/keepassxc
 whitelist ${HOME}/.config/KeePassXCrc
 include whitelist-common.inc
+whitelist ${HOME}/.local/state/keepassxc
 
 # Whitelist Keepass Database
 noblacklist ${HOME}/Documents/Keepass
