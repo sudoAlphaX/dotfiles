@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+"""Minimal 24-hour HH:MM overlay for Wayland (wlr-layer-shell)."""
+
+import datetime
+import gi
+
+gi.require_version("Gtk", "3.0")
+gi.require_version("GtkLayerShell", "0.1")
+from gi.repository import GLib, Gtk, GtkLayerShell  # noqa: E402
+
+FONT = "monospace 10"  # Pango: family + weight + size in points
+COLOR = "#e6e6e6"
+MARGIN_RIGHT = 8  # px from the right screen edge
+MARGIN_BOTTOM = 8  # px from the bottom screen edge
+
+win = Gtk.Window()
+GtkLayerShell.init_for_window(win)  # must run before show_all()
+GtkLayerShell.set_namespace(win, "clock-overlay")
+GtkLayerShell.set_layer(win, GtkLayerShell.Layer.OVERLAY)  # TOP is hidden on fullscreen
+GtkLayerShell.set_keyboard_mode(win, GtkLayerShell.KeyboardMode.NONE)
+GtkLayerShell.set_anchor(win, GtkLayerShell.Edge.BOTTOM, True)
+GtkLayerShell.set_anchor(win, GtkLayerShell.Edge.RIGHT, True)
+GtkLayerShell.set_margin(win, GtkLayerShell.Edge.BOTTOM, MARGIN_BOTTOM)
+GtkLayerShell.set_margin(win, GtkLayerShell.Edge.RIGHT, MARGIN_RIGHT)
+
+visual = win.get_screen().get_rgba_visual()
+if visual is not None:
+    win.set_visual(visual)
+win.set_app_paintable(True)
+css = Gtk.CssProvider()
+css.load_from_data(b"window { background: transparent; }")
+Gtk.StyleContext.add_provider_for_screen(
+    win.get_screen(), css, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+)
+
+label = Gtk.Label()
+win.add(label)
+win.show_all()
+
+
+def render():
+    label.set_markup(
+        '<span font_desc="%s" foreground="%s">%s</span>'
+        % (FONT, COLOR, datetime.datetime.now().strftime("%H:%M"))
+    )
+
+
+def schedule():
+    render()
+    now = datetime.datetime.now()
+    delay_ms = int((60 - now.second - now.microsecond / 1e6) * 1000) + 20
+    GLib.timeout_add(delay_ms, schedule)  # wakes once per minute, not per second
+    return False
+
+
+schedule()
+Gtk.main()
