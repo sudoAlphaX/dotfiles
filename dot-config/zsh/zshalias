@@ -211,8 +211,7 @@ alias jbfu="journalctl -b -f -u"
 alias jfbu="jbfu"
 
 # systemctl --user aliases
-alias scus="systemctl --user status"
-alias scusl="scus -l "
+alias scus="systemctl --user status -l"
 alias scust="systemctl --user start"
 alias scustp="systemctl --user stop"
 alias scur="systemctl --user restart"
