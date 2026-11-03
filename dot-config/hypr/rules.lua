@@ -7,76 +7,50 @@ hl.workspace_rule({ workspace = "w[t1]s[false]", gaps_out = 0, gaps_in = 0 })
 hl.window_rule({ match = { float = true }, rounding = 0 })
 hl.window_rule({ match = { float = false, workspace = "w[t1]s[false]" }, rounding = 0 })
 
+-- Special workspaces auto-launch their app when created empty (replaces the removed
+-- on_created_empty workspace rule). One handler, one table of workspace -> command.
+local SPECIAL_AUTOSTART = {
+	["special:music"] = terminal("ytm"),
+	["special:youtube"] = "killall freetube; "
+		.. UWSM_APP
+		.. "freetube --enable-features=AcceleratedVideoDecodeLinuxGL",
+	["special:s1"] = tmux("", "Hyprland"),
+	["special:s6"] = terminal("radeontop -c -T"),
+	["special:s7"] = terminal("nvtop -d 15"),
+	["special:s8"] = terminal("battop -d 20"),
+	["special:s9"] = "uwsm app -a btop -- "
+		.. TERMINAL_COMMAND
+		.. " -o font.size=12.0"
+		.. " -e btop",
+	["special:s10"] = "killall thunderbird; " .. UWSM_APP_A .. "thunderbird",
+	["special:discord"] = "killall vesktop; " .. UWSM_APP_A .. "vesktop",
+}
+
+hl.on("workspace.created", function(ws)
+	if ws == nil or not ws.is_empty then
+		return
+	end
+	local cmd = SPECIAL_AUTOSTART[ws.name]
+	if cmd == nil then
+		return
+	end
+	hl.dispatch(hl.dsp.exec_cmd(cmd, { workspace = ws.name }))
+end)
+
 -- Music players
-hl.workspace_rule({
-	workspace = "special:music",
-	on_created_empty = "[workspace special:music] " .. terminal("ytm"),
-	persistent = false,
-})
 hl.bind(MAINMOD .. " + m", hl.dsp.workspace.toggle_special("music"))
 hl.on("hyprland.shutdown", function()
 	hl.exec_cmd("pkill -SIGHUP musikcube")
 end)
 
 -- YouTube player workspace (similar to music workspace)
-hl.workspace_rule({
-	workspace = "special:youtube",
-	on_created_empty = "[workspace special:youtube] killall freetube; "
-		.. UWSM_APP
-		.. "freetube --enable-features=AcceleratedVideoDecodeLinuxGL",
-	persistent = false,
-})
 hl.bind(MAINMOD .. " + y", hl.dsp.workspace.toggle_special("youtube"))
-
--- Auto launch special workspace apps
-hl.workspace_rule({
-	workspace = "special:s1",
-	on_created_empty = "[workspace special:s1] " .. tmux("", "Hyprland"),
-	persistent = false,
-})
-hl.workspace_rule({
-	workspace = "special:s6",
-	on_created_empty = "[workspace special:s6] " .. terminal("radeontop -c -T"),
-	persistent = false,
-})
-hl.workspace_rule({
-	workspace = "special:s7",
-	on_created_empty = "[workspace special:s7] " .. terminal("nvtop -d 15"),
-	persistent = false,
-})
-hl.workspace_rule({
-	workspace = "special:s8",
-	on_created_empty = "[workspace special:s8] " .. terminal("battop -d 20"),
-	persistent = false,
-})
-hl.workspace_rule({
-	workspace = "special:s9",
-	on_created_empty = "[workspace special:s9] "
-		.. "uwsm app -a "
-		.. "btop"
-		.. " -- "
-		.. TERMINAL_COMMAND
-		.. " -o font.size=12.0"
-		.. " -e "
-		.. "btop",
-	persistent = false,
-})
-hl.workspace_rule({
-	workspace = "special:s10",
-	on_created_empty = "[workspace special:s10] killall thunderbird; " .. UWSM_APP_A .. "thunderbird",
-	persistent = false,
-})
 
 -- Discord/Vesktop inside special workspace
 hl.window_rule({
 	name = "discord",
 	workspace = "special:discord",
 	match = { initial_class = "vesktop" },
-})
-hl.workspace_rule({
-	workspace = "special:discord",
-	on_created_empty = "[workspace special:discord] killall vesktop; " .. UWSM_APP_A .. "vesktop",
-	persistent = false,
 })
 
 -- Thunderbird inside special workspace (safety net: the silent autostart exec in hyprland.lua
